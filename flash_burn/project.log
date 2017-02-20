@@ -1,0 +1,9 @@
+
+!CONFIGURATION: 'com.ti.ccstudio.buildDefinitions.C5500.Debug.2138708917' [Fri Jun 12 16:39:20 CST 2015]
+
+	!TOOL: 'com.ti.ccstudio.buildDefinitions.C5500_4.4.exe.compilerDebug.1208680505'
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.C5500_4.4.exe.compilerDebug.1208680505::-ml
+
+		!WARNING: Reference to the legacy 'Install_dir' macro detected.  This reference has been replaced with new build-variable 'CCSv3_INSTALL_ROOT', resolving to a local CCSv3.x installation which has been found at 'D:/PROGRA~2/CCSTUD~1.3' [Window > Preferences > C/C++ > Build > Build Variables].  It is recommended, however, that you do not reference any resources from the legacy CCSv3.x installation - consider copying these resources into a product-independent location, and referencing them using a new user-defined build-variable.
+

@@ -1,0 +1,118 @@
+******************************************************************************
+         TMS320C55x COFF Linker PC v3.3.2                      
+******************************************************************************
+>> Linked Mon Jul 28 18:08:22 2014
+
+OUTPUT FILE NAME:   <ad.out>
+ENTRY POINT SYMBOL: "main"  address: 00000200
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+                        (bytes)   (bytes)    (bytes)   (bytes)
+----------------------  --------  ---------  --------  --------  ----  --------
+  PROG                  00000200   00002400  00000100  00002300  RWIX
+  DATA                  00002600   00000200  00000000  00000200  RWIX
+  DARAM1                00002800   00000200  00000006  000001fa  RWIX
+  STACK                 00002a00   00000200  00000190  00000070  RWIX
+  VECT                  00002c00   00000100  00000100  00000000  RWIX
+  INITIAL               00002d00   00001000  00000000  00001000  RWIX
+  DARAM2                00004000   0000c000  00002000  0000a000  RWIX
+
+
+SECTION ALLOCATION MAP
+(Addresses surrounded by []'s are displayed for convenience only!)
+
+output                                                          attributes/
+section   page  orgn(bytes) orgn(words) len(bytes) len(words)   input sections
+--------  ----  ----------- ----------- ---------- ----------   --------------
+.bss         0   [ 00000000 ]  00000000          *   00000000   UNINITIALIZED
+
+.text        0     00000200  [ 00000100 ] 00000100          *   
+                   00000200  [ 00000100 ] 000000ff          *   AD.obj (.text)
+                   000002ff  [ 0000017f+] 00000001          *   --HOLE-- [fill = 20]
+
+.data        0   [ 00002600 ]  00001300          *   00000000   UNINITIALIZED
+
+variable     0   [ 00002800 ]  00001400          *   00000003   UNINITIALIZED
+                 [ 00002800 ]  00001400          *   00000003   AD.obj (variable)
+
+stack        0   [ 00002a00 ]  00001500          *   000000c8   UNINITIALIZED
+                 [ 00002a00 ]  00001500          *   000000c8   AD.obj (stack)
+
+ints         0     00002c00  [ 00001600 ] 00000100          *   
+                   00002c00  [ 00001600 ] 00000100          *   AD.obj (ints)
+
+.cinit       0   [ 00002d00 ]  00001680          *   00000000   UNINITIALIZED
+
+.const       0   [ 00002d00 ]  00001680          *   00000000   UNINITIALIZED
+
+.cio         0   [ 00002d00 ]  00001680          *   00000000   UNINITIALIZED
+
+data2        0   [ 00004000 ]  00002000          *   00000000   UNINITIALIZED
+
+data1        0   [ 00004000 ]  00002000          *   00001000   UNINITIALIZED
+                 [ 00004000 ]  00002000          *   00001000   AD.obj (data1)
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+abs. value/
+byte addr   word addr   name
+---------   ---------   ----
+00000001                $TI_capability$C5500$MemoryModel
+00000001                $TI_capability_requires_rev2
+            00000000    .bss
+            00001300    .data
+00000200                .text
+ffffffff                ___binit__
+            00000000    ___bss__
+ffffffff                ___c_args__
+ffffffff                ___cinit__
+            00001300    ___data__
+            00001300    ___edata__
+            00000000    ___end__
+00000300                ___etext__
+ffffffff                ___pinit__
+00000200                ___text__
+   *** UNDEFINED ***    _c_int00
+ffffffff                binit
+ffffffff                cinit
+            00001300    edata
+            00000000    end
+00000300                etext
+00000200                main
+ffffffff                pinit
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+abs. value/
+byte addr   word addr   name
+---------   ---------   ----
+            00000000    ___bss__
+            00000000    ___end__
+            00000000    end
+            00000000    .bss
+00000001                $TI_capability$C5500$MemoryModel
+00000001                $TI_capability_requires_rev2
+00000200                ___text__
+00000200                .text
+00000200                main
+00000300                ___etext__
+00000300                etext
+            00001300    .data
+            00001300    edata
+            00001300    ___data__
+            00001300    ___edata__
+ffffffff                ___c_args__
+ffffffff                pinit
+ffffffff                ___binit__
+ffffffff                ___cinit__
+ffffffff                ___pinit__
+   *** UNDEFINED ***    _c_int00
+ffffffff                cinit
+ffffffff                binit
+
+[23 symbols]

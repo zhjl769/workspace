@@ -1,0 +1,107 @@
+******************************************************************************
+              TMS320C55x Linker PC v4.4.1                      
+******************************************************************************
+>> Linked Wed Sep 09 10:00:45 2015
+
+OUTPUT FILE NAME:   <I2C.out>
+ENTRY POINT SYMBOL: ".text"  address: 00000200
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+                        (bytes)   (bytes)    (bytes)   (bytes)
+----------------------  --------  ---------  --------  --------  ----  --------
+  PROG                  00000200   00002c00  00000991  0000226f  RWIX
+  DATA1                 00002e00   00000200  00000000  00000200  RWIX
+  DATA2                 00003000   00000fff  000007f4  0000080b  RWIX
+  VECT                  00004000   000006ff  00000200  000004ff  RWIX
+  STACK                 00004700   000006ff  00000640  000000bf  RWIX
+  DARAM                 00010000   00020000  0001850e  00007af2  RWIX
+
+
+SECTION ALLOCATION MAP
+(Addresses surrounded by []'s are displayed for convenience only!)
+
+output                                                          attributes/
+section   page  orgn(bytes) orgn(words) len(bytes) len(words)   input sections
+--------  ----  ----------- ----------- ---------- ----------   --------------
+.text        0     00000200  [ 00000100 ] 00000991          *   
+                   00000200  [ 00000100 ] 000004c8          *   I2C.obj (.text)
+                   000006c8  [ 00000364 ] 000004c8          *   I2C.obj (.text)
+                   00000b90  [ 000005c8 ] 00000001          *   --HOLE-- [fill = 20]
+
+.data        0   [ 00002e00 ]  00001700          *   00000000   UNINITIALIZED
+
+buffer       0   [ 00003000 ]  00001800          *   000003fa   UNINITIALIZED
+                 [ 00003000 ]  00001800          *   000001fd   I2C.obj (buffer)
+                 [ 000033fa ]  000019fd          *   000001fd   I2C.obj (buffer)
+
+ints         0     00004000  [ 00002000 ] 00000200          *   
+                   00004000  [ 00002000 ] 00000100          *   I2C.obj (ints)
+                   00004100  [ 00002080 ] 00000100          *   I2C.obj (ints)
+
+stack        0   [ 00004700 ]  00002380          *   00000320   UNINITIALIZED
+                 [ 00004700 ]  00002380          *   00000190   I2C.obj (stack)
+                 [ 00004a20 ]  00002510          *   00000190   I2C.obj (stack)
+
+boot         0   [ 00010000 ]  00008000          *   0000c287   
+                 [ 00010000 ]  00008000          *   00004138   I2C.obj (boot)
+                 [ 00018270 ]  0000c138          *   00004138   USBL.obj (boot)
+                 [ 000204e0 ]  00010270          *   00004017   I2C.obj (boot)
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+abs. value/
+byte addr   word addr   name
+---------   ---------   ----
+00000002                $TI_capability$C5500$CallingConvention
+00000002                $TI_capability$C5500$MemoryModel
+00000001                $TI_capability_requires_rev2
+            00001700    .data
+00000200                .text
+ffffffff                ___binit__
+ffffffff                ___c_args__
+ffffffff                ___cinit__
+            00001700    ___data__
+            00001700    ___edata__
+00000b91                ___etext__
+ffffffff                ___pinit__
+00000200                ___text__
+ffffffff                binit
+            0000c138    boot
+ffffffff                cinit
+            00001700    edata
+00000b91                etext
+ffffffff                pinit
+00000200                start
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+abs. value/
+byte addr   word addr   name
+---------   ---------   ----
+00000001                $TI_capability_requires_rev2
+00000002                $TI_capability$C5500$CallingConvention
+00000002                $TI_capability$C5500$MemoryModel
+00000200                .text
+00000200                ___text__
+00000200                start
+00000b91                ___etext__
+00000b91                etext
+            00001700    .data
+            00001700    ___data__
+            00001700    ___edata__
+            00001700    edata
+            0000c138    boot
+ffffffff                ___binit__
+ffffffff                ___c_args__
+ffffffff                ___cinit__
+ffffffff                ___pinit__
+ffffffff                binit
+ffffffff                cinit
+ffffffff                pinit
+
+[20 symbols]

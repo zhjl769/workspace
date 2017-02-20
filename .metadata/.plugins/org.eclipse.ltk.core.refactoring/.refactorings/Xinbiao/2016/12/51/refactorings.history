@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Xinbiao/mcbsp_initial.h&apos; to &apos;mcbsp_initial.c&apos;" description="Rename resource &apos;mcbsp_initial.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="mcbsp_initial.h" name="mcbsp_initial.c" stamp="1481548527670" updateReferences="true"/>
+</session>

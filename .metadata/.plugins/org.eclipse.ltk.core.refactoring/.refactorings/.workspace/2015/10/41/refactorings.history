@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;WIFI CAR&apos; to &apos;UART_430&apos;" description="Rename resource &apos;WIFI CAR&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/WIFI CAR" name="UART_430" stamp="1444440843924" updateReferences="true"/>
+</session>

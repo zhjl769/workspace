@@ -1,0 +1,65 @@
+-------------------------------  AD.pjt - Debug  -------------------------------
+[AD.asm] "C:\CCStudio_v3.3\C5500\cgtools\bin\cl55" -g -pdsw225 -fr"C:/CCStudio_v3.3/MyProjects/AD7663_NEW_40k/Debug" -d"_DEBUG" -@"Debug.lkf" "AD.asm"
+"AD.asm", REMARK   at line 116: [R5571] This instruction may corrupt the carry
+                                        bit if the M40 bit is set (see the C55x
+                                        silicon exceptions errata; Advisory
+                                        CPU_41)
+			add   #1,*(#content1)
+
+"AD.asm", REMARK   at line 119: [R5672] If there is a long MMR write with no
+                                        intervening single MMR before this
+                                        return from interrupt, then an
+                                        interrupted conditional execution may
+                                        be corrupted; (see the C55x silicon
+                                        exceptions errata; Advisory CPU_94)
+	        reti                	            	    
+
+"AD.asm", REMARK   at line 119: [R5674] If processor is in fast-return mode, and
+                                        this return from interrupt instruction
+                                        is stalled in the ADDRESS or ACCESS1
+                                        phase, then the execution of a
+                                        subsequent conditional execution may be
+                                        corrupted; (see the C55x silicon
+                                        exceptions errata; Advisory CPU_99)
+	        reti                	            	    
+
+"AD.asm", REMARK   at line 119: [R5675] An MMR write to the RPTC register that
+                                        is close to this return from interrupt
+                                        instruction may cause an interrupted
+                                        single repeat loop's execution to be
+                                        corrupted; (see the C55x silicon
+                                        exceptions errata; Advisory CPU_100)
+	        reti                	            	    
+
+"AD.asm", REMARK   at line 121: [R5672] If there is a long MMR write with no
+                                        intervening single MMR before this
+                                        return from interrupt, then an
+                                        interrupted conditional execution may
+                                        be corrupted; (see the C55x silicon
+                                        exceptions errata; Advisory CPU_94)
+	        reti
+
+"AD.asm", REMARK   at line 121: [R5674] If processor is in fast-return mode, and
+                                        this return from interrupt instruction
+                                        is stalled in the ADDRESS or ACCESS1
+                                        phase, then the execution of a
+                                        subsequent conditional execution may be
+                                        corrupted; (see the C55x silicon
+                                        exceptions errata; Advisory CPU_99)
+	        reti
+
+"AD.asm", REMARK   at line 121: [R5675] An MMR write to the RPTC register that
+                                        is close to this return from interrupt
+                                        instruction may cause an interrupted
+                                        single repeat loop's execution to be
+                                        corrupted; (see the C55x silicon
+                                        exceptions errata; Advisory CPU_100)
+	        reti
+
+
+[Linking...] "C:\CCStudio_v3.3\C5500\cgtools\bin\cl55" -@"Debug.lkf"
+<Linking>
+>> warning: entry point other than _c_int00 specified
+
+Build Complete,
+  0 Errors, 1 Warnings, 7 Remarks.

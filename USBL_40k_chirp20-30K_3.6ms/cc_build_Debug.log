@@ -1,0 +1,238 @@
+------------------------------  USBL.pjt - Debug  ------------------------------
+[cbrev.asm] "D:\Program Files\CCStudio_v3.3\C5500\cgtools\bin\cl55" -g -q -o2 -fr"E:/DATA/workspace/USBL_40k_chirp20-30K(3.6ms)/Debug" -d"CHIP_5509" -ml -@"Debug.lkf" "cbrev.asm"
+"cbrev.asm", REMARK   at line 93: [R5584] Be sure to see see the C55x silicon
+                                          exceptions errata advisory CPU_47
+                                          when attempting to execute an
+                                          exponent or normalization instruction
+                                          in parallel
+		EXP AC2, T1				; Hi(AC2) = N
+
+"cbrev.asm", REMARK   at line 128: [R5688] A localrepeat may be corrupted when
+                                           C54CM == 1 (see the C55x silicon
+                                           exceptions errata; Advisory CPU_85)
+	            RPTBLOCAL even_loop; port of RPTBLOCAL even_loop
+
+"cbrev.asm", REMARK   at line 130: [R5573] Any BKxx and BSAxx updates are not
+                                           pipline protected against MAR
+                                           operations within 5 cycles (see line
+                                           129) (see the C55x silicon
+                                           exceptions errata; Advisory CPU_43)
+	              AMAR  *(AR0+T0B)
+
+"cbrev.asm", REMARK   at line 131: [R5573] Any BKxx and BSAxx updates are not
+                                           pipline protected against MAR
+                                           operations within 5 cycles (see line
+                                           129) (see the C55x silicon
+                                           exceptions errata; Advisory CPU_43)
+	              AMAR  *(AR2+T1)
+
+"cbrev.asm", REMARK   at line 135: [R5688] A localrepeat may be corrupted when
+                                           C54CM == 1 (see the C55x silicon
+                                           exceptions errata; Advisory CPU_85)
+	 ||           RPTBLOCAL even_loop; port of || RPTBLOCAL even_loop
+
+"cbrev.asm", REMARK   at line 141: [R5682] This outer loop contains a nested
+                                           localrepeat that may cause execution
+                                           to terminate if an iteration of the
+                                           nested localrepeat is interrupted;
+                                           (see the C55x silicon exceptions
+                                           errata; Advisory CPU_116)
+		}
+
+"cbrev.asm", REMARK   at line 167: [R5688] A localrepeat may be corrupted when
+                                           C54CM == 1 (see the C55x silicon
+                                           exceptions errata; Advisory CPU_85)
+	            RPTBLOCAL  odd_loop; port of RPTBLOCAL  odd_loop
+
+"cbrev.asm", REMARK   at line 169: [R5573] Any BKxx and BSAxx updates are not
+                                           pipline protected against MAR
+                                           operations within 5 cycles (see line
+                                           168) (see the C55x silicon
+                                           exceptions errata; Advisory CPU_43)
+	              AMAR  *(AR0+T0B)
+
+"cbrev.asm", REMARK   at line 170: [R5573] Any BKxx and BSAxx updates are not
+                                           pipline protected against MAR
+                                           operations within 5 cycles (see line
+                                           168) (see the C55x silicon
+                                           exceptions errata; Advisory CPU_43)
+	              AMAR  *(AR0+T0B)
+
+"cbrev.asm", REMARK   at line 171: [R5573] Any BKxx and BSAxx updates are not
+                                           pipline protected against MAR
+                                           operations within 5 cycles (see line
+                                           168) (see the C55x silicon
+                                           exceptions errata; Advisory CPU_43)
+	              AMAR  *(AR2+T1)
+
+"cbrev.asm", REMARK   at line 175: [R5688] A localrepeat may be corrupted when
+                                           C54CM == 1 (see the C55x silicon
+                                           exceptions errata; Advisory CPU_85)
+	 ||           RPTBLOCAL odd_loop; port of || RPTBLOCAL odd_loop
+
+"cbrev.asm", REMARK   at line 181: [R5682] This outer loop contains a nested
+                                           localrepeat that may cause execution
+                                           to terminate if an iteration of the
+                                           nested localrepeat is interrupted;
+                                           (see the C55x silicon exceptions
+                                           errata; Advisory CPU_116)
+		}
+
+"cbrev.asm", REMARK   at line 207: [R5688] A localrepeat may be corrupted when
+                                           C54CM == 1 (see the C55x silicon
+                                           exceptions errata; Advisory CPU_85)
+		RPTBLOCAL	loop2-1            ; port of RPTBLOCAL  loop2-1            
+
+"cbrev.asm", REMARK   at line 218: [R5601] MMR writes to ST0 and ST2 are not
+                                           pipeline protected against
+                                           interrupts (see the C55x silicon
+                                           exceptions errata; Advisory CPU_75)
+		POP	mmap(ST2_55)		; restore ST2_55 register
+
+
+[cfft_noscale.asm] "D:\Program Files\CCStudio_v3.3\C5500\cgtools\bin\cl55" -g -q -o2 -fr"E:/DATA/workspace/USBL_40k_chirp20-30K(3.6ms)/Debug" -d"CHIP_5509" -ml -@"Debug.lkf" "cfft_noscale.asm"
+"cfft_noscale.asm", REMARK   at line 260: [R5688] A localrepeat may be corrupted
+                                                  when C54CM == 1 (see the C55x
+                                                  silicon exceptions errata;
+                                                  Advisory CPU_85)
+	        RPTBLOCAL r4_loop; port of RPTBLOCAL r4_loop
+
+"cfft_noscale.asm", REMARK   at line 321: [R5601] MMR writes to ST0 and ST2 are
+                                                  not pipeline protected
+                                                  against interrupts (see the
+                                                  C55x silicon exceptions
+                                                  errata; Advisory CPU_75)
+	       OR	#0x57 , mmap(ST2_55)  ; circular ar0, ar1, ar2, ar4 and ar6
+
+"cfft_noscale.asm", REMARK   at line 412: [R5688] A localrepeat may be corrupted
+                                                  when C54CM == 1 (see the C55x
+                                                  silicon exceptions errata;
+                                                  Advisory CPU_85)
+	        RPTBLOCAL r2_loop1; port of RPTBLOCAL r2_loop1
+
+"cfft_noscale.asm", REMARK   at line 438: [R5688] A localrepeat may be corrupted
+                                                  when C54CM == 1 (see the C55x
+                                                  silicon exceptions errata;
+                                                  Advisory CPU_85)
+	          RPTBLOCAL r2_loop2          ; port of RPTBLOCAL r2_loop2          
+
+"cfft_noscale.asm", REMARK   at EOF: [R5669] This memory access on line 443 may
+                                             cause the instruction to fail to
+                                             execute correctly due to the bus
+                                             access on line 470 which may
+                                             preceed it in the loop (see the
+                                             C55x silicon exceptions errata;
+                                             Advisory CPU_92)
+"cfft_noscale.asm", REMARK   at line 475: [R5684] This outer loop contains a
+                                                  nested localrepeat that may
+                                                  cause execution to terminate
+                                                  if an iteration of the nested
+                                                  localrepeat is interrupted;
+                                                  Note: indirect write to
+                                                  memory may be write to MMR
+                                                  BRC1; (see the C55x silicon
+                                                  exceptions errata; Advisory
+                                                  CPU_116)
+		}
+
+"cfft_noscale.asm", REMARK   at line 500: [R5601] MMR writes to ST0 and ST2 are
+                                                  not pipeline protected
+                                                  against interrupts (see the
+                                                  C55x silicon exceptions
+                                                  errata; Advisory CPU_75)
+	      POP	mmap(ST2_55)
+
+"cfft_noscale.asm", REMARK   at line 502: [R5601] MMR writes to ST0 and ST2 are
+                                                  not pipeline protected
+                                                  against interrupts (see the
+                                                  C55x silicon exceptions
+                                                  errata; Advisory CPU_75)
+	      POP	mmap(ST0_55)
+
+
+[cifft_noscale.asm] "D:\Program Files\CCStudio_v3.3\C5500\cgtools\bin\cl55" -g -q -o2 -fr"E:/DATA/workspace/USBL_40k_chirp20-30K(3.6ms)/Debug" -d"CHIP_5509" -ml -@"Debug.lkf" "cifft_noscale.asm"
+
+[fir2.asm] "D:\Program Files\CCStudio_v3.3\C5500\cgtools\bin\cl55" -g -q -o2 -fr"E:/DATA/workspace/USBL_40k_chirp20-30K(3.6ms)/Debug" -d"CHIP_5509" -ml -@"Debug.lkf" "fir2.asm"
+"fir2.asm", REMARK   at line 79: [R5601] MMR writes to ST0 and ST2 are not
+                                         pipeline protected against interrupts
+                                         (see the C55x silicon exceptions
+                                         errata; Advisory CPU_75)
+		AND	#001FFh, mmap(ST0_55)     ;clear all ACOVx,TC1, TC2, C
+
+"fir2.asm", REMARK   at line 85: [R5601] MMR writes to ST0 and ST2 are not
+                                         pipeline protected against interrupts
+                                         (see the C55x silicon exceptions
+                                         errata; Advisory CPU_75)
+		AND	#07A00h, mmap(ST2_55)     ;clear ARMS, RDM, CDPLC, AR[0-7]LC
+
+"fir2.asm", REMARK   at line 118: [R5601] MMR writes to ST0 and ST2 are not
+                                          pipeline protected against interrupts
+                                          (see the C55x silicon exceptions
+                                          errata; Advisory CPU_75)
+		OR	#ST2mask, mmap(ST2_55)	;config circ/linear pointers
+
+"fir2.asm", REMARK   at line 122: [R5571] This instruction may corrupt the carry
+                                          bit if the M40 bit is set (see the
+                                          C55x silicon exceptions errata;
+                                          Advisory CPU_41)
+		ADD	#1, mmap(db_sz)		;db_sz = nh+1
+
+"fir2.asm", REMARK   at line 125: [R5573] Any BKxx and BSAxx updates are not
+                                          pipline protected against MAR
+                                          operations within 5 cycles (see line
+                                          122) (see the C55x silicon exceptions
+                                          errata; Advisory CPU_43)
+		AMAR	*db_ptr2-		;index of 2nd oldest db entry
+
+"fir2.asm", REMARK   at line 148: [R5688] A localrepeat may be corrupted when
+                                          C54CM == 1 (see the C55x silicon
+                                          exceptions errata; Advisory CPU_85)
+	 ||	  RPTBLOCAL	loop1-1		; port of ||RPTBLOCAL  loop1-1    
+
+"fir2.asm", REMARK   at line 153: [R5579] This instruction is sensitive to
+                                          stalls and the preceding memory write
+                                          on line 143 (see the C55x silicon
+                                          exceptions errata; Advisory CPU_45)
+		MPY	*db_ptr1+, *h_ptr+, AC0		;part 1 of dual-MPY
+
+"fir2.asm", REMARK   at line 158: [R5579] This instruction is sensitive to
+                                          stalls and the preceding memory write
+                                          on line 143 (see the C55x silicon
+                                          exceptions errata; Advisory CPU_45)
+		MAC	*db_ptr1+, *h_ptr+, AC0		;part 1 of dual-MAC
+
+"fir2.asm", REMARK   at line 162: [R5579] This instruction is sensitive to
+                                          stalls and the preceding memory write
+                                          on line 143 (see the C55x silicon
+                                          exceptions errata; Advisory CPU_45)
+		MACR	*(db_ptr1-T1), *h_ptr+, AC0	;part 1 of dual-MAC
+
+"fir2.asm", REMARK   at line 197: [R5601] MMR writes to ST0 and ST2 are not
+                                          pipeline protected against interrupts
+                                          (see the C55x silicon exceptions
+                                          errata; Advisory CPU_75)
+		AND	#0FE00h, mmap(ST2_55)	;clear CDPLC and AR[7-0]LC
+
+
+[h_LPF1.asm] "D:\Program Files\CCStudio_v3.3\C5500\cgtools\bin\cl55" -g -q -o2 -fr"E:/DATA/workspace/USBL_40k_chirp20-30K(3.6ms)/Debug" -d"CHIP_5509" -ml -@"Debug.lkf" "h_LPF1.asm"
+
+[h_LPF2.asm] "D:\Program Files\CCStudio_v3.3\C5500\cgtools\bin\cl55" -g -q -o2 -fr"E:/DATA/workspace/USBL_40k_chirp20-30K(3.6ms)/Debug" -d"CHIP_5509" -ml -@"Debug.lkf" "h_LPF2.asm"
+
+[main.c] "D:\Program Files\CCStudio_v3.3\C5500\cgtools\bin\cl55" -g -q -o2 -fr"E:/DATA/workspace/USBL_40k_chirp20-30K(3.6ms)/Debug" -d"CHIP_5509" -ml -@"Debug.lkf" "main.c"
+"mcbsp_initial.h", line 33: warning: nonstandard conversion between pointer to function and pointer to data
+"mcbsp_initial.h", line 71: warning: nonstandard conversion between pointer to function and pointer to data
+"mcbsp_initial.h", line 73: warning: nonstandard conversion between pointer to function and pointer to data
+"interrupt_function.c", line 81: warning: variable "R_IER" was set but never used
+"interrupt_function.c", line 146: warning: variable "R_IER" was set but never used
+
+[maxvec.asm] "D:\Program Files\CCStudio_v3.3\C5500\cgtools\bin\cl55" -g -q -o2 -fr"E:/DATA/workspace/USBL_40k_chirp20-30K(3.6ms)/Debug" -d"CHIP_5509" -ml -@"Debug.lkf" "maxvec.asm"
+
+[twid2048.asm] "D:\Program Files\CCStudio_v3.3\C5500\cgtools\bin\cl55" -g -q -o2 -fr"E:/DATA/workspace/USBL_40k_chirp20-30K(3.6ms)/Debug" -d"CHIP_5509" -ml -@"Debug.lkf" "twid2048.asm"
+
+[vectors.asm] "D:\Program Files\CCStudio_v3.3\C5500\cgtools\bin\cl55" -g -q -o2 -fr"E:/DATA/workspace/USBL_40k_chirp20-30K(3.6ms)/Debug" -d"CHIP_5509" -ml -@"Debug.lkf" "vectors.asm"
+
+[Linking...] "D:\Program Files\CCStudio_v3.3\C5500\cgtools\bin\cl55" -@"Debug.lkf"
+<Linking>
+
+Build Complete,
+  0 Errors, 5 Warnings, 32 Remarks.

@@ -1,0 +1,81 @@
+/*
+ * Variable.h
+ *
+ *  Created on: 2015-12-7
+ *      Author: zhjl769
+ */
+
+#ifndef VARIABLE_H_
+#define VARIABLE_H_
+
+#include "DSPLib.h"
+/*
+#pragma DATA_SECTION(Rev1,"rev1")
+short Rev1[1000];  //采集数据乒乓缓存区1
+
+#pragma DATA_SECTION(Rev2,"rev2")
+short Rev2[1000];  //每次采集数据乒乓缓存区2
+*/
+
+#define FIR_COEFF_ORDER    32
+#define FIR_COEFF_LENGTH   (FIR_COEFF_ORDER+2)
+
+extern _q15 Fir_coeffs[FIR_COEFF_LENGTH];
+
+
+/* Allocate DSPLib parameter structures. */
+extern msp_fir_q15_params FirParams;
+extern msp_fft_q15_params FFTParams;
+
+
+#define f1 12000 //参考信号1
+#define fs 65000 //采样率
+#define Di 1665  //缓存空间点数
+#define Ds 5  //滑动相关保留的点数
+
+#define Save 1625  //滑动相关保留的点数 Di - Ds
+
+#define Dfir 188  //滑动相关保留的点数 (Di - Ds)/5 + 64 + 2,32为滤波器系数
+#define Dxcor 126 //相关输出的点数  Dfir - FIR_COEFF_ORDER - 1
+
+/*
+ * 说明：此处每次更新的点数为125；但是滤波器每次的前32点的数据丢失，每次的后面的40点搬移到前面，为了保证每次更新的为新数据，
+ * 所以此处的点数为166，也就是在保证丢失的数据32点对更新的数据没有影响，前面必须加上已经处理了的32个点，为了更新新的数据，
+ * 此处加了点8个，并且滤波器的输出空间应该保证为偶数，所以此处为166个点，望知晓。
+ */
+
+#define Dref 40  //参考空间点数
+
+int Rev1[Save];//接收缓存1
+int Rev2[Save];//接收缓存2
+int Rev[Di];//接收缓存
+int X_ref[Dref];//volatile
+
+
+_q15 Xout[Dfir];
+_q15 Fout[Dxcor + FIR_COEFF_ORDER];
+_q15 FFTout[256];
+_q15 FFTout_save[25];
+
+
+unsigned int Block;//FFT点数保留的块数
+unsigned int Last_result;//此数据为上次是否检测到，如果上次检测到，那么该数据为1，反之为0，
+unsigned int Result_out;//连续检测结果计数
+
+/* Result maximum value */
+_q15 q15MaxVector;
+
+/* Index of result */
+uint16_t uint16MaxIndex;
+
+/* Index of result used interpolated */
+float  MaxIndex_out;
+
+
+
+extern void temperature_get(void);//温度获取函数
+extern void Voltage_get_get(void);//电压获取函数
+
+
+
+#endif /* VARIABLE_H_ */

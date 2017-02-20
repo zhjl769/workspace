@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;POWER&apos; to &apos;POWER_BIGDOG&apos;" description="Rename resource &apos;POWER&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/POWER" name="POWER_BIGDOG" stamp="1441160888182" updateReferences="true"/>&#x0A;<refactoring comment="Delete resource &apos;USBL(new)_100M/twid2048.asm&apos;" deleteContents="false" description="Delete resource &apos;USBL(new)_100M/twid2048.asm&apos;" element1="/USBL(new)_100M/twid2048.asm" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1441360863421"/>
+</session>

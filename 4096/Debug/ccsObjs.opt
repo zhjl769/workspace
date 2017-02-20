@@ -1,0 +1,1 @@
+"./twid4096.obj" "./main.obj" "./cifft_noscale.obj" "./cfft_noscale.obj" "./cbrev.obj" -l"libc.a" 

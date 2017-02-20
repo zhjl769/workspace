@@ -1,0 +1,35 @@
+
+**** Build of configuration Debug for project Example_2823xDMA_xintf_to_ram ****
+
+"D:\\Program Files (x86)\\CCSv5\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building target: Example_2823xDMA_xintf_to_ram.out'
+'Invoking: C2000 Linker'
+"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c2000_6.2.11/bin/cl2000" -v28 -ml -mt --float_support=fpu32 -Ooff -g --define="_DEBUG" --define="LARGE_MODEL" --quiet --verbose_diagnostics --diag_warning=225 --diag_suppress=10063 --issue_remarks --output_all_syms --cdebug_asm_data -z -m"Example_2823xDMA_xintf_to_ram.map" --stack_size=0x380 --warn_sections -i"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c2000_6.2.11/lib" -i"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c2000_6.2.11/include" -i"E:/DATA/workspace/Example_2823xDMA_xintf_to_ram" -i"D:/Program Files (x86)/CCSv5/controlSUITE/device_support/f2833x/v142/DSP2833x_common/lib" -i"D:/Program Files (x86)/CCSv5/controlSUITE/libs/math/IQmath/v15c/lib" --reread_libs --verbose_diagnostics --issue_remarks --xml_link_info="Example_2823xDMA_xintf_to_ram_linkInfo.xml" --entry_point=code_start --rom_model -o "Example_2823xDMA_xintf_to_ram.out"  "./Example_2823xDMA_xintf_to_ram.obj" "./DSP2833x_usDelay.obj" "./DSP2833x_Xintf.obj" "./DSP2833x_SysCtrl.obj" "./DSP2833x_PieVect.obj" "./DSP2833x_PieCtrl.obj" "./DSP2833x_GlobalVariableDefs.obj" "./DSP2833x_DefaultIsr.obj" "./DSP2833x_DMA.obj" "./DSP2833x_CpuTimers.obj" "./DSP2833x_CodeStartBranch.obj" "./DSP2833x_Adc.obj" "./DSP2833x_ADC_cal.obj" "D:/Program Files (x86)/CCSv5/controlSUITE/device_support/f2833x/v142/DSP2833x_common/cmd/28335_RAM_lnk.cmd" "D:/Program Files (x86)/CCSv5/controlSUITE/device_support/f2833x/v142/DSP2833x_headers/cmd/DSP2833x_Headers_nonBIOS.cmd" -l"rts2800_ml.lib" -l"IQmath.lib" -l"rts2800_fpu32.lib" 
+error: file "D:/Program Files
+   (x86)/CCSv5/ccsv5/tools/compiler/c2000_6.2.11/lib/rts2800_ml.lib<boot.obj>"
+   specifies ISA revision "C2800", which is not compatible with ISA revision
+   "C28FPU32" specified in a previous file or on the command line
+error: file "D:/Program Files
+
+   (x86)/CCSv5/ccsv5/tools/compiler/c2000_6.2.11/lib/rts2800_ml.lib<exit.obj>"
+   specifies ISA revision "C2800", which is not compatible with ISA revision
+>> Compilation failure
+   "C2700" specified in a previous file or on the command line
+error: file "D:/Program Files
+   (x86)/CCSv5/ccsv5/tools/compiler/c2000_6.2.11/lib/rts2800_ml.lib<memset.obj>
+   " specifies ISA revision "C2800", which is not compatible with ISA revision
+   "C2700" specified in a previous file or on the command line
+error: file "D:/Program Files
+   (x86)/CCSv5/ccsv5/tools/compiler/c2000_6.2.11/lib/rts2800_ml.lib<_lock.obj>"
+   specifies ISA revision "C2800", which is not compatible with ISA revision
+   "C2700" specified in a previous file or on the command line
+error: file "D:/Program Files
+   (x86)/CCSv5/ccsv5/tools/compiler/c2000_6.2.11/lib/rts2800_ml.lib<args_main.o
+   bj>" specifies ISA revision "C2800", which is not compatible with ISA
+   revision "C2700" specified in a previous file or on the command line
+error: errors encountered during linking; "Example_2823xDMA_xintf_to_ram.out"
+   not built
+gmake: *** [Example_2823xDMA_xintf_to_ram.out] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****

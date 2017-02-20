@@ -1,0 +1,1 @@
+"../flash_burn.cmd" "./sst25vf040b.obj" "./flash_burn.obj" -l"csl5509x.lib" -l"rts55x.lib" 

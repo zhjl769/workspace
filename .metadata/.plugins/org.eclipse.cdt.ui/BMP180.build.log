@@ -1,0 +1,71 @@
+
+**** Build of configuration Debug for project BMP180 ****
+
+"D:\\Program Files\\ccsv5\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../BMP180.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F6638__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="BMP180.pp"  "../BMP180.c"
+"../BMP180.c", line 11: error #20: identifier "sbit" is undefined
+"../BMP180.c", line 11: error #20: identifier "P1" is undefined
+"../BMP180.c", line 12: error #20: identifier "sbit" is undefined
+"../BMP180.c", line 13: error #20: identifier "sbit" is undefined
+"../BMP180.c", line 13: error #20: identifier "P2" is undefined
+"../BMP180.c", line 14: error #20: identifier "sbit" is undefined
+"../BMP180.c", line 15: error #20: identifier "sbit" is undefined
+"../BMP180.c", line 55: error #20: identifier "bit" is undefined
+"../BMP180.c", line 56: error #20: identifier "bit" is undefined
+"../BMP180.c", line 67: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../BMP180.c", line 68: remark #1530-D: (ULP 5.1) Detected modulo operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../BMP180.c", line 69: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../BMP180.c", line 70: remark #1530-D: (ULP 5.1) Detected modulo operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../BMP180.c", line 71: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../BMP180.c", line 72: remark #1530-D: (ULP 5.1) Detected modulo operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../BMP180.c", line 73: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../BMP180.c", line 74: remark #1530-D: (ULP 5.1) Detected modulo operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../BMP180.c", line 75: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../BMP180.c", line 76: remark #1530-D: (ULP 5.1) Detected modulo operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../BMP180.c", line 84: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../BMP180.c", line 84: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../BMP180.c", line 86: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../BMP180.c", line 86: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../BMP180.c", line 92: error #20: identifier "P0" is undefined
+"../BMP180.c", line 93: warning #225-D: function "_nop_" declared implicitly
+"../BMP180.c", line 95: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../BMP180.c", line 102: warning #225-D: function "_nop_" declared implicitly
+"../BMP180.c", line 103: error #20: identifier "P0" is undefined
+"../BMP180.c", line 110: warning #225-D: function "_nop_" declared implicitly
+"../BMP180.c", line 111: error #20: identifier "P0" is undefined
+"../BMP180.c", line 141: warning #225-D: function "_nop_" declared implicitly
+"../BMP180.c", line 156: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../BMP180.c", line 188: error #20: identifier "bit" is undefined
+"../BMP180.c", line 200: error #20: identifier "bit" is undefined
+"../BMP180.c", line 204: error #20: identifier "CY" is undefined
+"../BMP180.c", line 221: error #20: identifier "CY" is undefined
+"../BMP180.c", line 218: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../BMP180.c", line 239: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../BMP180.c", line 365: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../BMP180.c", line 366: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../BMP180.c", line 386: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../BMP180.c", line 387: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../BMP180.c", line 389: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../BMP180.c", line 390: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../BMP180.c", line 391: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../BMP180.c", line 393: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../BMP180.c", line 396: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../BMP180.c", line 398: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../BMP180.c", line 399: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../BMP180.c", line 401: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../BMP180.c", line 442: fatal error #1965: cannot open source file "REG51.H"
+16 errors and 1 catastrophic error detected in the compilation of "../BMP180.c".
+Compilation terminated.
+gmake: *** [BMP180.obj] Error 1
+
+>> Compilation failure
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F6638__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+'Finished building: ../main.c'
+' '
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****

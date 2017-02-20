@@ -1,0 +1,42 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="E:\DataCollect\dsp_prg\Allin1\A1\Boot\flash_burn\"
+ProjectType=Executable
+CPUFamily=TMS320C55XX
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="DspBiosBuilder"
+Tool="Linker"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+Source="flash_burn.c"
+Source="sst25vf040b.c"
+Source="flash_burn.cmd"
+
+["Compiler" Settings: "Debug"]
+Options=-g -q -pdv -fr".\Debug" -d"_DEBUG" -d"CHIP_5509A" -ml
+
+["Compiler" Settings: "Release"]
+Options=-o2 -fr"$(Proj_dir)\Release"
+
+["DspBiosBuilder" Settings: "Debug"]
+Options=-v55
+
+["Linker" Settings: "Debug"]
+Options=-q -a -c -heap0x800 -m".\Debug\flash_burn.map" -o".\Debug\flash_burn.out" -stack0x800 -sysstack0x800 -w -x -i"$(Install_dir)\C5000\cgtools\lib" -i"$(Install_dir)\C5000\csl\lib" -l"csl5509ax.lib" -l"rts55x.lib"
+
+["Linker" Settings: "Release"]
+Options=-c -m".\Release\flash_burn.map" -o".\Release\flash_burn.out" -w -x
+
+["flash_burn.cmd" Settings: "Debug"]
+LinkOrder=1
+
+["flash_burn.cmd" Settings: "Release"]
+LinkOrder=1
+
+
+[Tools]
+ToolDeleteList 

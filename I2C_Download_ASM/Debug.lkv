@@ -1,0 +1,3 @@
+-z -q -c -m"./Debug/I2C.map" -o"./Debug/I2C.out" -w -x -i"d:/ti/c5500/bios/lib" -i"d:/ti/c5500/rtdx/lib" -i"d:/ti/c5500/cgtools/lib"
+"D:\ti\myprojects\i2c_zhangzhe\Debug\I2C.obj"
+"D:\ti\myprojects\i2c_zhangzhe\I2C.cmd"

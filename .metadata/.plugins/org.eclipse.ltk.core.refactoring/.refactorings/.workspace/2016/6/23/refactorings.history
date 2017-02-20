@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;dma_ex4_singleTransferADC12&apos;" deleteContents="true" description="Delete resource &apos;dma_ex4_singleTransferADC12&apos;" element1="/dma_ex4_singleTransferADC12" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1465027423818"/>
+</session>

@@ -1,0 +1,387 @@
+#include "DSP28x_Project.h"     // Device Headerfile and Examples Include File
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "variable.h"
+#include "AD7762_init.h"
+#include "Math_Function.h"
+
+
+//#define x6_zone   *0x100000
+int FLAG=0;    //此标志是一个什么标志？定时器中断服务程序中有对FLAG置1的操作，应该是开始采集的标志
+
+int16 Piont1, Piont2;
+interrupt void cpu_timer0_isr(void);
+interrupt void cpu_timer1_isr(void);
+interrupt void XINT1_isr(void);
+
+
+int FLAG_1 = 0;    //此标志是一个什么标志？
+Uint16 * px;    //px, py, pz分别对应着XZCS0, XZCS6, XZCS7存储区的地址
+Uint16 * py;
+Uint16 * pz;
+Uint16  i;
+long    j = 0;
+int     k = 0;
+int     l = 0;
+int     m = 0;
+int     n = 0;
+long    a = 0;
+unsigned int    data_store=0;
+unsigned int    data_cnt=0;
+unsigned int     ad_signal_num=0;
+unsigned int     data_cnt_div=0;
+unsigned int    s_totel=0;
+
+
+//volatile Uint16 DATABuf1[BUF_SIZE];    //自己新加的，用来存储AD1采集到的数据到DSP内部
+void init_zone0(void);    //zone0    原来程序中应对应的是AD
+void delay_loop(void);
+void delay_loop_1(long num);
+void Gpio_select(void);
+void main(void)
+{
+	// Step 1. Initialize System Control:
+	InitSysCtrl();
+	// Step 3. Clear all interrupts and initialize PIE vector table:
+	// Disable CPU interrupts
+	DINT;
+	// Initialize the PIE control registers to their default state.
+	InitPieCtrl();
+	// Disable CPU interrupts and clear all CPU interrupt flags:
+	IER = 0x0000;
+	IFR = 0x0000;
+	// Initialize the PIE vector table with pointers to the shell Interrupt
+	InitPieVectTable();
+	// MemCopy(&RamfuncsLoadStart,&RamfuncsLoadEnd,&RamfuncsRunStart);
+	init_zone0();    //初始化zone0    原来程序中应对应的是AD
+	Gpio_select();
+	InitEPwm2Gpio();
+	GPIO3_PWM_Init(1152); //GPIO3的PWM初始化.1.152MHz采样率为18kHz
+	//	GPIO3_PWM_Init(2304); //GPIO3的PWM初始化.2.304MHz采样率为36kHz
+	GPIO4_XINT_Init(); //XINt1中断初始化
+	Xcorr_refdata();
+	InitCpuTimers();
+#if (CPU_FRQ_150MHZ)
+	// Configure CPU-Timer 0, 1, and 2 to interrupt every second:
+	// 150MHz CPU Freq, 1 second Period (in uSeconds)
+
+	ConfigCpuTimer(&CpuTimer0, 150, 10);    //配置Timer0每10us产生一次中断   150M*10u/150M=10u
+	ConfigCpuTimer(&CpuTimer1, 150, 1);
+	ConfigCpuTimer(&CpuTimer2, 150, 1);
+#endif
+
+#if (CPU_FRQ_120MHZ)
+	// Configure CPU-Timer 0, 1, and 2 to interrupt every second:
+	// 120MHz CPU Freq, 1 second Period (in uSeconds)
+
+	ConfigCpuTimer(&CpuTimer0, 120, 10);
+	ConfigCpuTimer(&CpuTimer1, 120, 1);
+	ConfigCpuTimer(&CpuTimer2, 120, 1);
+#endif
+	// To ensure precise timing, use write-only instructions to write to the entire register. Therefore, if any
+	// of the configuration bits are changed in ConfigCpuTimer and InitCpuTimers (in DSP2833x_CpuTimers.h), the
+	// below settings must also be updated.
+
+	CpuTimer0Regs.TCR.all = 0x4000; // Use write-only instruction to set TSS bit = 0    TSS  定时器停止状态位
+	CpuTimer1Regs.TCR.all = 0x4001; // Use write-only instruction to set TSS bit = 0
+	CpuTimer2Regs.TCR.all = 0x4001; // Use write-only instruction to set TSS bit = 0
+
+	AD7762_Write(0x0002, 0x0003);        //AD7662控制寄存器2写入0x0003值；
+
+	px=(Uint16 *)0x004000;    //zone0起始地址，终止地址0x005000
+
+	memset(DATABuf1, 0, sizeof(DATABuf1));
+	//	memset(DATABuf2, 0, sizeof(DATABuf2));
+	//	memset(DATABuf3, 0, sizeof(DATABuf3));
+
+	EALLOW;
+	PieVectTable.TINT0 = &cpu_timer0_isr;
+	PieVectTable.XINT1 = &XINT1_isr;
+	PieCtrlRegs.PIECTRL.bit.ENPIE = 1;          // Enable the PIE block
+	//	PieCtrlRegs.PIEIER1.bit.INTx7 = 1;    //使能TINT0的PIE级中断开关
+	PieCtrlRegs.PIEIER1.bit.INTx4 = 1;    //使能XINT1的PIE级中断开关
+	EDIS;
+	IER |= M_INT1; // Enable CPU 第一组中断
+	EINT; // Enable Global interrupt INTM
+	ERTM; // Enable Global realtime interrupt DBGM
+
+
+	while(1)
+		if(FLAG > 0)
+		{
+			int16 N, i, j;
+			FLAG = 0;
+			data_cnt = 0;
+			ad_signal_num = 0;
+			//			AD7762_Write(0x0002, 0x000f);        //AD7662控制寄存器2写入0x0000值,停止AD采集
+			DATA_Mean(DATABuf1, BUF_SIZE);
+			for(i = 0; i < BUF_SIZE; i++)
+				DATABuf2[i] =(float)((float)(DATABuf1[i])/8388608); //8388608为2^23,整型转化为浮点
+
+//			DATA_Gate(0x00500000, 16, DATABuf1, DATABuf2);
+			N = BUF_SIZE/Block_xcorr;
+			memset(DATABuf3, 0, BUF_SIZE);
+			for(i = 0; i < N; i ++)
+			{
+				for(j = 0; j < Block_xcorr; j ++)
+					DATABuf3[j] = DATABuf2[i*Block_xcorr + j];
+				switch (i)
+				{
+				case 0: xcorr(DATABuf2, Block_xcorr, DATABuf2, BUF_SIZE, DATABuf4);break;
+				case 1: xcorr(DATABuf2, Block_xcorr, DATABuf2, BUF_SIZE, DATABuf5);break;
+				}
+			}
+			Piont1 = DATA_Max(DATABuf4, BUF_SIZE);
+			Piont2 = DATA_Max(DATABuf5, BUF_SIZE);
+
+			//			AD7762_Write(0x0002, 0x0003);        //AD7662控制寄存器2写入0x0003值；
+		}
+		else
+			asm("  NOP");
+}
+
+interrupt void cpu_timer0_isr(void)
+{
+	CpuTimer0.InterruptCount++;
+	//	FLAG = 1;
+	CpuTimer0Regs.TCR.bit.TIF = 1;//外设中断标志位清0
+	GpioDataRegs.GPATOGGLE.bit.GPIO18=0x1;
+	PieCtrlRegs.PIEACK.all = PIEACK_GROUP1;
+}
+
+
+interrupt void XINT1_isr(void)
+{
+	DINT;
+	DRTM;
+	PieCtrlRegs.PIEIER1.bit.INTx4 = 0;    //关闭XINT1的PIE级中断开关
+	PieCtrlRegs.PIEIFR1.bit.INTx4 = 0;    //XINT1的PIE级中断标志位清零
+
+	if(ad_signal_num > 1023)
+	{
+		//		AD7762_Write(0x0002, 0x000f);        //AD7662控制寄存器2写入0x0000值,停止AD采集
+		FLAG = 10;
+		data_cnt = 0;
+		ad_signal_num = 0;
+	}
+	px = (Uint16 *)0x004000;
+	DATABuf1[ad_signal_num] = AD7762_Read();
+	data_cnt++;
+	ad_signal_num++;
+
+	PieCtrlRegs.PIEIER1.bit.INTx4 = 1;    //XINT1的PIE级中断开关
+	PieCtrlRegs.PIEACK.all = PIEACK_GROUP1; //PIEACK清0
+	ERTM; // Enable Global realtime interrupt DBGM
+	EINT;
+
+}
+
+void delay_loop()
+{
+	long      i;
+	for (i = 0; i < 1000; i++) {}
+}
+void init_zone0(void)
+{
+
+	// Make sure the XINTF clock is enabled
+	SysCtrlRegs.PCLKCR3.bit.XINTFENCLK = 1;
+
+	// Configure the GPIO for XINTF with a 16-bit data bus
+	// This function is in DSP2833x_Xintf.c
+	InitXintf16Gpio();
+	EALLOW;
+	// All Zones---------------------------------
+	// Timing for all zones based on XTIMCLK = SYSCLKOUT
+	XintfRegs.XINTCNF2.bit.XTIMCLK = 0;
+	// Buffer up to 3 writes
+	XintfRegs.XINTCNF2.bit.WRBUFF = 3;
+	// XCLKOUT is enabled
+	XintfRegs.XINTCNF2.bit.CLKOFF = 0;
+	// XCLKOUT = XTIMCLK
+	XintfRegs.XINTCNF2.bit.CLKMODE = 0;
+
+	// Zone 7------------------------------------
+	// When using ready, ACTIVE must be 1 or greater
+	// Lead must always be 1 or greater
+	// Zone write timing
+	XintfRegs.XTIMING0.bit.XWRLEAD = 1;//为什么要比一大，还有6:5是代表什么
+	XintfRegs.XTIMING0.bit.XWRACTIVE = 2;
+	XintfRegs.XTIMING0.bit.XWRTRAIL = 1;
+	// Zone read timing
+	XintfRegs.XTIMING0.bit.XRDLEAD = 1;
+	XintfRegs.XTIMING0.bit.XRDACTIVE = 3;
+	XintfRegs.XTIMING0.bit.XRDTRAIL = 1;
+
+	// don't double all Zone read/write lead/active/trail timing
+	XintfRegs.XTIMING0.bit.X2TIMING = 0;
+
+	// Zone will not sample XREADY signal
+	XintfRegs.XTIMING0.bit.USEREADY = 0;
+	XintfRegs.XTIMING0.bit.READYMODE = 0;
+
+	// 1,1 = x16 data bus
+	// 0,1 = x32 data bus
+	// other values are reserved
+	XintfRegs.XTIMING0.bit.XSIZE = 3;
+	EDIS;
+
+	//Force a pipeline flush to ensure that the write to
+	//the last register configured occurs before returning.
+	asm(" RPT #7 || NOP");
+}
+void init_zone7(void)
+{
+
+	// Make sure the XINTF clock is enabled
+	SysCtrlRegs.PCLKCR3.bit.XINTFENCLK = 1;
+
+	// Configure the GPIO for XINTF with a 16-bit data bus
+	// This function is in DSP2833x_Xintf.c
+	InitXintf16Gpio();
+	EALLOW;
+	// All Zones---------------------------------
+	// Timing for all zones based on XTIMCLK = SYSCLKOUT
+	XintfRegs.XINTCNF2.bit.XTIMCLK = 0;
+	// Buffer up to 3 writes
+	XintfRegs.XINTCNF2.bit.WRBUFF = 3;
+	// XCLKOUT is enabled
+	XintfRegs.XINTCNF2.bit.CLKOFF = 0;
+	// XCLKOUT = XTIMCLK
+	XintfRegs.XINTCNF2.bit.CLKMODE = 0;
+
+	// Zone 7------------------------------------
+	// When using ready, ACTIVE must be 1 or greater
+	// Lead must always be 1 or greater
+	// Zone write timing
+	XintfRegs.XTIMING7.bit.XWRLEAD = 3;
+	XintfRegs.XTIMING7.bit.XWRACTIVE = 7;
+	XintfRegs.XTIMING7.bit.XWRTRAIL = 3;
+	// Zone read timing
+	XintfRegs.XTIMING7.bit.XRDLEAD = 3;
+	XintfRegs.XTIMING7.bit.XRDACTIVE = 7;
+	XintfRegs.XTIMING7.bit.XRDTRAIL = 3;
+
+	// don't double all Zone read/write lead/active/trail timing
+	XintfRegs.XTIMING7.bit.X2TIMING = 0;
+
+	// Zone will not sample XREADY signal
+	XintfRegs.XTIMING7.bit.USEREADY = 0;
+	XintfRegs.XTIMING7.bit.READYMODE = 0;
+
+	// 1,1 = x16 data bus
+	// 0,1 = x32 data bus
+	// other values are reserved
+	XintfRegs.XTIMING7.bit.XSIZE = 3;
+	EDIS;
+
+	//Force a pipeline flush to ensure that the write to
+	//the last register configured occurs before returning.
+	asm(" RPT #7 || NOP");
+}
+void init_zone6(void)
+{
+
+	// Make sure the XINTF clock is enabled
+	SysCtrlRegs.PCLKCR3.bit.XINTFENCLK = 1;
+
+	// Configure the GPIO for XINTF with a 16-bit data bus
+	// This function is in DSP2833x_Xintf.c
+	InitXintf16Gpio();
+	EALLOW;
+	// All Zones---------------------------------
+	// Timing for all zones based on XTIMCLK = SYSCLKOUT
+	XintfRegs.XINTCNF2.bit.XTIMCLK = 0;
+	// Buffer up to 3 writes
+	XintfRegs.XINTCNF2.bit.WRBUFF = 3;
+	// XCLKOUT is enabled
+	XintfRegs.XINTCNF2.bit.CLKOFF = 0;
+	// XCLKOUT = XTIMCLK
+	XintfRegs.XINTCNF2.bit.CLKMODE = 0;
+
+	// Zone 7------------------------------------
+	// When using ready, ACTIVE must be 1 or greater
+	// Lead must always be 1 or greater
+	// Zone write timing
+	XintfRegs.XTIMING6.bit.XWRLEAD = 1;
+	XintfRegs.XTIMING6.bit.XWRACTIVE = 3;
+	XintfRegs.XTIMING6.bit.XWRTRAIL = 1;
+	// Zone read timing
+	XintfRegs.XTIMING6.bit.XRDLEAD = 1;
+	XintfRegs.XTIMING6.bit.XRDACTIVE = 3;
+	XintfRegs.XTIMING6.bit.XRDTRAIL = 1;
+
+	// don't double all Zone read/write lead/active/trail timing
+	XintfRegs.XTIMING6.bit.X2TIMING = 0;
+
+	// Zone will not sample XREADY signal
+	XintfRegs.XTIMING6.bit.USEREADY = 0;
+	XintfRegs.XTIMING6.bit.READYMODE = 0;
+
+	// 1,1 = x16 data bus
+	// 0,1 = x32 data bus
+	// other values are reserved
+	XintfRegs.XTIMING6.bit.XSIZE = 3;
+	EDIS;
+
+	//Force a pipeline flush to ensure that the write to
+	//the last register configured occurs before returning.
+	asm(" RPT #7 || NOP");
+}
+
+
+void delay_loop_1(long num)
+{
+	long     i;
+	for (i = 0; i < num; i++) {};
+}
+
+
+/*--------------------------初始化GPIO---------------------------------*/
+void Gpio_select(void)
+{
+	EALLOW;
+	GpioCtrlRegs.GPAMUX1.all = 0x00000000;  // All GPIO    GPIO0~GPIO15
+	GpioCtrlRegs.GPAMUX2.all = 0x00000000;  // All GPIO    GPIO16~GPIO31
+	GpioCtrlRegs.GPAMUX1.bit.GPIO3=0X0;
+	GpioCtrlRegs.GPAMUX1.bit.GPIO4=0X0;
+	GpioCtrlRegs.GPAMUX1.bit.GPIO5=0X0;
+	GpioCtrlRegs.GPAMUX1.bit.GPIO6=0X0;
+	GpioCtrlRegs.GPAMUX1.bit.GPIO7=0X0;
+	GpioCtrlRegs.GPBMUX1.all = 0x00000000;  // All GPIO
+	GpioCtrlRegs.GPBMUX2.all = 0x00000000; // B ALL GPIO    GPIO48~GPIO63
+	GpioCtrlRegs.GPADIR.all = 0xFFFFFFFF;   // All outputs
+	GpioCtrlRegs.GPADIR.bit.GPIO7 = 0x0;//DSPIN    IN
+	GpioDataRegs.GPADAT.bit.GPIO5 =0x1;    //RESET  UP
+	GpioDataRegs.GPADAT.bit.GPIO6 =0x1;    //SYNS  UP
+
+	//    GpioCtrlRegs.GPBDIR.bit.GPIO33 = 0x1;    //SCLA    OUT
+	//    GpioCtrlRegs.GPBDIR.bit.GPIO32 = 0x1;    //SDAA    OUT
+	//    GpioCtrlRegs.GPBDIR.bit.GPIO61 = 0x0;    //BUSY1    IN
+	GpioCtrlRegs.GPBDIR.bit.GPIO36 = 0x1;    //CS    OUT
+	GpioCtrlRegs.GPADIR.bit.GPIO3  =0X1;     //MCLK     OUT
+	GpioCtrlRegs.GPADIR.bit.GPIO4  =0x0;      //DRDY    IN
+	//    GpioCtrlRegs.GPADIR.bit.GPIO10 =0X0;    //I/O    (DS1302)    IN
+	GpioCtrlRegs.GPADIR.bit.GPIO5 =0x1;     //RESET    OUT
+	GpioCtrlRegs.GPADIR.bit.GPIO31 =0x1;     //RD/WR  OUT
+	//    GpioCtrlRegs.GPADIR.bit.GPIO12 =0X1;    //CE    (DS1302)    OUT
+	GpioCtrlRegs.GPADIR.bit.GPIO6 =0x1;     //SYNC   OUT
+	GpioCtrlRegs.GPCMUX1.all = 0x00000000;  // All GPIO
+	GpioCtrlRegs.GPCMUX2.all = 0x00000000;  // All GPIO
+	GpioCtrlRegs.GPCDIR.all = 0x00000000;    //GPIOC   ALL INPUT
+	//    GpioCtrlRegs.GPBDIR.bit.GPIO60 = 0x1;    //CS1    OUT
+	GpioCtrlRegs.GPADIR.bit.GPIO3 = 0x1;     //MCLK     OUT
+	GpioCtrlRegs.GPAMUX1.bit.GPIO3 = 0x1;     //MCLK  PWM
+	/*
+	 * 后面添加的GPIO4作为中断输入
+	 */
+	GpioCtrlRegs.GPAMUX1.bit.GPIO4 = 0; //选择GPIO4是GPIO口
+	GpioCtrlRegs.GPADIR.bit.GPIO4 = 0;//选择GPIO4都是输入口
+	GpioCtrlRegs.GPAQSEL1.bit.GPIO4= 0;//GPIO4时钟和系统时钟一样且支持GPIO
+	GpioIntRegs.GPIOXINT1SEL.bit.GPIOSEL = 4;//外部中断1选择GPIO4
+	XIntruptRegs.XINT1CR.bit.POLARITY= 0;//触发模式为下降沿触发
+	XIntruptRegs.XINT1CR.bit.ENABLE = 1;//使能中断
+	EDIS;
+}

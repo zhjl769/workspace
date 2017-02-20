@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="com.ti.ccstudio.project.ui.internal.properties.DynamicPropertiesPageManager">
+	</section>
+	<section name="CCS.ImportLegacyProjectWizard">
+		<item value="AUTO" key="DSPBIOSEnablementPage.DSPBIOS_ENABLEMENT"/>
+		<item value="true" key="LegacyProjectSelectionPage.COPY_INTO_WORKSPACE"/>
+		<item value="false" key="LegacyProjectSelectionPage.SELECT_DIRECTORY"/>
+		<item value="" key="AdvancedOptionsPage.COMMON_ROOT_VAR_NAME"/>
+		<item value="false" key="AdvancedOptionsPage.USE_COMMON_ROOT"/>
+		<item value="C:\Users\zhjl769\Desktop\jzd_newbywyh\LUSBL_Benthos_release_40k_jzd2\USBL.pjt" key="LegacyProjectSelectionPage.BROWSE_FILE_FILTER"/>
+		<item value="" key="AdvancedOptionsPage.COMMON_ROOT_PATH"/>
+	</section>
+	<section name="CCS.ImportCCSProjectWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_IMPORT_REFERENCED_PROJECTS_ID"/>
+		<item value="true" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+	</section>
+	<section name="com.ti.ccstudio.project.ui.internal.wizards.project.ProjectSettingsPage">
+		<item value="C5500" key="CCS.DEVICE_FAMILY"/>
+		<item value="TMS320C55XX.TMS320C5509A.EVM5509A" key="CCS.DEVICE"/>
+		<item value="" key="CCS.DEVICE_ENDIANNESS"/>
+		<item value="" key="CCS.CODEGEN_TOOL_VERSION"/>
+		<item value="CCS.TEMPLATES" key="CCS.EXPANDED_AREA"/>
+		<item value="null" key="CCS.LINKER_COMMAND_FILE"/>
+		<item value="executable" key="CCS.OUTPUT_TYPE"/>
+		<item value="null" key="CCS.RUNTIME_SUPPORT_LIB"/>
+		<item value="" key="CCS.OUTPUT_FORMAT"/>
+		<item value="D:\Program Files (x86)\CCSv5\ccsv5\ccs_base\common\targetdb\connections\SEED-XDS510PLUS_Connection.xml" key="CCS.CONNECTION"/>
+	</section>
+</section>

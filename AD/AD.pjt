@@ -1,0 +1,35 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="C:\CCStudio_v3.3\MyProjects\MyProjects_old\5509\hyf\test_code\AD7663_NEW\"
+ProjectType=Executable
+CPUFamily=TMS320C55XX
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="DspBiosBuilder"
+Tool="Linker"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+Source="AD.asm"
+Source="ad.cmd"
+
+["Compiler" Settings: "Debug"]
+Options=-g -pdsw225 -fr"$(Proj_dir)\Debug" -d"_DEBUG"
+
+["Compiler" Settings: "Release"]
+Options=-pdsw225 -o2 -fr"$(Proj_dir)\Release"
+
+["Linker" Settings: "Debug"]
+Options=-c -m".\Debug\AD.map" -o".\Debug\AD.out" -w -x
+
+["Linker" Settings: "Release"]
+Options=-c -m".\Release\AD.map" -o".\Release\AD.out" -w -x
+
+["ad.cmd" Settings: "Debug"]
+LinkOrder=1
+
+["ad.cmd" Settings: "Release"]
+LinkOrder=1
+

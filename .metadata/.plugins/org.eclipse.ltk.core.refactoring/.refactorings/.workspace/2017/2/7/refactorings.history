@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;Example_2833xECap_Capture_Pwm&apos;" deleteContents="true" description="Delete resource &apos;Example_2833xECap_Capture_Pwm&apos;" element1="/Example_2833xECap_Capture_Pwm" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1487386051499"/>&#x0A;<refactoring comment="Delete resource &apos;Example_2833xDMA_xintf_to_ram/variable.h&apos;" deleteContents="false" description="Delete resource &apos;Example_2833xDMA_xintf_to_ram/variable.h&apos;" element1="/Example_2833xDMA_xintf_to_ram/variable.h" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1487388768934"/>
+</session>

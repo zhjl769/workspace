@@ -1,0 +1,3 @@
+-z -c -m"./Debug/AD.map" -o"./Debug/AD.out" -w -x -i"C:/CCStudio_v3.3/C5500/csl/lib" -i"C:/CCStudio_v3.3/C5500/xdais/lib" -i"C:/CCStudio_v3.3/bios_5_31_02/packages/ti/bios/lib" -i"C:/CCStudio_v3.3/bios_5_31_02/packages/ti/rtdx/lib/c5500" -i"C:/CCStudio_v3.3/C5500/cgtools/lib"
+"C:\CCStudio_v3.3\MyProjects\AD7663_NEW_40k\ad.cmd"
+"C:\CCStudio_v3.3\MyProjects\AD7663_NEW_40k\Debug\AD.obj"

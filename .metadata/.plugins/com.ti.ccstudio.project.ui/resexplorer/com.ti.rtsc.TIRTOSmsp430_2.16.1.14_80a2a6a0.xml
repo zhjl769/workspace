@@ -1,0 +1,843 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resource.explorer version="1.0" name="TI-RTOS for MSP43x" dir="" href="http://processors.wiki.ti.com/index.php/TI-RTOS">
+
+    <content name="Release Notes" href="D:/Program Files/ccsv5/tirtos_msp43x_2_16_01_14/release_notes_tirtos_msp43x_2_16_01_14.html">
+	<type>weblink</type>
+    </content>
+    <content name="Documentation Links" href="D:/Program Files/ccsv5/tirtos_msp43x_2_16_01_14/docs/Documentation_Overview_msp43x.html">
+	<type>weblink</type>
+    </content>
+	<contents name="MSP430" desc="MSP430" icon="plugin://icons/obj16/devices.png">
+		<contents name="MSP430FRxxx Family" desc="MSP430FRxxx Family" icon="plugin://icons/obj16/devices.png">
+			<contents name="MSP430FR5969" desc="MSP430FR5969" icon="plugin://icons/obj16/devices.png">
+				<filter id="filter_26276515117312">
+					<devices><device>MSP430</device></devices>
+					<search.tags>
+					<tag>MSP430FR5969</tag>
+					<tag>MSP430FRxxx Family</tag>
+					</search.tags>
+				</filter>
+				<contents name="MSP-EXP430FR5969 Launchpad" desc="TI-RTOS example projects for MSP-EXP430FR5969 Launchpad" customPageType="genericNote">
+				<filter id="filter_26276515188016">
+					<devices><device>MSP430</device></devices>
+					<search.tags>
+					<tag>MSP430FR5969</tag>
+					<tag>MSP430FRxxx Family</tag>
+					<tag>MSP-EXP430FR5969 Launchpad</tag>
+					</search.tags>
+				</filter>
+				<contents name="Driver Examples" desc="TI-RTOS driver example projects for MSP-EXP430FR5969 Launchpad" customPageType="genericNote">
+				<filter id="filter_26276515189156">
+					<devices><device>MSP430</device></devices>
+					<search.tags>
+					<tag>MSP430FR5969</tag>
+					<tag>MSP430FRxxx Family</tag>
+					<tag>Driver Examples</tag>
+					</search.tags>
+				</filter>
+				<contents name="TI Driver Examples" desc="TI driver example projects for MSP-EXP430FR5969 Launchpad" customPageType="genericNote">
+				<filter id="filter_26276515190582">
+					<devices><device>MSP430</device></devices>
+					<search.tags>
+					<tag>MSP430FR5969</tag>
+					<tag>MSP430FRxxx Family</tag>
+					<tag>TI Driver Examples</tag>
+					</search.tags>
+				</filter>
+				<contents name="Empty Examples" desc="Empty example projects for MSP-EXP430FR5969 Launchpad" customPageType="genericNote">
+				<filter id="filter_26276515193718">
+					<devices><device>MSP430</device></devices>
+					<search.tags>
+					<tag>MSP430FR5969</tag>
+					<tag>MSP430FRxxx Family</tag>
+					<tag>Empty Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="Empty (Minimal) Project" desc="An empty TI-RTOS project with minimal footprint" href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430FR5969Launchpad\driverExamples\tiDriverExamples\emptyExamples\com_ti_rtsc_tirtosmsp430_example_30.projectspec">
+					<filter.ref ref.id="filter_26276515193718"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="empty_min_MSP_EXP430FR5969_TI_MSP430FR5969"/>
+							<attribute key="device.variant" value="MSP430FR5969"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Empty Project" desc="An empty TI-RTOS project" href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430FR5969Launchpad\driverExamples\tiDriverExamples\emptyExamples\com_ti_rtsc_tirtosmsp430_example_29.projectspec">
+					<filter.ref ref.id="filter_26276515193718"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="empty_MSP_EXP430FR5969_TI_MSP430FR5969"/>
+							<attribute key="device.variant" value="MSP430FR5969"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="FatFs Examples" desc="FatFs example projects for MSP-EXP430FR5969 Launchpad" customPageType="genericNote">
+				<filter id="filter_26276523131126">
+					<devices><device>MSP430</device></devices>
+					<search.tags>
+					<tag>MSP430FR5969</tag>
+					<tag>MSP430FRxxx Family</tag>
+					<tag>FatFs Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="FatSD" desc="An example using an SDcard" href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430FR5969Launchpad\driverExamples\tiDriverExamples\fatFsExamples\com_ti_rtsc_tirtosmsp430_example_31.projectspec">
+					<filter.ref ref.id="filter_26276523131126"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="fatsd_MSP_EXP430FR5969_TI_MSP430FR5969"/>
+							<attribute key="device.variant" value="MSP430FR5969"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="FatSD Raw" desc="An example using an SDcard with FatFs API calls" href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430FR5969Launchpad\driverExamples\tiDriverExamples\fatFsExamples\com_ti_rtsc_tirtosmsp430_example_32.projectspec">
+					<filter.ref ref.id="filter_26276523131126"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="fatsdraw_MSP_EXP430FR5969_TI_MSP430FR5969"/>
+							<attribute key="device.variant" value="MSP430FR5969"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="GPIO Examples" desc="GPIO example projects for MSP-EXP430FR5969 Launchpad" customPageType="genericNote">
+				<filter id="filter_26276523182444">
+					<devices><device>MSP430</device></devices>
+					<search.tags>
+					<tag>MSP430FR5969</tag>
+					<tag>MSP430FRxxx Family</tag>
+					<tag>GPIO Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="GPIO Interrupt" desc="An example using interrupts to toggle an LED after a button press" href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430FR5969Launchpad\driverExamples\tiDriverExamples\gpioExamples\com_ti_rtsc_tirtosmsp430_example_33.projectspec">
+					<filter.ref ref.id="filter_26276523182444"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="gpiointerrupt_MSP_EXP430FR5969_TI_MSP430FR5969"/>
+							<attribute key="device.variant" value="MSP430FR5969"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="I2C Examples" desc="I2C example projects for MSP-EXP430FR5969 Launchpad" customPageType="genericNote">
+				<filter id="filter_26276523213805">
+					<devices><device>MSP430</device></devices>
+					<search.tags>
+					<tag>MSP430FR5969</tag>
+					<tag>MSP430FRxxx Family</tag>
+					<tag>I2C Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="I2C RF430CL330 Load" desc="An example NFC RF430CL330 example that sends the CPU Load" href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430FR5969Launchpad\driverExamples\tiDriverExamples\i2CExamples\com_ti_rtsc_tirtosmsp430_example_34.projectspec">
+					<filter.ref ref.id="filter_26276523213805"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="i2crf430cl330_load_MSP_EXP430FR5969_TI_MSP430FR5969"/>
+							<attribute key="device.variant" value="MSP430FR5969"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="I2C TMP006" desc="An example on how to use the I2C driver with the TMP006 boosterpack" href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430FR5969Launchpad\driverExamples\tiDriverExamples\i2CExamples\com_ti_rtsc_tirtosmsp430_example_35.projectspec">
+					<filter.ref ref.id="filter_26276523213805"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="i2ctmp006_MSP_EXP430FR5969_TI_MSP430FR5969"/>
+							<attribute key="device.variant" value="MSP430FR5969"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="I2C TPL0401EVM" desc="An example on how to use the I2C driver with the TPL0401EVM boosterpack" href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430FR5969Launchpad\driverExamples\tiDriverExamples\i2CExamples\com_ti_rtsc_tirtosmsp430_example_36.projectspec">
+					<filter.ref ref.id="filter_26276523213805"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="i2ctpl0401evm_MSP_EXP430FR5969_TI_MSP430FR5969"/>
+							<attribute key="device.variant" value="MSP430FR5969"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="UART Examples" desc="UART example projects for MSP-EXP430FR5969 Launchpad" customPageType="genericNote">
+				<filter id="filter_26276523270824">
+					<devices><device>MSP430</device></devices>
+					<search.tags>
+					<tag>MSP430FR5969</tag>
+					<tag>MSP430FRxxx Family</tag>
+					<tag>UART Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="UART Echo" desc="Echoes characters back using the UART driver" href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430FR5969Launchpad\driverExamples\tiDriverExamples\uartExamples\com_ti_rtsc_tirtosmsp430_example_37.projectspec">
+					<filter.ref ref.id="filter_26276523270824"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="uartecho_MSP_EXP430FR5969_TI_MSP430FR5969"/>
+							<attribute key="device.variant" value="MSP430FR5969"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="UART Logging" desc="A simple example that sends Log data to the UART" href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430FR5969Launchpad\driverExamples\tiDriverExamples\uartExamples\com_ti_rtsc_tirtosmsp430_example_38.projectspec">
+					<filter.ref ref.id="filter_26276523270824"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="uartlogging_MSP_EXP430FR5969_TI_MSP430FR5969"/>
+							<attribute key="device.variant" value="MSP430FR5969"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="Watchdog Examples" desc="Watchdog example projects for MSP-EXP430FR5969 Launchpad" customPageType="genericNote">
+				<filter id="filter_26276523312448">
+					<devices><device>MSP430</device></devices>
+					<search.tags>
+					<tag>MSP430FR5969</tag>
+					<tag>MSP430FRxxx Family</tag>
+					<tag>Watchdog Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="Watchdog" desc="Watchdog Timer example that services a watchdog until a button press and release" href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430FR5969Launchpad\driverExamples\tiDriverExamples\watchdogExamples\com_ti_rtsc_tirtosmsp430_example_39.projectspec">
+					<filter.ref ref.id="filter_26276523312448"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="watchdog_MSP_EXP430FR5969_TI_MSP430FR5969"/>
+							<attribute key="device.variant" value="MSP430FR5969"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				</contents>
+				</contents>
+				<contents name="Instrumentation Examples" desc="Instrumentation examples for MSP-EXP430FR5969 Launchpad" customPageType="genericNote">
+				<filter id="filter_26276523389995">
+					<devices><device>MSP430</device></devices>
+					<search.tags>
+					<tag>MSP430FR5969</tag>
+					<tag>MSP430FRxxx Family</tag>
+					<tag>Instrumentation Examples</tag>
+					</search.tags>
+				</filter>
+				<contents name="TI Instrumentation Examples" desc="TI Instrumentation examples for MSP-EXP430FR5969 Launchpad" customPageType="genericNote">
+				<filter id="filter_26276523392276">
+					<devices><device>MSP430</device></devices>
+					<search.tags>
+					<tag>MSP430FR5969</tag>
+					<tag>MSP430FRxxx Family</tag>
+					<tag>TI Instrumentation Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="Hello World" desc="A basic example that logs a hello world string that can be viewed using System Analyzer." href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430FR5969Launchpad\instrumentationExamples\tiInstrumentationExamples\com_ti_rtsc_tirtosmsp430_example_40.projectspec">
+					<filter.ref ref.id="filter_26276523392276"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="helloworld_MSP_EXP430FR5969_TI_MSP430FR5969"/>
+							<attribute key="device.variant" value="MSP430FR5969"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Stairstep JTAG StopMode" desc="The stairstep example runs continuously and periodically generates log events. Different threads (Hwi, Swi, Task) run to present a CPU load to the system.  The Log data is obtained when the target is halted.  The sizes of the loggers in LoggingSetup might need to be decreased if your target does not have enough memory." href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430FR5969Launchpad\instrumentationExamples\tiInstrumentationExamples\com_ti_rtsc_tirtosmsp430_example_41.projectspec">
+					<filter.ref ref.id="filter_26276523392276"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="stairstepStopMode_MSP_EXP430FR5969_TI_MSP430FR5969"/>
+							<attribute key="device.variant" value="MSP430FR5969"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				</contents>
+				<contents name="Kernel Examples" desc="SYS/BIOS kernel examples for MSP-EXP430FR5969 Launchpad" customPageType="genericNote">
+				<filter id="filter_26276523452431">
+					<devices><device>MSP430</device></devices>
+					<search.tags>
+					<tag>MSP430FR5969</tag>
+					<tag>MSP430FRxxx Family</tag>
+					<tag>Kernel Examples</tag>
+					</search.tags>
+				</filter>
+				<contents name="TI Kernel Examples" desc="TI SYS/BIOS kernel examples for MSP-EXP430FR5969 Launchpad" customPageType="genericNote">
+				<filter id="filter_26276523454427">
+					<devices><device>MSP430</device></devices>
+					<search.tags>
+					<tag>MSP430FR5969</tag>
+					<tag>MSP430FRxxx Family</tag>
+					<tag>TI Kernel Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="Benchmark Example" desc="This example gathers and prints benchmark timing data for some representative SYS/BIOS APIs." href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430FR5969Launchpad\kernelExamples\tiKernelExamples\com_ti_rtsc_tirtosmsp430_example_42.projectspec">
+					<filter.ref ref.id="filter_26276523454427"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="benchloop_MSP_EXP430FR5969_TI_MSP430FR5969"/>
+							<attribute key="device.variant" value="MSP430FR5969"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="C++ Example (bigtime)" desc="In this program, C++ is used to create a real-time clock/calendar." href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430FR5969Launchpad\kernelExamples\tiKernelExamples\com_ti_rtsc_tirtosmsp430_example_43.projectspec">
+					<filter.ref ref.id="filter_26276523454427"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="bigtime_MSP_EXP430FR5969_TI_MSP430FR5969"/>
+							<attribute key="device.variant" value="MSP430FR5969"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Clock Example" desc="The clock example shows how to use the ti.sysbios.knl.Clock module to create one-shot and periodic Clock Instances. Clock Instances are essentially functions that run after a certain number of Clock ticks." href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430FR5969Launchpad\kernelExamples\tiKernelExamples\com_ti_rtsc_tirtosmsp430_example_44.projectspec">
+					<filter.ref ref.id="filter_26276523454427"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="clock_MSP_EXP430FR5969_TI_MSP430FR5969"/>
+							<attribute key="device.variant" value="MSP430FR5969"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Error Example" desc="This example shows how to use Error_Blocks to catch runtime errors. An Error_Block is passed to Task_create() and then checked for create failure. When no Error_Block is passed, the application will terminate when an error occurs. The error.cfg file shows how to plug an error hook." href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430FR5969Launchpad\kernelExamples\tiKernelExamples\com_ti_rtsc_tirtosmsp430_example_45.projectspec">
+					<filter.ref ref.id="filter_26276523454427"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="error_MSP_EXP430FR5969_TI_MSP430FR5969"/>
+							<attribute key="device.variant" value="MSP430FR5969"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Event Example" desc="The event example shows how to use the ti.sysbios.knl.Event module. The ti.sysbios.knl.Event module solves the 'Wait on Multiple' problem. In this example a reader task waits on several events." href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430FR5969Launchpad\kernelExamples\tiKernelExamples\com_ti_rtsc_tirtosmsp430_example_46.projectspec">
+					<filter.ref ref.id="filter_26276523454427"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="event_MSP_EXP430FR5969_TI_MSP430FR5969"/>
+							<attribute key="device.variant" value="MSP430FR5969"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Hello Example" desc="The hello example serves as a basic sanity check program for SYS/BIOS. It demonstrates how to print the string 'hello world' to stdout." href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430FR5969Launchpad\kernelExamples\tiKernelExamples\com_ti_rtsc_tirtosmsp430_example_47.projectspec">
+					<filter.ref ref.id="filter_26276523454427"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="hello_MSP_EXP430FR5969_TI_MSP430FR5969"/>
+							<attribute key="device.variant" value="MSP430FR5969"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Memory Example" desc="This example shows the use of xdc.runtime.Memory module and different xdc.runtime.IHeap implementations to manage memory. A system heap is created statically using ti.sysbios.heaps.HeapMem." href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430FR5969Launchpad\kernelExamples\tiKernelExamples\com_ti_rtsc_tirtosmsp430_example_48.projectspec">
+					<filter.ref ref.id="filter_26276523454427"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="memory_MSP_EXP430FR5969_TI_MSP430FR5969"/>
+							<attribute key="device.variant" value="MSP430FR5969"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Swi Example" desc="The swi example shows how to use the ti.sysbios.knl.Swi module. It demonstrates how the various Swi APIs work." href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430FR5969Launchpad\kernelExamples\tiKernelExamples\com_ti_rtsc_tirtosmsp430_example_50.projectspec">
+					<filter.ref ref.id="filter_26276523454427"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="swi_MSP_EXP430FR5969_TI_MSP430FR5969"/>
+							<attribute key="device.variant" value="MSP430FR5969"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Task Mutex Example" desc="This example shows the use of two tasks and one semaphore to protect data access." href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430FR5969Launchpad\kernelExamples\tiKernelExamples\com_ti_rtsc_tirtosmsp430_example_49.projectspec">
+					<filter.ref ref.id="filter_26276523454427"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="mutex_MSP_EXP430FR5969_TI_MSP430FR5969"/>
+							<attribute key="device.variant" value="MSP430FR5969"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				</contents>
+				<contents name="Network Examples" desc="TI-RTOS network examples for MSP-EXP430FR5969 Launchpad" customPageType="genericNote">
+				<filter id="filter_26276523599827">
+					<devices><device>MSP430</device></devices>
+					<search.tags>
+					<tag>MSP430FR5969</tag>
+					<tag>MSP430FRxxx Family</tag>
+					<tag>Network Examples</tag>
+					</search.tags>
+				</filter>
+				<contents name="TI Network Examples" desc="TI TI-RTOS network examples for  MSP-EXP430FR5969 Launchpad" customPageType="genericNote">
+				<filter id="filter_26276523602108">
+					<devices><device>MSP430</device></devices>
+					<search.tags>
+					<tag>MSP430FR5969</tag>
+					<tag>MSP430FRxxx Family</tag>
+					<tag>TI Network Examples</tag>
+					</search.tags>
+				</filter>
+				<contents name="WiFi Examples" desc="WiFi example projects for MSP-EXP430FR5969 Launchpad" customPageType="genericNote">
+				<filter id="filter_26276523603818">
+					<devices><device>MSP430</device></devices>
+					<search.tags>
+					<tag>MSP430FR5969</tag>
+					<tag>MSP430FRxxx Family</tag>
+					<tag>WiFi Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="TCP Echo for CC3X00" desc="The TCP Echo example showing how to use sockets with the SimpleLink Wi-Fi CC3X00" href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430FR5969Launchpad\networkExamples\tiNetworkExamples\wiFiExamples\com_ti_rtsc_tirtosmsp430_example_51.projectspec">
+					<filter.ref ref.id="filter_26276523603818"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="tcpEchoCC3X00_MSP_EXP430FR5969_TI_MSP430FR5969"/>
+							<attribute key="device.variant" value="MSP430FR5969"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="UDP Echo for CC3X00" desc="The UDP Echo example showing how to use sockets with the SimpleLink Wi-Fi CC3X00" href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430FR5969Launchpad\networkExamples\tiNetworkExamples\wiFiExamples\com_ti_rtsc_tirtosmsp430_example_52.projectspec">
+					<filter.ref ref.id="filter_26276523603818"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="udpEchoCC3X00_MSP_EXP430FR5969_TI_MSP430FR5969"/>
+							<attribute key="device.variant" value="MSP430FR5969"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				</contents>
+				</contents>
+				</contents>
+			</contents>
+		</contents>
+		<contents name="MSP430x5xx Family" desc="MSP430x5xx Family" icon="plugin://icons/obj16/devices.png">
+			<contents name="MSP430F5529" desc="MSP430F5529" icon="plugin://icons/obj16/devices.png">
+				<filter id="filter_26276627018777">
+					<devices><device>MSP430</device></devices>
+					<search.tags>
+					<tag>MSP430F5529</tag>
+					<tag>MSP430x5xx Family</tag>
+					</search.tags>
+				</filter>
+				<contents name="MSP-EXP430F5529 Launchpad" desc="TI-RTOS example projects for MSP-EXP430F5529 Launchpad" customPageType="genericNote">
+				<filter id="filter_26276627020488">
+					<devices><device>MSP430</device></devices>
+					<search.tags>
+					<tag>MSP430F5529</tag>
+					<tag>MSP430x5xx Family</tag>
+					<tag>MSP-EXP430F5529 Launchpad</tag>
+					</search.tags>
+				</filter>
+				<contents name="Driver Examples" desc="TI-RTOS driver example projects for MSP-EXP430F5529 Launchpad" customPageType="genericNote">
+				<filter id="filter_26276627021913">
+					<devices><device>MSP430</device></devices>
+					<search.tags>
+					<tag>MSP430F5529</tag>
+					<tag>MSP430x5xx Family</tag>
+					<tag>Driver Examples</tag>
+					</search.tags>
+				</filter>
+				<contents name="TI Driver Examples" desc="TI driver example projects for MSP-EXP430F5529 Launchpad" customPageType="genericNote">
+				<filter id="filter_26276627023339">
+					<devices><device>MSP430</device></devices>
+					<search.tags>
+					<tag>MSP430F5529</tag>
+					<tag>MSP430x5xx Family</tag>
+					<tag>TI Driver Examples</tag>
+					</search.tags>
+				</filter>
+				<contents name="Empty Examples" desc="Empty example projects for MSP-EXP430F5529 Launchpad" customPageType="genericNote">
+				<filter id="filter_26276627025049">
+					<devices><device>MSP430</device></devices>
+					<search.tags>
+					<tag>MSP430F5529</tag>
+					<tag>MSP430x5xx Family</tag>
+					<tag>Empty Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="Empty (Minimal) Project" desc="An empty TI-RTOS project with minimal footprint" href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430F5529Launchpad\driverExamples\tiDriverExamples\emptyExamples\com_ti_rtsc_tirtosmsp430_example_1.projectspec">
+					<filter.ref ref.id="filter_26276627025049"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="empty_min_MSP_EXP430F5529LP_TI_MSP430F5529"/>
+							<attribute key="device.variant" value="MSP430F5529"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Empty Project" desc="An empty TI-RTOS project" href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430F5529Launchpad\driverExamples\tiDriverExamples\emptyExamples\com_ti_rtsc_tirtosmsp430_example_0.projectspec">
+					<filter.ref ref.id="filter_26276627025049"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="empty_MSP_EXP430F5529LP_TI_MSP430F5529"/>
+							<attribute key="device.variant" value="MSP430F5529"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="FatFs Examples" desc="FatFs example projects for MSP-EXP430F5529 Launchpad" customPageType="genericNote">
+				<filter id="filter_26276627100600">
+					<devices><device>MSP430</device></devices>
+					<search.tags>
+					<tag>MSP430F5529</tag>
+					<tag>MSP430x5xx Family</tag>
+					<tag>FatFs Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="FatSD" desc="An example using an SDcard" href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430F5529Launchpad\driverExamples\tiDriverExamples\fatFsExamples\com_ti_rtsc_tirtosmsp430_example_2.projectspec">
+					<filter.ref ref.id="filter_26276627100600"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="fatsd_MSP_EXP430F5529LP_TI_MSP430F5529"/>
+							<attribute key="device.variant" value="MSP430F5529"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="FatSD Raw" desc="An example using an SDcard with FatFs API calls" href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430F5529Launchpad\driverExamples\tiDriverExamples\fatFsExamples\com_ti_rtsc_tirtosmsp430_example_3.projectspec">
+					<filter.ref ref.id="filter_26276627100600"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="fatsdraw_MSP_EXP430F5529LP_TI_MSP430F5529"/>
+							<attribute key="device.variant" value="MSP430F5529"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="GPIO Examples" desc="GPIO example projects for MSP-EXP430F5529 Launchpad" customPageType="genericNote">
+				<filter id="filter_26276627144790">
+					<devices><device>MSP430</device></devices>
+					<search.tags>
+					<tag>MSP430F5529</tag>
+					<tag>MSP430x5xx Family</tag>
+					<tag>GPIO Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="GPIO Interrupt" desc="An example using interrupts to toggle an LED after a button press" href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430F5529Launchpad\driverExamples\tiDriverExamples\gpioExamples\com_ti_rtsc_tirtosmsp430_example_4.projectspec">
+					<filter.ref ref.id="filter_26276627144790"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="gpiointerrupt_MSP_EXP430F5529LP_TI_MSP430F5529"/>
+							<attribute key="device.variant" value="MSP430F5529"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="I2C Examples" desc="I2C example projects for MSP-EXP430F5529 Launchpad" customPageType="genericNote">
+				<filter id="filter_26276627174441">
+					<devices><device>MSP430</device></devices>
+					<search.tags>
+					<tag>MSP430F5529</tag>
+					<tag>MSP430x5xx Family</tag>
+					<tag>I2C Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="I2C RF430CL330 Load" desc="An example NFC RF430CL330 example that sends the CPU Load" href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430F5529Launchpad\driverExamples\tiDriverExamples\i2CExamples\com_ti_rtsc_tirtosmsp430_example_5.projectspec">
+					<filter.ref ref.id="filter_26276627174441"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="i2crf430cl330_load_MSP_EXP430F5529LP_TI_MSP430F5529"/>
+							<attribute key="device.variant" value="MSP430F5529"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="I2C TMP006" desc="An example on how to use the I2C driver with the TMP006 boosterpack" href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430F5529Launchpad\driverExamples\tiDriverExamples\i2CExamples\com_ti_rtsc_tirtosmsp430_example_6.projectspec">
+					<filter.ref ref.id="filter_26276627174441"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="i2ctmp006_MSP_EXP430F5529LP_TI_MSP430F5529"/>
+							<attribute key="device.variant" value="MSP430F5529"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="I2C TPL0401EVM" desc="An example on how to use the I2C driver with the TPL0401EVM boosterpack" href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430F5529Launchpad\driverExamples\tiDriverExamples\i2CExamples\com_ti_rtsc_tirtosmsp430_example_7.projectspec">
+					<filter.ref ref.id="filter_26276627174441"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="i2ctpl0401evm_MSP_EXP430F5529LP_TI_MSP430F5529"/>
+							<attribute key="device.variant" value="MSP430F5529"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="UART Examples" desc="UART example projects for MSP-EXP430F5529 Launchpad" customPageType="genericNote">
+				<filter id="filter_26276627229750">
+					<devices><device>MSP430</device></devices>
+					<search.tags>
+					<tag>MSP430F5529</tag>
+					<tag>MSP430x5xx Family</tag>
+					<tag>UART Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="UART Console" desc="A basic console implemented with the UART driver and cstdio" href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430F5529Launchpad\driverExamples\tiDriverExamples\uartExamples\com_ti_rtsc_tirtosmsp430_example_8.projectspec">
+					<filter.ref ref.id="filter_26276627229750"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="uartconsole_MSP_EXP430F5529LP_TI_MSP430F5529"/>
+							<attribute key="device.variant" value="MSP430F5529"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="UART Echo" desc="Echoes characters back using the UART driver" href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430F5529Launchpad\driverExamples\tiDriverExamples\uartExamples\com_ti_rtsc_tirtosmsp430_example_9.projectspec">
+					<filter.ref ref.id="filter_26276627229750"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="uartecho_MSP_EXP430F5529LP_TI_MSP430F5529"/>
+							<attribute key="device.variant" value="MSP430F5529"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="UART Logging" desc="A simple example that sends Log data to the UART" href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430F5529Launchpad\driverExamples\tiDriverExamples\uartExamples\com_ti_rtsc_tirtosmsp430_example_10.projectspec">
+					<filter.ref ref.id="filter_26276627229750"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="uartlogging_MSP_EXP430F5529LP_TI_MSP430F5529"/>
+							<attribute key="device.variant" value="MSP430F5529"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="USB Examples" desc="USB example projects for MSP-EXP430F5529 Launchpad" customPageType="genericNote">
+				<filter id="filter_26276627281922">
+					<devices><device>MSP430</device></devices>
+					<search.tags>
+					<tag>MSP430F5529</tag>
+					<tag>MSP430x5xx Family</tag>
+					<tag>USB Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="USB CDC Mouse Device" desc="USB composite example that features a CDC virtual serial port communications along with a HID Mouse device" href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430F5529Launchpad\driverExamples\tiDriverExamples\usbExamples\com_ti_rtsc_tirtosmsp430_example_11.projectspec">
+					<filter.ref ref.id="filter_26276627281922"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="usbcdcmousedevice_MSP_EXP430F5529LP_TI_MSP430F5529"/>
+							<attribute key="device.variant" value="MSP430F5529"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="USB Keyboard Device" desc="USB HID Keyboard Device example that simulates a keyboard" href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430F5529Launchpad\driverExamples\tiDriverExamples\usbExamples\com_ti_rtsc_tirtosmsp430_example_12.projectspec">
+					<filter.ref ref.id="filter_26276627281922"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="usbkeyboarddevice_MSP_EXP430F5529LP_TI_MSP430F5529"/>
+							<attribute key="device.variant" value="MSP430F5529"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="USB Mouse Device" desc="USB HID Mouse Device example that moves a mouse cursor and simulates mouse clicks" href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430F5529Launchpad\driverExamples\tiDriverExamples\usbExamples\com_ti_rtsc_tirtosmsp430_example_13.projectspec">
+					<filter.ref ref.id="filter_26276627281922"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="usbmousedevice_MSP_EXP430F5529LP_TI_MSP430F5529"/>
+							<attribute key="device.variant" value="MSP430F5529"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="USB Serial Device" desc="USB CDC Device that allows for serial communications using a virtual serial COM port" href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430F5529Launchpad\driverExamples\tiDriverExamples\usbExamples\com_ti_rtsc_tirtosmsp430_example_14.projectspec">
+					<filter.ref ref.id="filter_26276627281922"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="usbserialdevice_MSP_EXP430F5529LP_TI_MSP430F5529"/>
+							<attribute key="device.variant" value="MSP430F5529"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="Watchdog Examples" desc="Watchdog example projects for MSP-EXP430F5529 Launchpad" customPageType="genericNote">
+				<filter id="filter_26276627345499">
+					<devices><device>MSP430</device></devices>
+					<search.tags>
+					<tag>MSP430F5529</tag>
+					<tag>MSP430x5xx Family</tag>
+					<tag>Watchdog Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="Watchdog" desc="Watchdog Timer example that services a watchdog until a button press and release" href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430F5529Launchpad\driverExamples\tiDriverExamples\watchdogExamples\com_ti_rtsc_tirtosmsp430_example_15.projectspec">
+					<filter.ref ref.id="filter_26276627345499"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="watchdog_MSP_EXP430F5529LP_TI_MSP430F5529"/>
+							<attribute key="device.variant" value="MSP430F5529"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				</contents>
+				</contents>
+				<contents name="Instrumentation Examples" desc="Instrumentation examples for MSP-EXP430F5529 Launchpad" customPageType="genericNote">
+				<filter id="filter_26276627444143">
+					<devices><device>MSP430</device></devices>
+					<search.tags>
+					<tag>MSP430F5529</tag>
+					<tag>MSP430x5xx Family</tag>
+					<tag>Instrumentation Examples</tag>
+					</search.tags>
+				</filter>
+				<contents name="TI Instrumentation Examples" desc="TI Instrumentation examples for MSP-EXP430F5529 Launchpad" customPageType="genericNote">
+				<filter id="filter_26276627446139">
+					<devices><device>MSP430</device></devices>
+					<search.tags>
+					<tag>MSP430F5529</tag>
+					<tag>MSP430x5xx Family</tag>
+					<tag>TI Instrumentation Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="Hello World" desc="A basic example that logs a hello world string that can be viewed using System Analyzer." href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430F5529Launchpad\instrumentationExamples\tiInstrumentationExamples\com_ti_rtsc_tirtosmsp430_example_16.projectspec">
+					<filter.ref ref.id="filter_26276627446139"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="helloworld_MSP_EXP430F5529LP_TI_MSP430F5529"/>
+							<attribute key="device.variant" value="MSP430F5529"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Stairstep JTAG StopMode" desc="The stairstep example runs continuously and periodically generates log events. Different threads (Hwi, Swi, Task) run to present a CPU load to the system.  The Log data is obtained when the target is halted.  The sizes of the loggers in LoggingSetup might need to be decreased if your target does not have enough memory." href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430F5529Launchpad\instrumentationExamples\tiInstrumentationExamples\com_ti_rtsc_tirtosmsp430_example_17.projectspec">
+					<filter.ref ref.id="filter_26276627446139"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="stairstepStopMode_MSP_EXP430F5529LP_TI_MSP430F5529"/>
+							<attribute key="device.variant" value="MSP430F5529"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				</contents>
+				<contents name="Kernel Examples" desc="SYS/BIOS kernel examples for MSP-EXP430F5529 Launchpad" customPageType="genericNote">
+				<filter id="filter_26276627506009">
+					<devices><device>MSP430</device></devices>
+					<search.tags>
+					<tag>MSP430F5529</tag>
+					<tag>MSP430x5xx Family</tag>
+					<tag>Kernel Examples</tag>
+					</search.tags>
+				</filter>
+				<contents name="TI Kernel Examples" desc="TI SYS/BIOS kernel examples for MSP-EXP430F5529 Launchpad" customPageType="genericNote">
+				<filter id="filter_26276627508005">
+					<devices><device>MSP430</device></devices>
+					<search.tags>
+					<tag>MSP430F5529</tag>
+					<tag>MSP430x5xx Family</tag>
+					<tag>TI Kernel Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="Benchmark Example" desc="This example gathers and prints benchmark timing data for some representative SYS/BIOS APIs." href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430F5529Launchpad\kernelExamples\tiKernelExamples\com_ti_rtsc_tirtosmsp430_example_18.projectspec">
+					<filter.ref ref.id="filter_26276627508005"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="benchloop_MSP_EXP430F5529LP_TI_MSP430F5529"/>
+							<attribute key="device.variant" value="MSP430F5529"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="C++ Example (bigtime)" desc="In this program, C++ is used to create a real-time clock/calendar." href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430F5529Launchpad\kernelExamples\tiKernelExamples\com_ti_rtsc_tirtosmsp430_example_19.projectspec">
+					<filter.ref ref.id="filter_26276627508005"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="bigtime_MSP_EXP430F5529LP_TI_MSP430F5529"/>
+							<attribute key="device.variant" value="MSP430F5529"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Clock Example" desc="The clock example shows how to use the ti.sysbios.knl.Clock module to create one-shot and periodic Clock Instances. Clock Instances are essentially functions that run after a certain number of Clock ticks." href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430F5529Launchpad\kernelExamples\tiKernelExamples\com_ti_rtsc_tirtosmsp430_example_20.projectspec">
+					<filter.ref ref.id="filter_26276627508005"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="clock_MSP_EXP430F5529LP_TI_MSP430F5529"/>
+							<attribute key="device.variant" value="MSP430F5529"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Error Example" desc="This example shows how to use Error_Blocks to catch runtime errors. An Error_Block is passed to Task_create() and then checked for create failure. When no Error_Block is passed, the application will terminate when an error occurs. The error.cfg file shows how to plug an error hook." href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430F5529Launchpad\kernelExamples\tiKernelExamples\com_ti_rtsc_tirtosmsp430_example_21.projectspec">
+					<filter.ref ref.id="filter_26276627508005"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="error_MSP_EXP430F5529LP_TI_MSP430F5529"/>
+							<attribute key="device.variant" value="MSP430F5529"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Event Example" desc="The event example shows how to use the ti.sysbios.knl.Event module. The ti.sysbios.knl.Event module solves the 'Wait on Multiple' problem. In this example a reader task waits on several events." href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430F5529Launchpad\kernelExamples\tiKernelExamples\com_ti_rtsc_tirtosmsp430_example_22.projectspec">
+					<filter.ref ref.id="filter_26276627508005"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="event_MSP_EXP430F5529LP_TI_MSP430F5529"/>
+							<attribute key="device.variant" value="MSP430F5529"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Hello Example" desc="The hello example serves as a basic sanity check program for SYS/BIOS. It demonstrates how to print the string 'hello world' to stdout." href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430F5529Launchpad\kernelExamples\tiKernelExamples\com_ti_rtsc_tirtosmsp430_example_23.projectspec">
+					<filter.ref ref.id="filter_26276627508005"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="hello_MSP_EXP430F5529LP_TI_MSP430F5529"/>
+							<attribute key="device.variant" value="MSP430F5529"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Memory Example" desc="This example shows the use of xdc.runtime.Memory module and different xdc.runtime.IHeap implementations to manage memory. A system heap is created statically using ti.sysbios.heaps.HeapMem." href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430F5529Launchpad\kernelExamples\tiKernelExamples\com_ti_rtsc_tirtosmsp430_example_24.projectspec">
+					<filter.ref ref.id="filter_26276627508005"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="memory_MSP_EXP430F5529LP_TI_MSP430F5529"/>
+							<attribute key="device.variant" value="MSP430F5529"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Swi Example" desc="The swi example shows how to use the ti.sysbios.knl.Swi module. It demonstrates how the various Swi APIs work." href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430F5529Launchpad\kernelExamples\tiKernelExamples\com_ti_rtsc_tirtosmsp430_example_26.projectspec">
+					<filter.ref ref.id="filter_26276627508005"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="swi_MSP_EXP430F5529LP_TI_MSP430F5529"/>
+							<attribute key="device.variant" value="MSP430F5529"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Task Mutex Example" desc="This example shows the use of two tasks and one semaphore to protect data access." href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430F5529Launchpad\kernelExamples\tiKernelExamples\com_ti_rtsc_tirtosmsp430_example_25.projectspec">
+					<filter.ref ref.id="filter_26276627508005"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="mutex_MSP_EXP430F5529LP_TI_MSP430F5529"/>
+							<attribute key="device.variant" value="MSP430F5529"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				</contents>
+				<contents name="Network Examples" desc="TI-RTOS network examples for MSP-EXP430F5529 Launchpad" customPageType="genericNote">
+				<filter id="filter_26276627653405">
+					<devices><device>MSP430</device></devices>
+					<search.tags>
+					<tag>MSP430F5529</tag>
+					<tag>MSP430x5xx Family</tag>
+					<tag>Network Examples</tag>
+					</search.tags>
+				</filter>
+				<contents name="TI Network Examples" desc="TI TI-RTOS network examples for  MSP-EXP430F5529 Launchpad" customPageType="genericNote">
+				<filter id="filter_26276627655686">
+					<devices><device>MSP430</device></devices>
+					<search.tags>
+					<tag>MSP430F5529</tag>
+					<tag>MSP430x5xx Family</tag>
+					<tag>TI Network Examples</tag>
+					</search.tags>
+				</filter>
+				<contents name="WiFi Examples" desc="WiFi example projects for MSP-EXP430F5529 Launchpad" customPageType="genericNote">
+				<filter id="filter_26276627657681">
+					<devices><device>MSP430</device></devices>
+					<search.tags>
+					<tag>MSP430F5529</tag>
+					<tag>MSP430x5xx Family</tag>
+					<tag>WiFi Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="TCP Echo for CC3X00" desc="The TCP Echo example showing how to use sockets with the SimpleLink Wi-Fi CC3X00" href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430F5529Launchpad\networkExamples\tiNetworkExamples\wiFiExamples\com_ti_rtsc_tirtosmsp430_example_27.projectspec">
+					<filter.ref ref.id="filter_26276627657681"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="tcpEchoCC3X00_MSP_EXP430F5529LP_TI_MSP430F5529"/>
+							<attribute key="device.variant" value="MSP430F5529"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="UDP Echo for CC3X00" desc="The UDP Echo example showing how to use sockets with the SimpleLink Wi-Fi CC3X00" href="D:\Program Files\ccsv5\tirtos_msp43x_2_16_01_14\resources\msp_exp430F5529Launchpad\networkExamples\tiNetworkExamples\wiFiExamples\com_ti_rtsc_tirtosmsp430_example_28.projectspec">
+					<filter.ref ref.id="filter_26276627657681"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="udpEchoCC3X00_MSP_EXP430F5529LP_TI_MSP430F5529"/>
+							<attribute key="device.variant" value="MSP430F5529"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				</contents>
+				</contents>
+				</contents>
+			</contents>
+		</contents>
+	</contents>
+
+</resource.explorer>

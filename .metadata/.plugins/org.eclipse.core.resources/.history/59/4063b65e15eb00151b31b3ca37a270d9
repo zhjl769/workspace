@@ -1,0 +1,32 @@
+#include <msp430f1611.h>
+
+#include "Init.h"
+#include "Other.h"
+#include "LCD12864.h"
+/*
+ * main.c
+ */
+void main( )
+{
+       WDTCTL = WDTPW | WDTHOLD;	// Stop watchdog timer
+       IO_Init();//IO口初始化
+       Init_CLK();//时钟初始化
+        _EINT(); //调用C编译器内部函数使能中断
+        unsigned char tab1[]="哈尔滨工程大学";
+        unsigned char tab2[]="水声学院";
+        unsigned char tab3[]="滚蛋";
+    	LCD12864_init();
+    	LCD12864_write_zi(2,2,tab3);
+    	while (1)
+    	{
+    		Delay(2000);
+    		LCD12864_write_zi(2,2,tab3);
+    		Delay(2000);
+    		LCD12864_write_zi(1,1,tab2);
+    		Delay(2000);
+    		LCD12864_write_zi(0,0,tab1);
+    		Delay(2000);
+    		LCD12864_lcd_clear();
+    		Delay(2000);
+      	}
+}

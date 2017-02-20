@@ -1,0 +1,117 @@
+
+**** Build of configuration Debug for project USBL_40k_chirp20-30K(3.6ms) ****
+
+"D:\\Program Files (x86)\\CCSv5\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../cbrev.asm'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O2 -g --include_path="D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/include" --include_path="D:/Program Files (x86)/CCSv5/xdais_7_21_01_07/packages/ti/xdais" --include_path="D:/PROGRA~2/CCSTUD~1.3/C5500/csl/include" --define="CHIP_5509" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="cbrev.pp"  "../cbrev.asm"
+"..\cbrev.asm", REMARK   at line 141: [R5682] This outer loop contains a nested
+                                              localrepeat that may cause
+                                              execution to terminate if an
+                                              iteration of the nested
+                                              localrepeat is interrupted; (see
+                                              the C55x silicon exceptions
+                                              errata; Advisory CPU_116)
+		}
+
+"..\cbrev.asm", REMARK   at line 181: [R5682] This outer loop contains a nested
+                                              localrepeat that may cause
+                                              execution to terminate if an
+                                              iteration of the nested
+                                              localrepeat is interrupted; (see
+                                              the C55x silicon exceptions
+                                              errata; Advisory CPU_116)
+		}
+
+'Finished building: ../cbrev.asm'
+' '
+'Building file: ../cfft_noscale.asm'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O2 -g --include_path="D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/include" --include_path="D:/Program Files (x86)/CCSv5/xdais_7_21_01_07/packages/ti/xdais" --include_path="D:/PROGRA~2/CCSTUD~1.3/C5500/csl/include" --define="CHIP_5509" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="cfft_noscale.pp"  "../cfft_noscale.asm"
+"..\cfft_noscale.asm", REMARK   at line 475: [R5684] This outer loop contains a
+                                                     nested localrepeat that
+                                                     may cause execution to
+                                                     terminate if an iteration
+                                                     of the nested localrepeat
+                                                     is interrupted; Note:
+                                                     indirect write to memory
+                                                     may be write to MMR BRC1;
+                                                     (see the C55x silicon
+                                                     exceptions errata;
+                                                     Advisory CPU_116)
+		}
+
+'Finished building: ../cfft_noscale.asm'
+' '
+'Building file: ../cifft_noscale.asm'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O2 -g --include_path="D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/include" --include_path="D:/Program Files (x86)/CCSv5/xdais_7_21_01_07/packages/ti/xdais" --include_path="D:/PROGRA~2/CCSTUD~1.3/C5500/csl/include" --define="CHIP_5509" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="cifft_noscale.pp"  "../cifft_noscale.asm"
+'Finished building: ../cifft_noscale.asm'
+' '
+'Building file: ../fir2.asm'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O2 -g --include_path="D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/include" --include_path="D:/Program Files (x86)/CCSv5/xdais_7_21_01_07/packages/ti/xdais" --include_path="D:/PROGRA~2/CCSTUD~1.3/C5500/csl/include" --define="CHIP_5509" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="fir2.pp"  "../fir2.asm"
+'Finished building: ../fir2.asm'
+' '
+'Building file: ../h_LPF1.asm'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O2 -g --include_path="D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/include" --include_path="D:/Program Files (x86)/CCSv5/xdais_7_21_01_07/packages/ti/xdais" --include_path="D:/PROGRA~2/CCSTUD~1.3/C5500/csl/include" --define="CHIP_5509" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="h_LPF1.pp"  "../h_LPF1.asm"
+'Finished building: ../h_LPF1.asm'
+' '
+'Building file: ../h_LPF2.asm'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O2 -g --include_path="D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/include" --include_path="D:/Program Files (x86)/CCSv5/xdais_7_21_01_07/packages/ti/xdais" --include_path="D:/PROGRA~2/CCSTUD~1.3/C5500/csl/include" --define="CHIP_5509" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="h_LPF2.pp"  "../h_LPF2.asm"
+'Finished building: ../h_LPF2.asm'
+' '
+'Building file: ../main.c'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O2 -g --include_path="D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/include" --include_path="D:/Program Files (x86)/CCSv5/xdais_7_21_01_07/packages/ti/xdais" --include_path="D:/PROGRA~2/CCSTUD~1.3/C5500/csl/include" --define="CHIP_5509" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"..\mcbsp_initial.h", line 33: warning #1311-D: nonstandard conversion between pointer to function and pointer to data
+"..\mcbsp_initial.h", line 71: warning #1311-D: nonstandard conversion between pointer to function and pointer to data
+"..\mcbsp_initial.h", line 73: warning #1311-D: nonstandard conversion between pointer to function and pointer to data
+"..\subfunction.c", line 97: warning #225-D: function declared implicitly
+"..\subfunction.c", line 98: warning #225-D: function declared implicitly
+"..\subfunction.c", line 114: warning #225-D: function declared implicitly
+"..\subfunction.c", line 115: warning #225-D: function declared implicitly
+"..\subfunction.c", line 891: warning #225-D: function declared implicitly
+"..\subfunction.c", line 892: warning #225-D: function declared implicitly
+"..\subfunction.c", line 909: warning #225-D: function declared implicitly
+"..\subfunction.c", line 1016: warning #225-D: function declared implicitly
+"..\subfunction.c", line 1017: warning #225-D: function declared implicitly
+"..\subfunction.c", line 1029: warning #225-D: function declared implicitly
+"..\subfunction.c", line 1030: warning #225-D: function declared implicitly
+"..\subfunction.c", line 1457: warning #225-D: function declared implicitly
+"..\subfunction.c", line 1458: warning #225-D: function declared implicitly
+"..\subfunction.c", line 1473: warning #225-D: function declared implicitly
+"..\subfunction.c", line 1510: warning #225-D: function declared implicitly
+"..\subfunction.c", line 1515: warning #225-D: function declared implicitly
+"..\interrupt_function.c", line 81: warning #552-D: variable "R_IER" was set but never used
+"..\interrupt_function.c", line 146: warning #552-D: variable "R_IER" was set but never used
+'Finished building: ../main.c'
+' '
+'Building file: ../maxvec.asm'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O2 -g --include_path="D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/include" --include_path="D:/Program Files (x86)/CCSv5/xdais_7_21_01_07/packages/ti/xdais" --include_path="D:/PROGRA~2/CCSTUD~1.3/C5500/csl/include" --define="CHIP_5509" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="maxvec.pp"  "../maxvec.asm"
+'Finished building: ../maxvec.asm'
+' '
+'Building file: ../twid2048.asm'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O2 -g --include_path="D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/include" --include_path="D:/Program Files (x86)/CCSv5/xdais_7_21_01_07/packages/ti/xdais" --include_path="D:/PROGRA~2/CCSTUD~1.3/C5500/csl/include" --define="CHIP_5509" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="twid2048.pp"  "../twid2048.asm"
+'Finished building: ../twid2048.asm'
+' '
+'Building file: ../vectors.asm'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O2 -g --include_path="D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/include" --include_path="D:/Program Files (x86)/CCSv5/xdais_7_21_01_07/packages/ti/xdais" --include_path="D:/PROGRA~2/CCSTUD~1.3/C5500/csl/include" --define="CHIP_5509" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="vectors.pp"  "../vectors.asm"
+'Finished building: ../vectors.asm'
+' '
+'Building target: USBL.out'
+'Invoking: C5500 Linker'
+"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O2 -g --define="CHIP_5509" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 -z -m"USBL.map" --stack_size=0x200 --heap_size=0x400 -i"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/lib" -i"D:/Program Files/ccsv5/ccsv5/ccs_base/c5500/csl/include" -i"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/include" -i"E:/DATA/workspace/USBL_40k_chirp20-30K(3.6ms)" -i"D:/PROGRA~2/CCSTUD~1.3/C5500/csl/lib" --reread_libs --display_error_number --warn_sections --xml_link_info="USBL_40k_chirp20-30K(3.6ms)_linkInfo.xml" --rom_model --sys_stacksize=0x200 -o "USBL.out"  "../USBL.cmd" "./vectors.obj" "./twid2048.obj" "./maxvec.obj" "./main.obj" "./h_LPF2.obj" "./h_LPF1.obj" "./fir2.obj" "./cifft_noscale.obj" "./cfft_noscale.obj" "./cbrev.obj" -l"csl5509x.lib" -l"rts55x.lib" 
+warning #10247-D: creating output section ".csldata" without a SECTIONS
+   specification
+warning #10247-D: creating output section "vectors" without a SECTIONS
+   specification
+'Finished building target: USBL.out'
+' '
+
+**** Build Finished ****

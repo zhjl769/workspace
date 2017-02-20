@@ -1,0 +1,10 @@
+-----------------------------  sdram.pjt - Debug  -----------------------------
+[main.c] "C:\CCStudio_v3.3\C5500\cgtools\bin\cl55" -g -fr"C:/CCStudio_v3.3/MyProjects/sdram/Debug" -d"CHIP_5509" -ml -@"Debug.lkf" "main.c"
+"main.c", line 48: warning: variable "SDCNT" was declared but never referenced
+"main.c", line 128: warning: variable "a" was declared but never referenced
+
+[Linking...] "C:\CCStudio_v3.3\C5500\cgtools\bin\cl55" -@"Debug.lkf"
+<Linking>
+
+Build Complete,
+  0 Errors, 2 Warnings, 0 Remarks.

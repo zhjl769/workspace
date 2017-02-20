@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configurations XML_version="1.2" id="configurations_0">
+    <configuration XML_version="1.2" id="configuration_0">
+        <instance XML_version="1.2" desc="SEED XDS510PLUS Emulator" href="connections/SEED-XDS510PLUS_Connection.xml" id="SEED XDS510PLUS Emulator" xml="SEED-XDS510PLUS_Connection.xml" xmlpath="connections"/>
+        <connection XML_version="1.2" id="SEED XDS510PLUS Emulator">
+            <instance XML_version="1.2" href="drivers/seedxds510plusc55x.xml" id="drivers" xml="seedxds510plusc55x.xml" xmlpath="drivers"/>
+            <platform XML_version="1.2" id="platform_0">
+                <instance XML_version="1.2" desc="EVM5509A" href="boards/evm5509a.xml" id="EVM5509A" xml="evm5509a.xml" xmlpath="boards"/>
+            </platform>
+        </connection>
+    </configuration>
+</configurations>

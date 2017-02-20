@@ -1,0 +1,394 @@
+******************************************************************************
+              TMS320C55x Linker PC v4.4.1                      
+******************************************************************************
+>> Linked Tue Nov 15 10:03:28 2016
+
+OUTPUT FILE NAME:   <TEST.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 00002af5
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+                        (bytes)   (bytes)    (bytes)   (bytes)
+----------------------  --------  ---------  --------  --------  ----  --------
+  MMR                   00000000   000000c0  00000000  000000c0  RWIX
+  DARAM0                000000c0   00001f40  00000940  00001600  RWIX
+  DARAM1                00002000   00002000  00000bea  00001416  RWIX
+  DARAM2                00004000   00002000  00000000  00002000  RWIX
+  DARAM3                00006000   00002000  00000000  00002000  RWIX
+  DARAM4                00008000   00002000  00000000  00002000  RWIX
+  DARAM5                0000a000   00002000  000000f0  00001f10  RWIX
+  DARAM6                0000c000   00002000  00000000  00002000  RWIX
+  DARAM7                0000e000   00002000  00000000  00002000  RWIX
+  SARAM0                00010000   00002000  00000000  00002000  RWIX
+  SARAM1                00012000   00002000  00000000  00002000  RWIX
+  SARAM2                00014000   00002000  00000000  00002000  RWIX
+  SARAM3                00016000   00002000  00000000  00002000  RWIX
+  SARAM4                00018000   00002000  00000000  00002000  RWIX
+  SARAM5                0001a000   00002000  00000000  00002000  RWIX
+  SARAM6                0001c000   00002000  00000000  00002000  RWIX
+  SARAM7                0001e000   00002000  00000000  00002000  RWIX
+  SARAM8                00020000   00002000  00000000  00002000  RWIX
+  SARAM9                00022000   00002000  00000000  00002000  RWIX
+  SARAM10               00024000   00002000  00000000  00002000  RWIX
+  SARAM11               00026000   00002000  00000000  00002000  RWIX
+  SARAM12               00028000   00002000  00000000  00002000  RWIX
+  SARAM13               0002a000   00002000  00000000  00002000  RWIX
+  SARAM14               0002c000   00002000  00000000  00002000  RWIX
+  SARAM15               0002e000   00002000  00000000  00002000  RWIX
+  SARAM16               00030000   00002000  00000000  00002000  RWIX
+  SARAM17               00032000   00002000  00000000  00002000  RWIX
+  SARAM18               00034000   00002000  00000000  00002000  RWIX
+  SARAM19               00036000   00002000  00000000  00002000  RWIX
+  SARAM20               00038000   00002000  00000000  00002000  RWIX
+  SARAM21               0003a000   00002000  00000000  00002000  RWIX
+  SARAM22               0003c000   00002000  00000000  00002000  RWIX
+  SARAM23               0003e000   00002000  00002000  00000000  RWIX
+  CE0                   00040000   003c0000  00000000  003c0000  RWIX
+  CE1                   00400000   00400000  00000000  00400000  RWIX
+  CE2                   00800000   00400000  00002000  003fe000  RWIX
+  CE3                   00c00000   003f0000  00000000  003f0000  RWIX
+  ROM                   00ff0000   0000ff00  00000000  0000ff00  RWIX
+  VECS                  00ffff00   00000100  00000000  00000100  RWIX
+
+
+SECTION ALLOCATION MAP
+(Addresses surrounded by []'s are displayed for convenience only!)
+
+output                                                          attributes/
+section   page  orgn(bytes) orgn(words) len(bytes) len(words)   input sections
+--------  ----  ----------- ----------- ---------- ----------   --------------
+.stack       0   [ 000000c0 ]  00000060          *   00000100   UNINITIALIZED
+                 [ 000000c0 ]  00000060          *   00000100   --HOLE--
+
+.sysstack 
+*            0   [ 000002c0 ]  00000160          *   00000100   UNINITIALIZED
+                 [ 000002c0 ]  00000160          *   00000100   --HOLE--
+
+.cinit       0   [ 000004c0 ]  00000260          *   000000f4   
+                 [ 000004c0 ]  00000260          *   00000081   csl5509ax.lib : csl_dmadat.obj (.cinit)
+                 [ 000005c2 ]  000002e1          *   00000026   main.obj (.cinit)
+                 [ 0000060e ]  00000307          *   00000025   csl5509ax.lib : csl_csldat.obj (.cinit)
+                 [ 00000658 ]  0000032c          *   0000000f                 : csl_timdat.obj (.cinit)
+                 [ 00000676 ]  0000033b          *   0000000e   rts55x.lib : exit.obj (.cinit)
+                 [ 00000692 ]  00000349          *   0000000a              : _lock.obj (.cinit)
+                 [ 000006a6 ]  00000353          *   00000001   --HOLE-- [fill = 0]
+
+.csldata     0   [ 000006a8 ]  00000354          *   000000ac   UNINITIALIZED
+                 [ 000006a8 ]  00000354          *   0000007e   csl5509ax.lib : csl_dmadat.obj (.csldata:DMA_data)
+                 [ 000007a4 ]  000003d2          *   00000022                 : csl_csldat.obj (.csldata:SYS_data)
+                 [ 000007e8 ]  000003f4          *   0000000c                 : csl_timdat.obj (.csldata:TIMER_data)
+
+.vectors     0     00000800  [ 00000400 ] 00000100          *   
+                   00000800  [ 00000400 ] 00000100          *   vectors.obj (.vectors)
+
+vectors      0     00000900  [ 00000480 ] 00000100          *   
+                   00000900  [ 00000480 ] 00000100          *   rts55x.lib : vectors.obj (vectors)
+
+.text        0     00002000  [ 00001000 ] 00000bea          *   
+                   00002000  [ 00001000 ] 000002b1          *   main.obj (.text)
+                   000022b1  [ 00001158+] 000001c7          *   csl5509ax.lib : dma_reset.obj (.text:DMA_reset)
+                   00002478  [ 0000123c ] 00000116          *                 : tim_rstt.obj (.text:TIMER_reset)
+                   0000258e  [ 000012c7 ] 00000101          *                 : dma_cfg.obj (.text:DMA_config)
+                   0000268f  [ 00001347+] 000000ce          *                 : dma_open.obj (.text:DMA_open)
+                   0000275d  [ 000013ae+] 000000cb          *                 : tim_open.obj (.text:TIMER_open)
+                   00002828  [ 00001414 ] 000000b6          *   rts55x.lib : exit.obj (.text)
+                   000028de  [ 0000146f ] 00000089          *   csl5509ax.lib : irq_pluga.obj (.text)
+                   00002967  [ 000014b3+] 00000062          *                 : irq_enab.obj (.text:IRQ_enable)
+                   000029c9  [ 000014e4+] 00000062          *   rts55x.lib : autoinit.obj (.text)
+                   00002a2b  [ 00001515+] 00000050          *   csl5509ax.lib : tim_cfg.obj (.text:TIMER_config)
+                   00002a7b  [ 0000153d+] 0000003e          *   main.obj (.text:retain)
+                   00002ab9  [ 0000155c+] 0000003c          *   rts55x.lib : args_main.obj (.text)
+                   00002af5  [ 0000157a+] 0000003b          *              : boot.obj (.text)
+                   00002b30  [ 00001598 ] 00000037          *   csl5509ax.lib : irq_setvecs.obj (.text:IRQ_setVecs)
+                   00002b67  [ 000015b3+] 00000020          *                 : tim_start.obj (.text:TIMER_start)
+                   00002b87  [ 000015c3+] 00000012          *   rts55x.lib : _lock.obj (.text)
+                   00002b99  [ 000015cc+] 0000000f          *   csl5509ax.lib : irq_gdisab.obj (.text:IRQ_globalDisable)
+                   00002ba8  [ 000015d4 ] 0000000f          *                 : irq_genab.obj (.text:IRQ_globalEnable)
+                   00002bb7  [ 000015db+] 0000000d          *                 : _csl_init.obj (.text:_CSL_init)
+                   00002bc4  [ 000015e2 ] 0000000c          *                 : csl.obj (.text:CSL_init)
+                   00002bd0  [ 000015e8 ] 0000000c          *                 : irq_grest.obj (.text:IRQ_globalRestore)
+                   00002bdc  [ 000015ee ] 00000007          *   rts55x.lib : exit.obj (.text:CIO_breakpoint)
+                   00002be3  [ 000015f1+] 00000002          *   csl5509ax.lib : csl.obj (.text)
+                   00002be5  [ 000015f2+] 00000002          *   rts55x.lib : vectors.obj (.text)
+                   00002be7  [ 000015f3+] 00000002          *   vectors.obj (.text)
+                   00002be9  [ 000015f4 ] 00000001          *   --HOLE-- [fill = 20]
+
+.data        0   [ 00008000 ]  00004000          *   00000000   UNINITIALIZED
+
+.bss         0   [ 0000a000 ]  00005000          *   00000078   UNINITIALIZED
+                 [ 0000a000 ]  00005000          *   00000046   rts55x.lib : exit.obj (.bss)
+                 [ 0000a08c ]  00005046          *   0000002e   main.obj (.bss)
+                 [ 0000a0e8 ]  00005074          *   00000004   rts55x.lib : _lock.obj (.bss)
+
+Send_SARAM 
+*            0   [ 0003e000 ]  0001f000          *   00001000   UNINITIALIZED
+                 [ 0003e000 ]  0001f000          *   00001000   main.obj (Send_SARAM)
+
+Send         0   [ 00800000 ]  00400000          *   00001000   UNINITIALIZED
+                 [ 00800000 ]  00400000          *   00001000   main.obj (Send)
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+abs. value/
+byte addr   word addr   name
+---------   ---------   ----
+00000002                $TI_capability$C5500$CallingConvention
+00000002                $TI_capability$C5500$MemoryModel
+00000001                $TI_capability_requires_rev2
+            00005000    .bss
+            00004000    .data
+00002000                .text
+00002bdd                C$$EXIT
+0000204e                _CLK_init
+00002be3                _CSL5509A_LIB_
+            00000354    _CSL_DmaData
+            000003d2    _CSL_SysData
+            000003f4    _CSL_TimerData
+00002bc4                _CSL_init
+0000258e                _DMA_config
+00002102                _DMA_init
+0000268f                _DMA_open
+000022b1                _DMA_reset
+000021c7                _GPIO_init
+00002967                _IRQ_enable
+00002b99                _IRQ_globalDisable
+00002ba8                _IRQ_globalEnable
+00002bd0                _IRQ_globalRestore
+000028de                _IRQ_plug
+00002b30                _IRQ_setVecs
+00000900                _Reset
+            0000504f    _Revdst1AddrHi
+            00005050    _Revdst1AddrLo
+            00005051    _Revdst2AddrHi
+            00005052    _Revdst2AddrLo
+            00005047    _RevsrcAddrHi
+            0000504e    _RevsrcAddrLo
+0000205f                _SDRAM_init
+            00400000    _Send_sig
+            0001f000    _Send_sig_SARAM
+00002a2b                _TIMER_config
+0000275d                _TIMER_open
+00002478                _TIMER_reset
+00002b67                _TIMER_start
+00000800                _VECSTART
+00002bb7                __CSL_init
+            00000160    __STACK_END
+00000200                __STACK_SIZE
+00000200                __SYSSTACK_SIZE
+ffffffff                ___binit__
+            00005000    ___bss__
+ffffffff                ___c_args__
+            00000260    ___cinit__
+            00004000    ___data__
+            00004000    ___edata__
+            00005078    ___end__
+00002bea                ___etext__
+ffffffff                ___pinit__
+00002000                ___text__
+00002ab9                __args_main
+            00005042    __cleanup_ptr
+            00005044    __dtors_ptr
+            00005074    __lock
+00002b97                __nop
+00002b8f                __register_lock
+00002b87                __register_unlock
+            00000060    __stack
+            00000160    __sysstack
+            00005076    __unlock
+00002bdc                _abort
+00002888                _atexit
+000029c9                _auto_init
+00002af5                _c_int00
+            0000505c    _dmaConfigForSend
+00002828                _exit
+            00005048    _hDmaSend0
+000021d4                _main
+            0000504a    _mhTimer0
+            0000504c    _mhTimer1
+00002a7b                _no_isr
+            00005046    _send_flag
+            00005055    _senddst0AddrHi
+            00005056    _senddst0AddrLo
+            00005059    _senddst1AddrHi
+            0000505a    _senddst1AddrLo
+            00005053    _sendsrc0AddrHi
+            00005054    _sendsrc0AddrLo
+            00005057    _sendsrc1AddrHi
+            00005058    _sendsrc1AddrLo
+            0000506e    _timCfg0
+            00005071    _timCfg1
+00002a97                _timer0_Isr
+ffffffff                binit
+            00000260    cinit
+            00004000    edata
+            00005078    end
+00002bea                etext
+00000810                int0
+00000818                int1
+00000860                int10
+00000868                int11
+00000870                int12
+00000878                int13
+00000880                int14
+00000888                int15
+00000890                int16
+00000898                int17
+000008a0                int18
+000008a8                int19
+00000820                int2
+000008b0                int20
+000008b8                int21
+000008c0                int22
+000008c8                int23
+000008d0                int24
+000008d8                int25
+000008e0                int26
+000008e8                int27
+000008f0                int28
+000008f8                int29
+00000828                int3
+00000830                int4
+00000838                int5
+00000840                int6
+00000848                int7
+00000850                int8
+00000858                int9
+00000808                nmi
+00002be7                no_isr
+ffffffff                pinit
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+abs. value/
+byte addr   word addr   name
+---------   ---------   ----
+00000001                $TI_capability_requires_rev2
+00000002                $TI_capability$C5500$CallingConvention
+00000002                $TI_capability$C5500$MemoryModel
+            00000060    __stack
+00000200                __STACK_SIZE
+00000200                __SYSSTACK_SIZE
+            00000160    __STACK_END
+            00000160    __sysstack
+            00000260    ___cinit__
+            00000260    cinit
+            00000354    _CSL_DmaData
+            000003d2    _CSL_SysData
+            000003f4    _CSL_TimerData
+00000800                _VECSTART
+00000808                nmi
+00000810                int0
+00000818                int1
+00000820                int2
+00000828                int3
+00000830                int4
+00000838                int5
+00000840                int6
+00000848                int7
+00000850                int8
+00000858                int9
+00000860                int10
+00000868                int11
+00000870                int12
+00000878                int13
+00000880                int14
+00000888                int15
+00000890                int16
+00000898                int17
+000008a0                int18
+000008a8                int19
+000008b0                int20
+000008b8                int21
+000008c0                int22
+000008c8                int23
+000008d0                int24
+000008d8                int25
+000008e0                int26
+000008e8                int27
+000008f0                int28
+000008f8                int29
+00000900                _Reset
+00002000                .text
+00002000                ___text__
+0000204e                _CLK_init
+0000205f                _SDRAM_init
+00002102                _DMA_init
+000021c7                _GPIO_init
+000021d4                _main
+000022b1                _DMA_reset
+00002478                _TIMER_reset
+0000258e                _DMA_config
+0000268f                _DMA_open
+0000275d                _TIMER_open
+00002828                _exit
+00002888                _atexit
+000028de                _IRQ_plug
+00002967                _IRQ_enable
+000029c9                _auto_init
+00002a2b                _TIMER_config
+00002a7b                _no_isr
+00002a97                _timer0_Isr
+00002ab9                __args_main
+00002af5                _c_int00
+00002b30                _IRQ_setVecs
+00002b67                _TIMER_start
+00002b87                __register_unlock
+00002b8f                __register_lock
+00002b97                __nop
+00002b99                _IRQ_globalDisable
+00002ba8                _IRQ_globalEnable
+00002bb7                __CSL_init
+00002bc4                _CSL_init
+00002bd0                _IRQ_globalRestore
+00002bdc                _abort
+00002bdd                C$$EXIT
+00002be3                _CSL5509A_LIB_
+00002be7                no_isr
+00002bea                ___etext__
+00002bea                etext
+            00004000    .data
+            00004000    ___data__
+            00004000    ___edata__
+            00004000    edata
+            00005000    .bss
+            00005000    ___bss__
+            00005042    __cleanup_ptr
+            00005044    __dtors_ptr
+            00005046    _send_flag
+            00005047    _RevsrcAddrHi
+            00005048    _hDmaSend0
+            0000504a    _mhTimer0
+            0000504c    _mhTimer1
+            0000504e    _RevsrcAddrLo
+            0000504f    _Revdst1AddrHi
+            00005050    _Revdst1AddrLo
+            00005051    _Revdst2AddrHi
+            00005052    _Revdst2AddrLo
+            00005053    _sendsrc0AddrHi
+            00005054    _sendsrc0AddrLo
+            00005055    _senddst0AddrHi
+            00005056    _senddst0AddrLo
+            00005057    _sendsrc1AddrHi
+            00005058    _sendsrc1AddrLo
+            00005059    _senddst1AddrHi
+            0000505a    _senddst1AddrLo
+            0000505c    _dmaConfigForSend
+            0000506e    _timCfg0
+            00005071    _timCfg1
+            00005074    __lock
+            00005076    __unlock
+            00005078    ___end__
+            00005078    end
+            0001f000    _Send_sig_SARAM
+            00400000    _Send_sig
+ffffffff                ___binit__
+ffffffff                ___c_args__
+ffffffff                ___pinit__
+ffffffff                binit
+ffffffff                pinit
+
+[124 symbols]

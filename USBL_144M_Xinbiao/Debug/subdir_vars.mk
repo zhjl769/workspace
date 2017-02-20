@@ -1,0 +1,86 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+CMD_SRCS += \
+../USBL.cmd 
+
+ASM_SRCS += \
+../cbrev.asm \
+../cfft_noscale.asm \
+../cifft_noscale.asm \
+../fir2.asm \
+../h_LPF1.asm \
+../h_LPF2.asm \
+../maxvec.asm \
+../twid2048.asm \
+../vectors.asm 
+
+C_SRCS += \
+../main.c 
+
+OBJS += \
+./cbrev.obj \
+./cfft_noscale.obj \
+./cifft_noscale.obj \
+./fir2.obj \
+./h_LPF1.obj \
+./h_LPF2.obj \
+./main.obj \
+./maxvec.obj \
+./twid2048.obj \
+./vectors.obj 
+
+ASM_DEPS += \
+./cbrev.pp \
+./cfft_noscale.pp \
+./cifft_noscale.pp \
+./fir2.pp \
+./h_LPF1.pp \
+./h_LPF2.pp \
+./maxvec.pp \
+./twid2048.pp \
+./vectors.pp 
+
+C_DEPS += \
+./main.pp 
+
+C_DEPS__QUOTED += \
+"main.pp" 
+
+OBJS__QUOTED += \
+"cbrev.obj" \
+"cfft_noscale.obj" \
+"cifft_noscale.obj" \
+"fir2.obj" \
+"h_LPF1.obj" \
+"h_LPF2.obj" \
+"main.obj" \
+"maxvec.obj" \
+"twid2048.obj" \
+"vectors.obj" 
+
+ASM_DEPS__QUOTED += \
+"cbrev.pp" \
+"cfft_noscale.pp" \
+"cifft_noscale.pp" \
+"fir2.pp" \
+"h_LPF1.pp" \
+"h_LPF2.pp" \
+"maxvec.pp" \
+"twid2048.pp" \
+"vectors.pp" 
+
+ASM_SRCS__QUOTED += \
+"../cbrev.asm" \
+"../cfft_noscale.asm" \
+"../cifft_noscale.asm" \
+"../fir2.asm" \
+"../h_LPF1.asm" \
+"../h_LPF2.asm" \
+"../maxvec.asm" \
+"../twid2048.asm" \
+"../vectors.asm" 
+
+

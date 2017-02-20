@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;2833xDMA_xintf_to_ram/Example_2833xDMA_xintf_to_ram.c&apos; to &apos;2833xDMA_xintf_to_ram.c&apos;" description="Rename resource &apos;Example_2833xDMA_xintf_to_ram.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Example_2833xDMA_xintf_to_ram.c" name="2833xDMA_xintf_to_ram.c" stamp="1480040081193" updateReferences="true"/>
+</session>

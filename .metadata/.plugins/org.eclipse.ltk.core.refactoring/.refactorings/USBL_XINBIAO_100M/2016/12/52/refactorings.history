@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;USBL(new)_100M/Head&apos; to &apos;HeaderFile&apos;" description="Rename resource &apos;Head&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Head" name="HeaderFile" stamp="1482316540261" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;USBL(new)_100M/HeaderFile&apos; to &apos;SourceFile&apos;" description="Rename resource &apos;HeaderFile&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="HeaderFile" name="SourceFile" stamp="1482317187383" updateReferences="true"/>
+</session>

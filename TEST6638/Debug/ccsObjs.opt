@@ -1,0 +1,1 @@
+"./init.obj" "./irig.obj" "./main.obj" "./uart.obj" "./Mod_SDCard/FAT16.obj" "./Mod_SDCard/mmc.obj" "../lnk_msp430f6638.cmd" -l"libmath.a" -l"libc.a" 

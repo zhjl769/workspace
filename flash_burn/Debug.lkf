@@ -1,0 +1,4 @@
+-z -q -a -c -heap0x800 -m"./Debug/flash_burn.map" -o"./Debug/flash_burn.out" -stack0x800 -sysstack0x800 -w -x -i"C:/CCStudio_v3.3/C5000/cgtools/lib" -i"C:/CCStudio_v3.3/C5000/csl/lib" -i"C:/CCStudio_v3.3/C5500/csl/lib" -i"C:/CCStudio_v3.3/C5500/xdais/lib" -i"C:/CCStudio_v3.3/bios_5_31_02/packages/ti/bios/lib" -i"C:/CCStudio_v3.3/bios_5_31_02/packages/ti/rtdx/lib/c5500" -i"C:/CCStudio_v3.3/C5500/cgtools/lib" -l"csl5509ax.lib" -l"rts55x.lib"
+"E:\DataCollect\dsp_prg\Allin1\A1\Boot\flash_burn\flash_burn.cmd"
+"E:\DataCollect\dsp_prg\Allin1\A1\Boot\flash_burn\Debug\flash_burn.obj"
+"E:\DataCollect\dsp_prg\Allin1\A1\Boot\flash_burn\Debug\sst25vf040b.obj"

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;USBL/USBL(100K).pjt&apos; to &apos;USBL.pjt&apos;" description="Rename resource &apos;USBL(100K).pjt&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="USBL(100K).pjt" name="USBL.pjt" stamp="1433472570071" updateReferences="true"/>
+</session>

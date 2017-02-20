@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;USBL&apos; to &apos;LBL_Benthos_release_40k_send_ramses2&apos;" description="Rename resource &apos;USBL&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/USBL" name="LBL_Benthos_release_40k_send_ramses2" stamp="1435288955718" updateReferences="true"/>
+</session>

@@ -1,0 +1,1 @@
+"./vectors.obj" "./main.obj" "../VC5509.cmd" -l"D:/Program Files (x86)/CCSv5/ccsv5/ccs_base/c5500/csl/lib/csl5509ax.lib" -l"D:/Program Files (x86)/CCSv5/ccsv5/ccs_base/c5500/cgtools/lib/rts55x.lib" 

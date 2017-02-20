@@ -1,0 +1,16 @@
+
+**** Build of configuration Debug for project lbl_omapl138 ****
+
+"D:\\Program Files\\ccsv5\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.c'
+'Invoking: C6000 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6740 --abi=coffabi -g --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="D:/workspace_v5_5/lbl_omapl138/src" --include_path="D:/workspace_v5_5/lbl_omapl138/lib" --include_path="D:/workspace_v5_5/lbl_omapl138/inc" --define=omapl138 --display_error_number --diag_warning=225 --diag_wrap=off --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 18: fatal error #5: could not open source file "main.h"
+1 fatal error detected in the compilation of "../main.c".
+Compilation terminated.
+
+>> Compilation failure
+gmake: *** [main.obj] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****

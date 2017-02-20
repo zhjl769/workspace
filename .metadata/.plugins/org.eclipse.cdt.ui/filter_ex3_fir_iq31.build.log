@@ -1,0 +1,660 @@
+
+**** Build of configuration Debug for project filter_ex3_fir_iq31 ****
+
+"D:\\Program Files\\ccsv5\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../filter_ex3_fir_iq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="filter_ex3_fir_iq31.pp"  "../filter_ex3_fir_iq31.c"
+"E:\DATA\workspace\filter_ex3_fir_iq31\dsplib\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+"../filter_ex3_fir_iq31.c", line 114: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../filter_ex3_fir_iq31.c", line 115: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../filter_ex3_fir_iq31.c", line 116: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../filter_ex3_fir_iq31.c", line 121: remark #1546-D: (ULP 15.1) Detected consecutive bitfield assigns. Recommend using bit mask instead
+"../filter_ex3_fir_iq31.c", line 132: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../filter_ex3_fir_iq31.c", line 136: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../filter_ex3_fir_iq31.c", line 73: remark #1535-D: (ULP 8.1) variable "coeffs" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../filter_ex3_fir_iq31.c", line 113 (col. 8): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../filter_ex3_fir_iq31.c", line 115 (col. 21): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../filter_ex3_fir_iq31.c", line 116 (col. 21): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+'Finished building: ../filter_ex3_fir_iq31.c'
+' '
+'Building file: ../dsplib/source/vector/msp_abs_iq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_abs_iq31.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_abs_iq31.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/vector/msp_abs_iq31.c'
+' '
+'Building file: ../dsplib/source/vector/msp_abs_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_abs_q15.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_abs_q15.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/vector/msp_abs_q15.c'
+' '
+'Building file: ../dsplib/source/vector/msp_add_iq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_add_iq31.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_add_iq31.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/vector/msp_add_iq31.c'
+' '
+'Building file: ../dsplib/source/vector/msp_add_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_add_q15.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_add_q15.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/vector/msp_add_q15.c'
+' '
+'Building file: ../dsplib/source/vector/msp_cmplx_add_iq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_cmplx_add_iq31.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_cmplx_add_iq31.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/vector/msp_cmplx_add_iq31.c'
+' '
+'Building file: ../dsplib/source/vector/msp_cmplx_add_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_cmplx_add_q15.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_cmplx_add_q15.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/vector/msp_cmplx_add_q15.c'
+' '
+'Building file: ../dsplib/source/vector/msp_cmplx_conj_iq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_cmplx_conj_iq31.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_cmplx_conj_iq31.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/vector/msp_cmplx_conj_iq31.c'
+' '
+'Building file: ../dsplib/source/vector/msp_cmplx_conj_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_cmplx_conj_q15.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_cmplx_conj_q15.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/vector/msp_cmplx_conj_q15.c'
+' '
+'Building file: ../dsplib/source/vector/msp_cmplx_mac_iq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_cmplx_mac_iq31.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_cmplx_mac_iq31.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/vector/msp_cmplx_mac_iq31.c'
+' '
+'Building file: ../dsplib/source/vector/msp_cmplx_mac_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_cmplx_mac_q15.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_cmplx_mac_q15.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/vector/msp_cmplx_mac_q15.c'
+' '
+'Building file: ../dsplib/source/vector/msp_cmplx_mpy_iq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_cmplx_mpy_iq31.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_cmplx_mpy_iq31.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/vector/msp_cmplx_mpy_iq31.c'
+' '
+'Building file: ../dsplib/source/vector/msp_cmplx_mpy_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_cmplx_mpy_q15.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_cmplx_mpy_q15.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/vector/msp_cmplx_mpy_q15.c'
+' '
+'Building file: ../dsplib/source/vector/msp_cmplx_mpy_real_iq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_cmplx_mpy_real_iq31.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_cmplx_mpy_real_iq31.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/vector/msp_cmplx_mpy_real_iq31.c'
+' '
+'Building file: ../dsplib/source/vector/msp_cmplx_mpy_real_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_cmplx_mpy_real_q15.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_cmplx_mpy_real_q15.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/vector/msp_cmplx_mpy_real_q15.c'
+' '
+'Building file: ../dsplib/source/vector/msp_cmplx_scale_iq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_cmplx_scale_iq31.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_cmplx_scale_iq31.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+"../dsplib/source/vector/msp_cmplx_scale_iq31.c", line 49: remark #1546-D: (ULP 15.1) Detected consecutive bitfield assigns. Recommend using bit mask instead
+"../dsplib/source/vector/msp_cmplx_scale_iq31.c", line 50: remark #1546-D: (ULP 15.1) Detected consecutive bitfield assigns. Recommend using bit mask instead
+'Finished building: ../dsplib/source/vector/msp_cmplx_scale_iq31.c'
+' '
+'Building file: ../dsplib/source/vector/msp_cmplx_scale_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_cmplx_scale_q15.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_cmplx_scale_q15.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+"../dsplib/source/vector/msp_cmplx_scale_q15.c", line 49: remark #1546-D: (ULP 15.1) Detected consecutive bitfield assigns. Recommend using bit mask instead
+"../dsplib/source/vector/msp_cmplx_scale_q15.c", line 50: remark #1546-D: (ULP 15.1) Detected consecutive bitfield assigns. Recommend using bit mask instead
+'Finished building: ../dsplib/source/vector/msp_cmplx_scale_q15.c'
+' '
+'Building file: ../dsplib/source/vector/msp_cmplx_shift_iq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_cmplx_shift_iq31.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_cmplx_shift_iq31.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+"../dsplib/source/vector/msp_cmplx_shift_iq31.c", line 62: remark #1546-D: (ULP 15.1) Detected consecutive bitfield assigns. Recommend using bit mask instead
+'Finished building: ../dsplib/source/vector/msp_cmplx_shift_iq31.c'
+' '
+'Building file: ../dsplib/source/vector/msp_cmplx_shift_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_cmplx_shift_q15.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_cmplx_shift_q15.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+"../dsplib/source/vector/msp_cmplx_shift_q15.c", line 62: remark #1546-D: (ULP 15.1) Detected consecutive bitfield assigns. Recommend using bit mask instead
+'Finished building: ../dsplib/source/vector/msp_cmplx_shift_q15.c'
+' '
+'Building file: ../dsplib/source/vector/msp_cmplx_sub_iq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_cmplx_sub_iq31.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_cmplx_sub_iq31.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/vector/msp_cmplx_sub_iq31.c'
+' '
+'Building file: ../dsplib/source/vector/msp_cmplx_sub_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_cmplx_sub_q15.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_cmplx_sub_q15.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/vector/msp_cmplx_sub_q15.c'
+' '
+'Building file: ../dsplib/source/vector/msp_mac_iq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_mac_iq31.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_mac_iq31.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/vector/msp_mac_iq31.c'
+' '
+'Building file: ../dsplib/source/vector/msp_mac_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_mac_q15.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_mac_q15.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/vector/msp_mac_q15.c'
+' '
+'Building file: ../dsplib/source/vector/msp_max_iq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_max_iq31.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_max_iq31.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/vector/msp_max_iq31.c'
+' '
+'Building file: ../dsplib/source/vector/msp_max_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_max_q15.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_max_q15.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/vector/msp_max_q15.c'
+' '
+'Building file: ../dsplib/source/vector/msp_max_uq15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_max_uq15.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_max_uq15.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/vector/msp_max_uq15.c'
+' '
+'Building file: ../dsplib/source/vector/msp_max_uq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_max_uq31.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_max_uq31.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/vector/msp_max_uq31.c'
+' '
+'Building file: ../dsplib/source/vector/msp_min_iq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_min_iq31.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_min_iq31.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/vector/msp_min_iq31.c'
+' '
+'Building file: ../dsplib/source/vector/msp_min_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_min_q15.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_min_q15.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/vector/msp_min_q15.c'
+' '
+'Building file: ../dsplib/source/vector/msp_min_uq15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_min_uq15.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_min_uq15.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/vector/msp_min_uq15.c'
+' '
+'Building file: ../dsplib/source/vector/msp_min_uq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_min_uq31.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_min_uq31.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/vector/msp_min_uq31.c'
+' '
+'Building file: ../dsplib/source/vector/msp_mpy_iq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_mpy_iq31.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_mpy_iq31.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/vector/msp_mpy_iq31.c'
+' '
+'Building file: ../dsplib/source/vector/msp_mpy_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_mpy_q15.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_mpy_q15.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/vector/msp_mpy_q15.c'
+' '
+'Building file: ../dsplib/source/vector/msp_neg_iq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_neg_iq31.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_neg_iq31.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/vector/msp_neg_iq31.c'
+' '
+'Building file: ../dsplib/source/vector/msp_neg_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_neg_q15.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_neg_q15.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/vector/msp_neg_q15.c'
+' '
+'Building file: ../dsplib/source/vector/msp_offset_iq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_offset_iq31.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_offset_iq31.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/vector/msp_offset_iq31.c'
+' '
+'Building file: ../dsplib/source/vector/msp_offset_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_offset_q15.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_offset_q15.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/vector/msp_offset_q15.c'
+' '
+'Building file: ../dsplib/source/vector/msp_scale_iq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_scale_iq31.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_scale_iq31.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/vector/msp_scale_iq31.c'
+' '
+'Building file: ../dsplib/source/vector/msp_scale_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_scale_q15.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_scale_q15.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/vector/msp_scale_q15.c'
+' '
+'Building file: ../dsplib/source/vector/msp_shift_iq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_shift_iq31.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_shift_iq31.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/vector/msp_shift_iq31.c'
+' '
+'Building file: ../dsplib/source/vector/msp_shift_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_shift_q15.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_shift_q15.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/vector/msp_shift_q15.c'
+' '
+'Building file: ../dsplib/source/vector/msp_sub_iq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_sub_iq31.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_sub_iq31.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/vector/msp_sub_iq31.c'
+' '
+'Building file: ../dsplib/source/vector/msp_sub_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/vector/msp_sub_q15.pp" --obj_directory="dsplib/source/vector"  "../dsplib/source/vector/msp_sub_q15.c"
+"..\dsplib\source\vector\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/vector/msp_sub_q15.c'
+' '
+'Building file: ../dsplib/source/utility/msp_cmplx_fill_iq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/utility/msp_cmplx_fill_iq31.pp" --obj_directory="dsplib/source/utility"  "../dsplib/source/utility/msp_cmplx_fill_iq31.c"
+"..\dsplib\source\utility\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/utility/msp_cmplx_fill_iq31.c'
+' '
+'Building file: ../dsplib/source/utility/msp_cmplx_fill_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/utility/msp_cmplx_fill_q15.pp" --obj_directory="dsplib/source/utility"  "../dsplib/source/utility/msp_cmplx_fill_q15.c"
+"..\dsplib\source\utility\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/utility/msp_cmplx_fill_q15.c'
+' '
+'Building file: ../dsplib/source/utility/msp_copy_iq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/utility/msp_copy_iq31.pp" --obj_directory="dsplib/source/utility"  "../dsplib/source/utility/msp_copy_iq31.c"
+"..\dsplib\source\utility\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/utility/msp_copy_iq31.c'
+' '
+'Building file: ../dsplib/source/utility/msp_copy_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/utility/msp_copy_q15.pp" --obj_directory="dsplib/source/utility"  "../dsplib/source/utility/msp_copy_q15.c"
+"..\dsplib\source\utility\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/utility/msp_copy_q15.c'
+' '
+'Building file: ../dsplib/source/utility/msp_deinterleave_iq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/utility/msp_deinterleave_iq31.pp" --obj_directory="dsplib/source/utility"  "../dsplib/source/utility/msp_deinterleave_iq31.c"
+"..\dsplib\source\utility\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/utility/msp_deinterleave_iq31.c'
+' '
+'Building file: ../dsplib/source/utility/msp_deinterleave_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/utility/msp_deinterleave_q15.pp" --obj_directory="dsplib/source/utility"  "../dsplib/source/utility/msp_deinterleave_q15.c"
+"..\dsplib\source\utility\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/utility/msp_deinterleave_q15.c'
+' '
+'Building file: ../dsplib/source/utility/msp_fill_iq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/utility/msp_fill_iq31.pp" --obj_directory="dsplib/source/utility"  "../dsplib/source/utility/msp_fill_iq31.c"
+"..\dsplib\source\utility\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/utility/msp_fill_iq31.c'
+' '
+'Building file: ../dsplib/source/utility/msp_fill_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/utility/msp_fill_q15.pp" --obj_directory="dsplib/source/utility"  "../dsplib/source/utility/msp_fill_q15.c"
+"..\dsplib\source\utility\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/utility/msp_fill_q15.c'
+' '
+'Building file: ../dsplib/source/transform/msp_cmplx_bitrev_iq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/transform/msp_cmplx_bitrev_iq31.pp" --obj_directory="dsplib/source/transform"  "../dsplib/source/transform/msp_cmplx_bitrev_iq31.c"
+"..\dsplib\source\transform\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+"../dsplib/source/transform/msp_cmplx_bitrev_iq31.c", line 168: remark #1543-D: (ULP 12.2) Detected for loop with repetitive data transfer. Recommend using DMA
+'Finished building: ../dsplib/source/transform/msp_cmplx_bitrev_iq31.c'
+' '
+'Building file: ../dsplib/source/transform/msp_cmplx_bitrev_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/transform/msp_cmplx_bitrev_q15.pp" --obj_directory="dsplib/source/transform"  "../dsplib/source/transform/msp_cmplx_bitrev_q15.c"
+"..\dsplib\source\transform\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+"../dsplib/source/transform/msp_cmplx_bitrev_q15.c", line 168: remark #1543-D: (ULP 12.2) Detected for loop with repetitive data transfer. Recommend using DMA
+'Finished building: ../dsplib/source/transform/msp_cmplx_bitrev_q15.c'
+' '
+'Building file: ../dsplib/source/transform/msp_cmplx_fft_auto_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/transform/msp_cmplx_fft_auto_q15.pp" --obj_directory="dsplib/source/transform"  "../dsplib/source/transform/msp_cmplx_fft_auto_q15.c"
+"..\dsplib\source\transform\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+"../dsplib/source/transform/msp_cmplx_fft_auto_q15.c", line 208: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../dsplib/source/transform/msp_cmplx_fft_auto_q15.c", line 237: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../dsplib/source/transform/msp_cmplx_fft_auto_q15.c", line 256: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../dsplib/source/transform/msp_cmplx_fft_auto_q15.c", line 256: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../dsplib/source/transform/msp_cmplx_fft_auto_q15.c", line 268: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+'Finished building: ../dsplib/source/transform/msp_cmplx_fft_auto_q15.c'
+' '
+'Building file: ../dsplib/source/transform/msp_cmplx_fft_fixed_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/transform/msp_cmplx_fft_fixed_q15.pp" --obj_directory="dsplib/source/transform"  "../dsplib/source/transform/msp_cmplx_fft_fixed_q15.c"
+"..\dsplib\source\transform\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+"../dsplib/source/transform/msp_cmplx_fft_fixed_q15.c", line 215: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../dsplib/source/transform/msp_cmplx_fft_fixed_q15.c", line 229: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../dsplib/source/transform/msp_cmplx_fft_fixed_q15.c", line 229: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../dsplib/source/transform/msp_cmplx_fft_fixed_q15.c", line 241: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+'Finished building: ../dsplib/source/transform/msp_cmplx_fft_fixed_q15.c'
+' '
+'Building file: ../dsplib/source/transform/msp_cmplx_fft_iq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/transform/msp_cmplx_fft_iq31.pp" --obj_directory="dsplib/source/transform"  "../dsplib/source/transform/msp_cmplx_fft_iq31.c"
+"..\dsplib\source\transform\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+"../dsplib/source/transform/msp_cmplx_fft_iq31.c", line 218: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../dsplib/source/transform/msp_cmplx_fft_iq31.c", line 232: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../dsplib/source/transform/msp_cmplx_fft_iq31.c", line 232: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../dsplib/source/transform/msp_cmplx_fft_iq31.c", line 244: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+'Finished building: ../dsplib/source/transform/msp_cmplx_fft_iq31.c'
+' '
+'Building file: ../dsplib/source/transform/msp_cmplx_ifft_auto_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/transform/msp_cmplx_ifft_auto_q15.pp" --obj_directory="dsplib/source/transform"  "../dsplib/source/transform/msp_cmplx_ifft_auto_q15.c"
+"..\dsplib\source\transform\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+"../dsplib/source/transform/msp_cmplx_ifft_auto_q15.c", line 64: remark #1546-D: (ULP 15.1) Detected consecutive bitfield assigns. Recommend using bit mask instead
+"../dsplib/source/transform/msp_cmplx_ifft_auto_q15.c", line 83: remark #1546-D: (ULP 15.1) Detected consecutive bitfield assigns. Recommend using bit mask instead
+"../dsplib/source/transform/msp_cmplx_ifft_auto_q15.c", line 84: remark #1546-D: (ULP 15.1) Detected consecutive bitfield assigns. Recommend using bit mask instead
+'Finished building: ../dsplib/source/transform/msp_cmplx_ifft_auto_q15.c'
+' '
+'Building file: ../dsplib/source/transform/msp_cmplx_ifft_fixed_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/transform/msp_cmplx_ifft_fixed_q15.pp" --obj_directory="dsplib/source/transform"  "../dsplib/source/transform/msp_cmplx_ifft_fixed_q15.c"
+"..\dsplib\source\transform\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+"../dsplib/source/transform/msp_cmplx_ifft_fixed_q15.c", line 63: remark #1546-D: (ULP 15.1) Detected consecutive bitfield assigns. Recommend using bit mask instead
+"../dsplib/source/transform/msp_cmplx_ifft_fixed_q15.c", line 74: remark #1546-D: (ULP 15.1) Detected consecutive bitfield assigns. Recommend using bit mask instead
+"../dsplib/source/transform/msp_cmplx_ifft_fixed_q15.c", line 75: remark #1546-D: (ULP 15.1) Detected consecutive bitfield assigns. Recommend using bit mask instead
+'Finished building: ../dsplib/source/transform/msp_cmplx_ifft_fixed_q15.c'
+' '
+'Building file: ../dsplib/source/transform/msp_cmplx_ifft_iq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/transform/msp_cmplx_ifft_iq31.pp" --obj_directory="dsplib/source/transform"  "../dsplib/source/transform/msp_cmplx_ifft_iq31.c"
+"..\dsplib\source\transform\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+"../dsplib/source/transform/msp_cmplx_ifft_iq31.c", line 91: remark #1546-D: (ULP 15.1) Detected consecutive bitfield assigns. Recommend using bit mask instead
+"../dsplib/source/transform/msp_cmplx_ifft_iq31.c", line 92: remark #1546-D: (ULP 15.1) Detected consecutive bitfield assigns. Recommend using bit mask instead
+"../dsplib/source/transform/msp_cmplx_ifft_iq31.c", line 100: remark #1546-D: (ULP 15.1) Detected consecutive bitfield assigns. Recommend using bit mask instead
+"../dsplib/source/transform/msp_cmplx_ifft_iq31.c", line 111: remark #1546-D: (ULP 15.1) Detected consecutive bitfield assigns. Recommend using bit mask instead
+"../dsplib/source/transform/msp_cmplx_ifft_iq31.c", line 112: remark #1546-D: (ULP 15.1) Detected consecutive bitfield assigns. Recommend using bit mask instead
+'Finished building: ../dsplib/source/transform/msp_cmplx_ifft_iq31.c'
+' '
+'Building file: ../dsplib/source/transform/msp_fft_auto_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/transform/msp_fft_auto_q15.pp" --obj_directory="dsplib/source/transform"  "../dsplib/source/transform/msp_fft_auto_q15.c"
+"..\dsplib\source\transform\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+"../dsplib/source/transform/msp_fft_auto_q15.c", line 52: remark #1546-D: (ULP 15.1) Detected consecutive bitfield assigns. Recommend using bit mask instead
+'Finished building: ../dsplib/source/transform/msp_fft_auto_q15.c'
+' '
+'Building file: ../dsplib/source/transform/msp_fft_fixed_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/transform/msp_fft_fixed_q15.pp" --obj_directory="dsplib/source/transform"  "../dsplib/source/transform/msp_fft_fixed_q15.c"
+"..\dsplib\source\transform\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+"../dsplib/source/transform/msp_fft_fixed_q15.c", line 52: remark #1546-D: (ULP 15.1) Detected consecutive bitfield assigns. Recommend using bit mask instead
+'Finished building: ../dsplib/source/transform/msp_fft_fixed_q15.c'
+' '
+'Building file: ../dsplib/source/transform/msp_fft_iq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/transform/msp_fft_iq31.pp" --obj_directory="dsplib/source/transform"  "../dsplib/source/transform/msp_fft_iq31.c"
+"..\dsplib\source\transform\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+"../dsplib/source/transform/msp_fft_iq31.c", line 52: remark #1546-D: (ULP 15.1) Detected consecutive bitfield assigns. Recommend using bit mask instead
+'Finished building: ../dsplib/source/transform/msp_fft_iq31.c'
+' '
+'Building file: ../dsplib/source/transform/msp_ifft_auto_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/transform/msp_ifft_auto_q15.pp" --obj_directory="dsplib/source/transform"  "../dsplib/source/transform/msp_ifft_auto_q15.c"
+"..\dsplib\source\transform\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+"../dsplib/source/transform/msp_ifft_auto_q15.c", line 56: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../dsplib/source/transform/msp_ifft_auto_q15.c", line 76: remark #1546-D: (ULP 15.1) Detected consecutive bitfield assigns. Recommend using bit mask instead
+"../dsplib/source/transform/msp_ifft_auto_q15.c", line 95: remark #1546-D: (ULP 15.1) Detected consecutive bitfield assigns. Recommend using bit mask instead
+"../dsplib/source/transform/msp_ifft_auto_q15.c", line 96: remark #1546-D: (ULP 15.1) Detected consecutive bitfield assigns. Recommend using bit mask instead
+'Finished building: ../dsplib/source/transform/msp_ifft_auto_q15.c'
+' '
+'Building file: ../dsplib/source/transform/msp_ifft_fixed_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/transform/msp_ifft_fixed_q15.pp" --obj_directory="dsplib/source/transform"  "../dsplib/source/transform/msp_ifft_fixed_q15.c"
+"..\dsplib\source\transform\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+"../dsplib/source/transform/msp_ifft_fixed_q15.c", line 55: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../dsplib/source/transform/msp_ifft_fixed_q15.c", line 75: remark #1546-D: (ULP 15.1) Detected consecutive bitfield assigns. Recommend using bit mask instead
+"../dsplib/source/transform/msp_ifft_fixed_q15.c", line 86: remark #1546-D: (ULP 15.1) Detected consecutive bitfield assigns. Recommend using bit mask instead
+"../dsplib/source/transform/msp_ifft_fixed_q15.c", line 87: remark #1546-D: (ULP 15.1) Detected consecutive bitfield assigns. Recommend using bit mask instead
+'Finished building: ../dsplib/source/transform/msp_ifft_fixed_q15.c'
+' '
+'Building file: ../dsplib/source/transform/msp_ifft_iq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/transform/msp_ifft_iq31.pp" --obj_directory="dsplib/source/transform"  "../dsplib/source/transform/msp_ifft_iq31.c"
+"..\dsplib\source\transform\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+"../dsplib/source/transform/msp_ifft_iq31.c", line 92: remark #1546-D: (ULP 15.1) Detected consecutive bitfield assigns. Recommend using bit mask instead
+"../dsplib/source/transform/msp_ifft_iq31.c", line 93: remark #1546-D: (ULP 15.1) Detected consecutive bitfield assigns. Recommend using bit mask instead
+"../dsplib/source/transform/msp_ifft_iq31.c", line 111: remark #1546-D: (ULP 15.1) Detected consecutive bitfield assigns. Recommend using bit mask instead
+"../dsplib/source/transform/msp_ifft_iq31.c", line 122: remark #1546-D: (ULP 15.1) Detected consecutive bitfield assigns. Recommend using bit mask instead
+"../dsplib/source/transform/msp_ifft_iq31.c", line 123: remark #1546-D: (ULP 15.1) Detected consecutive bitfield assigns. Recommend using bit mask instead
+'Finished building: ../dsplib/source/transform/msp_ifft_iq31.c'
+' '
+'Building file: ../dsplib/source/transform/msp_split_iq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/transform/msp_split_iq31.pp" --obj_directory="dsplib/source/transform"  "../dsplib/source/transform/msp_split_iq31.c"
+"..\dsplib\source\transform\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/transform/msp_split_iq31.c'
+' '
+'Building file: ../dsplib/source/transform/msp_split_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/transform/msp_split_q15.pp" --obj_directory="dsplib/source/transform"  "../dsplib/source/transform/msp_split_q15.c"
+"..\dsplib\source\transform\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/transform/msp_split_q15.c'
+' '
+'Building file: ../dsplib/source/transform/msp_transform_tables.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/transform/msp_transform_tables.pp" --obj_directory="dsplib/source/transform"  "../dsplib/source/transform/msp_transform_tables.c"
+"..\dsplib\source\transform\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+"..\dsplib\source\transform\..\..\include\DSPLib_support.h", line 222: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"..\dsplib\source\transform\..\..\include\DSPLib_support.h", line 355: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"..\dsplib\source\transform\..\..\include\DSPLib_support.h", line 356: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"..\dsplib\source\transform\..\..\include\DSPLib_support.h", line 373: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"..\dsplib\source\transform\..\..\include\DSPLib_support.h", line 374: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+'Finished building: ../dsplib/source/transform/msp_transform_tables.c'
+' '
+'Building file: ../dsplib/source/matrix/msp_matrix_abs_iq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/matrix/msp_matrix_abs_iq31.pp" --obj_directory="dsplib/source/matrix"  "../dsplib/source/matrix/msp_matrix_abs_iq31.c"
+"..\dsplib\source\matrix\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/matrix/msp_matrix_abs_iq31.c'
+' '
+'Building file: ../dsplib/source/matrix/msp_matrix_abs_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/matrix/msp_matrix_abs_q15.pp" --obj_directory="dsplib/source/matrix"  "../dsplib/source/matrix/msp_matrix_abs_q15.c"
+"..\dsplib\source\matrix\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/matrix/msp_matrix_abs_q15.c'
+' '
+'Building file: ../dsplib/source/matrix/msp_matrix_add_iq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/matrix/msp_matrix_add_iq31.pp" --obj_directory="dsplib/source/matrix"  "../dsplib/source/matrix/msp_matrix_add_iq31.c"
+"..\dsplib\source\matrix\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/matrix/msp_matrix_add_iq31.c'
+' '
+'Building file: ../dsplib/source/matrix/msp_matrix_add_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/matrix/msp_matrix_add_q15.pp" --obj_directory="dsplib/source/matrix"  "../dsplib/source/matrix/msp_matrix_add_q15.c"
+"..\dsplib\source\matrix\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/matrix/msp_matrix_add_q15.c'
+' '
+'Building file: ../dsplib/source/matrix/msp_matrix_mpy_iq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/matrix/msp_matrix_mpy_iq31.pp" --obj_directory="dsplib/source/matrix"  "../dsplib/source/matrix/msp_matrix_mpy_iq31.c"
+"..\dsplib\source\matrix\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/matrix/msp_matrix_mpy_iq31.c'
+' '
+'Building file: ../dsplib/source/matrix/msp_matrix_mpy_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/matrix/msp_matrix_mpy_q15.pp" --obj_directory="dsplib/source/matrix"  "../dsplib/source/matrix/msp_matrix_mpy_q15.c"
+"..\dsplib\source\matrix\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/matrix/msp_matrix_mpy_q15.c'
+' '
+'Building file: ../dsplib/source/matrix/msp_matrix_neg_iq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/matrix/msp_matrix_neg_iq31.pp" --obj_directory="dsplib/source/matrix"  "../dsplib/source/matrix/msp_matrix_neg_iq31.c"
+"..\dsplib\source\matrix\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/matrix/msp_matrix_neg_iq31.c'
+' '
+'Building file: ../dsplib/source/matrix/msp_matrix_neg_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/matrix/msp_matrix_neg_q15.pp" --obj_directory="dsplib/source/matrix"  "../dsplib/source/matrix/msp_matrix_neg_q15.c"
+"..\dsplib\source\matrix\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/matrix/msp_matrix_neg_q15.c'
+' '
+'Building file: ../dsplib/source/matrix/msp_matrix_offset_iq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/matrix/msp_matrix_offset_iq31.pp" --obj_directory="dsplib/source/matrix"  "../dsplib/source/matrix/msp_matrix_offset_iq31.c"
+"..\dsplib\source\matrix\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+"../dsplib/source/matrix/msp_matrix_offset_iq31.c", line 48: remark #1546-D: (ULP 15.1) Detected consecutive bitfield assigns. Recommend using bit mask instead
+'Finished building: ../dsplib/source/matrix/msp_matrix_offset_iq31.c'
+' '
+'Building file: ../dsplib/source/matrix/msp_matrix_offset_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/matrix/msp_matrix_offset_q15.pp" --obj_directory="dsplib/source/matrix"  "../dsplib/source/matrix/msp_matrix_offset_q15.c"
+"..\dsplib\source\matrix\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+"../dsplib/source/matrix/msp_matrix_offset_q15.c", line 48: remark #1546-D: (ULP 15.1) Detected consecutive bitfield assigns. Recommend using bit mask instead
+'Finished building: ../dsplib/source/matrix/msp_matrix_offset_q15.c'
+' '
+'Building file: ../dsplib/source/matrix/msp_matrix_scale_iq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/matrix/msp_matrix_scale_iq31.pp" --obj_directory="dsplib/source/matrix"  "../dsplib/source/matrix/msp_matrix_scale_iq31.c"
+"..\dsplib\source\matrix\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+"../dsplib/source/matrix/msp_matrix_scale_iq31.c", line 48: remark #1546-D: (ULP 15.1) Detected consecutive bitfield assigns. Recommend using bit mask instead
+"../dsplib/source/matrix/msp_matrix_scale_iq31.c", line 49: remark #1546-D: (ULP 15.1) Detected consecutive bitfield assigns. Recommend using bit mask instead
+'Finished building: ../dsplib/source/matrix/msp_matrix_scale_iq31.c'
+' '
+'Building file: ../dsplib/source/matrix/msp_matrix_scale_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/matrix/msp_matrix_scale_q15.pp" --obj_directory="dsplib/source/matrix"  "../dsplib/source/matrix/msp_matrix_scale_q15.c"
+"..\dsplib\source\matrix\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+"../dsplib/source/matrix/msp_matrix_scale_q15.c", line 48: remark #1546-D: (ULP 15.1) Detected consecutive bitfield assigns. Recommend using bit mask instead
+"../dsplib/source/matrix/msp_matrix_scale_q15.c", line 49: remark #1546-D: (ULP 15.1) Detected consecutive bitfield assigns. Recommend using bit mask instead
+'Finished building: ../dsplib/source/matrix/msp_matrix_scale_q15.c'
+' '
+'Building file: ../dsplib/source/matrix/msp_matrix_shift_iq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/matrix/msp_matrix_shift_iq31.pp" --obj_directory="dsplib/source/matrix"  "../dsplib/source/matrix/msp_matrix_shift_iq31.c"
+"..\dsplib\source\matrix\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+"../dsplib/source/matrix/msp_matrix_shift_iq31.c", line 48: remark #1546-D: (ULP 15.1) Detected consecutive bitfield assigns. Recommend using bit mask instead
+'Finished building: ../dsplib/source/matrix/msp_matrix_shift_iq31.c'
+' '
+'Building file: ../dsplib/source/matrix/msp_matrix_shift_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/matrix/msp_matrix_shift_q15.pp" --obj_directory="dsplib/source/matrix"  "../dsplib/source/matrix/msp_matrix_shift_q15.c"
+"..\dsplib\source\matrix\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+"../dsplib/source/matrix/msp_matrix_shift_q15.c", line 48: remark #1546-D: (ULP 15.1) Detected consecutive bitfield assigns. Recommend using bit mask instead
+'Finished building: ../dsplib/source/matrix/msp_matrix_shift_q15.c'
+' '
+'Building file: ../dsplib/source/matrix/msp_matrix_sub_iq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/matrix/msp_matrix_sub_iq31.pp" --obj_directory="dsplib/source/matrix"  "../dsplib/source/matrix/msp_matrix_sub_iq31.c"
+"..\dsplib\source\matrix\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/matrix/msp_matrix_sub_iq31.c'
+' '
+'Building file: ../dsplib/source/matrix/msp_matrix_sub_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/matrix/msp_matrix_sub_q15.pp" --obj_directory="dsplib/source/matrix"  "../dsplib/source/matrix/msp_matrix_sub_q15.c"
+"..\dsplib\source\matrix\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/matrix/msp_matrix_sub_q15.c'
+' '
+'Building file: ../dsplib/source/matrix/msp_matrix_trans_iq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/matrix/msp_matrix_trans_iq31.pp" --obj_directory="dsplib/source/matrix"  "../dsplib/source/matrix/msp_matrix_trans_iq31.c"
+"..\dsplib\source\matrix\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/matrix/msp_matrix_trans_iq31.c'
+' '
+'Building file: ../dsplib/source/matrix/msp_matrix_trans_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/matrix/msp_matrix_trans_q15.pp" --obj_directory="dsplib/source/matrix"  "../dsplib/source/matrix/msp_matrix_trans_q15.c"
+"..\dsplib\source\matrix\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/matrix/msp_matrix_trans_q15.c'
+' '
+'Building file: ../dsplib/source/leasc/msp_leasc_flags.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/leasc/msp_leasc_flags.pp" --obj_directory="dsplib/source/leasc"  "../dsplib/source/leasc/msp_leasc_flags.c"
+"E:\DATA\workspace\filter_ex3_fir_iq31\dsplib\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/leasc/msp_leasc_flags.c'
+' '
+'Building file: ../dsplib/source/leasc/msp_leasc_init.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/leasc/msp_leasc_init.pp" --obj_directory="dsplib/source/leasc"  "../dsplib/source/leasc/msp_leasc_init.c"
+"E:\DATA\workspace\filter_ex3_fir_iq31\dsplib\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/leasc/msp_leasc_init.c'
+' '
+'Building file: ../dsplib/source/leasc/msp_leasc_isr.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/leasc/msp_leasc_isr.pp" --obj_directory="dsplib/source/leasc"  "../dsplib/source/leasc/msp_leasc_isr.c"
+"E:\DATA\workspace\filter_ex3_fir_iq31\dsplib\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/leasc/msp_leasc_isr.c'
+' '
+'Building file: ../dsplib/source/filter/msp_biquad_df1_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/filter/msp_biquad_df1_q15.pp" --obj_directory="dsplib/source/filter"  "../dsplib/source/filter/msp_biquad_df1_q15.c"
+"..\dsplib\source\filter\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+"../dsplib/source/filter/msp_biquad_df1_q15.c", line 170: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../dsplib/source/filter/msp_biquad_df1_q15.c", line 170: remark #1543-D: (ULP 12.2) Detected for loop with repetitive data transfer. Recommend using DMA
+'Finished building: ../dsplib/source/filter/msp_biquad_df1_q15.c'
+' '
+'Building file: ../dsplib/source/filter/msp_biquad_df2_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/filter/msp_biquad_df2_q15.pp" --obj_directory="dsplib/source/filter"  "../dsplib/source/filter/msp_biquad_df2_q15.c"
+"..\dsplib\source\filter\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/filter/msp_biquad_df2_q15.c'
+' '
+'Building file: ../dsplib/source/filter/msp_cmplx_fir_iq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/filter/msp_cmplx_fir_iq31.pp" --obj_directory="dsplib/source/filter"  "../dsplib/source/filter/msp_cmplx_fir_iq31.c"
+"..\dsplib\source\filter\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/filter/msp_cmplx_fir_iq31.c'
+' '
+'Building file: ../dsplib/source/filter/msp_cmplx_fir_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/filter/msp_cmplx_fir_q15.pp" --obj_directory="dsplib/source/filter"  "../dsplib/source/filter/msp_cmplx_fir_q15.c"
+"..\dsplib\source\filter\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+'Finished building: ../dsplib/source/filter/msp_cmplx_fir_q15.c'
+' '
+'Building file: ../dsplib/source/filter/msp_fir_iq31.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/filter/msp_fir_iq31.pp" --obj_directory="dsplib/source/filter"  "../dsplib/source/filter/msp_fir_iq31.c"
+"..\dsplib\source\filter\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+"../dsplib/source/filter/msp_fir_iq31.c", line 150: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+'Finished building: ../dsplib/source/filter/msp_fir_iq31.c'
+' '
+'Building file: ../dsplib/source/filter/msp_fir_q15.c'
+'Invoking: MSP430 Compiler'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --include_path="D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" --include_path="E:/DATA/workspace/filter_ex3_fir_iq31/dsplib/include" --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="dsplib/source/filter/msp_fir_q15.pp" --obj_directory="dsplib/source/filter"  "../dsplib/source/filter/msp_fir_q15.c"
+"..\dsplib\source\filter\..\..\include\DSPLib_support.h", line 199: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+"../dsplib/source/filter/msp_fir_q15.c", line 148: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+'Finished building: ../dsplib/source/filter/msp_fir_q15.c'
+' '
+'Building target: filter_ex3_fir_iq31.out'
+'Invoking: MSP430 Linker'
+"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=eabi --advice:power=all -g --define=__MSP430FR5969__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal -z -m"filter_ex3_fir_iq31.map" --heap_size=160 --stack_size=160 --use_hw_mpy=F5 -i"D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/include" -i"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"D:/Program Files/ccsv5/ccsv5/tools/compiler/msp430_4.2.1/include" -i"D:/Program Files/ccsv5/ccsv5/ccs_base/msp430/lib" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="filter_ex3_fir_iq31_linkInfo.xml" --rom_model -o "filter_ex3_fir_iq31.out"  "./dsplib/source/filter/msp_fir_q15.obj" "./dsplib/source/filter/msp_fir_iq31.obj" "./dsplib/source/filter/msp_cmplx_fir_q15.obj" "./dsplib/source/filter/msp_cmplx_fir_iq31.obj" "./dsplib/source/filter/msp_biquad_df2_q15.obj" "./dsplib/source/filter/msp_biquad_df1_q15.obj" "./dsplib/source/leasc/msp_leasc_isr.obj" "./dsplib/source/leasc/msp_leasc_init.obj" "./dsplib/source/leasc/msp_leasc_flags.obj" "./dsplib/source/matrix/msp_matrix_trans_q15.obj" "./dsplib/source/matrix/msp_matrix_trans_iq31.obj" "./dsplib/source/matrix/msp_matrix_sub_q15.obj" "./dsplib/source/matrix/msp_matrix_sub_iq31.obj" "./dsplib/source/matrix/msp_matrix_shift_q15.obj" "./dsplib/source/matrix/msp_matrix_shift_iq31.obj" "./dsplib/source/matrix/msp_matrix_scale_q15.obj" "./dsplib/source/matrix/msp_matrix_scale_iq31.obj" "./dsplib/source/matrix/msp_matrix_offset_q15.obj" "./dsplib/source/matrix/msp_matrix_offset_iq31.obj" "./dsplib/source/matrix/msp_matrix_neg_q15.obj" "./dsplib/source/matrix/msp_matrix_neg_iq31.obj" "./dsplib/source/matrix/msp_matrix_mpy_q15.obj" "./dsplib/source/matrix/msp_matrix_mpy_iq31.obj" "./dsplib/source/matrix/msp_matrix_add_q15.obj" "./dsplib/source/matrix/msp_matrix_add_iq31.obj" "./dsplib/source/matrix/msp_matrix_abs_q15.obj" "./dsplib/source/matrix/msp_matrix_abs_iq31.obj" "./dsplib/source/transform/msp_transform_tables.obj" "./dsplib/source/transform/msp_split_q15.obj" "./dsplib/source/transform/msp_split_iq31.obj" "./dsplib/source/transform/msp_ifft_iq31.obj" "./dsplib/source/transform/msp_ifft_fixed_q15.obj" "./dsplib/source/transform/msp_ifft_auto_q15.obj" "./dsplib/source/transform/msp_fft_iq31.obj" "./dsplib/source/transform/msp_fft_fixed_q15.obj" "./dsplib/source/transform/msp_fft_auto_q15.obj" "./dsplib/source/transform/msp_cmplx_ifft_iq31.obj" "./dsplib/source/transform/msp_cmplx_ifft_fixed_q15.obj" "./dsplib/source/transform/msp_cmplx_ifft_auto_q15.obj" "./dsplib/source/transform/msp_cmplx_fft_iq31.obj" "./dsplib/source/transform/msp_cmplx_fft_fixed_q15.obj" "./dsplib/source/transform/msp_cmplx_fft_auto_q15.obj" "./dsplib/source/transform/msp_cmplx_bitrev_q15.obj" "./dsplib/source/transform/msp_cmplx_bitrev_iq31.obj" "./dsplib/source/utility/msp_fill_q15.obj" "./dsplib/source/utility/msp_fill_iq31.obj" "./dsplib/source/utility/msp_deinterleave_q15.obj" "./dsplib/source/utility/msp_deinterleave_iq31.obj" "./dsplib/source/utility/msp_copy_q15.obj" "./dsplib/source/utility/msp_copy_iq31.obj" "./dsplib/source/utility/msp_cmplx_fill_q15.obj" "./dsplib/source/utility/msp_cmplx_fill_iq31.obj" "./dsplib/source/vector/msp_sub_q15.obj" "./dsplib/source/vector/msp_sub_iq31.obj" "./dsplib/source/vector/msp_shift_q15.obj" "./dsplib/source/vector/msp_shift_iq31.obj" "./dsplib/source/vector/msp_scale_q15.obj" "./dsplib/source/vector/msp_scale_iq31.obj" "./dsplib/source/vector/msp_offset_q15.obj" "./dsplib/source/vector/msp_offset_iq31.obj" "./dsplib/source/vector/msp_neg_q15.obj" "./dsplib/source/vector/msp_neg_iq31.obj" "./dsplib/source/vector/msp_mpy_q15.obj" "./dsplib/source/vector/msp_mpy_iq31.obj" "./dsplib/source/vector/msp_min_uq31.obj" "./dsplib/source/vector/msp_min_uq15.obj" "./dsplib/source/vector/msp_min_q15.obj" "./dsplib/source/vector/msp_min_iq31.obj" "./dsplib/source/vector/msp_max_uq31.obj" "./dsplib/source/vector/msp_max_uq15.obj" "./dsplib/source/vector/msp_max_q15.obj" "./dsplib/source/vector/msp_max_iq31.obj" "./dsplib/source/vector/msp_mac_q15.obj" "./dsplib/source/vector/msp_mac_iq31.obj" "./dsplib/source/vector/msp_cmplx_sub_q15.obj" "./dsplib/source/vector/msp_cmplx_sub_iq31.obj" "./dsplib/source/vector/msp_cmplx_shift_q15.obj" "./dsplib/source/vector/msp_cmplx_shift_iq31.obj" "./dsplib/source/vector/msp_cmplx_scale_q15.obj" "./dsplib/source/vector/msp_cmplx_scale_iq31.obj" "./dsplib/source/vector/msp_cmplx_mpy_real_q15.obj" "./dsplib/source/vector/msp_cmplx_mpy_real_iq31.obj" "./dsplib/source/vector/msp_cmplx_mpy_q15.obj" "./dsplib/source/vector/msp_cmplx_mpy_iq31.obj" "./dsplib/source/vector/msp_cmplx_mac_q15.obj" "./dsplib/source/vector/msp_cmplx_mac_iq31.obj" "./dsplib/source/vector/msp_cmplx_conj_q15.obj" "./dsplib/source/vector/msp_cmplx_conj_iq31.obj" "./dsplib/source/vector/msp_cmplx_add_q15.obj" "./dsplib/source/vector/msp_cmplx_add_iq31.obj" "./dsplib/source/vector/msp_add_q15.obj" "./dsplib/source/vector/msp_add_iq31.obj" "./dsplib/source/vector/msp_abs_q15.obj" "./dsplib/source/vector/msp_abs_iq31.obj" "./filter_ex3_fir_iq31.obj" "../lnk_msp430fr5969.cmd" -l"libmath.a" -l"libc.a" 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changes using LPMx or _bis_SR_register() or __low_power_mode_x() in this project.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port A in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port B in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+'Finished building target: filter_ex3_fir_iq31.out'
+' '
+
+**** Build Finished ****

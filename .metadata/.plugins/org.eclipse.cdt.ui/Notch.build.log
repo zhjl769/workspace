@@ -1,0 +1,11 @@
+
+**** Clean-only build of configuration Debug for project Notch ****
+
+"D:\\Program Files\\ccsv5\\ccsv5\\utils\\bin\\gmake" -k clean 
+DEL /F  "Notch.out"
+DEL /F "init.pp" "main.pp" 
+DEL /F "init.obj" "main.obj" 
+'Finished clean'
+' '
+
+**** Build Finished ****
