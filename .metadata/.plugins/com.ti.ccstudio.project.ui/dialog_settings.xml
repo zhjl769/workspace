@@ -17,8 +17,8 @@
 		<item value="true" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 	</section>
 	<section name="com.ti.ccstudio.project.ui.internal.wizards.project.ProjectSettingsPage">
-		<item value="C5500" key="CCS.DEVICE_FAMILY"/>
-		<item value="TMS320C55XX.TMS320C5509A.EVM5509A" key="CCS.DEVICE"/>
+		<item value="C6000" key="CCS.DEVICE_FAMILY"/>
+		<item value="TMS320C64XX.TMS320C6416" key="CCS.DEVICE"/>
 		<item value="" key="CCS.DEVICE_ENDIANNESS"/>
 		<item value="" key="CCS.CODEGEN_TOOL_VERSION"/>
 		<item value="CCS.TEMPLATES" key="CCS.EXPANDED_AREA"/>
