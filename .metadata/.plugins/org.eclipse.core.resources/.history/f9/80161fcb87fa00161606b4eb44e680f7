@@ -1,0 +1,190 @@
+/*
+ * main.c
+ */
+/*************************************************/
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+
+#include <csl.h>
+#include <csl_mcbsp.h>
+#include <csl_edma.h>
+#include <csl_pll.h>
+#include <csl_gpio.h>
+
+#include "Sys_init.h"
+
+int main(void)
+{
+	MCBSP_Handle My_Mcbsp0;
+	MCBSP_Handle My_Mcbsp1;
+	CSL_init();
+	memset(ping,0,sizeof(int)*128);
+	memset(pong,0,sizeof(int)*128);
+	ping_data=0x00000000;
+	pong_data=0x00000000;
+	//Let's disable/clear related interrupts just in case they are pending
+	//  from a previous run of the program.
+//	setupInterrupts();
+	IRQ_reset(IRQ_EVT_EDMAINT);
+	EDMA_intDisable(TCCINTNUM);
+	EDMA_intClear(TCCINTNUM);
+	EDMA_clearPram(0x00000000);
+	/* Lets open up the EDMA channel associated with Mcbsp0_rev #1. */
+	hEdma = EDMA_open(EDMA_CHA_REVT0, EDMA_OPEN_RESET);
+	/* We also need two EDMA reload parameter sets so let's allocate them */
+	/* here. Notice the -1, this means allocate any availale tale.        */
+	hEdmaPing = EDMA_allocTable(-1);
+	hEdmaPong = EDMA_allocTable(-1);
+	cfgEdma = Ping_EDMA_config;
+
+	/* Let's initialize the link fields of the configuration structures */
+	Ping_EDMA_config.rld = EDMA_RLD_RMK(0,hEdmaPing);
+	Pong_EDMA_config.rld = EDMA_RLD_RMK(0,hEdmaPong);
+	cfgEdma.rld     = EDMA_RLD_RMK(0,hEdmaPong);
+
+	/* Now let's program up the EDMA channel with the configuration structure */
+	EDMA_config(hEdma, &cfgEdma);
+
+	/* Let's also configure the reload parameter tables in the EDMA PRAM */
+	/* with the values in the configuration structures.                  */
+	EDMA_config(hEdmaPing, &Ping_EDMA_config);
+	EDMA_config(hEdmaPong, &Pong_EDMA_config);
+	/* Enable the related interrupts */
+	IRQ_enable(IRQ_EVT_EDMAINT);
+	EDMA_intEnable(TCCINTNUM);
+
+	/* Enable the EDMA channel */
+	EDMA_enableChannel(hEdma);
+
+	My_Mcbsp0 = MCBSP_open(MCBSP_DEV0, MCBSP_OPEN_RESET);
+	My_Mcbsp1 = MCBSP_open(MCBSP_DEV1, MCBSP_OPEN_RESET);
+	MCBSP_config(My_Mcbsp0, &MY_MCBSP_Config);
+	MCBSP_config(My_Mcbsp1, &MY_MCBSP_Config);
+	MCBSP_start(My_Mcbsp0, MCBSP_XMIT_START | MCBSP_SRGR_START| MCBSP_SRGR_FRAMESYNC, MCBSP_SRGR_DEFAULT_DELAY);
+	MCBSP_start(My_Mcbsp1, MCBSP_XMIT_START | MCBSP_SRGR_START| MCBSP_SRGR_FRAMESYNC, MCBSP_SRGR_DEFAULT_DELAY);
+	while(1)
+		;
+}
+/*
+// Function to sets up interrupts to service EDMA transfers
+void setupInterrupts(void)
+{
+	//Point to the IRQ vector table
+    IRQ_setVecs(vectors);
+    IRQ_nmiEnable();
+    IRQ_globalEnable();
+    IRQ_map(IRQ_EVT_EDMAINT, 8);
+    IRQ_reset(IRQ_EVT_EDMAINT);
+}
+
+//Interrupt Service Routine c_int08 : ISR to service EDMAINT.
+//vecs_edma1.asm must be modified to include c_int08 entry.
+interrupt void  EDMA0_int(void)
+{
+  	//Clear the pending interrupt from the EDMA interrupt pending register
+  	EDMA_intClear(TCCINTNUM);
+
+  	//Perform ping-pong
+  	pingpong = (pingpong + 1) & 1;
+
+    //Exit from the program if certain no of transfres are done
+    if (transferCount >= TRANSFER_CNT)
+    {
+		TIMER_pause(hTimer);
+      	stopEdma();
+      	TIMER_close(hTimer);
+      	printf ("\nDone.....");
+      	exit(0);
+    }
+
+  	//Based on if we ping'ed or pong'ed, we need to set the EDMA channel
+  	//  link address for the NEXT frame.
+	if (pingpong)
+	{
+    	//Currently doing pong so setup next frame for ping
+    	//Modify the input data source, this just simulates
+    	//  the input data changing.
+    	ping_data++;
+
+    	//Rememer to flush this variable out of the cache
+    	//  since it's the source of an EDMA transfer
+    	CACHE_wbInvL2(&ping_data, 4, CACHE_WAIT);
+
+    	//Now filling pong so set link to ping
+    	EDMA_link(hEdma,hEdmaPing);
+  	}
+  	else
+  	{
+    	//Currently doing ping so setup next frame for pong
+    	//Modify the output data source, this just simulates
+    	//  the input data changing.
+    	pong_data++;
+
+    	//Rememer to flush this variable out of the cache
+    	//  since it's the source of an EDMA transfer
+    	CACHE_wbInvL2(&pong_data, 4, CACHE_WAIT);
+
+    	//Now filling ping so set link to pong
+        EDMA_link(hEdma,hEdmaPong);
+  	}
+  	processbuff(0);
+  	return;
+}
+
+Mcbsp0_RX_int
+//Interrupt Service Routine c_int08 : ISR to service EDMAINT.
+//vecs_edma1.asm must be modified to include c_int08 entry.
+interrupt void  EDMA0_int(void)
+{
+  	//Clear the pending interrupt from the EDMA interrupt pending register
+	MCBSP_intClear(TCCINTNUM);
+
+  	//Perform ping-pong
+  	pingpong = (pingpong + 1) & 1;
+
+    //Exit from the program if certain no of transfres are done
+    if (transferCount >= TRANSFER_CNT)
+    {
+		TIMER_pause(hTimer);
+      	stopEdma();
+      	TIMER_close(hTimer);
+      	printf ("\nDone.....");
+      	exit(0);
+    }
+
+  	//Based on if we ping'ed or pong'ed, we need to set the EDMA channel
+  	//  link address for the NEXT frame.
+	if (pingpong)
+	{
+    	//Currently doing pong so setup next frame for ping
+    	//Modify the input data source, this just simulates
+    	//  the input data changing.
+    	ping_data++;
+
+    	//Rememer to flush this variable out of the cache
+    	//  since it's the source of an EDMA transfer
+    	CACHE_wbInvL2(&ping_data, 4, CACHE_WAIT);
+
+    	//Now filling pong so set link to ping
+    	EDMA_link(hEdma,hEdmaPing);
+  	}
+  	else
+  	{
+    	//Currently doing ping so setup next frame for pong
+    	//Modify the output data source, this just simulates
+    	//  the input data changing.
+    	pong_data++;
+
+    	//Rememer to flush this variable out of the cache
+    	//  since it's the source of an EDMA transfer
+    	CACHE_wbInvL2(&pong_data, 4, CACHE_WAIT);
+
+    	//Now filling ping so set link to pong
+        EDMA_link(hEdma,hEdmaPong);
+  	}
+  	processbuff(0);
+  	return;
+}
+*/
+

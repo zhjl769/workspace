@@ -1,16 +1,67 @@
 
 **** Build of configuration Debug for project lbl_omapl138 ****
 
-"D:\\Program Files\\ccsv5\\ccsv5\\utils\\bin\\gmake" -k all 
+"D:\\Program Files (x86)\\CCSv5\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../intvecs.asm'
+'Invoking: C6000 Compiler'
+"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6740 --abi=coffabi -g --include_path="D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="E:/DATA/workspace/lbl_omapl138/src" --include_path="E:/DATA/workspace/lbl_omapl138/lib" --include_path="E:/DATA/workspace/lbl_omapl138/inc" --define=omapl138 --display_error_number --diag_warning=225 --diag_wrap=off --preproc_with_compile --preproc_dependency="intvecs.pp"  "../intvecs.asm"
+'Finished building: ../intvecs.asm'
+' '
 'Building file: ../main.c'
 'Invoking: C6000 Compiler'
-"D:/Program Files/ccsv5/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6740 --abi=coffabi -g --include_path="D:/Program Files/ccsv5/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="D:/workspace_v5_5/lbl_omapl138/src" --include_path="D:/workspace_v5_5/lbl_omapl138/lib" --include_path="D:/workspace_v5_5/lbl_omapl138/inc" --define=omapl138 --display_error_number --diag_warning=225 --diag_wrap=off --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
-"../main.c", line 18: fatal error #5: could not open source file "main.h"
-1 fatal error detected in the compilation of "../main.c".
-Compilation terminated.
+"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6740 --abi=coffabi -g --include_path="D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="E:/DATA/workspace/lbl_omapl138/src" --include_path="E:/DATA/workspace/lbl_omapl138/lib" --include_path="E:/DATA/workspace/lbl_omapl138/inc" --define=omapl138 --display_error_number --diag_warning=225 --diag_wrap=off --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"E:\DATA\workspace\lbl_omapl138\inc\types.h", line 13: warning #303-D: typedef name has already been declared (with same type)
+"E:\DATA\workspace\lbl_omapl138\inc\types.h", line 14: warning #303-D: typedef name has already been declared (with same type)
+"E:\DATA\workspace\lbl_omapl138\inc\types.h", line 15: warning #303-D: typedef name has already been declared (with same type)
+"E:\DATA\workspace\lbl_omapl138\inc\types.h", line 17: warning #303-D: typedef name has already been declared (with same type)
+"E:\DATA\workspace\lbl_omapl138\inc\types.h", line 18: warning #303-D: typedef name has already been declared (with same type)
+"E:\DATA\workspace\lbl_omapl138\inc\types.h", line 19: warning #303-D: typedef name has already been declared (with same type)
+'Finished building: ../main.c'
+' '
+'Building target: lbl_omapl138.out'
+'Invoking: C6000 Linker'
+"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6740 --abi=coffabi -g --define=omapl138 --display_error_number --diag_warning=225 --diag_wrap=off -z --stack_size=0x800 -m"lbl_omapl138.map" --heap_size=0x800 -i"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c6000_7.4.4/lib" -i"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c6000_7.4.4/include" --reread_libs --define=DSP_CORE=1 --warn_sections --display_error_number --diag_wrap=off --xml_link_info="lbl_omapl138_linkInfo.xml" --rom_model -o "lbl_omapl138.out"  "./main.obj" "./intvecs.obj" "../test_omapl138.cmd" "../lib/dsplib64plus.lib" "../lib/evmomapl138_bsl.lib" -l"libc.a" 
+<Linking>
 
+ undefined             first referenced
+  symbol                   in file     
+ ---------             ----------------
+ _AD_start             ./main.obj      
+ _AD_stop              ./main.obj      
+ _DSP_interrupt_ARM    ./main.obj      
+ _Tcp_Info             ./main.obj      
+ _c_int10              ./intvecs.obj   
+
+ _c_int11              ./intvecs.obj   
+ _c_int4               ./intvecs.obj   
+ _c_int5               ./intvecs.obj   
+ _c_int6               ./intvecs.obj   
+ _c_int7               ./intvecs.obj   
+ _c_int8               ./intvecs.obj   
+ _c_int9               ./intvecs.obj   
+ _close_EDMA_E4        ./main.obj      
 >> Compilation failure
-gmake: *** [main.obj] Error 1
+ _configure_para       ./main.obj      
+ _detection            ./main.obj      
+ _evm_init_edma_setup  ./main.obj      
+ _evm_init_gpio_extern ./main.obj      
+ _evm_init_mcbsp       ./main.obj      
+ _evm_init_timer_send  ./main.obj      
+ _evm_init_uart        ./main.obj      
+ _fifo                 ./main.obj      
+ _gen_sig              ./main.obj      
+ _gen_transmit_sig     ./main.obj      
+ _gen_twiddle_fft32x32 ./main.obj      
+ _get_delay            ./main.obj      
+ _get_envelop          ./main.obj      
+ _get_fft              ./main.obj      
+ _get_xcorr            ./main.obj      
+ _init_global_var      ./main.obj      
+ _transmit             ./main.obj      
+
+error #10234-D: unresolved symbols remain
+error #10010: errors encountered during linking; "lbl_omapl138.out" not built
+gmake: *** [lbl_omapl138.out] Error 1
 gmake: Target `all' not remade because of errors.
 
 **** Build Finished ****

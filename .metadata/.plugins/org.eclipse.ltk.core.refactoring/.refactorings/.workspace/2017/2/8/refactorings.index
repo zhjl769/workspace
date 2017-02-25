@@ -4,3 +4,7 @@
 1487584203496	Rename resource 'USBL(new)_100M'
 1487584273883	Rename resource 'USBL_40k_chirp20-30(two)'
 1487584329399	Rename resource 'USBL_40k_chirp20-30K(3.6ms)'
+1487838648681	Delete resource 'minimal_GenericC64xpDevice'
+1487852331053	Delete resource 'ADS7945_TEST/targetConfigs/TMS320C6416.ccxml'
+1487903222936	Delete resource 'lbl_omapl138'
+1487928597750	Delete resource 'ADS7945_TEST/vectors.asm'

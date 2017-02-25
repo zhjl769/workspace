@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <libraryInfos>
-<libraryInfo home="D:\Program Files\ccsv5\ccsv5\eclipse" version="1.6.0_13">
+<libraryInfo home="D:\Program Files\ccsv5\ccsv5\eclipse\jre" version="1.6.0_13">
 <bootpath>
 <entry path="D:\Program Files\ccsv5\ccsv5\eclipse\jre\lib\resources.jar"/>
 <entry path="D:\Program Files\ccsv5\ccsv5\eclipse\jre\lib\rt.jar"/>
@@ -18,7 +18,7 @@
 <entry path="D:\Program Files\ccsv5\ccsv5\eclipse\jre\lib\endorsed"/>
 </endorsedDirs>
 </libraryInfo>
-<libraryInfo home="D:\Program Files\ccsv5\ccsv5\eclipse\jre" version="1.6.0_13">
+<libraryInfo home="D:\Program Files\ccsv5\ccsv5\eclipse" version="1.6.0_13">
 <bootpath>
 <entry path="D:\Program Files\ccsv5\ccsv5\eclipse\jre\lib\resources.jar"/>
 <entry path="D:\Program Files\ccsv5\ccsv5\eclipse\jre\lib\rt.jar"/>

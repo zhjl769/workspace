@@ -3,6 +3,17 @@
  <object class="com.ti.dvt.profile.LaunchHistorySystem"> 
   <void property="idHistoryMap"> 
    <void method="put"> 
+    <string>SEED XDS510PLUS Emulator_2/C64xx_0</string> 
+    <object class="com.ti.dvt.profile.LaunchHistory"> 
+     <void property="contextId"> 
+      <string>140640</string> 
+     </void> 
+     <void property="orderedItems"> 
+      <object class="java.util.ArrayList"/> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
     <string>TI MSP430 USB1/MSP430</string> 
     <object class="com.ti.dvt.profile.LaunchHistory"> 
      <void property="contextId"> 
@@ -25,6 +36,17 @@
     </object> 
    </void> 
    <void method="put"> 
+    <string>SEED XDS510PLUS Emulator_1/C64xx_0</string> 
+    <object class="com.ti.dvt.profile.LaunchHistory"> 
+     <void property="contextId"> 
+      <string>140640</string> 
+     </void> 
+     <void property="orderedItems"> 
+      <object class="java.util.ArrayList"/> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
     <string>SEED XDS510PLUS Emulator/C55xx</string> 
     <object class="com.ti.dvt.profile.LaunchHistory"> 
      <void property="contextId"> 
@@ -36,6 +58,39 @@
         <string>Configuration 3</string> 
        </void> 
       </object> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
+    <string>SEED XDS510PLUS Emulator_0/C64xx_0</string> 
+    <object class="com.ti.dvt.profile.LaunchHistory"> 
+     <void property="contextId"> 
+      <string>140640</string> 
+     </void> 
+     <void property="orderedItems"> 
+      <object class="java.util.ArrayList"/> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
+    <string>SEED XDS510PLUS Emulator_0/C64xx_1</string> 
+    <object class="com.ti.dvt.profile.LaunchHistory"> 
+     <void property="contextId"> 
+      <string>140640</string> 
+     </void> 
+     <void property="orderedItems"> 
+      <object class="java.util.ArrayList"/> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
+    <string>SEED XDS510PLUS Emulator_0/C64xx_2</string> 
+    <object class="com.ti.dvt.profile.LaunchHistory"> 
+     <void property="contextId"> 
+      <string>140640</string> 
+     </void> 
+     <void property="orderedItems"> 
+      <object class="java.util.ArrayList"/> 
      </void> 
     </object> 
    </void> 

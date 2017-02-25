@@ -1,5 +1,7 @@
-MODULES_MRU_PATH=E\:\\DATA\\workspace\\Test\\Debug\\Test.out
-MODULES_MRU_PATH.1=E\:\\DATA\\workspace\\I2C\\Debug\\I2C.out
+MODULES_MRU_PATH=E\:\\DATA\\workspace\\ADS7945_TEST\\Debug\\ADS7945_TEST.out
+MODULES_MRU_PATH.1=E\:/DATA\\workspace\\ADS7945_TEST\\Debug\\ADS7945_TEST.out
+MODULES_MRU_PATH.2=E\:\\DATA\\workspace\\Test\\Debug\\Test.out
+MODULES_MRU_PATH.3=E\:\\DATA\\workspace\\I2C\\Debug\\I2C.out
 PROMPT_FOR_ADVISOR_REMARKS_ON_LAUNCH=always
 eclipse.preferences.version=1
 useAnnotationsPrefPage=true

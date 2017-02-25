@@ -1,1 +1,1 @@
-"./src/user_evmomapl138.obj" "./src/sys_interrupts.obj" "./src/function.obj" "./src/evmomapl138_timer.obj" "./src/evmomapl138_gpio.obj" "./src/evmomapl138.obj" "./main.obj" "./intvecs.obj" "../test_omapl138.cmd" "../lib/dsplib64plus.lib" "../lib/evmomapl138_bsl.lib" -l"libc.a" 
+"./main.obj" "./intvecs.obj" "../test_omapl138.cmd" "../lib/dsplib64plus.lib" "../lib/evmomapl138_bsl.lib" -l"libc.a" 

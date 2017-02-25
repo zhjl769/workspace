@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Move 1 resources to &apos;targetConfigs&apos;" description="Move 1 resources to &apos;targetConfigs&apos;" destination="targetConfigs" element1="TMS320C6416.ccxml" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1487852377452" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;ADS7945_TEST/vecs_edma1.asm&apos; to &apos;vecs.asm&apos;" description="Rename resource &apos;vecs_edma1.asm&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="vecs_edma1.asm" name="vecs.asm" stamp="1487927660684" updateReferences="true"/>
+</session>

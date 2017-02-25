@@ -1,0 +1,26 @@
+/*
+ * main.c
+ */
+ /*************************************************/
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+
+#include <csl.h>
+#include <csl_mcbsp.h>
+#include <csl_edma.h>
+#include <csl_pll.h>
+#include <csl_gpio.h>
+
+#include "Sys_init.h"
+
+int main(void)
+{
+	MCBSP_Handle My_Mcbsp;
+	CSL_init();
+	My_Mcbsp = MCBSP_open(MCBSP_DEV1, MCBSP_OPEN_RESET);
+	MCBSP_config(My_Mcbsp, &MY_MCBSP_Config);
+	MCBSP_start(My_Mcbsp,MCBSP_RCV_START | MCBSP_XMIT_START | MCBSP_SRGR_START| MCBSP_SRGR_FRAMESYNC, MCBSP_SRGR_DEFAULT_DELAY);
+
+	return 0;
+}

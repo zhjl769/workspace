@@ -15,7 +15,8 @@
 
 MEMORY
 {
-    L2RAM:     o = 0x00000000  l = 0x00100000  /* 1MB L2 Internal RAM */
+    INM:       o = 0x00000000  l = 0x00000400  /* 1MB L2 Internal RAM */
+    L2RAM:     o = 0x00000400  l = 0x00100000  /* 1MB L2 Internal RAM */
     EMIFBCE0:  o = 0x60000000  l = 0x04000000  /* 64MB EMIFB CE0 */
     EMIFBCE1:  o = 0x64000000  l = 0x04000000  /* 64MB EMIFB CE1 */
     EMIFBCE2:  o = 0x68000000  l = 0x04000000  /* 64MB EMIFB CE2 */
@@ -28,6 +29,7 @@ MEMORY
 
 SECTIONS
 {
+     vectors       >  INM
     .text          >  L2RAM
     .stack         >  L2RAM
     .bss           >  L2RAM
