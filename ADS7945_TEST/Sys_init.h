@@ -20,7 +20,7 @@
 #pragma DATA_ALIGN(outbuff,128);
 Int16 ping[BUFF_SZ];
 Int16 pong[BUFF_SZ];
-Int16 outbuff[BUFF_SZ];
+Int16 outbuff[4000];
 
 
 /* global variable used to track the ping-pong'ing */
@@ -31,7 +31,7 @@ Uint16 Buffflag = 0;
 
 
 /* declare some CSL objects */
-MCBSP_Handle My_Mcbsp0;
+MCBSP_Handle My_Mcbsp0;ll
 MCBSP_Handle My_Mcbsp1;
 EDMA_Handle hEdma;     /* Handle for the EDMA channe0                 */
 EDMA_Handle hEdmaPing; /* Handle for the ping EDMA reload parameters  */
@@ -93,7 +93,7 @@ EDMA_Config Pong_EDMA_config = {
 
 /* create a config structure for digital loopback mode */
 static MCBSP_Config MY_MCBSP_Config = {
-		MCBSP_SPCR_RMK(
+		MCBSP_SPCR_RMK(                              //free,soft,frst,grst,xintm,xsyncerr,xrst,dlb,rjust, clkstp,dxena,rintm,rsyncerr,rrst
 				MCBSP_SPCR_FREE_NO,
 				MCBSP_SPCR_SOFT_NO,
 				MCBSP_SPCR_FRST_NO,
@@ -102,7 +102,7 @@ static MCBSP_Config MY_MCBSP_Config = {
 				MCBSP_SPCR_XSYNCERR_NO,
 				MCBSP_SPCR_XRST_YES,
 				MCBSP_SPCR_DLB_OFF,
-				MCBSP_SPCR_RJUST_RSE,
+				MCBSP_SPCR_RJUST_LZF,
 				MCBSP_SPCR_CLKSTP_DISABLE,
 				MCBSP_SPCR_DXENA_OFF,
 				MCBSP_SPCR_RINTM_RRDY,
@@ -116,7 +116,7 @@ static MCBSP_Config MY_MCBSP_Config = {
 				MCBSP_RCR_RCOMPAND_MSB,
 				MCBSP_RCR_RFIG_YES,
 				MCBSP_RCR_RDATDLY_0BIT,
-				MCBSP_RCR_RFRLEN1_OF(2),
+				MCBSP_RCR_RFRLEN1_OF(1),
 				MCBSP_RCR_RWDLEN1_16BIT,
 				MCBSP_RCR_RWDREVRS_DISABLE
 		),
@@ -137,7 +137,7 @@ static MCBSP_Config MY_MCBSP_Config = {
 				MCBSP_SRGR_CLKSM_INTERNAL,
 				MCBSP_SRGR_FSGM_FSG,
 				MCBSP_SRGR_FPER_OF(99),
-				MCBSP_SRGR_FWID_OF(9),
+				MCBSP_SRGR_FWID_OF(88),       //在ADS7945中，此值为FPER的值减去需要的bit数，最好加上5~8，如16bit为99-16+6 = 88
 				MCBSP_SRGR_CLKGDV_OF(149)      //Mcbsp输入时钟为CLK/4,即150MHz,此为Mcbsp的输出时钟，CLK/4/Value
 		),
 		MCBSP_MCR_DEFAULT,
@@ -158,7 +158,7 @@ static MCBSP_Config MY_MCBSP_Config = {
 				MCBSP_PCR_CLKRM_INPUT,
 				MCBSP_PCR_CLKSSTAT_0,
 				MCBSP_PCR_DXSTAT_0,
-				MCBSP_PCR_FSXP_ACTIVEHIGH,
+				MCBSP_PCR_FSXP_ACTIVELOW,
 				MCBSP_PCR_FSRP_ACTIVELOW,
 				MCBSP_PCR_CLKXP_RISING,
 				MCBSP_PCR_CLKRP_FALLING

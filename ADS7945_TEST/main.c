@@ -13,6 +13,7 @@
 #include <csl_gpio.h>
 #include "Sys_init.h"
 #include "Interrupt.h"
+#include "Function.h"
 
 /*---------Function prototypes---------*/
 extern far void vectors();
@@ -23,6 +24,7 @@ void main(void)
 	IRQ_setVecs(vectors);
 	IRQ_nmiEnable();
 	IRQ_globalDisable();
+	Build_Frenal(200, 60, 60, 20, outbuff);
 	IRQ_map(IRQ_EVT_EDMAINT, 8);
 	IRQ_reset(IRQ_EVT_EDMAINT);    //Çå³ýEDMAÖÐ¶Ï
 	IRQ_map(IRQ_EVT_RINT0, 13);

@@ -35,6 +35,7 @@ main.obj: D:/Program\ Files\ (x86)/CCSv5/ccsv5/ccs_base/c6000/csl/include/csl_gp
 main.obj: D:/Program\ Files\ (x86)/CCSv5/ccsv5/ccs_base/c6000/csl/include/csl_gpiohal.h
 main.obj: ../Sys_init.h
 main.obj: ../Interrupt.h
+main.obj: ../Function.h
 
 ../main.c: 
 D:/Program\ Files\ (x86)/CCSv5/ccsv5/tools/compiler/c6000_7.4.15/include/math.h: 
@@ -71,3 +72,4 @@ D:/Program\ Files\ (x86)/CCSv5/ccsv5/ccs_base/c6000/csl/include/csl_gpio.h:
 D:/Program\ Files\ (x86)/CCSv5/ccsv5/ccs_base/c6000/csl/include/csl_gpiohal.h: 
 ../Sys_init.h: 
 ../Interrupt.h: 
+../Function.h: 

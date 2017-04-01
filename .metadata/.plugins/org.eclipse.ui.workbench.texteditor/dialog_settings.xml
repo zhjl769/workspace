@@ -2,37 +2,37 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="475" key="DIALOG_WIDTH"/>
-		<item value="162" key="DIALOG_Y_ORIGIN"/>
+		<item value="165" key="DIALOG_Y_ORIGIN"/>
+		<item value="1160" key="DIALOG_X_ORIGIN"/>
 		<item value="400" key="DIALOG_HEIGHT"/>
-		<item value="999" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="wrap"/>
-		<item value="true" key="isRegEx"/>
 		<item value="true" key="casesensitive"/>
+		<item value="true" key="isRegEx"/>
 		<item value="true" key="incremental"/>
 		<item value="true" key="wholeword"/>
-		<item value="MCBSP_SRGR_DEFAULT_DELAY" key="selection"/>
+		<item value="Buffer" key="selection"/>
 		<list key="findhistory">
+			<item value="Send_sig"/>
+			<item value="t_Fre"/>
+			<item value="Time_Fre"/>
+			<item value="Time_Sig"/>
+			<item value="Sig"/>
 			<item value="MCBSP_SRGR_DEFAULT_DELAY"/>
 			<item value="MCBSP_DEV1"/>
 			<item value="EDMA_CHA_TINT1"/>
-			<item value="EDMA_open"/>
-			<item value="EDMA_Config"/>
-			<item value="EDMA_OPT_PDTS_DEFAULT"/>
-			<item value="EDMA_OPT_ATCC_OF"/>
-			<item value="EDMA_OPT_RMK"/>
 		</list>
 		<list key="replacehistory">
+			<item value="Buffer"/>
+			<item value="t_Sig"/>
+			<item value="Time_Delay"/>
+			<item value="Fre"/>
 			<item value="0x7f"/>
 			<item value="Nack = 0"/>
 			<item value="从IIC"/>
 			<item value="_I2C"/>
-			<item value="\\r\\n"/>
-			<item value="\r\n"/>
-			<item value="UCA1"/>
-			<item value="P5"/>
 		</list>
 	</section>
 </section>
