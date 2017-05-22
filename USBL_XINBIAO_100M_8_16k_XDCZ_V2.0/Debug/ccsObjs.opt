@@ -1,0 +1,1 @@
+"../USBL.cmd" "./vectors.obj" "./twid2048.obj" "./maxvec.obj" "./h_LPF2.obj" "./h_LPF1.obj" "./fir2.obj" "./cifft_scale.obj" "./cifft_noscale.obj" "./cfft_scale.obj" "./cfft_noscale.obj" "./cbrev.obj" "./main.obj" "./cross_page_set0.obj" -l"csl5509ax.lib" -l"rts55x.lib" 

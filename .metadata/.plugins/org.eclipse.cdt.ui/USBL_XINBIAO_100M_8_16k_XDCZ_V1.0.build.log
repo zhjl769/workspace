@@ -1,0 +1,162 @@
+
+**** Build of configuration Debug for project USBL_XINBIAO_100M_8_16k_XDCZ_V1.0 ****
+
+"D:\\Program Files (x86)\\CCSv5\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../Creat_signal.c'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O2 -g --include_path="D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/include" --include_path="E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0/SourceFile" --include_path="D:/Program Files (x86)/CCSv5/xdais_7_21_01_07/packages/ti/xdais" --include_path="D:/PROGRA~2/CCSTUD~1.3/C5500/csl/include" --include_path="E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0/Debug" --include_path="D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/bios/include" --include_path="D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/rtdx/include/c5500" --define="CHIP_5509A" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="Creat_signal.pp"  "../Creat_signal.c"
+"../Creat_signal.c", line 91: warning #551-D: variable "w_1024" is used before its value is set
+'Finished building: ../Creat_signal.c'
+' '
+'Building file: ../Interleaver.c'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O2 -g --include_path="D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/include" --include_path="E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0/SourceFile" --include_path="D:/Program Files (x86)/CCSv5/xdais_7_21_01_07/packages/ti/xdais" --include_path="D:/PROGRA~2/CCSTUD~1.3/C5500/csl/include" --include_path="E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0/Debug" --include_path="D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/bios/include" --include_path="D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/rtdx/include/c5500" --define="CHIP_5509A" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="Interleaver.pp"  "../Interleaver.c"
+'Finished building: ../Interleaver.c'
+' '
+'Building file: ../Rsc_encoder.c'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O2 -g --include_path="D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/include" --include_path="E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0/SourceFile" --include_path="D:/Program Files (x86)/CCSv5/xdais_7_21_01_07/packages/ti/xdais" --include_path="D:/PROGRA~2/CCSTUD~1.3/C5500/csl/include" --include_path="E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0/Debug" --include_path="D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/bios/include" --include_path="D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/rtdx/include/c5500" --define="CHIP_5509A" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="Rsc_encoder.pp"  "../Rsc_encoder.c"
+'Finished building: ../Rsc_encoder.c'
+' '
+'Building file: ../Symbol_Mapper.c'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O2 -g --include_path="D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/include" --include_path="E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0/SourceFile" --include_path="D:/Program Files (x86)/CCSv5/xdais_7_21_01_07/packages/ti/xdais" --include_path="D:/PROGRA~2/CCSTUD~1.3/C5500/csl/include" --include_path="E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0/Debug" --include_path="D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/bios/include" --include_path="D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/rtdx/include/c5500" --define="CHIP_5509A" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="Symbol_Mapper.pp"  "../Symbol_Mapper.c"
+'Finished building: ../Symbol_Mapper.c'
+' '
+'Building file: ../Symbol_combination.c'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O2 -g --include_path="D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/include" --include_path="E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0/SourceFile" --include_path="D:/Program Files (x86)/CCSv5/xdais_7_21_01_07/packages/ti/xdais" --include_path="D:/PROGRA~2/CCSTUD~1.3/C5500/csl/include" --include_path="E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0/Debug" --include_path="D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/bios/include" --include_path="D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/rtdx/include/c5500" --define="CHIP_5509A" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="Symbol_combination.pp"  "../Symbol_combination.c"
+'Finished building: ../Symbol_combination.c'
+' '
+'Building file: ../UpFIR_and_Pwm_Modulation.c'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O2 -g --include_path="D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/include" --include_path="E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0/SourceFile" --include_path="D:/Program Files (x86)/CCSv5/xdais_7_21_01_07/packages/ti/xdais" --include_path="D:/PROGRA~2/CCSTUD~1.3/C5500/csl/include" --include_path="E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0/Debug" --include_path="D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/bios/include" --include_path="D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/rtdx/include/c5500" --define="CHIP_5509A" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="UpFIR_and_Pwm_Modulation.pp"  "../UpFIR_and_Pwm_Modulation.c"
+'Finished building: ../UpFIR_and_Pwm_Modulation.c'
+' '
+'Building file: ../crc.c'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O2 -g --include_path="D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/include" --include_path="E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0/SourceFile" --include_path="D:/Program Files (x86)/CCSv5/xdais_7_21_01_07/packages/ti/xdais" --include_path="D:/PROGRA~2/CCSTUD~1.3/C5500/csl/include" --include_path="E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0/Debug" --include_path="D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/bios/include" --include_path="D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/rtdx/include/c5500" --define="CHIP_5509A" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="crc.pp"  "../crc.c"
+'Finished building: ../crc.c'
+' '
+'Building file: ../cross_page_set0.c'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O2 -g --include_path="D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/include" --include_path="E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0/SourceFile" --include_path="D:/Program Files (x86)/CCSv5/xdais_7_21_01_07/packages/ti/xdais" --include_path="D:/PROGRA~2/CCSTUD~1.3/C5500/csl/include" --include_path="E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0/Debug" --include_path="D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/bios/include" --include_path="D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/rtdx/include/c5500" --define="CHIP_5509A" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="cross_page_set0.pp"  "../cross_page_set0.c"
+'Finished building: ../cross_page_set0.c'
+' '
+'Building file: ../main.c'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O2 -g --include_path="D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/include" --include_path="E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0/SourceFile" --include_path="D:/Program Files (x86)/CCSv5/xdais_7_21_01_07/packages/ti/xdais" --include_path="D:/PROGRA~2/CCSTUD~1.3/C5500/csl/include" --include_path="E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0/Debug" --include_path="D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/bios/include" --include_path="D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/rtdx/include/c5500" --define="CHIP_5509A" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"..\mcbsp_initial.h", line 81: warning #1311-D: nonstandard conversion between pointer to function and pointer to data
+"..\mcbsp_initial.h", line 117: warning #1311-D: nonstandard conversion between pointer to function and pointer to data
+"..\mcbsp_initial.h", line 159: warning #1311-D: nonstandard conversion between pointer to function and pointer to data
+'Finished building: ../main.c'
+' '
+'Building file: ../SourceFile/cbrev.asm'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O2 -g --include_path="D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/include" --include_path="E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0/SourceFile" --include_path="D:/Program Files (x86)/CCSv5/xdais_7_21_01_07/packages/ti/xdais" --include_path="D:/PROGRA~2/CCSTUD~1.3/C5500/csl/include" --include_path="E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0/Debug" --include_path="D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/bios/include" --include_path="D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/rtdx/include/c5500" --define="CHIP_5509A" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="SourceFile/cbrev.pp"  "../SourceFile/cbrev.asm"
+'Finished building: ../SourceFile/cbrev.asm'
+' '
+'Building file: ../SourceFile/cfft_noscale.asm'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O2 -g --include_path="D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/include" --include_path="E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0/SourceFile" --include_path="D:/Program Files (x86)/CCSv5/xdais_7_21_01_07/packages/ti/xdais" --include_path="D:/PROGRA~2/CCSTUD~1.3/C5500/csl/include" --include_path="E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0/Debug" --include_path="D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/bios/include" --include_path="D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/rtdx/include/c5500" --define="CHIP_5509A" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="SourceFile/cfft_noscale.pp"  "../SourceFile/cfft_noscale.asm"
+"..\SourceFile\cfft_noscale.asm", REMARK   at line 475: [R5684] This outer loop
+                                                                contains a
+                                                                nested
+                                                                localrepeat
+                                                                that may cause
+                                                                execution to
+                                                                terminate if an
+                                                                iteration of
+                                                                the nested
+                                                                localrepeat is
+                                                                interrupted;
+                                                                Note: indirect
+                                                                write to memory
+                                                                may be write to
+                                                                MMR BRC1; (see
+                                                                the C55x
+                                                                silicon
+                                                                exceptions
+                                                                errata;
+                                                                Advisory
+                                                                CPU_116)
+		}
+
+'Finished building: ../SourceFile/cfft_noscale.asm'
+' '
+'Building file: ../SourceFile/cfft_scale.asm'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O2 -g --include_path="D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/include" --include_path="E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0/SourceFile" --include_path="D:/Program Files (x86)/CCSv5/xdais_7_21_01_07/packages/ti/xdais" --include_path="D:/PROGRA~2/CCSTUD~1.3/C5500/csl/include" --include_path="E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0/Debug" --include_path="D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/bios/include" --include_path="D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/rtdx/include/c5500" --define="CHIP_5509A" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="SourceFile/cfft_scale.pp"  "../SourceFile/cfft_scale.asm"
+"..\SourceFile\cfft_scale.asm", REMARK   at line 565: [R5684] This outer loop
+                                                              contains a nested
+                                                              localrepeat that
+                                                              may cause
+                                                              execution to
+                                                              terminate if an
+                                                              iteration of the
+                                                              nested
+                                                              localrepeat is
+                                                              interrupted;
+                                                              Note: indirect
+                                                              write to memory
+                                                              may be write to
+                                                              MMR BRC1; (see
+                                                              the C55x silicon
+                                                              exceptions
+                                                              errata; Advisory
+                                                              CPU_116)
+		}
+
+'Finished building: ../SourceFile/cfft_scale.asm'
+' '
+'Building file: ../SourceFile/cifft_noscale.asm'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O2 -g --include_path="D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/include" --include_path="E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0/SourceFile" --include_path="D:/Program Files (x86)/CCSv5/xdais_7_21_01_07/packages/ti/xdais" --include_path="D:/PROGRA~2/CCSTUD~1.3/C5500/csl/include" --include_path="E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0/Debug" --include_path="D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/bios/include" --include_path="D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/rtdx/include/c5500" --define="CHIP_5509A" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="SourceFile/cifft_noscale.pp"  "../SourceFile/cifft_noscale.asm"
+'Finished building: ../SourceFile/cifft_noscale.asm'
+' '
+'Building file: ../SourceFile/cifft_scale.asm'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O2 -g --include_path="D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/include" --include_path="E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0/SourceFile" --include_path="D:/Program Files (x86)/CCSv5/xdais_7_21_01_07/packages/ti/xdais" --include_path="D:/PROGRA~2/CCSTUD~1.3/C5500/csl/include" --include_path="E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0/Debug" --include_path="D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/bios/include" --include_path="D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/rtdx/include/c5500" --define="CHIP_5509A" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="SourceFile/cifft_scale.pp"  "../SourceFile/cifft_scale.asm"
+'Finished building: ../SourceFile/cifft_scale.asm'
+' '
+'Building file: ../SourceFile/fir2.asm'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O2 -g --include_path="D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/include" --include_path="E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0/SourceFile" --include_path="D:/Program Files (x86)/CCSv5/xdais_7_21_01_07/packages/ti/xdais" --include_path="D:/PROGRA~2/CCSTUD~1.3/C5500/csl/include" --include_path="E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0/Debug" --include_path="D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/bios/include" --include_path="D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/rtdx/include/c5500" --define="CHIP_5509A" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="SourceFile/fir2.pp"  "../SourceFile/fir2.asm"
+'Finished building: ../SourceFile/fir2.asm'
+' '
+'Building file: ../SourceFile/h_LPF1.asm'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O2 -g --include_path="D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/include" --include_path="E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0/SourceFile" --include_path="D:/Program Files (x86)/CCSv5/xdais_7_21_01_07/packages/ti/xdais" --include_path="D:/PROGRA~2/CCSTUD~1.3/C5500/csl/include" --include_path="E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0/Debug" --include_path="D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/bios/include" --include_path="D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/rtdx/include/c5500" --define="CHIP_5509A" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="SourceFile/h_LPF1.pp"  "../SourceFile/h_LPF1.asm"
+'Finished building: ../SourceFile/h_LPF1.asm'
+' '
+'Building file: ../SourceFile/h_LPF2.asm'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O2 -g --include_path="D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/include" --include_path="E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0/SourceFile" --include_path="D:/Program Files (x86)/CCSv5/xdais_7_21_01_07/packages/ti/xdais" --include_path="D:/PROGRA~2/CCSTUD~1.3/C5500/csl/include" --include_path="E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0/Debug" --include_path="D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/bios/include" --include_path="D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/rtdx/include/c5500" --define="CHIP_5509A" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="SourceFile/h_LPF2.pp"  "../SourceFile/h_LPF2.asm"
+'Finished building: ../SourceFile/h_LPF2.asm'
+' '
+'Building file: ../SourceFile/maxvec.asm'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O2 -g --include_path="D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/include" --include_path="E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0/SourceFile" --include_path="D:/Program Files (x86)/CCSv5/xdais_7_21_01_07/packages/ti/xdais" --include_path="D:/PROGRA~2/CCSTUD~1.3/C5500/csl/include" --include_path="E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0/Debug" --include_path="D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/bios/include" --include_path="D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/rtdx/include/c5500" --define="CHIP_5509A" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="SourceFile/maxvec.pp"  "../SourceFile/maxvec.asm"
+'Finished building: ../SourceFile/maxvec.asm'
+' '
+'Building file: ../SourceFile/twid2048.asm'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O2 -g --include_path="D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/include" --include_path="E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0/SourceFile" --include_path="D:/Program Files (x86)/CCSv5/xdais_7_21_01_07/packages/ti/xdais" --include_path="D:/PROGRA~2/CCSTUD~1.3/C5500/csl/include" --include_path="E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0/Debug" --include_path="D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/bios/include" --include_path="D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/rtdx/include/c5500" --define="CHIP_5509A" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="SourceFile/twid2048.pp"  "../SourceFile/twid2048.asm"
+'Finished building: ../SourceFile/twid2048.asm'
+' '
+'Building file: ../SourceFile/vectors.asm'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O2 -g --include_path="D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/include" --include_path="E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0/SourceFile" --include_path="D:/Program Files (x86)/CCSv5/xdais_7_21_01_07/packages/ti/xdais" --include_path="D:/PROGRA~2/CCSTUD~1.3/C5500/csl/include" --include_path="E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0/Debug" --include_path="D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/bios/include" --include_path="D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/rtdx/include/c5500" --define="CHIP_5509A" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="SourceFile/vectors.pp"  "../SourceFile/vectors.asm"
+'Finished building: ../SourceFile/vectors.asm'
+' '
+'Building target: USBL.out'
+'Invoking: C5500 Linker'
+"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O2 -g --define="CHIP_5509A" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 -z -m"USBL.map" --stack_size=0x200 --heap_size=0x400 -i"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/lib" -i"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/include" -i"E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0" -i"E:/DATA/workspace/USBL_XINBIAO_100M_8_16k_XDCZ_V1.0/SourceFile" -i"D:/PROGRA~2/CCSTUD~1.3/C5500/csl/lib" -i"D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/rtdx/lib/c5500" -i"D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/bios/lib" --reread_libs --display_error_number --warn_sections --xml_link_info="USBL_XINBIAO_100M_8_16k_XDCZ_V1.0_linkInfo.xml" --rom_model --sys_stacksize=0x200 -o "USBL.out"  "../USBL.cmd" "./vectors.obj" "./twid2048.obj" "./maxvec.obj" "./h_LPF2.obj" "./h_LPF1.obj" "./fir2.obj" "./cifft_scale.obj" "./cifft_noscale.obj" "./cfft_scale.obj" "./cfft_noscale.obj" "./cbrev.obj" "./main.obj" "./cross_page_set0.obj" "./crc.obj" "./UpFIR_and_Pwm_Modulation.obj" "./Symbol_combination.obj" "./Symbol_Mapper.obj" "./Rsc_encoder.obj" "./Interleaver.obj" "./Creat_signal.obj" -l"csl5509ax.lib" -l"rts55x.lib" 
+warning #10254-D: section "Match_Data" (0xe00000) spans page boundary: not
+   allowed before CPU revision 3.0
+warning #10254-D: section "Up_Spread" (0xa00000) spans page boundary: not
+   allowed before CPU revision 3.0
+'Finished building target: USBL.out'
+' '
+
+**** Build Finished ****
