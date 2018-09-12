@@ -4,15 +4,23 @@
 
 SHELL = cmd.exe
 
-CG_TOOL_ROOT := D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1
+CG_TOOL_ROOT := E:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1
+
+GEN_OPTS__FLAG := 
+GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
-$(GEN_CMDS__FLAG) \
-"./vectors_i2c1.obj" \
+"./I2C.obj" \
+"./USBL.obj" \
 "./main.obj" \
+"./regs.obj" \
+"./vector.obj" \
+"./vectors_i2c1.obj" \
+"../I2C.cmd" \
 "../IIC.cmd" \
--l"D:/Program Files (x86)/CCSv5/ccsv5/ccs_base\c5500\cgtools\lib\rts55x.lib" \
--l"D:/Program Files (x86)/CCSv5/ccsv5/ccs_base\c5500\csl\lib\csl5509ax.lib" \
+$(GEN_CMDS__FLAG) \
+-l"E:/Program Files (x86)/CCSv6/ccsv6/ccs_base/c5500/cgtools/lib/rts55x.lib" \
+-l"E:/Program Files (x86)/CCSv6/ccsv6/ccs_base/c5500/csl/lib/csl5509ax.lib" \
 
 -include ../makefile.init
 
@@ -44,17 +52,20 @@ endif
 ifneq ($(strip $(CC_DEPS)),)
 -include $(CC_DEPS)
 endif
+ifneq ($(strip $(SV7A_DEPS)),)
+-include $(SV7A_DEPS)
+endif
 ifneq ($(strip $(S55_DEPS)),)
 -include $(S55_DEPS)
 endif
 ifneq ($(strip $(C67_DEPS)),)
 -include $(C67_DEPS)
 endif
-ifneq ($(strip $(C??_DEPS)),)
--include $(C??_DEPS)
-endif
 ifneq ($(strip $(CLA_DEPS)),)
 -include $(CLA_DEPS)
+endif
+ifneq ($(strip $(C??_DEPS)),)
+-include $(C??_DEPS)
 endif
 ifneq ($(strip $(CPP_DEPS)),)
 -include $(CPP_DEPS)
@@ -83,6 +94,9 @@ endif
 ifneq ($(strip $(C43_DEPS)),)
 -include $(C43_DEPS)
 endif
+ifneq ($(strip $(INO_DEPS)),)
+-include $(INO_DEPS)
+endif
 ifneq ($(strip $(S67_DEPS)),)
 -include $(S67_DEPS)
 endif
@@ -94,6 +108,9 @@ ifneq ($(strip $(S43_DEPS)),)
 endif
 ifneq ($(strip $(OPT_DEPS)),)
 -include $(OPT_DEPS)
+endif
+ifneq ($(strip $(PDE_DEPS)),)
+-include $(PDE_DEPS)
 endif
 ifneq ($(strip $(S64_DEPS)),)
 -include $(S64_DEPS)
@@ -109,6 +126,12 @@ endif
 -include ../makefile.defs
 
 # Add inputs and outputs from these tool invocations to the build variables 
+EXE_OUTPUTS += \
+I2C_Download.out \
+
+EXE_OUTPUTS__QUOTED += \
+"I2C_Download.out" \
+
 
 # All Target
 all: I2C_Download.out
@@ -117,16 +140,17 @@ all: I2C_Download.out
 I2C_Download.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: C5500 Linker'
-	"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -g --define=CHIP_5509A --display_error_number --diag_warning=225 --ptrdiff_size=32 -z -m"I2C_Download.map" --stack_size=0x800 --heap_size=0x800 -i"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/lib" -i"E:/DATA/workspace/I2C_Download" -i"D:/PROGRA~2/CCSTUD~1.3/C5500/csl/lib" -i"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/include" --reread_libs --display_error_number --warn_sections --xml_link_info="I2C_Download_linkInfo.xml" --rom_model --sys_stacksize=0x200 -o "I2C_Download.out" $(ORDERED_OBJS)
+	"E:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -g --define=CHIP_5509A --display_error_number --diag_warning=225 --ptrdiff_size=32 -z -m"I2C_Download.map" --stack_size=0x800 --heap_size=0x800 -i"E:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/lib" -i"F:/DATA/workspace/I2C_Download" -i"/lib" -i"E:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/include" --reread_libs --display_error_number --warn_sections --xml_link_info="I2C_Download_linkInfo.xml" --rom_model --sys_stacksize=0x200 -o "I2C_Download.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(C5500_EXECUTABLE_OUTPUTS__QUOTED) "I2C_Download.out"
-	-$(RM) "main.pp" 
-	-$(RM) "main.obj" "vectors_i2c1.obj" 
-	-$(RM) "vectors_i2c1.pp" 
+	-$(RM) $(EXE_OUTPUTS__QUOTED)
+	-$(RM) "main.d" 
+	-$(RM) "I2C.obj" "USBL.obj" "main.obj" "regs.obj" "vector.obj" "vectors_i2c1.obj" 
+	-$(RM) "vectors_i2c1.d" 
+	-$(RM) "I2C.d" "USBL.d" "regs.d" "vector.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

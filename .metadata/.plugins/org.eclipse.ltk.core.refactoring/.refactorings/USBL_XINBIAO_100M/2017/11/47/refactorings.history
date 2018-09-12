@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;TMS320C5509A.ccxml&apos; to &apos;targetConfigs&apos;" description="Move &apos;TMS320C5509A.ccxml&apos; to &apos;targetConfigs&apos;" destination="targetConfigs" element1="TMS320C5509A.ccxml" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1511630512933" updateReferences="true"/>
+</session>

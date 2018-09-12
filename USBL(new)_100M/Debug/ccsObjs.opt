@@ -1,1 +1,1 @@
-"../USBL.cmd" "./vectors.obj" "./twid4096.obj" "./maxvec.obj" "./h_LPF2.obj" "./h_LPF1.obj" "./fir2.obj" "./cifft_scale.obj" "./cifft_noscale.obj" "./cfft_scale.obj" "./cfft_noscale.obj" "./cbrev.obj" "./main.obj" -l"csl5509x.lib" -l"rts55x.lib" 
+"../USBL.cmd" "./cbrev.obj" "./cfft_noscale.obj" "./cfft_scale.obj" "./cifft_noscale.obj" "./cifft_scale.obj" "./fir2.obj" "./h_LPF1.obj" "./h_LPF2.obj" "./main.obj" "./maxvec.obj" "./twid2048.obj" "./twid4096.obj" "./vectors.obj" -lcsl5509x.lib -lrts55x.lib -llibc.a 

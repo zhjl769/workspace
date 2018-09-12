@@ -1,0 +1,7 @@
+# FIXED
+
+dr_tft2.obj: ../dr_tft2.c
+dr_tft2.obj: E:/Program\ Files\ (x86)/CCSv6/ccsv6/ccs_base/msp430/include/msp430.h
+
+../dr_tft2.c: 
+E:/Program\ Files\ (x86)/CCSv6/ccsv6/ccs_base/msp430/include/msp430.h: 

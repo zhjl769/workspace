@@ -1,0 +1,47 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="C:\CCStudio_v3.3\MyProjects\QB0.9test3_6\"
+ProjectType=Executable
+CPUFamily=TMS320C64XX
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="DspBiosBuilder"
+Tool="Linker"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+Source="..\..\C6000\cgtools\lib\rts6400.lib"
+Source="..\..\C6000\csl\lib\csl6416.lib"
+Source="..\..\c6400\dsplib\lib\dsp64x.lib"
+Source="bootload.asm"
+Source="c6xdspinit.c"
+Source="c6xinterrupts.c"
+Source="cf.c"
+Source="databuffer.c"
+Source="isr.c"
+Source="QB_main.c"
+Source="serial_order.c"
+Source="Sync.c"
+Source="vectors.asm"
+Source="QB.cmd"
+
+["Compiler" Settings: "Debug"]
+Options=-g -fr"$(Proj_dir)\Debug" -d"_DEBUG" -d"CHIP_6416" -d"_TMS320C6400" -mv6400
+
+["Compiler" Settings: "Release"]
+Options=-o3 -fr"$(Proj_dir)\Release" -mv6400
+
+["Linker" Settings: "Debug"]
+Options=-c -m".\Debug\QB_1.map" -o".\Debug\QB_1.out" -w -x
+
+["Linker" Settings: "Release"]
+Options=-c -m".\Release\QB_1.map" -o".\Release\QB_1.out" -w -x
+
+["QB.cmd" Settings: "Debug"]
+LinkOrder=1
+
+["QB.cmd" Settings: "Release"]
+LinkOrder=1
+

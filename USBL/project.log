@@ -1,0 +1,7 @@
+
+!CONFIGURATION: 'com.ti.ccstudio.buildDefinitions.C5500.Debug.1858897959' [Thu May 05 18:46:18 CST 2016]
+
+	!TOOL: 'com.ti.ccstudio.buildDefinitions.C5500_4.4.exe.compilerDebug.1045758675'
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.C5500_4.4.exe.compilerDebug.1045758675::-ml
+

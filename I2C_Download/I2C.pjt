@@ -1,0 +1,29 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectName="I2C"
+ProjectDir="E:\MyProjects\i2c_zhangzhe_download\"
+ProjectType=Executable
+CPUFamily=TMS320C55XX
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="Linker"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+Source="I2C.asm"
+Source="I2C.cmd"
+
+["Compiler" Settings: "Debug"]
+Options=-g -q -fr"E:\MyProjects\i2c_zhangzhe_download\Debug" -d"_DEBUG"
+
+["Compiler" Settings: "Release"]
+Options=-q -o2 -fr"E:\MyProjects\i2c_zhangzhe_download\Release"
+
+["Linker" Settings: "Debug"]
+Options=-q -c -m".\Debug\I2C.map" -o".\Debug\I2C.out" -w -x
+
+["Linker" Settings: "Release"]
+Options=-q -c -m".\Release\I2C.map" -o".\Release\I2C.out" -w -x
+

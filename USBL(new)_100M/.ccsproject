@@ -6,7 +6,7 @@
 	<deviceEndianness value="UNKNOWN"/>
 	<codegenToolVersion value="4.4.1"/>
 	<isElfFormat value="false"/>
-	<connection value="common/targetdb/connections/SEED-XDS510PLUS_Connection.xml"/>
+	<connection value="common/targetdb/connections/TIXDS100v3_Dot7_Connection.xml"/>
 	<rts value=""/>
 	<isTargetManual value="false"/>
 </projectOptions>

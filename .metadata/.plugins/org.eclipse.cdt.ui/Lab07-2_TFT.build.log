@@ -1,0 +1,37 @@
+
+**** Build of configuration Debug__TI for project Lab07-2_TFT ****
+
+"E:\\Program Files (x86)\\CCSv6\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../dr_tft.c'
+'Invoking: MSP430 Compiler'
+"E:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/ti-cgt-msp430_16.9.8.LTS/bin/cl430" --include_path="E:/Program Files (x86)/CCSv6/ccsv6/ccs_base/msp430/include" --include_path="E:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/ti-cgt-msp430_16.9.8.LTS/include" --advice:power=all -g --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="dr_tft.d"  "../dr_tft.c"
+
+>> Compilation failure
+subdir_rules.mk:7: recipe for target 'dr_tft.obj' failed
+"E:/Program Files (x86)/CCSv6/ccsv6/ccs_base/msp430/include/msp430.h", line 1403: fatal error #35: #error directive: "Failed to match a default include file"
+1 catastrophic error detected in the compilation of "../dr_tft.c".
+Compilation terminated.
+gmake: *** [dr_tft.obj] Error 1
+"E:/Program Files (x86)/CCSv6/ccsv6/ccs_base/msp430/include/msp430.h", line 1403: fatal error #35: #error directive: "Failed to match a default include file"
+1 catastrophic error detected in the compilation of "../dr_tft2.c".
+Compilation terminated.
+'Building file: ../dr_tft2.c'
+'Invoking: MSP430 Compiler'
+"E:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/ti-cgt-msp430_16.9.8.LTS/bin/cl430" --include_path="E:/Program Files (x86)/CCSv6/ccsv6/ccs_base/msp430/include" --include_path="E:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/ti-cgt-msp430_16.9.8.LTS/include" --advice:power=all -g --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="dr_tft2.d"  "../dr_tft2.c"
+
+>> Compilation failure
+subdir_rules.mk:14: recipe for target 'dr_tft2.obj' failed
+gmake: *** [dr_tft2.obj] Error 1
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"E:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/ti-cgt-msp430_16.9.8.LTS/bin/cl430" --include_path="E:/Program Files (x86)/CCSv6/ccsv6/ccs_base/msp430/include" --include_path="E:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/ti-cgt-msp430_16.9.8.LTS/include" --advice:power=all -g --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="main.d"  "../main.c"
+
+>> Compilation failure
+subdir_rules.mk:21: recipe for target 'main.obj' failed
+"E:/Program Files (x86)/CCSv6/ccsv6/ccs_base/msp430/include/msp430.h", line 1403: fatal error #35: #error directive: "Failed to match a default include file"
+1 catastrophic error detected in the compilation of "../main.c".
+Compilation terminated.
+gmake: *** [main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****

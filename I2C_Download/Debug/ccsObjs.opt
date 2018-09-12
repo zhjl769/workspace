@@ -1,1 +1,1 @@
-"./vectors_i2c1.obj" "./main.obj" "../IIC.cmd" -l"D:/Program Files (x86)/CCSv5/ccsv5/ccs_base\c5500\cgtools\lib\rts55x.lib" -l"D:/Program Files (x86)/CCSv5/ccsv5/ccs_base\c5500\csl\lib\csl5509ax.lib" 
+"./I2C.obj" "./USBL.obj" "./main.obj" "./regs.obj" "./vector.obj" "./vectors_i2c1.obj" "../I2C.cmd" "../IIC.cmd" -l"E:/Program Files (x86)/CCSv6/ccsv6/ccs_base/c5500/cgtools/lib/rts55x.lib" -l"E:/Program Files (x86)/CCSv6/ccsv6/ccs_base/c5500/csl/lib/csl5509ax.lib" 

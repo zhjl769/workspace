@@ -1,0 +1,22 @@
+-------------------------  test_lbl_omap.pjt - Debug  -------------------------
+[evmomapl138.c] "C:\Program Files\Texas Instruments\C6000 Code Generation Tools 6.1.9\bin\cl6x" -g -pdsw225 -fr"C:/CCStudio_v3.3/MyProjects/LBL_0819_omap/Debug" -i"C:/CCStudio_v3.3/bsl_zq_change_0718_noprintf/inc" -mv6740 -@"Debug.lkf" "evmomapl138.c"
+
+[evmomapl138_gpio.c] "C:\Program Files\Texas Instruments\C6000 Code Generation Tools 6.1.9\bin\cl6x" -g -pdsw225 -fr"C:/CCStudio_v3.3/MyProjects/LBL_0819_omap/Debug" -i"C:/CCStudio_v3.3/bsl_zq_change_0718_noprintf/inc" -mv6740 -@"Debug.lkf" "evmomapl138_gpio.c"
+
+[evmomapl138_timer.c] "C:\Program Files\Texas Instruments\C6000 Code Generation Tools 6.1.9\bin\cl6x" -g -pdsw225 -fr"C:/CCStudio_v3.3/MyProjects/LBL_0819_omap/Debug" -i"C:/CCStudio_v3.3/bsl_zq_change_0718_noprintf/inc" -mv6740 -@"Debug.lkf" "evmomapl138_timer.c"
+
+[function.c] "C:\Program Files\Texas Instruments\C6000 Code Generation Tools 6.1.9\bin\cl6x" -g -pdsw225 -fr"C:/CCStudio_v3.3/MyProjects/LBL_0819_omap/Debug" -i"C:/CCStudio_v3.3/bsl_zq_change_0718_noprintf/inc" -mv6740 -@"Debug.lkf" "function.c"
+
+[intvecs.asm] "C:\Program Files\Texas Instruments\C6000 Code Generation Tools 6.1.9\bin\cl6x" -g -pdsw225 -fr"C:/CCStudio_v3.3/MyProjects/LBL_0819_omap/Debug" -i"C:/CCStudio_v3.3/bsl_zq_change_0718_noprintf/inc" -mv6740 -@"Debug.lkf" "intvecs.asm"
+
+[main_sys.c] "C:\Program Files\Texas Instruments\C6000 Code Generation Tools 6.1.9\bin\cl6x" -g -pdsw225 -fr"C:/CCStudio_v3.3/MyProjects/LBL_0819_omap/Debug" -i"C:/CCStudio_v3.3/bsl_zq_change_0718_noprintf/inc" -mv6740 -@"Debug.lkf" "main_sys.c"
+
+[sys_interrupts.c] "C:\Program Files\Texas Instruments\C6000 Code Generation Tools 6.1.9\bin\cl6x" -g -pdsw225 -fr"C:/CCStudio_v3.3/MyProjects/LBL_0819_omap/Debug" -i"C:/CCStudio_v3.3/bsl_zq_change_0718_noprintf/inc" -mv6740 -@"Debug.lkf" "sys_interrupts.c"
+
+[user_evmomapl138.c] "C:\Program Files\Texas Instruments\C6000 Code Generation Tools 6.1.9\bin\cl6x" -g -pdsw225 -fr"C:/CCStudio_v3.3/MyProjects/LBL_0819_omap/Debug" -i"C:/CCStudio_v3.3/bsl_zq_change_0718_noprintf/inc" -mv6740 -@"Debug.lkf" "user_evmomapl138.c"
+
+[Linking...] "C:\Program Files\Texas Instruments\C6000 Code Generation Tools 6.1.9\bin\cl6x" -@"Debug.lkf"
+<Linking>
+
+Build Complete,
+  0 Errors, 0 Warnings, 0 Remarks.

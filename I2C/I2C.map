@@ -1,0 +1,111 @@
+******************************************************************************
+         TMS320C55x COFF Linker PC v3.3.2                      
+******************************************************************************
+>> Linked Tue Jun 09 16:27:06 2015
+
+OUTPUT FILE NAME:   <I2C.out>
+ENTRY POINT SYMBOL: ".text"  address: 00000200
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+                        (bytes)   (bytes)    (bytes)   (bytes)
+----------------------  --------  ---------  --------  --------  ----  --------
+  PROG                  00000200   00002c00  000004c9  00002737  RWIX
+  DATA1                 00002e00   00000200  00000000  00000200  RWIX
+  DATA2                 00003000   00000500  000003fa  00000106  RWIX
+  VECT                  00003500   00000100  00000100  00000000  RWIX
+  STACK                 00004700   00000600  00000320  000002e0  RWIX
+  DARAM                 00010000   00010000  00008026  00007fda  RWIX
+
+
+SECTION ALLOCATION MAP
+(Addresses surrounded by []'s are displayed for convenience only!)
+
+output                                                          attributes/
+section   page  orgn(bytes) orgn(words) len(bytes) len(words)   input sections
+--------  ----  ----------- ----------- ---------- ----------   --------------
+.bss         0   [ 00000000 ]  00000000          *   00000000   UNINITIALIZED
+
+.text        0     00000200  [ 00000100 ] 000004c9          *   
+                   00000200  [ 00000100 ] 000004c8          *   I2C.obj (.text)
+                   000006c8  [ 00000364 ] 00000001          *   --HOLE-- [fill = 20]
+
+.data        0   [ 00002e00 ]  00001700          *   00000000   UNINITIALIZED
+
+buffer       0   [ 00003000 ]  00001800          *   000001fd   UNINITIALIZED
+                 [ 00003000 ]  00001800          *   000001fd   I2C.obj (buffer)
+
+ints         0     00003500  [ 00001a80 ] 00000100          *   
+                   00003500  [ 00001a80 ] 00000100          *   I2C.obj (ints)
+
+stack        0   [ 00004700 ]  00002380          *   00000190   UNINITIALIZED
+                 [ 00004700 ]  00002380          *   00000190   I2C.obj (stack)
+
+boot         0   [ 00010000 ]  00008000          *   00004013   
+                 [ 00010000 ]  00008000          *   00004013   I2C.obj (boot)
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+abs. value/
+byte addr   word addr   name
+---------   ---------   ----
+00000001                $TI_capability$C5500$MemoryModel
+00000001                $TI_capability_requires_rev2
+            00000000    .bss
+            00001700    .data
+00000200                .text
+ffffffff                ___binit__
+            00000000    ___bss__
+ffffffff                ___c_args__
+ffffffff                ___cinit__
+            00001700    ___data__
+            00001700    ___edata__
+            00000000    ___end__
+000006c9                ___etext__
+ffffffff                ___pinit__
+00000200                ___text__
+   *** UNDEFINED ***    _c_int00
+ffffffff                binit
+            00008000    boot
+ffffffff                cinit
+            00001700    edata
+            00000000    end
+000006c9                etext
+ffffffff                pinit
+00000200                start
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+abs. value/
+byte addr   word addr   name
+---------   ---------   ----
+            00000000    ___bss__
+            00000000    ___end__
+            00000000    end
+            00000000    .bss
+00000001                $TI_capability$C5500$MemoryModel
+00000001                $TI_capability_requires_rev2
+00000200                ___text__
+00000200                .text
+00000200                start
+000006c9                ___etext__
+000006c9                etext
+            00001700    edata
+            00001700    .data
+            00001700    ___data__
+            00001700    ___edata__
+            00008000    boot
+ffffffff                cinit
+ffffffff                pinit
+ffffffff                ___cinit__
+ffffffff                ___c_args__
+ffffffff                ___binit__
+ffffffff                binit
+   *** UNDEFINED ***    _c_int00
+ffffffff                ___pinit__
+
+[24 symbols]

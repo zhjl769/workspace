@@ -1,0 +1,1981 @@
+/*获取噪声量级
+*/
+
+void get_noise()
+{
+	long temp;
+	short i;
+ 	IFR1 = 0x0ffff;
+  	IER1 |= 0x0010;
+
+    DMA_start(myhDma);
+	while(DMAdone == FALSE);
+	DMAdone = FALSE;
+	DMA_stop(myhDma);
+
+	IFR1 = 0x0ffff;
+	IER1 &= 0x0ffef;
+	temp = 0;
+    for(i = 100;i<100+512;i++)
+	{
+		temp = temp + fabs(Rev1[i]);
+	}
+	noise_10ms = (short)(temp>>9);
+}
+
+/*获取压力信息函数
+  函数功能：利用DSP内部AD(10bit),采样率为100kHz,采集64点数据,取均值
+            拟合成深度信息
+*/
+void pressure_init()
+{
+	volatile short temp_js,buff,f_send_uart,j_uart;
+	volatile Uint32 ii;
+	FLAG_yl_init = 0;
+	j_uart = 0;
+	temp_js = 4;
+	f_send_uart = 0;
+	//发送初始化压力传感器数据
+	while(j_uart < temp_js)
+	{
+		buff = UART_LSR485;
+		f_send_uart = buff & (0x0060);
+		if(f_send_uart!=0)
+		{    
+			UART_THR485 = init_rs485[j_uart];
+			for(ii=100;ii>0;ii--);
+			j_uart++;
+		}
+	}// end while
+	IER0 |= 0x0008;
+	IFR0 = 0x0ffff;//使能int0中断
+//	timer1_cnt = 0;
+// 	IFR1 = 0x0ffff;
+// 	IER1 |= 0x0040;//使能定时器1中断
+//	TIMER_start(mhTimer1);//打开定时器1定时
+	while(FLAG_yl_init == 0)
+	{	
+		ii = 0;
+		while(ii < 250000)
+		{
+			ii++;
+			if(FLAG_yl_init == 1)
+			{
+				break;
+			}
+		}
+		if(ii == 250000)
+		{
+			memset(RS485_DATA,0,sizeof(short)*12);
+			break;
+		}
+		
+//		if(timer1_cnt == 100000)
+//		{
+//			break;
+//		}
+	} 
+	//表示压力传感器初始化成功
+	IER0 &= 0x0fff7;
+	IFR0 = 0x0ffff;//关闭int2中断 
+//	TIMER_stop(mhTimer1);//关闭定时器1
+//	IFR1 = 0x0ffff;
+//	IER1 &= 0x0ffbf;//关闭定时器1中断
+}
+void get_pressure()
+{
+	
+	volatile short temp_js,buff,f_send_uart,j_uart;
+	volatile Uint32 ii;
+
+	FLAG_yl = 0;
+	j_uart = 0;
+	temp_js = 5;
+	f_send_uart = 0;
+//	timer1_cnt = 0;
+// 	IFR1 = 0x0ffff;
+// 	IER1 |= 0x0040;//使能定时器1中断
+//	TIMER_start(mhTimer1);//打开定时器1定时 
+	//发送初始化压力传感器数据
+	while(j_uart < temp_js)
+	{
+		buff = UART_LSR485;
+		f_send_uart = buff & (0x0060);
+		if(f_send_uart!=0)
+		{    
+			UART_THR485 = ask_rs485[j_uart];
+			for(ii=100;ii>0;ii--);
+			j_uart++;
+		}
+	}// end while
+	IER0 |= 0x0008;
+	IFR0 = 0x0ffff;//使能int2中断
+
+	while(FLAG_yl == 0)
+	{
+		ii = 0;
+		while(ii < 250000)
+		{
+			ii++;
+			if(FLAG_yl == 1)
+			{
+				break;
+			}
+		}
+		if(ii == 250000)
+		{
+			memset(RS485_DATA,0,sizeof(short)*12);
+			break;
+		}
+//		if(timer1_cnt == 100000)
+//		{
+//			temp_yl_data = 0;
+//			IER0 &= 0x0fff7;
+//			IFR0 = 0x0ffff;//关闭int2中断
+//			break;
+//		} 
+	} 
+	timer1_cnt = ii;
+	temp_yl_data = (((Uint32)RS485_DATA[2])<<24) + (((Uint32)RS485_DATA[3])<<16) + (((Uint32)RS485_DATA[4])<<8) + ((Uint32)RS485_DATA[5]);
+	if(temp_yl_data > 268435455)
+	{
+		temp_yl_data = 0;
+	}
+	//temp_yl_data的值单位为：Pa；且1 Pa=10e-5 bar=（10e-5）*10 m=10e-4 m
+	//单位是深度分米，即延迟（long）FLAG_yl_data个100us时间,后续计算中：0.1m代表延迟0.1ms
+	//此处也可以变换为：FLAG_yl_data = (long)temp_yl_data/10;代表延迟的us值。
+	//表示压力传感器获取信息成功
+    if(temp_yl_data > 0)
+	{
+		depth = (float)(temp_yl_data-0)/15000;
+	}
+	else
+	{
+		depth = 0.0;
+	}
+	//temp_yl_data单位为Pa，1Pa对应10e-4m，压力调制时间为1.5m对应0.2ms
+	//depth为转换的时间延迟，单位为us
+
+//	TIMER_stop(mhTimer1);//关闭定时器1
+//	IFR1 = 0x0ffff;
+//	IER1 &= 0x0ffbf;//关闭定时器1中断 
+}
+
+
+/*获取电压信息函数
+  函数功能：利用DSP内部AD(10bit),采样率为100kHz,采集64点数据,取均值
+*/
+
+void get_voltage()
+{
+	long sum;
+	short i = 0;
+	for ( i = 0; i < 64; i++)
+	{
+		ADCCTL = 0x8000;	// 启动AD转换，通道0
+		do
+		{
+		    temp_ADC=ADCDATA;
+		}while(temp_ADC & 0x8000);//查询ADC忙标志位
+		ADC_in[i] = temp_ADC & 0x0fff;
+	}
+	sum = 0;
+	for(i = 0; i < 64; i++)
+	{
+		sum = sum + ADC_in[i];
+	}
+	voltage_AD = (short)(sum>>6);//求电压均值
+}
+
+
+void get_parameter()//获取参数信息
+{
+	NOISE_TH_NEW = PC_DATA[4]+256*PC_DATA[5];//重新计算绝对门限16bit
+	if(NOISE_TH_NEW < 1000)
+	{
+		NOISE_TH_NEW = 1000;
+	}
+	if(NOISE_TH_NEW > 20000)
+	{
+		NOISE_TH_NEW = 1000;
+	}
+
+	Time_Delay = (Uint32)(PC_DATA[8]+256*PC_DATA[9])*1000;
+	if(Time_Delay > 500000)
+	{
+		Time_Delay = 100000;
+	}
+	if(Time_Delay < 100000)
+	{
+		Time_Delay = 100000;
+	}
+	
+	if((PC_DATA[6]>0) && (PC_DATA[6]<31))
+	{
+		responder_period = PC_DATA[6]*10;
+	}
+	get_voltage();//获取电压信息
+	timer1_cnt = 0;
+ 	IFR1 = 0x0ffff;
+ 	IER1 |= 0x0040;//使能定时器1中断
+	TIMER_start(mhTimer1);//打开定时器1定时
+  //  get_temperature();//读取温度
+	IODATA = 0x0000;
+	TIMER_stop(mhTimer1);//关闭定时器1
+	IFR1 = 0x0ffff;
+	IER1 &= 0x0ffbf;//关闭定时器1中断
+    get_pressure();//获取压力信息
+    get_noise();//获取当前噪声
+}
+
+
+/*串口接收数据初始化
+  函数功能：串口初始化配置，波特率为38400
+*/
+void receive_752_init()
+{
+   UART_IER232 = 0x00;//清中断
+   asm(" nop ");
+   UART_LCR232 = 0x80;//DLAB=1,下步进行波特率设置
+   asm(" nop ");
+   UART_DLL232 = 0x18;//波特率设置0x60->9600
+   asm(" nop ");    //波特率设置0x18->38400
+   UART_DLH232 = 0x00;
+   asm(" nop ");
+   UART_LCR232 = 0x0bf;//设置其他寄存器前必须将LCR设置为0x0bf（参见芯片文档）
+   asm(" nop ");
+   UART_EFR232 = 0x10;//使能IER：bit4~7;FCR:bit4~5;MCR:bit5~7
+   asm(" nop ");
+   UART_LCR232 = 0x00;//还原LCR
+   asm(" nop ");
+   UART_FCR232 = 0x0ff;//初始化设置FIFO，使能，清零
+   asm(" nop ");
+   UART_MCR232 = 0x48;//
+   asm(" nop ");
+   UART_TCR232 = 0x03;//RCVFIFO设置为28字节停止发送
+   asm(" nop ");
+   UART_TLR232 = 0x03f;//RCVFIFO中断触发级别0x03*4=12，12个字节触发一次中断
+   asm(" nop ");
+   UART_LCR232 = 0x03;//设置数据格式：无奇偶校验，1比特停止位，8比特数据位
+   asm(" nop ");
+   UART_IER232 = 0x01;//使能FIFO接收中断
+   asm(" nop ");
+
+//通道2初始化用于压力传感器传输通信，映射CE1空间
+   UART_IER485 = 0x00;//清中断
+   asm(" nop ");
+   UART_LCR485 = 0x80;//DLAB=1,下步进行波特率设置
+   asm(" nop ");
+   UART_DLL485 = 0x60;//波特率设置0x18->38400
+   asm(" nop ");    //0x60->9600
+   UART_DLH485 = 0x00;//0x30->19200
+   asm(" nop ");
+   UART_LCR485 = 0x0bf;//设置其他寄存器前必须将LCR设置为0x0bf（参见芯片文档）
+   asm(" nop ");
+   UART_EFR485 = 0x10;//使能IER：bit4~7;FCR:bit4~5;MCR:bit5~7
+   asm(" nop ");
+   UART_LCR485 = 0x00;//还原LCR
+   asm(" nop ");
+   UART_FCR485 = 0x0ff;//初始化设置FIFO，使能，清零
+   asm(" nop ");
+   UART_MCR485 = 0x48;//
+   asm(" nop ");
+   UART_TCR485 = 0x06;//RCVFIFO中断级别触发停止发送
+   asm(" nop ");
+   UART_TLR485 = 0x03f;//RCVFIFO中断触发级别0x06*4=24（可能需要修改下）
+   asm(" nop ");
+   UART_LCR485 = 0x03;//设置数据格式：无奇偶校验，1比特停止位，8比特数据位
+   asm(" nop ");
+   UART_IER485 = 0x01;//使能FIFO接收中断
+   asm(" nop ");
+}
+
+/*系统初始化配置
+  函数功能：初始化时钟为200MHz
+			串口配置在CE0、CE1空间
+			SDRAM配置在CE2、CE3空间
+			中断向量表映射在0x000e;
+			初始化GPIO为输出，输出为低
+*/
+void System_initial()
+{
+
+	CLKMD = 0x0000;
+	while(CLKMD & 0x0001){}
+	CLKMD = 0x2912;//clk = 8M; mult=50;div=1;50/2*8M=200M.CLKMD = 0x2c92 ;改：144M CLKMD = 0x2912 bywyh
+
+
+	EBSR=0x0211;//设置为全部EMIF模式，无保持信号应答
+	EMI_RST=0x0000;
+    //CE2和CE3为SDRAM
+///*	
+	EGCR = EGCR & 0x0ffdf;//SDRAM初始化
+    EGCR = 0x020f;//CLKMEM=CPU时钟的一半；不响应外部总线征用请求
+	CE2_1 = 0x3000;//16bit宽度SDRAM;
+	CE3_1 = 0x3000;//16bit宽度SDRAM;       
+	SDC1 = 0x5958;//TRC=11,tRC=120ns;SDSIZE=00,4M*16bit;RFEN=1,EMIF对SDRAM进行刷新;TRCD=5,tRCD=60ns;TRP=8,tRP=90ns;
+//	SDC1 = 0x5858;//TRC=11,tRC=120ns;SDSIZE=00,4M*16bit;RFEN=1,EMIF对SDRAM进行刷新;TRCD=5,tRCD=60ns;TRP=8,tRP=90ns;
+	SDC2 = 0x028f;//SDACC=0,EMIF总线宽度为16bit;TMRD=2,tMRD=30ns;TRAS=8,tRAS=90ns;TACTV2ACTV=15,tRRD=160ns
+    SDPER = 0x061a;//PERIOD=15620ns
+    EGCR = EGCR|0x0020;//CLKMEM引脚输出时钟使能
+    INIT = 0x0000;//初始化SDRAM
+	*/
+//CE0和CE1初始化为异步串口 yuanshi
+/*
+	CE0_1=0x103f;//16bit宽度异步存储器;读建立时间5ns;读选通时间75ns;读保持时间15ns
+	CE0_2=0x00ff;//读延长保持时间5ns;写延长保持时间5ns;写建立时间5ns;写选通时间315ns;写保持时间15ns
+	CE0_3=0x00ff;//超时时间为256个CPU时钟
+
+	CE1_1=0x103f;//16bit宽度异步存储器;读建立时间5ns;读选通时间75ns;读保持时间15ns
+	CE1_2=0x00ff;//读延长保持时间5ns;写延长保持时间5ns;写建立时间5ns;写选通时间315ns;写保持时间15ns
+	CE1_3=0x00ff;//超时时间为256个CPU时钟
+*///bywyh EMIF pdf clk=144MHz
+	CE0_1=0x112F;//16bit宽度异步存储器;读建立时间5ns;读选通时间75ns;读保持时间15ns
+	CE0_2=0x00BB;//读延长保持时间5ns;写延长保持时间5ns;写建立时间5ns;写选通时间315ns;写保持时间15ns
+	CE0_3=0x00ff;//超时时间为256个CPU时钟
+
+	CE1_1=0x112F;//16bit宽度异步存储器;读建立时间5ns;读选通时间75ns;读保持时间15ns
+	CE1_2=0x00BB;//读延长保持时间5ns;写延长保持时间5ns;写建立时间5ns;写选通时间315ns;写保持时间15ns
+	CE1_3=0x00ff;//超时时间为256个CPU时钟
+
+	
+	IVPH=0x000e;//中断向量表映射地址
+	IVPD=0x000e;
+
+	receive_752_init();//串口接收数据初始化
+}
+
+/******************************************************************
+函数：void SD_WriteData(unsigned int SectorNumber,Uint16 *SendData)
+功能：向指定的扇区中写入512字节的数据
+输入参数：扇区号（0~根据卡的容量计算），写入数据的首地址
+返回：无
+*******************************************************************/
+void SD_WriteData(Uint32 SectorNumber,Uint16 *SendData)
+{
+	  volatile Uint16 i;
+	  //asm(" BCLR XF ");//测试写入时间,第一个引号后必须有至少一个空格
+	 
+	  MMC_write(mmc1,512*SectorNumber,SendData,512);
+	 // busy_flag_0=MMCST0_1;
+	  //长延时，等待SD卡自编程结束(根据系统时钟频率和MMC控制器与SD卡通信时钟频率来决定延时）
+	  //下面的延时对于Fsd=666.7KHz ，Fsystem=192MHz的正常调试结果。（经验公式：当Fsd=500KHz ，Fsystem=24MHz时，以下延时至少9个）
+	  //经笔者调试情况看，此处延时很重要  272
+	  for(i=0;i<272;i++)
+	  {
+	      for (count = 0; count <= 25000; count++)
+	      asm("	NOP ");
+	  } 
+
+  //asm(" BSET XF");	
+}
+
+/******************************************************************
+函数：SD_ReadData(unsigned int SectorNumber,Uint16 *ReceiveData)
+功能：向指定的扇区中读出512字节的数据
+输入参数：扇区号（0~根据卡的容量计算），存储读出数据的首地址
+返回：无
+*******************************************************************/
+void SD_ReadData(Uint32 SectorNumber,Uint16 *ReceiveData)
+{
+  	MMC_read(mmc1,512*SectorNumber,ReceiveData,512);  
+}
+
+/*************************************************************************
+函数：Uint16 ReadSectorNumber_Usable(void)
+功能：从第2012159扇区中读出可用的扇区号(对应1G卡的倒数第二个扇区）
+输入参数：无
+返回：可用的扇区号
+***************************************************************************/
+Uint32 ReadSectorNumber_Usable(void)
+{
+  SD_ReadData(10000000,SecCounter);
+  
+  return((Uint32)((((Uint32)SecCounter[1])<<16)|(Uint32)SecCounter[0]));
+}
+/*************************************************************************
+函数：void SaveSectorCounter(void)
+功能：保存最后下一个空扇区号，保存在第2012159扇区中?以备下次接着该扇区写入数据
+输入参数：无
+返回：无
+***************************************************************************/
+void SaveSectorCounter(void)
+{
+  SecCounter[0]=(Uint16)SectorCounter;
+  SecCounter[1]=(Uint16)(SectorCounter>>16);
+  SD_WriteData(10000000,SecCounter);
+}
+/****************************************************
+函数：void MMC_Init(void)
+功能：初始化MMC控制器
+输入参数：无
+返回：无
+****************************************************/
+void MMC_Init(void)
+{
+  short SD_jishu;
+  //注：对于5509a的MMC控制器，只支持MMC卡和SD卡
+  mmc1 = MMC_open(MMC_DEV1);//使能MMC0控制器
+  MMC_setupNative(mmc1,&Init);//按照初始参数来初始化MMC0控制器
+
+  MMC_sendGoIdle(mmc1);//复位总线上的说有存储卡
+  for (count=0;count<4016;count++)
+  {
+  	asm(" NOP ");
+  }
+  SD_jishu = 0;
+  do
+  {
+	  cardtype = MMC_sendOpCond(mmc1,0x00100000);//工作电压门限：3.2~3.3V，不同的卡对该命令的应答值不同，MMC控制器根据应答值来判断该存储卡类型
+	  SD_jishu++;
+	  if(SD_jishu == 10)
+	  {
+		SD_status = 0;
+		break;
+	  }
+  }while(cardtype == 65535);
+  
+  if(cardtype == 0xffff)
+  {
+	SD_status = 0;
+    
+  }
+  else
+  {
+     //检测到为SD卡
+     cid = &cardid;
+     SD_sendAllCID(mmc1,cid); // get the CID structure for all cards.     
+     card = &cardalloc;
+     rca = SD_sendRca(mmc1,card);
+     SD_status = 1;
+  
+	                       
+	  retVal = MMC_selectCard(mmc1,card);//选择MMC0来和SD卡进行通信
+	  
+	  SD_setWidth(mmc1, 0x4);//MMC控制器和SD卡的通信数据宽度为4bits
+  }
+}
+
+
+
+/*McBSP初始化配置
+  函数功能：初始化配置AD采样率为40kHz
+*/
+//change by wyh，只需要改 ：SRGR1_0=0x0223， 
+
+void McBSP_init()
+{
+	SPCR2_0 = 0x0000;
+	SPCR1_0 = 0x0000;
+	XCR2_0  = 0x0000;
+	XCR1_0  = 0x0040;//XWDLEN1=16bit
+	SRGR2_0 = 0x3063;//CLKSM=1，McBSP internal input clock；    帧同步信号周期为20;采样率为40kHz;FPER=99;CLKin=144M,CLKG= 
+	SRGR1_0 = 0x0223;//帧同步脉冲4个CLKG宽度;时钟分频次数为100//决定FWID,CLKGDV,  fs=40k,clk=200MHz,0231h
+	PCR0    = 0x0b0d;//FSXM=1，帧同步由mcbsp产生;FSRM=0，接收同步由外部产生；CLKXM=CLKRM=1;FSXP=1，发射帧同步低有效；FSRP=1;CLKRP=CLKXP接收发射同源；
+	RCR2_0  = 0x0005;//RWDLEN2=000；RCOMPAND=01；无压缩LSB先接收。RFIG=0；Frame-sync detect.
+	RCR1_0  = 0x0040;//接收字长为16位
+}
+
+/*产生参考信号*/
+void Produceref()
+{
+	unsigned long lfm_head;
+	double t_lfm;
+	int i;
+
+
+	memset(Rev,0,sizeof(short)*NFFT);
+    //定位信号25ms
+    for(lfm_head = 1; lfm_head < 1001; lfm_head++)
+    {
+       t_lfm = (float)lfm_head/40000.0;//采样频率40kHz
+       Rev[lfm_head - 1] = (short)(-100*(cos(2*PI*9000*t_lfm + PI*5000*t_lfm*t_lfm/0.025)));//起始频率9kHz，截止频率14kHz,25ms
+ 
+    }
+
+	
+	for (i = 0; i < NFFT; i++)
+	{
+
+		X_ref[2*i] = Rev[i];//偶地址右移7bit
+		X_ref[2*i+1] = 0;
+	}
+	cfft_NOSCALE(X_ref,NFFT);  //是否考虑溢出问题
+	cbrev(X_ref,X_ref,NFFT); 
+}
+
+
+/*产生滤波器系数*/
+void Producefilter()
+{
+	int i;
+	for (i = 0; i < 2*NFFT; i ++)
+	{
+		h_BPF1[i] = 0;
+	}
+	for (i = 0; i < 257; i ++)
+	{
+
+		h_BPF1[2*i] = filter1[i]/1200;
+ 	}
+
+	cfft_NOSCALE(h_BPF1,NFFT);  //是否考虑溢出问题
+	cbrev(h_BPF1,h_BPF1,NFFT); 
+
+
+	for (i = 0; i < 2*NFFT; i ++)
+	{
+		h_BPF2[i] = 0;
+	}
+	for (i = 0; i < 257; i ++)
+	{
+
+		h_BPF2[2*i] = filter2[i]/1200;
+ 	}
+
+	cfft_NOSCALE(h_BPF2,NFFT);  //是否考虑溢出问题
+	cbrev(h_BPF2,h_BPF2,NFFT); 
+} 
+
+
+/*产生发射信号
+  函数功能：产生两个信号，询问信号和测阵信号
+			存放在CE2空间
+			首地址分别为0x400000和0x500000
+*/
+void Producelfm()
+{
+   volatile unsigned long lfm_head;
+   volatile double t_lfm;
+
+   for(lfm_head = 0; lfm_head < 25000; lfm_head++)
+   {
+      t_lfm = (float)lfm_head/1000000.0;//采样频率1MHz
+      templfm = (short)(20000*(cos(2*PI*9000*t_lfm + PI*5000*t_lfm*t_lfm/0.025)));//起始频率9kHz，截止频率14kHz,25ms
+	  if(templfm < 0)
+	  {
+	      Send_sig[lfm_head]=0x05;//GPIO2=1;GPIO1=0;GPIO0=1;
+      }
+      else
+      {
+          Send_sig[lfm_head]=0x03;//GPIO2=0;GPIO1=1;GPIO0=1;
+	  }
+   }
+}
+
+/*初始化内部AD
+  函数功能：初始化内部ADC时钟为4MHz
+			采样率为10kHz
+*/
+/*//change by wyh 
+  函数功能：初始化内部ADC时钟为2MHz
+			采样率为10kHz
+ADC Sample and Hold Period =
+(ADC Clock Period) *(2 *(CONVRATEDIV + 1 + SAMPTIMEDIV))
+*/
+void InitADC()
+{
+	ADCCLKCTL = 0x23; // 4MHz ADCLK   ADC Clock = (CPU Clock)/(CPUCLKDIV + 1)
+	ADCCLKDIV = 0x0ba00; //1kHz采样率
+}
+
+/*重叠保留数据
+  函数功能：重叠保留接收数据
+			将接收数据转化为有符号数
+*/
+void Revprepare()
+{
+	int i=0,j=0;
+
+	for (i = BUF_LEN_MAX; i < NFFT; i++)
+	{
+		Rev[j] = Rev[i];//将处理单元后面的数据搬移到前面
+		j++;
+	}
+	j = 0;
+	if (DMAnum%2 == 1)
+	{
+		for(i = Rev_resave;i < NFFT;i++)
+		{
+			Rev[i] = Rev1[j];//如果DMAnum%2==1，将Rev1数组中的数搬移到处理单元的后面，并将无符号数转化为有符号数
+			j++;
+		}
+	}
+	else
+	{
+		for(i = Rev_resave;i < NFFT;i++)
+		{
+			Rev[i] = Rev2[j];//如果DMAnum%2==0，将Rev2数组中的数搬移到处理单元的后面，并将无符号数转化为有符号数
+			j++;
+		}		
+	}
+}
+
+/*FFT数据预处理
+  函数功能：将数据存在FFT缓存单元中，虚部为0，实部右移7bit
+*/
+void FFTprepare(short *data, short *data_bu0, short data_N)
+{
+	int i;
+	for (i = 0; i < data_N; i++)
+	{
+
+		data_bu0[2*i] = data[i]>>6;//偶地址右移7bit
+		data_bu0[2*i+1] = 0;
+	}
+}
+
+
+void FFTprepare2(short *data, short *data_bu0, short N_FFT)
+{
+	int i;
+	for (i = 0; i < 2*N_FFT; i ++)
+	{
+		data_bu0[i] = 0;
+	}
+	for (i = 0; i < N_FFT; i ++)
+	{
+		data_bu0[2*i] = data[i];
+	}
+}
+
+/*FFT数据预处理
+  函数功能：将数据存在FFT缓存单元中，虚部为0，实部右移7bit
+*/
+void FFTprepare_FSK(short *data, short *data_bu0, short data_N)
+{
+	int i;
+	for (i = 0; i < data_N; i++)
+	{
+
+		data_bu0[2*i] = data[i]>>12;//偶地址右移7bit
+		data_bu0[2*i+1] = 0;
+	}
+}
+
+/*点乘函数
+  函数功能：复数点乘，输入两个复数数组A、B，输出C，数组长度为len
+*/
+void dot(short* A,short* B,short* C,short len)
+{
+	short i;
+	long temp1,temp2,temp3,temp4,temp5,temp6,temp7,temp8;
+	for(i = 0; i < len; i++)
+	{
+		temp1 = A[2*i];
+		temp2 = A[2*i + 1];
+		temp3 = B[2*i];
+		temp4 = B[2*i + 1];
+		
+		temp5 = (long)((long)temp1*temp3);//(long)((long)temp1*temp3>>k)
+		temp6 = (long)((long)temp2*temp4);
+		
+		temp7 = (long)((long)temp1*temp4);
+		temp8 = (long)((long)temp2*temp3);
+				                                    
+		C[2*i] = (short)((temp5 - temp6) >> 21);//(short)((temp5+temp6)>>2)
+		C[2*i + 1] = (short)((temp7 + temp8) >> 21);//(short)((temp7-temp8)>>2)
+	}
+}
+
+/*点乘函数
+  函数功能：复数点乘，输入两个复数数组A、B，输出C，数组长度为len
+*/
+void dot1(short* A,short* B,short* C,short len)
+{
+	short i;
+	long temp1,temp2,temp3,temp4,temp5,temp6,temp7,temp8;
+	for(i = 0; i < len; i++)
+	{
+		temp1 = A[2*i];
+		temp2 = A[2*i + 1];
+		temp3 = B[2*i];
+		temp4 = B[2*i + 1];
+		
+		temp5 = (long)((long)temp1*temp3);//(long)((long)temp1*temp3>>k)
+		temp6 = (long)((long)temp2*temp4);
+		
+		temp7 = (long)((long)temp1*temp4);
+		temp8 = (long)((long)temp2*temp3);
+				                                    
+		C[2*i] = (short)((temp5 - temp6) >> 12);//(short)((temp5+temp6)>>2)
+		C[2*i + 1] = (short)((temp7 + temp8) >> 12);//(short)((temp7-temp8)>>2)
+	}
+}
+
+
+void qujunzhi1(short *datain, short length)
+{
+	int i;
+	long sum = 0;
+	short mean;
+
+	for (i = 0; i < length; i ++)
+	{
+		sum = sum + datain[i];
+	}
+	mean = sum/length;
+	for (i = 0; i < length; i ++)
+	{
+		if(datain[i] > mean)
+			datain[i] = 10;
+		else
+			datain[i] = -10;
+
+
+	} 
+} 
+
+
+void qujunzhi2(short *datain, short length)
+{
+	int i;
+	long sum = 0;
+	short mean;
+
+	for (i = 0; i < length; i ++)
+	{
+		sum = sum + datain[i];
+	}
+	mean = sum/length;
+	for (i = 0; i < length; i ++)
+	{
+		if(datain[i] > mean)
+			datain[i] = -10;
+		else
+			datain[i] = 10;
+
+
+	} 
+}
+
+void qumo2(short *In, short *Out, short N)
+{
+	int i;
+	long result1;
+	long result2;
+
+
+	for (i = 0; i < N; i++)
+	{
+		result1 = (long)In[2*i]*In[2*i];
+		result2 = (long)In[2*i+1]*In[2*i+1];
+		Out[i] = (short)((result1>>8)+(result2>>8));
+	}
+
+}
+
+
+/*检测程序
+  函数功能：输入为相关峰包络，返回检测成功标志位和检测位置
+			检测成功标志位置1
+*/
+void detect(short *envelopein, short len,volatile int *flag,volatile short *endpos)
+{
+	short i,j,jishu=0;
+	volatile short pos = 0;
+	short Flag_sig = 0, flagg = 0;
+	short startpos = 0, pos_begin =0, width = 0;
+	short width_low = 0, width_high = 0;
+
+	short Max_val = 0, Max_threshold = 0, Max_pos = 0;
+	long sum = 0;
+	short sum_mean = 0;
+	float neicha_a;
+	float neicha_b;
+	//开始检测相关峰
+	for(i = 900; i < len; i++)//从100点开始搜索，100点为保护
+	{
+		if(envelopein[i] > NOISE_TH_NEW)//相关峰笥诰悦畔?
+		{
+			if(i > 2000)//珏值出现在后（560+80）点(80点为保护)，认为没有信号
+			{
+				Flag_sig = 0;//检测不到，Flag_sig置0
+				break;	 
+			}
+			else
+			{
+				startpos = i;//检测到了，Flag_sig置1,将位置赋给startpos
+				Flag_sig = 1;
+				break;
+			}
+		}//end if(envelopein[i]>NOISE_TH_NEW)
+	}//搜索起点//0.533ms//0.451ms//0.18ms//end for
+	if(Flag_sig)
+	{
+		Flag_sig = 0;//搜索到大于绝对门限，Flag_sig标志位清零
+        //找锁定区间的最大值
+		Max_val = 0;//最大值清零
+		for(i = startpos;i < 2000; i++)//从开始到最后80点搜索最大值
+		{			
+			if(flagg == 0)
+			{
+				if(envelopein[i] >= NOISE_TH_NEW)
+				{
+					flagg = 1;
+					pos_begin = i;//如果大于峰值门限，flagg置1
+					Max_val = 0;
+					for(j = i;j < i + 24; j++)
+					{
+						if(Max_val < envelopein[j])
+						{
+							Max_val = envelopein[j];
+						}
+					}
+					Max_threshold = (short)Max_val*0.5;
+					//if((envelopein[i] < Max_threshold) || (Max_threshold < NOISE_TH_NEW))
+					if((envelopein[i] < Max_threshold))
+					{
+						flagg = 0;//如果小于峰值门限，flagg置0
+					}//end if(envelopein[i]<Max_threshold)
+				}//end if(envelopein[i]>=NOISE_TH_NEW)
+			}
+			else
+			{
+				//if((envelopein[i] <= Max_threshold) || (Max_threshold < NOISE_TH_NEW))
+				if((envelopein[i] <= Max_threshold))
+				{
+					flagg = 0;
+					for(j = pos_begin;j >= startpos; j--)
+					{
+						if(envelopein[j] <= Max_threshold)
+						{
+							pos_begin = j;
+							break;
+						}
+					}//向前搜索，找相关峰起始位置
+				//	width = i - pos_begin;//相关峰宽度为当前i-起始位置
+                    
+				//	Max_pos = (short)(i + pos_begin)/2;//最大值为大于门限的前后均值
+					Max_pos = pos_begin;
+					for(j = pos_begin;j<i;j++)
+					{
+						if(envelopein[Max_pos] < envelopein[j])
+						{
+							Max_pos = j;
+						}
+					}//找到最大值位置
+					for(j = Max_pos;j > pos_begin;j--)
+					{
+						if(envelopein[j] < envelopein[Max_pos]*0.5)
+						{
+							width_low = j;
+							break;
+						}
+						else
+						{
+							width_low = pos_begin;
+						}
+					}
+					for(j = Max_pos;j < i;j++)
+					{
+						if(envelopein[j] < envelopein[Max_pos]*0.5)
+						{
+							width_high = j;
+							break;
+						}
+						else
+						{
+							width_high = i;
+						}
+					}
+					width = width_high - width_low;//计算脉冲宽度
+
+					sum = 0;
+					for(j=0;j<40;j++)
+					{
+						sum = sum + envelopein[Max_pos + j] + envelopein[Max_pos-j];//最大值前后100点求均值
+					}
+					sum_mean = sum/80*SNR;//3为待定参数//局部信噪比为大于均值的3
+					jishu = jishu + 1;
+					sum_mean_save = 0;
+					width_save = 0;
+					
+					if(jishu > 100)
+					{
+						break;
+					}
+					if(NOISE_TH_HD == 0)
+					{
+						SNR_HD_out = 100;
+					}
+					else
+					{
+						SNR_HD_out = (float)envelopein[Max_pos]/NOISE_TH_HD;
+					}
+					if((envelopein[Max_pos] > sum_mean) && (width > Maikuan_l) && (width < Maikuan_h) && (SNR_HD_out > 10))//相关峰满足局部信噪比和脉宽门
+					{
+						pos = 1;
+						Flag_answer = 1;//检测到信号1
+						sum_mean_save = sum_mean;
+						width_save = width;
+						for(i = Max_pos - 5;i < Max_pos + 5; i++)
+						{
+							if(envelopein[Max_pos] < Rev_envelope[i])
+							{
+								Max_pos = i;
+							}
+						}
+						
+						//内插函数
+						neicha_a=(float)((float)(envelopein[Max_pos-1])+(float)(envelopein[Max_pos+1])-2*(float)(envelopein[Max_pos]))/2;
+						if(neicha_a==0)
+							endpos_float=(float)Max_pos;
+						else{
+							neicha_b=(float)((float)(envelopein[Max_pos])-(float)(envelopein[Max_pos-1]))-(float)(neicha_a*(float)(Max_pos*2-1));
+							endpos_float=(-1)*neicha_b/2/neicha_a;
+						}
+						*endpos = Max_pos;
+						break;
+							
+
+					}//endif 局部信噪比和脉宽条件
+				}//endif向前搜索大于门限
+			}//endif 大于门限绝对值
+		}//endfor搜索相关峰
+	}//endif大于绝对门限
+	else
+	{
+		pos=0; 	
+	}//endif大于绝对门限
+
+	*flag = pos;//return pos	 
+}
+
+/*检测询问信号
+  函数功能：检测询问信号，如果检测到，返回Pos_flag1标志位和endpos1检测位置
+*/
+void asksignal()
+{	
+	int i,j;
+	volatile short k;
+    volatile long sum;
+	dot(X_ref,Rev_FFT,Rev_xcorr,NFFT);//0.348ms//与参考信号1点乘
+	cifft_NOSCALE(Rev_xcorr,NFFT);//0.862ms//反傅里叶变换
+	cbrev(Rev_xcorr,Rev_xcorr,NFFT);//0.064ms
+	memset(Rev_xcorr,0,20);
+	memset(Rev_xcorr+4076,0,20);
+	j = 0;
+	for(i = BUF_LEN_MAX; i < NFFT; i++)
+	{
+		Rev_xcorrout[j] = Rev_xcorrout[i];
+		j++;		
+	}//将相关结果重叠保留
+//	j=0;//0.100ms//0.040ms
+	for(i = Rev_resave; i < NFFT; i++)
+	{		 
+		Rev_xcorrout[i] = abs(Rev_xcorr[2*i]);
+	//	j++;		
+	}//0.036ms//点乘实部的结果存在相关结果后面
+
+	memset(h_LPF1_db,0,sizeof(short)*(N_LPF1 + 2));//0.0005ms//0.0005ms//0.0005ms
+	oflag_LPF1 = fir2(Rev_xcorrout,h_LPF1,Rev_envelope,h_LPF1_db,NFFT,N_LPF1);//1.37ms
+	//以上程序执行时间为固定奔?.68ms
+    sum = 0;
+	for(k = 0;k < 512; k++)
+	{
+		sum = sum + Rev_envelope[k];
+	}
+    sum = sum>>9;
+	NOISE_TH_HD = NOISE_TH_HD*0.99 + (float)(sum*0.01);
+	detect(Rev_envelope,NFFT,&Pos_flag,&endpos);//低通滤波取相关结果包络
+	//检测函数最大搜索100个相关峰，检测时间范围为0.12ms~2ms
+/*
+	endpos_xcorr = endpos - 32;
+	
+	for(i = endpos - 35; i < endpos - 29; i++)
+	{	
+		if(Rev_xcorr[2*endpos_xcorr] < Rev_xcorr[2*i])
+		{
+			endpos_xcorr = i;
+		}	 
+		
+	//	j++;		
+	}
+	
+*/
+}
+
+
+/*发射信号1
+  函数功能：发射信号1，采用DMA0通道发射，定时器1为同步事件
+*/
+void Senddata0()
+{
+
+ 	IFR1 = 0x0ffff;
+ 	IER1 |= 0x0004;//鬌MA1用于发射询市藕?
+	DMA_FSETH(hDmaSend0,DMACCR,ENDPROG,1);//将ENDPROG置1
+	DMA_start(hDmaSend0);//开始发送数据
+	TIMER_start(mhTimer1);			
+	do{
+	;
+	}while(FLAGSENDOVER == 0);//发送完毕
+
+	FLAGSENDOVER = 0;
+	IFR1 = 0x0ffff;
+ 	IER1 &= 0x0fffb;//开启DMA1用于发射询问信号
+
+}
+
+
+/*检测准备函数
+  函数功能：检测准备，包括重叠保留，FFT变换
+*/
+void detect_prepare()
+{
+	Revprepare();   //0.075ms//重叠保留数据
+	memset(Rev_FFT,0,sizeof(short)*2*NFFT);
+	FFTprepare(Rev,Rev_FFT,NFFT);//0.103ms
+	cfft_NOSCALE(Rev_FFT,NFFT);  //0.862ms//FFT变换
+	cbrev(Rev_FFT,Rev_FFT,NFFT);  //0.038ms 
+    memset(Rev_FFT,0,20);
+	memset(Rev_FFT+4076,0,20); 
+}
+
+/*FSK检测准备函数
+  函数功能：检测准备，包括重叠保留，FFT变换
+*/
+void detect_prepare_FSK()
+{
+
+	memset(Rev_FFT,0,sizeof(short)*2*NFFT);
+	FFTprepare_FSK(Rev,Rev_FFT,NFFT);//0.103ms
+	cfft_NOSCALE(Rev_FFT,NFFT);  //0.862ms//FFT变换
+	cbrev(Rev_FFT,Rev_FFT,NFFT);  //0.038ms 
+    memset(Rev_FFT,0,20);
+	memset(Rev_FFT+4076,0,20); 
+}
+
+/*执行动作1
+  函数功埽杭觳獾叫藕�，执行动作1
+*/
+void take_action1()
+{
+	short i;
+	long temp;
+	//计算转发延迟
+	resend_delay = Time_Delay - 51720 - (Uint32)((NFFT - endpos_float)*25);	//单位都是1us
+//	resend_delay = Time_Delay - 41420 - (Uint32)((Uint32)(4096 - endpos)*10);	//单位都是1us
+	if(resend_delay > 0)
+	{
+		// 延迟	
+		timer1_cnt = 0;
+	 	IFR1 = 0x0ffff;
+	 	IER1 |= 0x0040;//开启DMA1射
+		TIMER_start(mhTimer1);//打开定时器1定时
+		while(1)
+		{
+			if(timer1_cnt == resend_delay)
+			{
+				TIMER_stop(mhTimer1);//关闭定时器1
+				IFR1 = 0x0ffff;
+	 			IER1 &= 0x0ffbf;//开启DMA1用于发射询问信号
+				break;
+			}
+		}
+	}
+
+	Senddata0();//发射信号1
+//	asm(" bset XF ");
+	get_pressure();
+	if(FLAG_yl == 0)
+	{
+		resend_delay = 200000 - 26140 - (Uint32)(0.134*timer1_cnt) + (Uint32)(depth*200);//单位1us
+	}
+	else if(FLAG_yl == 1)
+	{
+		resend_delay = 200000 - 26220 - (Uint32)(0.134*timer1_cnt) + (Uint32)(depth*200);//单位1us
+	}
+
+	if(resend_delay > 0)
+	{
+		// 延迟	
+		timer1_cnt = 0;
+	 	IFR1 = 0x0ffff;
+	 	IER1 |= 0x0040;//开启DMA1用于发射询问信号
+		TIMER_start(mhTimer1);//打开定时器1定时
+		while(1)
+		{
+			if(timer1_cnt == resend_delay)
+			{
+				TIMER_stop(mhTimer1);//关闭定时器1
+				IFR1 = 0x0ffff;
+	 			IER1 &= 0x0ffbf;//开启DMA1用于发射询问信号
+				break;
+			}
+		}
+	}
+	Senddata0();//发射信号1
+	resend_delay = 50000;
+	if(resend_delay > 0)
+	{
+		// 延迟	
+		timer1_cnt = 0;
+	 	IFR1 = 0x0ffff;
+	 	IER1 |= 0x0040;//开启DMA1用于发射询问信号
+		TIMER_start(mhTimer1);//打开定时器1定时
+		while(1)
+		{
+			if(timer1_cnt == resend_delay)
+			{
+				TIMER_stop(mhTimer1);//关闭定时器1
+				IFR1 = 0x0ffff;
+	 			IER1 &= 0x0ffbf;//开启DMA1用于发射询问信号
+				break;
+			}
+		}
+	}
+	//打开定时器，计算测量温度和电池电压时间
+	timer1_cnt = 0;
+ 	IFR1 = 0x0ffff;
+ 	IER1 |= 0x0040;//开启DMA1用于发射询问信号
+	TIMER_start(mhTimer1);//打开定时器1定时
+//	get_temperature();
+	IODATA = 0x0000;
+	get_voltage();
+	temp = 0;
+    for(i = 100;i<100+512;i++)
+	{
+		temp = temp + fabs(Rev_save[i]);
+	}
+	noise_10ms = (short)(temp>>9);
+	uart_config();
+	SD_write[28] = (Rev_envelope[endpos]) & 0x0ff;//相关峰最大值低8位
+	SD_write[29] = (Rev_envelope[endpos]>>8) & 0x0ff;//相关峰最大值高8位
+	SD_write[30] = (sum_mean_save) & 0x0ff;//相关峰均值?位
+	SD_write[31] = (sum_mean_save>>8) & 0x0ff;//相关峰均值高8位
+	SD_write[32] = (width_save) & 0x0ff;//相关峰宽度低8位
+	SD_write[33] = (width_save>>8) & 0x0ff;//相关峰宽度高8位
+	SD_write[34] = 0;//无指令
+
+	TIMER_stop(mhTimer1);//关闭定时器1
+	IFR1 = 0x0ffff;
+	IER1 &= 0x0ffbf;//开启DMA1用于发射询问信号
+	if(SD_status == 1)
+	{
+		SD_WriteData(SectorCounter,SD_write);//将获取信息写入SD卡扇区内
+		SectorCounter = SectorCounter + 1;
+	}
+	resend_delay = 2291000 - timer1_cnt - 50000;//参数需要修改，与压力传感器延迟时间有关
+	if(resend_delay > 0)
+	{
+		// 延迟	
+		timer1_cnt = 0;
+	 	IFR1 = 0x0ffff;
+	 	IER1 |= 0x0040;//开启DMA1用于发射询问信号
+		TIMER_start(mhTimer1);//打开定时器1定时
+		while(1)
+		{
+			if(timer1_cnt == resend_delay)
+			{
+				TIMER_stop(mhTimer1);//关闭定时器1
+				IFR1 = 0x0ffff;
+	 			IER1 &= 0x0ffbf;//开启DMA1用于发射询问信号
+				break;
+			}
+		}
+	}
+//	asm(" bclr XF ");
+
+}
+
+/*执行动作2
+  函数功能：检测到信号2，执行动作2
+*/
+void take_action2()
+{
+	short i;
+	long temp;
+	short temp_read;
+	Senddata0();//发射信号1
+
+    IODOR = 0x0bf;
+	IODATA |= 0x0080;//GPIO7 = 1，驱动释放器释放
+	resend_delay = 20000000;//定时器计时，驱动时间>10s认为释放失败
+
+	timer1_cnt = 0;
+ 	IFR1 = 0x0ffff;
+ 	IER1 |= 0x0040;
+	TIMER_start(mhTimer1);//打开定时器1定时
+	while(1)
+	{
+		temp_read = IODATA & 0x0040;
+		if(temp_read == 0x0040)
+		{
+			release_flag = 1;
+			break;
+		}
+		if(timer1_cnt == resend_delay)
+		{
+			release_flag = 0;
+			break;
+
+		}
+	}
+	TIMER_stop(mhTimer1);//关闭ㄊ摈1
+	IFR1 = 0x0ffff;
+	IER1 &= 0x0ffbf;
+
+
+	IODOR = 0x0bf;
+	IODATA = 0x0000;//GPIO7 = 1，驱动释放器释放
+
+	Senddata0();//发射信号1
+/*
+	if(release_flag == 1)
+	{
+		resend_delay = 175000;	//单位都是1us
+	}
+	else
+	{
+		resend_delay = 275000;	//单位都是1us
+	}
+	if(resend_delay > 0)
+	{
+		// 延迟	
+		timer1_cnt = 0;
+	 	IFR1 = 0x0ffff;
+	 	IER1 |= 0x0040;//开启DMA1用于发射询问信号
+		TIMER_start(mhTimer1);//打开定时器1定时
+		while(1)
+		{
+			if(timer1_cnt == resend_delay)
+			{
+				TIMER_stop(mhTimer1);//关闭定时器1
+				IFR1 = 0x0ffff;
+	 			IER1 &= 0x0ffbf;//开启DMA1用于发射询问信号
+				break;
+			}
+		}
+	}
+	Senddata0();//发射信号1
+*/
+	resend_delay = 50000;
+	if(resend_delay > 0)
+	{
+		// 延迟	
+		timer1_cnt = 0;
+	 	IFR1 = 0x0ffff;
+	 	IER1 |= 0x0040;//开启DMA1用于发射询问信号
+		TIMER_start(mhTimer1);//打开定时器1定时
+		while(1)
+		{
+			if(timer1_cnt == resend_delay)
+			{
+				TIMER_stop(mhTimer1);//关闭定时器1
+				IFR1 = 0x0ffff;
+	 			IER1 &= 0x0ffbf;//开启DMA1用于发射询问信号
+				break;
+			}
+		}
+	}
+	get_pressure();//压力获取函数
+	//打开定时器，计算测量温度和电池电压时间
+	timer1_cnt = 0;
+ 	IFR1 = 0x0ffff;
+ 	IER1 |= 0x0040;//开启DMA1用于发射询问信号
+	TIMER_start(mhTimer1);//打开定时器1定时
+//	get_temperature();
+	
+	IODATA = 0x0000;
+	get_voltage();
+	temp = 0;
+    for(i = 100;i<100+512;i++)
+	{
+		temp = temp + fabs(Rev_save[i]);
+	}
+	noise_10ms = (short)(temp>>9);
+
+	uart_config();
+	SD_write[28] = (Rev_envelope[endpos]) & 0x0ff;//相关峰最大值低8位
+	SD_write[29] = (Rev_envelope[endpos]>>8) & 0x0ff;//相关峰最大值高8位
+	SD_write[30] = (sum_mean_save) & 0x0ff;//相关峰均值低8位
+	SD_write[31] = (sum_mean_save>>8) & 0x0ff;//相关峰均值高8位
+	SD_write[32] = (width_save) & 0x0ff;//相关峰宽度低8位
+	SD_write[33] = (width_save>>8) & 0x0ff;//相关峰宽度高8位
+	SD_write[34] = 1;//释放指令
+	SD_write[35] = 1;//释放指令
+	TIMER_stop(mhTimer1);//关闭定时器1
+	IFR1 = 0x0ffff;
+	IER1 &= 0x0ffbf;//开启DMA1用于发射询问信号
+	if(SD_status == 1)
+	{
+		SD_WriteData(SectorCounter,SD_write);//将获取信息写入SD卡扇区内
+		SectorCounter = SectorCounter + 1;
+	}
+	resend_delay = 2291000 - timer1_cnt - 50000;//参数需要修改，与压力传感器延迟时间有关
+	if(resend_delay > 0)
+	{
+		// 延迟	
+		timer1_cnt = 0;
+	 	IFR1 = 0x0ffff;
+	 	IER1 |= 0x0040;//开启DMA1用于发射询问信号
+		TIMER_start(mhTimer1);//打开定时器1定时
+		while(1)
+		{
+			if(timer1_cnt == resend_delay)
+			{
+				TIMER_stop(mhTimer1);//关闭定时器1
+				IFR1 = 0x0ffff;
+	 			IER1 &= 0x0ffbf;//开启DMA1用于发射询问信号
+				break;
+			}
+		}
+	}
+	
+
+} 
+
+
+/*执行动作3
+  函数功能：检测到信号3，执行动作3
+*/
+void take_action3()
+{
+	short i;
+	long temp;
+		//计算转发延迟
+	resend_delay = 75000;	//单位都是1us
+	if(resend_delay > 0)
+	{
+		// 延迟	
+		timer1_cnt = 0;
+	 	IFR1 = 0x0ffff;
+	 	IER1 |= 0x0040;//开启DMA1用于发射询问信号
+		TIMER_start(mhTimer1);//打开定时器1定时
+		while(1)
+		{
+			if(timer1_cnt == resend_delay)
+			{
+				TIMER_stop(mhTimer1);//关闭定时器1
+				IFR1 = 0x0ffff;
+	 			IER1 &= 0x0ffbf;//开启DMA1用于发射询问信号
+				break;
+			}
+		}
+	}
+
+	Senddata0();//发射信号1
+
+	timer1_cnt = 0;
+ 	IFR1 = 0x0ffff;
+ 	IER1 |= 0x0040;//使能定时器1中断
+	TIMER_start(mhTimer1);//打开定时器1定时 
+    get_voltage();
+
+	TIMER_stop(mhTimer1);//关闭定时器1
+	IFR1 = 0x0ffff;
+	IER1 &= 0x0ffbf;//关闭定时器1中断
+
+	resend_delay = 175000 + (Uint32)((float)voltage_AD/1024*3.3*8*10000) - timer1_cnt;
+
+	if(resend_delay > 0)
+	{
+		// 延迟	
+		timer1_cnt = 0;
+	 	IFR1 = 0x0ffff;
+	 	IER1 |= 0x0040;//开启DMA1用于发射询问信号
+		TIMER_start(mhTimer1);//打开定时器1定时
+		while(1)
+		{
+			if(timer1_cnt == resend_delay)
+			{
+				TIMER_stop(mhTimer1);//关闭定时器1
+				IFR1 = 0x0ffff;
+	 			IER1 &= 0x0ffbf;//开启DMA1用于发射询问信号
+				break;
+			}
+		}
+	}
+	Senddata0();//发射信号1
+
+	resend_delay = 50000;
+	if(resend_delay > 0)
+	{
+		// 延迟	
+		timer1_cnt = 0;
+	 	IFR1 = 0x0ffff;
+	 	IER1 |= 0x0040;//开启DMA1用于发射询问信号
+		TIMER_start(mhTimer1);//打开定时器1定时
+		while(1)
+		{
+			if(timer1_cnt == resend_delay)
+			{
+				TIMER_stop(mhTimer1);//关闭定时器1
+				IFR1 = 0x0ffff;
+	 			IER1 &= 0x0ffbf;//开启DMA1用于发射询问信号
+				break;
+			}
+		}
+	}
+	get_pressure();//压力获取�
+	//打开定时器，计算测量温度和电池电压时
+	timer1_cnt = 0;
+ 	IFR1 = 0x0ffff;
+ 	IER1 |= 0x0040;//开启DMA1用于发射询问信号
+	TIMER_start(mhTimer1);//打开定时器1定时
+//	get_temperature();
+	IODATA = 0x0000;
+	get_voltage();
+	temp = 0;
+    for(i = 100;i<100+512;i++)
+	{
+		temp = temp + fabs(Rev_save[i]);
+	}
+	noise_10ms = (short)(temp>>9);
+	uart_config();
+	SD_write[28] = (Rev_envelope[endpos]) & 0x0ff;//相关峰最大值低8位
+	SD_write[29] = (Rev_envelope[endpos]>>8) & 0x0ff;//相关峰最大值高8位
+	SD_write[30] = (sum_mean_save) & 0x0ff;//相关寰档��
+	SD_write[31] = (sum_mean_save>>8) & 0x0ff;//相关峰均值高8?
+	SD_write[32] = (width_save) & 0x0ff;//相关峰宽度低8位
+	SD_write[33] = (width_save>>8) & 0x0ff;//相关峰宽度高8位
+	SD_write[34] = 2;//电量指令
+	TIMER_stop(mhTimer1);//关闭定时器1
+	IFR1 = 0x0ffff;
+	IER1 &= 0x0ffbf;//开启DMA1用于发射询问信号
+	if(SD_status == 1)
+	{
+		SD_WriteData(SectorCounter,SD_write);//将获取信息写入SD卡扇区内
+		SectorCounter = SectorCounter + 1;
+	}
+	resend_delay = 2291000 - timer1_cnt - 50000;//参数需要修改，与压力传感器延迟时间有
+	if(resend_delay > 0)
+	{
+		// 延迟	
+		timer1_cnt = 0;
+	 	IFR1 = 0x0ffff;
+	 	IER1 |= 0x0040;//开启DMA1用于发射询问信号
+		TIMER_start(mhTimer1);//打开定时器1定时
+		while(1)
+		{
+			if(timer1_cnt == resend_delay)
+			{
+				TIMER_stop(mhTimer1);//关闭定时器1
+				IFR1 = 0x0ffff;
+	 			IER1 &= 0x0ffbf;//开启DMA1用于发射询问信号
+				break;
+			}
+		}
+	} 
+	
+	
+
+}  
+
+void FSKdetect()
+{
+	short i,j;
+	//窄带滤波1
+	
+	dot1(h_BPF1,Rev_FFT,Rev_xcorr,NFFT);
+	cifft_NOSCALE(Rev_xcorr,NFFT);
+	cbrev(Rev_xcorr,Rev_xcorr,NFFT);
+    memset(Rev_xcorr,0,20);
+	memset(Rev_xcorr+4076,0,20);
+	j = 0;
+	for(i = BUF_LEN_MAX; i < NFFT; i++)
+	{
+		Rev_bp1[j] = Rev_bp1[i];
+		j++;		
+	}//将结果重叠保留
+	j=0;
+	for(i = Rev_resave; i < NFFT; i++)
+	{		 
+		Rev_bp1[i] = abs(Rev_xcorr[2*i]);
+	//	j++;		
+	}
+
+	memset(h_LPF2_db,0,sizeof(short)*(N_LPF2 + 2));
+	oflag_LPF2 = fir2(Rev_bp1,h_LPF2,Rev_bp1_envelope,h_LPF2_db,NFFT,N_LPF2);
+	//以上程序执行时间2.68ms
+
+	qujunzhi1(Rev_bp1_envelope, NFFT);
+    //窄带滤波2
+	
+	dot1(h_BPF2,Rev_FFT,Rev_xcorr,NFFT);
+	cifft_NOSCALE(Rev_xcorr,NFFT);
+	cbrev(Rev_xcorr,Rev_xcorr,NFFT);
+	memset(Rev_xcorr,0,20);
+	memset(Rev_xcorr+4076,0,20);
+	j = 0;
+	for(i = BUF_LEN_MAX; i < NFFT; i++)
+	{
+		Rev_bp2[j] = Rev_bp2[i];
+		j++;		
+	}//将结果重叠Ａ?
+	j=0;
+	for(i = Rev_resave; i < NFFT; i++)
+	{		 
+		Rev_bp2[i] = abs(Rev_xcorr[2*i]);
+	//	j++;		
+	}
+
+	memset(h_LPF2_db,0,sizeof(short)*(N_LPF2 + 2));
+	oflag_LPF2 = fir2(Rev_bp2,h_LPF2,Rev_bp2_envelope,h_LPF2_db,NFFT,N_LPF2);
+	//以上程序执行时间2.68ms
+    qujunzhi2(Rev_bp2_envelope, NFFT);
+    
+	//降采样
+	j = 0;
+	for (i = (block2-1)*N_resample; i < block2*N_resample; i ++)
+	{
+		temp_dainei_temp[i] = (Rev_bp1_envelope[Rev_resave+40*j] + Rev_bp2_envelope[Rev_resave+40*j])/2;///64;
+		j++;
+	}
+	
+	if (block2 == 5)
+	{
+	
+	//FFT检测频率
+
+		FFTprepare2(temp_dainei_temp,temp_dainei_temp_fft, NFFT_mingling);
+		cfft_NOSCALE(temp_dainei_temp_fft, NFFT_mingling);  //是否考虑溢出问题
+		cbrev(temp_dainei_temp_fft,temp_dainei_temp_fft,NFFT_mingling);  //可不可以指向一个数组
+	
+
+		qumo2(temp_dainei_temp_fft, temp_dainei_temp_fft_abs, NFFT_mingling);
+		testpinlv_max=0;
+		testpinlv_ind=0;
+		maxvec(temp_dainei_temp_fft_abs, NFFT_mingling/2, &testpinlv_max, &testpinlv_ind);
+		//内插函数
+		x2 = testpinlv_ind;
+		x1 = x2 - 1;
+		x3 = x2 + 1;
+		y1 = temp_dainei_temp_fft_abs[x1];
+		y2 = temp_dainei_temp_fft_abs[x2];
+		y3 = temp_dainei_temp_fft_abs[x3];
+		a = (float)(y1 + y3 - 2*y2)/2;
+	    b = (float)(y3 - y1 - 4*a*x2)/2; 
+        if (a == 0)
+    	    x_max = (float)x2;
+	    else
+            x_max = (-1)*b/(2*a);
+	
+	    f_code = x_max/255*1000;
+		block2 = 2;
+		//将第6,7,8块搬到第1,2,3块
+		for (i = (block2-2)*N_resample; i < block2*N_resample; i ++)
+		{
+			temp_dainei_temp[i] = temp_dainei_temp[i+3*N_resample];///64;
+		}
+		//查表测频
+		if ((f_code >= 82.5-1)&&(f_code <= 82.5+1))
+		{
+			if (testpinlv_flag == 1)
+			{
+
+
+				count_final_jiance++;
+				if (count_final_jiance == 26)
+				{
+
+					Flag_answer = 2;//释放指令
+
+
+				}
+
+
+		
+			}
+			else
+			{
+				count_final_jiance = 0;
+				testpinlv_flag = 1;
+			}
+		}
+		else
+		{
+			testpinlv_flag = 0;
+			count_final_jiance = 0;
+		}
+	}
+
+
+	block2++;
+
+
+	
+
+
+		
+
+//	if((code & 0x00ff) == 0x0a9)
+//	{
+//		Flag_answer = 4;//获取电量指令
+//	}
+	//以上程序执行时间<1ms
+	
+}
+/*执行动作2
+  函数功能：检测到信号2，执行动作2
+*/
+
+/*检测信号
+  函数功能：检测信号程序
+*/
+void detect_signal()
+{
+	
+
+	while((Flag_answer==0) && (FLAG_RS232_REVOK == 0))//没有检测到信号或者串口命令
+	{
+
+		if (DMAdone == TRUE)
+		{
+			DMAdone = FALSE;
+			while(DMA_FGETH(myhDma,DMACCR,ENDPROG))
+			{
+			}
+			if (DMAnum%2 == 1)
+			{
+				DMA_RSETH(myhDma,DMACSSAU,RevsrcAddrHi);//重新配置DMA地址
+				DMA_RSETH(myhDma,DMACSSAL,RevsrcAddrLo);
+				DMA_RSETH(myhDma,DMACDSAU,Revdst2AddrHi);
+				DMA_RSETH(myhDma,DMACDSAL,Revdst2AddrLo);
+				
+			}
+
+			if (DMAnum%2 == 0)
+			{
+				DMA_RSETH(myhDma,DMACSSAU,RevsrcAddrHi);//重新配置DMA地址
+				DMA_RSETH(myhDma,DMACSSAL,RevsrcAddrLo);
+				DMA_RSETH(myhDma,DMACDSAU,Revdst1AddrHi);
+				DMA_RSETH(myhDma,DMACDSAL,Revdst1AddrLo);
+				
+			}
+
+		    DMA_RSETH(myhDma,DMACEN, BUF_LEN_MAX);
+		    DMA_RSETH(myhDma,DMACFN, 1);
+			/* Set programmation bit to 1, ENDPROG = 1) */
+		    DMA_FSETH(myhDma,DMACCR,ENDPROG,1);//重新配置DMA，开始下一帧传输
+				 
+    	   	asm(" bset XF ");
+			
+			detect_prepare();//检庾急?/1.08ms
+			
+			
+			asksignal();//检测定位信号//2.8ms~4.68ms
+            
+			detect_prepare_FSK();//检庾急?/1.08ms
+			FSKdetect();//检测FSK指令//5.7ms~6.4ms
+            if(Flag_answer == 0)
+			{
+//				asm(" bset XF ");
+				memcpy(Rev_save,Rev,NFFT);//保留上一次数据，计算噪声用
+//				asm(" bclr XF ");
+			}
+			
+			asm(" bclr XF ");
+
+
+		}//end if(DMAdone==TRUE)
+	
+	}//end while((Flag_answer==0)&&(FLAG_RS232_REVOK==0))
+	do{
+		;
+	}while(DMAdone==FALSE);//搬榻崾?
+}
+
+void variable_init()
+{
+	FLAGSENDOVER=0;
+
+	FLAG_RS232_REVOK = 0;
+	Pos_flag = 0;
+
+	endpos = 0;
+	sum_mean_save = 0;
+	width_save = 0;
+
+	resend_delay = 0;
+	DMAnum = 0;
+	DMAdone = FALSE;
+
+	timer1_cnt = 0;
+	temp_ADC = 0;
+
+	voltage_AD = 0;
+	depth = 0.0;
+	Flag_answer = 0;
+	
+	temperature = 0.0;
+	block2 = 2;
+	testpinlv_flag = 0;
+	count_final_jiance = 0;
+
+
+	release_flag = 0;//释放成功状态位
+	memset(temp_dainei_temp,0,sizeof(short)*(NFFT_mingling));
+	memset(Rev,0,sizeof(short)*NFFT);
+	memset(Rev_FFT,0,sizeof(short)*2*NFFT);
+	memset(Rev_xcorr,0,sizeof(short)*2*NFFT);
+	memset(Rev_xcorrout,0,sizeof(short)*NFFT);
+
+	memset(Rev_envelope,0,sizeof(short)*NFFT);
+/*	
+	memset(Rev_bp1,0,sizeof(short)*NFFT);
+
+	memset(Rev_bp2,0,sizeof(short)*NFFT);
+
+	memset(Rev_bp1_abs,0,sizeof(short)*NFFT);
+
+	memset(Rev_bp2_abs,0,sizeof(short)*NFFT);
+	memset(Rev_bp1_envelope,0,sizeof(short)*NFFT);
+	memset(Rev_bp2_envelope,0,sizeof(short)*NFFT);
+*/	
+
+}
+
+/*系统配置函数
+  函数功能：重新配置系统参数
+*/
+void system_config()
+{
+	
+
+//	IODOR=0xff;	
+	IODATA=0x00;
+	IER0=0x0000;
+	IFR0=0xFFFF;
+	IER1=0x0011;//使能DMAC2和串口中断
+	IFR1=0xFFFF;
+
+	variable_init();
+//	asm(" bclr intm ");
+	
+	while(DMA_FGETH(myhDma,DMACCR,ENDPROG))
+	{
+	;
+	}
+	DMA_RSETH(myhDma,DMACSSAU,RevsrcAddrHi);
+	DMA_RSETH(myhDma,DMACSSAL,RevsrcAddrLo);
+	DMA_RSETH(myhDma,DMACDSAU,Revdst1AddrHi);
+	DMA_RSETH(myhDma,DMACDSAL,Revdst1AddrLo);
+
+	DMA_RSETH(myhDma,DMACEN, BUF_LEN_MAX);
+    DMA_RSETH(myhDma,DMACFN, 1);
+	DMA_FSETH(myhDma,DMACCR,ENDPROG,1);//重新配置DMA
+//	DMA_start(myhDma);//DMA开始采集
+	
+}
+
+
+/*同步信标函数
+  函数功能：
+*/
+void Syntimermod()
+{	
+    short i;
+    long temp;
+	
+	while(1)
+	{
+		get_pressure();
+		FLAG_OK = 0;
+		if(depth > 0.5)
+		{
+			FLAG_OK = 1;
+		}
+		while(FLAG_OK == 1)  //已下水
+		{
+			if(Flag_timer == 1)
+			{
+				
+				
+				// 延迟	
+				
+				timer1_cnt = 0;
+			 	IFR1 = 0x0ffff;
+			 	IER1 |= 0x0040;//开启DMA1用于发射询问信号
+				TCR1 &= 0x0fbef;
+				//TIMER_start(mhTimer1);//打开定时器1定时
+				while(1)
+				{
+					if(timer1_cnt == responder_Delay)
+					{
+						TCR1 |= 0x0c34;
+						//TIMER_stop(mhTimer1);//关闭定时器1
+						IFR1 = 0x0ffff;
+			 			IER1 &= 0x0ffbf;//开启DMA1用于发射询问信号
+						break;
+					}
+				}
+				
+				Senddata0();//发射信号1
+				
+				get_pressure();
+				if(FLAG_yl == 0)
+				{
+					resend_delay = 200000 - 23726 - (Uint32)(0.134*timer1_cnt);
+				}
+				else if(FLAG_yl == 1)
+				{
+					resend_delay = 200000 - 25130 - (Uint32)(0.134*timer1_cnt) + (Uint32)(depth*200);
+				}
+
+				if(resend_delay > 0)
+				{
+					// 延迟	
+					timer1_cnt = 0;
+				 	IFR1 = 0x0ffff;
+				 	IER1 |= 0x0040;//开启DMA1用于发射询问信号
+					TIMER_start(mhTimer1);//打ㄊ逼�定时
+					while(1)
+					{
+						if(timer1_cnt == resend_delay)
+						{
+							TIMER_stop(mhTimer1);//关闭定时器1
+							IFR1 = 0x0ffff;
+				 			IER1 &= 0x0ffbf;//开启DMA1用于发射询问信号
+							break;
+						}
+					}
+				}
+				Senddata0();//发射信号1
+				FLAG_OK = 0;
+				resend_delay = 50000;
+				if(resend_delay > 0)
+				{
+					// 延迟	
+					timer1_cnt = 0;
+				 	IFR1 = 0x0ffff;
+				 	IER1 |= 0x0040;//开启DMA1用于发射询问信号
+					TIMER_start(mhTimer1);//打开定时器1定时
+					while(1)
+					{
+						if(timer1_cnt == resend_delay)
+						{
+							TIMER_stop(mhTimer1);//关闭定时器1
+							IFR1 = 0x0ffff;
+				 			IER1 &= 0x0ffbf;//开启DMA1用于发射询问信号
+							break;
+						}
+					}
+				}
+				//打开定时器，计算测量温度和电池电压时间
+				timer1_cnt = 0;
+			 	IFR1 = 0x0ffff;
+			 	IER1 |= 0x0040;//开启DMA1用于发射询问信号
+				TIMER_start(mhTimer1);//打开定时器1定时
+	//			get_temperature();
+				IODATA = 0x0000;
+				get_voltage();
+				temp = 0;
+			    for(i = 100;i<100+512;i++)
+				{
+					temp = temp + fabs(Rev_save[i]);
+				}
+				noise_10ms = (short)(temp>>9);
+				uart_config();
+				SD_write[28] = 0;//相关峰最大值低8位
+				SD_write[29] = 0;//相关畲笾蹈?位
+				SD_write[30] = 0;//相关峰均值低8位
+				SD_write[31] = 0;//相关峰均值高8位
+				SD_write[32] = 0;//相关峰宽度低8位
+				SD_write[33] = 0;//相关峰宽度高8位
+				SD_write[34] = 0;//无指令
+
+				TIMER_stop(mhTimer1);//关闭定时器1
+				IFR1 = 0x0ffff;
+				IER1 &= 0x0ffbf;//开启DMA1用于发射询问信号
+				if(SD_status == 1)
+				{
+					SD_WriteData(SectorCounter,SD_write);//将获取信息写入SD卡扇区内
+					SectorCounter = SectorCounter + 1;
+				}
+				
+			}
+
+					
+		}
+		Flag_timer = 0;
+		if(FLAG_RS232_REVOK == 1)//接收到串口中断
+		{
+
+			TCR0=0x1c34;//关闭定时器0，重新同步
+			timer0_cnt=0;
+			break;
+		}
+	}
+} 
+
+
+
+
+
+/*同步信标函数
+  函数功能：
+*/
+void Respondermod()
+{	
+	
+	while(1)
+	{
+
+		if(responder_flag == 1)
+		{
+				
+			responder_flag = 0;
+			// 延迟	
+				
+			timer1_cnt = 0;
+		 	IFR1 = 0x0ffff;
+		 	IER1 |= 0x0040;//开启DMA1用于发射询问信号
+			TCR1 &= 0x0fbef;
+			//TIMER_start(mhTimer1);//打开定时器1定时
+			while(1)
+			{
+				if(timer1_cnt == responder_Delay)
+				{
+					TCR1 |= 0x0c34;
+					//TIMER_stop(mhTimer1);//关闭定时器1
+					IFR1 = 0x0ffff;
+		 			IER1 &= 0x0ffbf;//开启DMA1用于发射询问信号
+					break;
+				}
+			}
+				
+			Senddata0();//发射信号1
+			IER0 &= 0x0fffb;//0x0004;//关闭外部中断0
+			IFR0 = 0x0ffff;
+			resend_delay = 500000;
+			if(resend_delay > 0)
+			{
+				// 延迟	
+				timer1_cnt = 0;
+			 	IFR1 = 0x0ffff;
+			 	IER1 |= 0x0040;//开启DMA1用于发射询问信号
+				TIMER_start(mhTimer1);//打开定时器1定时
+				while(1)
+				{
+					if(timer1_cnt == resend_delay)
+					{
+						TIMER_stop(mhTimer1);//关闭定时器1
+						IFR1 = 0x0ffff;
+			 			IER1 &= 0x0ffbf;//开启DMA1用于发射询问信号
+						break;
+					}
+				}
+			}
+
+			IER0 |= 0x0004;//打开外部中断0
+			IFR0 = 0x0ffff;
+			responder_flag = 0;
+		
+		
+		}
+		if(FLAG_RS232_REVOK == 1)//接收到串口中断
+		{
+
+			break;
+		}
+					
+	}
+
+	
+}
+ 
+
+

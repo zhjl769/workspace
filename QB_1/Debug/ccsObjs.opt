@@ -1,0 +1,1 @@
+"../QB.cmd" "./QB_main.obj" "./Sync.obj" "./bootload.obj" "./c6xdspinit.obj" "./c6xinterrupts.obj" "./cf.obj" "./databuffer.obj" "./isr.obj" "./serial_order.obj" "./vectors.obj" "C:/Users/zhjl769/C6000/csl/lib/csl6416.lib" "C:/Users/zhjl769/c6400/dsplib/lib/dsp64x.lib" "D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c6000_7.4.23/lib/rts6400.lib" 

@@ -1,0 +1,501 @@
+/* Create DMA Receive Side Configuration */
+DMA_Config  myConfig = { 
+  DMA_DMACSDP_RMK(
+    DMA_DMACSDP_DSTBEN_NOBURST,//地址不打包
+    DMA_DMACSDP_DSTPACK_OFF,
+    DMA_DMACSDP_DST_DARAM,//目的地址为DARAM
+    DMA_DMACSDP_SRCBEN_NOBURST,
+    DMA_DMACSDP_SRCPACK_OFF,
+    DMA_DMACSDP_SRC_PERIPH,//源地址为外设
+    DMA_DMACSDP_DATATYPE_16BIT//16bit数据
+  ),                                       /* DMACSDP  */
+  DMA_DMACCR_RMK(
+    DMA_DMACCR_DSTAMODE_POSTINC,//目的地址自加
+    DMA_DMACCR_SRCAMODE_CONST,//源地址为常数
+    DMA_DMACCR_ENDPROG_OFF,
+    DMA_DMACCR_REPEAT_OFF,
+    DMA_DMACCR_AUTOINIT_ON,//传输结束后等待ENDPROG变为1进行下次传输
+    DMA_DMACCR_EN_STOP,//禁止DMA传输
+    DMA_DMACCR_PRIO_LOW,//优先级为低
+    DMA_DMACCR_FS_DISABLE,//数据单元传输等待同步事件
+    DMA_DMACCR_SYNC_REVT0//同步事件为McBSP0接收中断
+  ),                                       /* DMACCR   */
+  DMA_DMACICR_RMK(
+    DMA_DMACICR_BLOCKIE_OFF,
+    DMA_DMACICR_LASTIE_OFF,
+    DMA_DMACICR_FRAMEIE_ON,//帧中断使能
+    DMA_DMACICR_FIRSTHALFIE_OFF,
+    DMA_DMACICR_DROPIE_OFF,
+    DMA_DMACICR_TIMEOUTIE_OFF
+  ),                                       /* DMACICR  */
+    (DMA_AdrPtr)(MCBSP_ADDR(DRR11)),        /* DMACSSAL *///McBSP接收数据寄存器
+    0,                                     /* DMACSSAU */
+    (DMA_AdrPtr)&Rev1,                      /* DMACDSAL *///接收数组
+    0,                                     /* DMACDSAU */
+    BUF_LEN_MAX,                                     /* DMACEN   *///接收数据长度
+    1,                                     /* DMACFN   */
+    0,                                     /* DMACFI  */
+    0                                     /* DMACEI  */
+};
+
+/*DMA发送模式配置0*/
+DMA_Config  myconfigdma0 = { 
+  DMA_DMACSDP_RMK(
+    DMA_DMACSDP_DSTBEN_NOBURST,    /**/
+    DMA_DMACSDP_DSTPACK_OFF,       /**/  
+    DMA_DMACSDP_DST_PERIPH,         /*目的地址:外设总线型'_PERIPH'GPIO口*/
+    DMA_DMACSDP_SRCBEN_NOBURST,    /**/
+    DMA_DMACSDP_SRCPACK_OFF,       /**/
+    DMA_DMACSDP_SRC_SARAM,         /*源地址EMIF*/
+    DMA_DMACSDP_DATATYPE_16BIT     /*_16BIT:的通道传输的数据类型*/
+  ),                                       /* DMACSDP  */
+  DMA_DMACCR_RMK(
+    DMA_DMACCR_DSTAMODE_CONST,   /*目的地址为常数，源地址自加*/
+    DMA_DMACCR_SRCAMODE_POSTINC,   /**/
+    DMA_DMACCR_ENDPROG_OFF,         /**/
+    DMA_DMACCR_REPEAT_OFF,         /**/
+    DMA_DMACCR_AUTOINIT_ON,        /*传输结束后等待ENDPROG变为1进行下次传输*/
+    DMA_DMACCR_EN_STOP,            /**/
+    DMA_DMACCR_PRIO_HI,            /**/
+    DMA_DMACCR_FS_ELEMENT,         /*单元同步*/
+    DMA_DMACCR_SYNC_TIM2INT           /*定时器定时发送*/
+  ),                                       /* DMACCR   */
+  DMA_DMACICR_RMK(
+    DMA_DMACICR_BLOCKIE_OFF,       /*0*/
+    DMA_DMACICR_LASTIE_OFF,        /*0*/
+    DMA_DMACICR_FRAMEIE_ON,        /*帧中断*/
+    DMA_DMACICR_FIRSTHALFIE_OFF,   /*0*/
+    DMA_DMACICR_DROPIE_OFF,        /*0*/
+    DMA_DMACICR_TIMEOUTIE_OFF      /*0*/
+  ),
+    (DMA_AdrPtr)&Send_sig,                /* DMACSSAL *///CE2空间
+    0,                     				 /* DMACSSAU */
+    (DMA_AdrPtr)&IODATA,
+    0,                                     /* DMACDSAU */
+    7200,
+    1,                                     /* DMACFN   */
+    0,                                     /* DMACFI   */
+    0                                      /* DMACEI   */
+};
+
+/*DMA发送模式配置1*/
+DMA_Config  myconfigdma1 = {
+  DMA_DMACSDP_RMK(
+    DMA_DMACSDP_DSTBEN_NOBURST,    /**/
+    DMA_DMACSDP_DSTPACK_OFF,       /**/
+    DMA_DMACSDP_DST_PERIPH,         /*目的地址:外设总线型'_PERIPH'GPIO口*/
+    DMA_DMACSDP_SRCBEN_NOBURST,    /**/
+    DMA_DMACSDP_SRCPACK_OFF,       /**/
+    DMA_DMACSDP_SRC_SARAM,         /*源地址EMIF*/
+    DMA_DMACSDP_DATATYPE_16BIT     /*_16BIT:的通道传输的数据类型*/
+  ),                                       /* DMACSDP  */
+  DMA_DMACCR_RMK(
+    DMA_DMACCR_DSTAMODE_CONST,   /*目的地址为常数，源地址自加*/
+    DMA_DMACCR_SRCAMODE_POSTINC,   /**/
+    DMA_DMACCR_ENDPROG_OFF,         /**/
+    DMA_DMACCR_REPEAT_OFF,         /**/
+    DMA_DMACCR_AUTOINIT_ON,        /*传输结束后等待ENDPROG变为1进行下次传输*/
+    DMA_DMACCR_EN_STOP,            /**/
+    DMA_DMACCR_PRIO_HI,            /**/
+    DMA_DMACCR_FS_ELEMENT,         /*单元同步*/
+    DMA_DMACCR_SYNC_TIM2INT           /*定时器定时发送*/
+  ),                                       /* DMACCR   */
+  DMA_DMACICR_RMK(
+    DMA_DMACICR_BLOCKIE_OFF,       /*0*/
+    DMA_DMACICR_LASTIE_OFF,        /*0*/
+    DMA_DMACICR_FRAMEIE_ON,        /*帧中断*/
+    DMA_DMACICR_FIRSTHALFIE_OFF,   /*0*/
+    DMA_DMACICR_DROPIE_OFF,        /*0*/
+    DMA_DMACICR_TIMEOUTIE_OFF      /*0*/
+  ),                                      
+    (DMA_AdrPtr)&Send_sig1,                /* DMACSSAL *///CE2空间
+    0,                     				 /* DMACSSAU */
+    (DMA_AdrPtr)&IODATA,    
+    0,                                     /* DMACDSAU */
+    7200,
+    1,                                     /* DMACFN   */
+    0,                                     /* DMACFI   */
+    0                                      /* DMACEI   */
+};
+
+
+
+#define TIMER_CTRL0    TIMER_TCR_RMK(\
+                      TIMER_TCR_IDLEEN_DEFAULT,    /* IDLEEN == 0 */ \
+                      TIMER_TCR_FUNC_OF(11),        /* FUNC   == 11外部时钟源 */ \
+                      TIMER_TCR_TLB_RESET,         /* TLB    == 1 */ \
+                      TIMER_TCR_SOFT_BRKPTNOW,     /* SOFT   == 0 */ \
+                      TIMER_TCR_FREE_WITHSOFT,     /* FREE   == 0 */ \
+                      TIMER_TCR_PWID_OF(0),        /* PWID   == 01 */ \
+                      TIMER_TCR_ARB_RESET,         /* ARB    == 1 */ \
+                      TIMER_TCR_TSS_STOP,         /* TSS    == 1 */ \
+                      TIMER_TCR_CP_PULSE,          /* CP     == 0 */ \
+                      TIMER_TCR_POLAR_HIGH,         /* POLAR  == 1 */ \
+                      TIMER_TCR_DATOUT_0           /* DATOUT == 0 */ \
+) 
+
+#define TIMER_CTRL1    TIMER_TCR_RMK(\
+                      TIMER_TCR_IDLEEN_DEFAULT,    /* IDLEEN == 0 */ \
+                      TIMER_TCR_FUNC_OF(01),        /* FUNC   == 01CPU时钟源 */ \
+                      TIMER_TCR_TLB_RESET,         /* TLB    == 1 */ \
+                      TIMER_TCR_SOFT_BRKPTNOW,     /* SOFT   == 0 */ \
+                      TIMER_TCR_FREE_WITHSOFT,     /* FREE   == 0 */ \
+                      TIMER_TCR_PWID_OF(0),        /* PWID   == 01 */ \
+                      TIMER_TCR_ARB_RESET,         /* ARB    == 1 */ \
+                      TIMER_TCR_TSS_STOP,         /* TSS    == 1 */ \
+                      TIMER_TCR_CP_PULSE,          /* CP     == 0 */ \
+                      TIMER_TCR_POLAR_HIGH,         /* POLAR  == 1 */ \
+                      TIMER_TCR_DATOUT_0           /* DATOUT == 0 */ \
+) 
+
+TIMER_Config timCfg0 = {	//Timer0为100ms  外部时钟频率=10MHz
+   TIMER_CTRL0,               /* TCR0 */
+   0xf423u,                  /* PRD0=62499 */
+   0x000fu                    /* PRSC=15 */
+};//定时100ms
+
+//change by wyh 
+TIMER_Config timCfg1 = {	//Timer1为1uS
+   TIMER_CTRL1,               /* TCR0 */
+   0x0063u,                  /* PRD0 200MHz->0x00c7; 144MHz->0x008f;100MHz->0x0063*/
+   0x0000                    /* PRSC */
+};
+
+//MMC控制器的初始化参数，用户可以更改
+//change by wyh
+MMC_SetupNative Init = {
+    0,   /* 禁止MMC的DMA申请 */
+    0,   /* Set level of edge detection for DAT3 pin        */
+    0,   /* Determines if MMC goes IDLE during IDLE instr   */
+    1,   /* Memory clk reflected on CLK Pin                 */
+    11,  /* 23。MMC控制器的频率分频因子：Fmmc=Fsystem/(a+1),a为该处初始值，范围：1~255   91*/
+    18,  /* 17。MMC控制器给SD卡的通信频率：Fsd=Fsystem/(2(a+1)(b+1)),a为上个值，b为该处初始值。范围：0~255 17*/
+    0,   /* No. memory clks to wait before response timeout */
+    0,   /* No. memory clks to wait before data timeout     */
+    512, /* 每个扇区为512字节（必须和SD的CSD中的数据相同）  */
+  };
+
+void DMA_init(void)
+{
+	RevsrcAddrHi = (Uint16)(((Uint32)(MCBSP_ADDR(DRR10))) >> 15) & 0xFFFFu;//McBSP接收寄存器高字节地址
+    RevsrcAddrLo = (Uint16)(((Uint32)(MCBSP_ADDR(DRR10))) << 1) & 0xFFFFu;//McBSP接收寄存器低字节地址
+    Revdst1AddrHi = (Uint16)(((Uint32)(&Rev1)) >> 15) & 0xFFFFu;//重叠保留数组1高字节地址
+    Revdst1AddrLo = (Uint16)(((Uint32)(&Rev1)) << 1) & 0xFFFFu;//重叠保留数组1低字节地址
+	Revdst2AddrHi = (Uint16)(((Uint32)(&Rev2)) >> 15) & 0xFFFFu;//重叠保留数组2高字节地址
+    Revdst2AddrLo = (Uint16)(((Uint32)(&Rev2)) << 1) & 0xFFFFu;//重叠保留数组2低字节地址
+
+    myConfig.dmacssal = (DMA_AdrPtr)RevsrcAddrLo;//DMA通道源地址低字节
+    myConfig.dmacssau = RevsrcAddrHi;//DMA通道源地址高字节
+    myConfig.dmacdsal = (DMA_AdrPtr)Revdst1AddrLo;//DMA通道目的地址低字节
+    myConfig.dmacdsau = Revdst1AddrHi;//DMA通道目的地址高字节
+
+	sendsrc0AddrHi = (Uint16)(((Uint32)(myconfigdma0.dmacssal)) >> 15) & 0xFFFFu;//DMA0发射源地址高字节
+    sendsrc0AddrLo = (Uint16)(((Uint32)(myconfigdma0.dmacssal)) << 1) & 0xFFFFu;//DMA0发射源地址低字节
+    senddst0AddrHi = (Uint16)(((Uint32)(myconfigdma0.dmacdsal)) >> 15) & 0xFFFFu;//DMA0发射目的地址高字节
+    senddst0AddrLo = (Uint16)(((Uint32)(myconfigdma0.dmacdsal)) << 1) & 0xFFFFu;//DMA0发射目的地址低字节
+
+    sendsrc1AddrHi = (Uint16)(((Uint32)(myconfigdma1.dmacssal)) >> 15) & 0xFFFFu;//DMA0发射源地址高字节
+    sendsrc1AddrLo = (Uint16)(((Uint32)(myconfigdma1.dmacssal)) << 1) & 0xFFFFu;//DMA0发射源地址低字节
+    senddst1AddrHi = (Uint16)(((Uint32)(myconfigdma1.dmacdsal)) >> 15) & 0xFFFFu;//DMA0发射目的地址高字节
+    senddst1AddrLo = (Uint16)(((Uint32)(myconfigdma1.dmacdsal)) << 1) & 0xFFFFu;//DMA0发射目的地址低字节
+
+    myconfigdma0.dmacssal = (DMA_AdrPtr)sendsrc0AddrLo;//发射源地址EMIF
+    myconfigdma0.dmacssau = sendsrc0AddrHi;
+    myconfigdma0.dmacdsal = (DMA_AdrPtr)senddst0AddrLo;//发射目的地址GPIO
+    myconfigdma0.dmacdsau = senddst0AddrHi;
+
+    myconfigdma1.dmacssal = (DMA_AdrPtr)sendsrc1AddrLo;//发射源地址EMIF
+    myconfigdma1.dmacssau = sendsrc1AddrHi;
+    myconfigdma1.dmacdsal = (DMA_AdrPtr)senddst1AddrLo;//发射目的地址GPIO
+    myconfigdma1.dmacdsau = senddst1AddrHi;
+
+
+    hDmaSend0 = DMA_open(DMA_CHA0,DMA_OPEN_RESET);//DMA0用于GPIO发射
+  //  hDmaSend1 = DMA_open(DMA_CHA0,DMA_OPEN_RESET);//DMA0用于GPIO发射
+
+    myhDma = DMA_open(DMA_CHA2,DMA_OPEN_RESET);  //DMA2用于McBSP采集数据
+
+	mhTimer0 = TIMER_open(TIMER_DEV0, TIMER_OPEN_RESET);//定时器0作为同步时钟
+	mhTimer1 = TIMER_open(TIMER_DEV1, TIMER_OPEN_RESET);//定时器1作为发射信号同步事件
+
+    DMA_config(myhDma,&myConfig);
+  //  DMA_config(hDmaSend0,&myconfigdma0);
+  //  DMA_config(hDmaSend1,&myconfigdma1);
+
+
+	TIMER_config(mhTimer0, &timCfg0);
+	TIMER_config(mhTimer1, &timCfg1);
+}
+
+
+/*//change by wyh 
+  函数功能：初始化内部ADC时钟为2MHz	 采样率为10kHz
+ADC Sample and Hold Period =  (ADC Clock Period) *(2 *(CONVRATEDIV + 1 + SAMPTIMEDIV))
+*/
+void InitADC()
+{
+	ADCCLKCTL = 0x17; // 4MHz ADCLK   ADC Clock = (CPU Clock)/(CPUCLKDIV + 1)
+	ADCCLKDIV = 0x0ba00; //10kHz采样率
+}
+  
+/*McBSP初始化配置  函数功能：初始化配置AD采样率为40kHz  */
+//change by wyh，只需要改 ：SRGR1_0=0x0223
+void McBSP_init()
+{
+	SPCR2_0 = 0x0000;
+	SPCR1_0 = 0x0000;
+	XCR2_0  = 0x0000;
+	XCR1_0  = 0x0040;//XWDLEN1=16bit
+	SRGR2_0 = 0x3063;//CLKSM=1，McBSP internal input clock；    帧同步信号周期为20;采样率为40kHz;FPER=99;CLKin=144M,CLKG=
+	SRGR1_0 = 0x0218;//帧同步脉冲4个CLKG宽度;时钟分频次数为100//决定FWID,CLKGDV,fs=40k,clk=200MHz,0231h//fs=100k,clk=100MHz,0208h
+	PCR0    = 0x0b0d;//FSXM=1，帧同步由mcbsp产生;FSRM=0，接收同步由外部产生；CLKXM=CLKRM=1;FSXP=1，发射帧同步低有效；FSRP=1;CLKRP=CLKXP接收发射同源；
+	RCR2_0  = 0x0005;//RWDLEN2=000；RCOMPAND=01；无压缩LSB先接收。RFIG=0；Frame-sync detect.
+	RCR1_0  = 0x0040;//接收字长为16位
+}  
+
+/*串口接收数据初始化
+  函数功能：串口初始化配置，波特率为38400
+*/
+
+void receive_752_init()
+{
+   UART_IER232 = 0x00;//清中断
+   asm(" nop ");
+   UART_LCR232 = 0x80;//DLAB=1,下步进行波特率设置
+   asm(" nop ");
+   UART_DLL232 = 0x18;//波特率设置0x60->9600
+   asm(" nop ");    //波特率设置0x18->38400
+   UART_DLH232 = 0x00;
+   asm(" nop ");
+   UART_LCR232 = 0x0bf;//设置其他寄存器前必须将LCR设置为0x0bf（参见芯片文档）
+   asm(" nop ");
+   UART_EFR232 = 0x10;//使能IER：bit4~7;FCR:bit4~5;MCR:bit5~7
+   asm(" nop ");
+   UART_LCR232 = 0x00;//还原LCR
+   asm(" nop ");
+   UART_FCR232 = 0x0ff;//初始化设置FIFO，使能，清零
+   asm(" nop ");
+   UART_MCR232 = 0x48;//
+   asm(" nop ");
+   UART_TCR232 = 0x03;//RCVFIFO设置为28字节停止发送
+   asm(" nop ");
+   UART_TLR232 = 0x03f;//RCVFIFO中断触发级别0x03*4=12，12个字节触发一次中断
+   asm(" nop ");
+   UART_LCR232 = 0x03;//设置数据格式：无奇偶校验，1比特停止位，8比特数据位
+   asm(" nop ");
+   UART_IER232 = 0x01;//使能FIFO接收中断
+   asm(" nop ");
+//通道2初始化用于压力传感器传输通信，映射CE1空间
+   UART_IER485 = 0x00;//清中断
+   asm(" nop ");
+   UART_LCR485 = 0x80;//DLAB=1,下步进行波特率设置
+   asm(" nop ");
+   UART_DLL485 = 0x60;//波特率设置0x18->38400
+   asm(" nop ");    //0x60->9600
+   UART_DLH485 = 0x00;//0x30->19200
+   asm(" nop ");
+   UART_LCR485 = 0x0bf;//设置其他寄存器前必须将LCR设置为0x0bf（参见芯片文档）
+   asm(" nop ");
+   UART_EFR485 = 0x10;//使能IER：bit4~7;FCR:bit4~5;MCR:bit5~7
+   asm(" nop ");
+   UART_LCR485 = 0x00;//还原LCR
+   asm(" nop ");
+   UART_FCR485 = 0x0ff;//初始化设置FIFO，使能，清零
+   asm(" nop ");
+   UART_MCR485 = 0x48;//
+   asm(" nop ");
+   UART_TCR485 = 0x06;//RCVFIFO中断级别触发停止发送
+   asm(" nop ");
+   UART_TLR485 = 0x03f;//RCVFIFO中断触发级别0x06*4=24（可能需要修改下）
+   asm(" nop ");
+   UART_LCR485 = 0x03;//设置数据格式：无奇偶校验，1比特停止位，8比特数据位
+   asm(" nop ");
+   UART_IER485 = 0x01;//使能FIFO接收中断
+   asm(" nop ");
+}
+/*系统初始化配置
+  函数功能：初始化时钟为200MHz; 串口配置在CE0、CE1空间; SDRAM配置在CE2、CE3空间
+			中断向量表映射在0x000e;	初始化GPIO为输出，输出为低
+*/
+void System_initial()
+{
+	CLKMD = 0x0000;
+	while(CLKMD & 0x0001){}
+	CLKMD = 0x2CB2;//clk = 8M; mult=50;div=1;50/2*8M=200M.CLKMD = 0x2c92 ;改144M CLKMD = 0x2912 bywyh,100M CLKMD = 0xCB2 bywyh
+	EBSR=0x0211;//设置为全部EMIF模式，无保持信号应答
+	EMI_RST=0x0000;
+    //CE2和CE3为SDRAM
+/*	
+	EGCR = EGCR & 0x0ffdf;//SDRAM初始化
+    EGCR = 0x020f;//CLKMEM=CPU时钟的一半；不响应外部总线征用请求
+	CE2_1 = 0x3000;//16bit宽度SDRAM;
+	CE3_1 = 0x3000;//16bit宽度SDRAM;
+	SDC1 = 0x5958;//TRC=11,tRC=120ns;SDSIZE=00,4M*16bit;RFEN=1,EMIF对SDRAM进行刷新;TRCD=5,tRCD=60ns;TRP=8,tRP=90ns;
+//	SDC1 = 0x5858;//TRC=11,tRC=120ns;SDSIZE=00,4M*16bit;RFEN=1,EMIF对SDRAM进行刷新;TRCD=5,tRCD=60ns;TRP=8,tRP=90ns;
+	SDC2 = 0x028f;//SDACC=0,EMIF总线宽度为16bit;TMRD=2,tMRD=30ns;TRAS=8,tRAS=90ns;TACTV2ACTV=15,tRRD=160ns
+    SDPER = 0x061a;//PERIOD=15620ns
+    EGCR = EGCR|0x0020;//CLKMEM引脚输出时钟使能
+    INIT = 0x0000;//初始化SDRAM
+	*/
+//CE0和CE1初始化为异步串口 yuanshi
+/*
+	CE0_1=0x103f;//16bit宽度异步存储器;读建立时间5ns;读选通时间75ns;读保持时间15ns
+	CE0_2=0x00ff;//读延长保持时间5ns;写延长保持时间5ns;写建立时间5ns;写选通时间315ns;写保持时间15ns
+	CE0_3=0x00ff;//超时时间为256个CPU时钟
+
+	CE1_1=0x103f;//16bit宽度异步存储器;读建立时间5ns;读选通时间75ns;读保持时间15ns
+	CE1_2=0x00ff;//读延长保持时间5ns;写延长保持时间5ns;写建立时间5ns;写选通时间315ns;写保持时间15ns
+	CE1_3=0x00ff;//超时时间为256个CPU时钟
+*///bywyh EMIF pdf clk=144MHz
+	CE0_1=0x112F;//16bit宽度异步存储器;读建立时间5ns;读选通时间75ns;读保持时间15ns
+	CE0_2=0x00BB;//读延长保持时间5ns;写延长保持时间5ns;写建立时间5ns;写选通时间315ns;写保持时间15ns
+	CE0_3=0x00ff;//超时时间为256个CPU时钟
+	CE1_1=0x112F;//16bit宽度异步存储器;读建立时间5ns;读选通时间75ns;读保持时间15ns
+	CE1_2=0x00BB;//读延长保持时间5ns;写延长保持时间5ns;写建立时间5ns;写选通时间315ns;写保持时间15ns
+	CE1_3=0x00ff;//超时时间为256个CPU时钟
+	IVPH=0x000e;//中断向量表映射地址
+	IVPD=0x000e;
+	receive_752_init();//串口接收数据初始化
+}
+/******************************************************************
+函数：void SD_WriteData(unsigned int SectorNumber,Uint16 *SendData)
+功能：向指定的扇区中写入512字节的数据
+输入参数：扇区号（0~根据卡的容量计算），写入数据的首地址
+返回：无
+*******************************************************************/
+void SD_WriteData(Uint32 SectorNumber,Uint16 *SendData)
+{
+	  volatile Uint16 i,j;
+	  //asm(" BCLR XF ");//测试写入时间,第一个引号后必须有至少一个空格
+	 
+	  MMC_write(mmc1,512*SectorNumber,SendData,512);
+	 // busy_flag_0=MMCST0_1;
+	  //长延时，等待SD卡自编程结束(根据系统时钟频率和MMC控制器与SD卡通信时钟频率来决定延时）
+	  //下面的延时对于Fsd=666.7KHz ，Fsystem=192MHz的正常调试结果。（经验公式：当Fsd=500KHz ，Fsystem=24MHz时，以下延时至少9个）
+	  //经笔者调试情况看，此处延时很重要  272
+	  for(i=0;i<84;i++)
+	  {
+	      for (j = 0; j <= 25000; j++)
+	      asm("	NOP ");
+	  } 
+
+  //asm(" BSET XF");	
+}
+
+/******************************************************************
+函数：SD_ReadData(unsigned int SectorNumber,Uint16 *ReceiveData)
+功能：向指定的扇区中读出512字节的数据
+输入参数：扇区号（0~根据卡的容量计算），存储读出数据的首地址
+返回：无
+*******************************************************************/
+void SD_ReadData(Uint32 SectorNumber,Uint16 *ReceiveData)
+{
+  	MMC_read(mmc1,512*SectorNumber,ReceiveData,512);  
+}
+
+/*************************************************************************
+函数：Uint16 ReadSectorNumber_Usable(void)
+功能：从第2012159扇区中读出可用的扇区号(对应1G卡的倒数第二个扇区）
+输入参数：无
+返回：可用的扇区号
+***************************************************************************/
+Uint32 ReadSectorNumber_Usable(void)
+{
+  SD_ReadData(10000000,SecCounter);
+  
+  return((Uint32)((((Uint32)SecCounter[1])<<16)|(Uint32)SecCounter[0]));
+}
+/*************************************************************************
+函数：void SaveSectorCounter(void)
+功能：保存最后下一个空扇区号，保存在第2012159扇区中?以备下次接着该扇区写入数据
+输入参数：无
+返回：无
+***************************************************************************/
+void SaveSectorCounter(void)
+{
+  SecCounter[0]=(Uint16)SectorCounter;
+  SecCounter[1]=(Uint16)(SectorCounter>>16);
+  SD_WriteData(10000000,SecCounter);
+}
+/****************************************************
+函数：void MMC_Init(void)
+功能：初始化MMC控制器
+输入参数：无
+返回：无
+****************************************************/
+void MMC_Init(void)
+{
+  volatile short SD_jishu;
+  //注：对于5509a的MMC控制器，只支持MMC卡和SD卡
+  mmc1 = MMC_open(MMC_DEV1);//使能MMC0控制器
+  MMC_setupNative(mmc1,&Init);//按照初始参数来初始化MMC0控制器
+
+  MMC_sendGoIdle(mmc1);//复位总线上的说有存储卡
+  for (count=0;count<4016;count++)
+  {
+  	asm(" NOP ");
+  }
+  SD_jishu = 0;
+  do
+  {
+	  cardtype = MMC_sendOpCond(mmc1,0x00100000);//工作电压门限：3.2~3.3V，不同的卡对该命令的应答值不同，MMC控制器根据应答值来判断该存储卡类型
+	  SD_jishu++;
+	  if(SD_jishu == 10)
+	  {
+		SD_status = 0;
+		break;
+	  }
+  }while(cardtype == 65535);
+  
+  if(cardtype == 0xffff)
+  {
+	SD_status = 0;
+  }
+  else
+  {
+     //检测到为SD卡
+     cid = &cardid;
+     SD_sendAllCID(mmc1,cid); // get the CID structure for all cards.     
+     card = &cardalloc;
+     rca = SD_sendRca(mmc1,card);
+     SD_status = 1;
+  
+	                       
+	  retVal = MMC_selectCard(mmc1,card);//选择MMC0来和SD卡进行通信
+	  
+	  SD_setWidth(mmc1, 0x4);//MMC控制器和SD卡的通信数据宽度为4bits
+  }
+}   
+
+void uart_config()
+{
+	memset(SD_write,0,sizeof(short)*256);
+	SD_write[0] = 0x0ee;   //发送字节头
+	SD_write[1] = transponder_mode;//工作模式
+	SD_write[2] = tongbu_flag;//命令位
+	SD_write[3] = 0x0bb;//校验位
+	SD_write[4] = (NOISE_TH_NEW) & 0x0ff;//检测门限低8bit
+	SD_write[5] = (NOISE_TH_NEW>>8) & 0x0ff;//检测门限高8bit
+	SD_write[6] = responder_period/10;//校验位
+	SD_write[7] = 0x0cc;//校验位
+	SD_write[8] = ((Time_Delay/1000)) & 0x0ff;//转发时延低8bit
+	SD_write[9] = ((Time_Delay/1000)>>8) & 0x0ff;//转发时延高8bit
+	SD_write[10] = 0x0cc;//校验位
+	SD_write[11] = 0x01;//校验位
+	SD_write[12] = (voltage_AD) & 0x0ff;//电压量化值低8bit
+	SD_write[13] = (voltage_AD>>8) & 0x0ff;//电压量化值高8bit
+	SD_write[14] = 0x01;//校验位
+	SD_write[15] = (RS485_DATA[5]) & 0xff;//SD_write[15] = (RS485_DATA[5]) & 0xff;
+	SD_write[16] = ((RS485_DATA[4])) & 0xff;//SD_write[16] = ((RS485_DATA[4])) & 0xff
+	SD_write[17] = ((RS485_DATA[3])) & 0xff;//SD_write[17] = ((RS485_DATA[3])) & 0xff
+	SD_write[18] = ((RS485_DATA[2])) & 0xff;//SD_write[18] = ((RS485_DATA[2])) & 0xff
+	SD_write[19] = ((Uint16)(temperature/0.5)) & 0xff;//温度量化值低8bit
+	SD_write[20] = (((Uint16)(temperature/0.5))>>8) & 0xff;//温度量化值高8bit
+	SD_write[21] = (noise_10ms) & 0x0ff;//噪声量化值低8bit
+	SD_write[22] = (noise_10ms>>8) & 0x0ff;//噪声量化值高8bit
+	SD_write[23] = 0x00;//FSK频率1---9kHz
+	SD_write[24] = 0x08;//FSK频�---9+8*0.5=13kHz
+	SD_write[25] = 0x0ff;//槲
+	SD_write[26] = SD_status;//SD卡状态，1为正常，0为不正常
+ 	SD_write[27] = 0x0ff;//校验位
+}

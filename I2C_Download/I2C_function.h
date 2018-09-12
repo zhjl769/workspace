@@ -53,7 +53,7 @@ void I2C_Read(Uint16 chipAdd, Uint8 *data, Uint16 count, Uint16 slaveaddress)
 
 	I2C_writeByte(chipAdd & 0xff);
 	while(I2C_FGET(I2CSTR,NACK));//检测从IIC是否回复一个ACK位
-	while((I2C_FGET(I2CSTR,XRDY)) = 0);
+	while((I2C_FGET(I2CSTR,XRDY)) == 0);
 	while(!I2C_xrdy());
 
 	I2C_RSET(I2CMDR, _I2C_I2CMDR_STT_CLR);//复位I2CMDR的STT位

@@ -1,0 +1,46 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="C:\CCStudio_v3.3\MyProjects\LBL_0819_omap\"
+ProjectType=Executable
+CPUFamily=TMS320C67XX
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="DspBiosBuilder"
+Tool="Linker"
+Tool="XDC"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+Source="..\..\..\..\..\c64plus-dsplib_2_02_00_00\lib\dsplib64plus.lib"
+Source="..\..\bsl_zq_change_0718_noprintf\lib\evmomapl138_bsl.lib"
+Source="..\..\C6000\cgtools\lib\rts67plus.lib"
+Source="evmomapl138.c"
+Source="evmomapl138_gpio.c"
+Source="evmomapl138_timer.c"
+Source="function.c"
+Source="intvecs.asm"
+Source="main_sys.c"
+Source="sys_interrupts.c"
+Source="user_evmomapl138.c"
+Source="test_omapl138.cmd"
+
+["Compiler" Settings: "Debug"]
+Options=-g -pdsw225 -fr"$(Proj_dir)\Debug" -i"C:\CCStudio_v3.3\bsl_zq_change_0718_noprintf\inc" -mv6740
+
+["Compiler" Settings: "Release"]
+Options=-pdsw225 -o3 -fr"$(Proj_dir)\Release" -mv6700
+
+["Linker" Settings: "Debug"]
+Options=-c -m".\Debug\test_lbl_omap.map" -o".\Debug\test_lbl_omap.out" -w -x
+
+["Linker" Settings: "Release"]
+Options=-c -m".\Release\test_lbl_omap.map" -o".\Release\test_lbl_omap.out" -w -x
+
+["test_omapl138.cmd" Settings: "Debug"]
+LinkOrder=1
+
+["test_omapl138.cmd" Settings: "Release"]
+LinkOrder=1
+

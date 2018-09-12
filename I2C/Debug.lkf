@@ -1,0 +1,3 @@
+-z -c -heap0x500 -m"./Debug/I2C.map" -o"./Debug/I2C.out" -stack0x500 -sysstack0x500 -w -x -i"C:/CCStudio_v3.3/C5500/csl/lib" -i"C:/CCStudio_v3.3/C5500/xdais/lib" -i"C:/CCStudio_v3.3/C5500/cgtools/lib" -l"csl5509.lib" -l"rts55.lib"
+"C:\Users\zhjl769\Desktop\i2c\I2C\Debug\I2C.obj"
+"C:\Users\zhjl769\Desktop\i2c\I2C\I2C.cmd"

@@ -1,0 +1,76 @@
+
+**** Build of configuration Debug for project QB_1 ****
+
+"D:\\Program Files (x86)\\CCSv6\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../QB_main.c'
+'Invoking: C6000 Compiler'
+"D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c6000_7.4.23/bin/cl6x" -mv6400 --abi=coffabi -g --include_path="D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c6000_7.4.23/include" --include_path="D:/Program Files (x86)/CCSv6/xdais_7_24_00_04/packages/ti/xdais" --include_path="/include" --define="_DEBUG" --define="CHIP_6416" --define="_TMS320C6400" --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="QB_main.d"  "../QB_main.c"
+
+>> Compilation failure
+subdir_rules.mk:7: recipe for target 'QB_main.obj' failed
+"..\QB_main.h", line 12: fatal error #5: could not open source file "csl.h"
+1 fatal error detected in the compilation of "../QB_main.c".
+Compilation terminated.
+gmake: *** [QB_main.obj] Error 1
+'Building file: ../Sync.c'
+'Invoking: C6000 Compiler'
+"D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c6000_7.4.23/bin/cl6x" -mv6400 --abi=coffabi -g --include_path="D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c6000_7.4.23/include" --include_path="D:/Program Files (x86)/CCSv6/xdais_7_24_00_04/packages/ti/xdais" --include_path="/include" --define="_DEBUG" --define="CHIP_6416" --define="_TMS320C6400" --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="Sync.d"  "../Sync.c"
+
+>> Compilation failure
+subdir_rules.mk:14: recipe for target 'Sync.obj' failed
+"../Sync.c", line 3: fatal error #5: could not open source file "csl_irq.h"
+1 fatal error detected in the compilation of "../Sync.c".
+Compilation terminated.
+gmake: *** [Sync.obj] Error 1
+'Building file: ../bootload.asm'
+'Invoking: C6000 Compiler'
+"D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c6000_7.4.23/bin/cl6x" -mv6400 --abi=coffabi -g --include_path="D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c6000_7.4.23/include" --include_path="D:/Program Files (x86)/CCSv6/xdais_7_24_00_04/packages/ti/xdais" --include_path="/include" --define="_DEBUG" --define="CHIP_6416" --define="_TMS320C6400" --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="bootload.d"  "../bootload.asm"
+'Finished building: ../bootload.asm'
+' '
+'Building file: ../c6xdspinit.c'
+'Invoking: C6000 Compiler'
+"D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c6000_7.4.23/bin/cl6x" -mv6400 --abi=coffabi -g --include_path="D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c6000_7.4.23/include" --include_path="D:/Program Files (x86)/CCSv6/xdais_7_24_00_04/packages/ti/xdais" --include_path="/include" --define="_DEBUG" --define="CHIP_6416" --define="_TMS320C6400" --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="c6xdspinit.d"  "../c6xdspinit.c"
+'Finished building: ../c6xdspinit.c'
+' '
+'Building file: ../c6xinterrupts.c'
+'Invoking: C6000 Compiler'
+"D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c6000_7.4.23/bin/cl6x" -mv6400 --abi=coffabi -g --include_path="D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c6000_7.4.23/include" --include_path="D:/Program Files (x86)/CCSv6/xdais_7_24_00_04/packages/ti/xdais" --include_path="/include" --define="_DEBUG" --define="CHIP_6416" --define="_TMS320C6400" --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="c6xinterrupts.d"  "../c6xinterrupts.c"
+'Finished building: ../c6xinterrupts.c'
+' '
+'Building file: ../cf.c'
+'Invoking: C6000 Compiler'
+"D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c6000_7.4.23/bin/cl6x" -mv6400 --abi=coffabi -g --include_path="D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c6000_7.4.23/include" --include_path="D:/Program Files (x86)/CCSv6/xdais_7_24_00_04/packages/ti/xdais" --include_path="/include" --define="_DEBUG" --define="CHIP_6416" --define="_TMS320C6400" --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="cf.d"  "../cf.c"
+"../cf.c", line 408: warning #225-D: function declared implicitly
+'Finished building: ../cf.c'
+' '
+'Building file: ../databuffer.c'
+'Invoking: C6000 Compiler'
+"D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c6000_7.4.23/bin/cl6x" -mv6400 --abi=coffabi -g --include_path="D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c6000_7.4.23/include" --include_path="D:/Program Files (x86)/CCSv6/xdais_7_24_00_04/packages/ti/xdais" --include_path="/include" --define="_DEBUG" --define="CHIP_6416" --define="_TMS320C6400" --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="databuffer.d"  "../databuffer.c"
+"../databuffer.c", line 21: warning #225-D: function declared implicitly
+'Finished building: ../databuffer.c'
+' '
+'Building file: ../isr.c'
+'Invoking: C6000 Compiler'
+"D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c6000_7.4.23/bin/cl6x" -mv6400 --abi=coffabi -g --include_path="D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c6000_7.4.23/include" --include_path="D:/Program Files (x86)/CCSv6/xdais_7_24_00_04/packages/ti/xdais" --include_path="/include" --define="_DEBUG" --define="CHIP_6416" --define="_TMS320C6400" --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="isr.d"  "../isr.c"
+
+>> Compilation failure
+subdir_rules.mk:56: recipe for target 'isr.obj' failed
+"../isr.c", line 13: fatal error #5: could not open source file "csl.h"
+1 fatal error detected in the compilation of "../isr.c".
+Compilation terminated.
+gmake: *** [isr.obj] Error 1
+'Building file: ../serial_order.c'
+'Invoking: C6000 Compiler'
+"D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c6000_7.4.23/bin/cl6x" -mv6400 --abi=coffabi -g --include_path="D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c6000_7.4.23/include" --include_path="D:/Program Files (x86)/CCSv6/xdais_7_24_00_04/packages/ti/xdais" --include_path="/include" --define="_DEBUG" --define="CHIP_6416" --define="_TMS320C6400" --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="serial_order.d"  "../serial_order.c"
+'Finished building: ../serial_order.c'
+' '
+'Building file: ../vectors.asm'
+'Invoking: C6000 Compiler'
+"D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c6000_7.4.23/bin/cl6x" -mv6400 --abi=coffabi -g --include_path="D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c6000_7.4.23/include" --include_path="D:/Program Files (x86)/CCSv6/xdais_7_24_00_04/packages/ti/xdais" --include_path="/include" --define="_DEBUG" --define="CHIP_6416" --define="_TMS320C6400" --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="vectors.d"  "../vectors.asm"
+'Finished building: ../vectors.asm'
+' '
+gmake: *** No rule to make target 'C:/Users/zhjl769/C6000/csl/lib/csl6416.lib', needed by 'QB_1.out'.
+gmake: *** No rule to make target 'C:/Users/zhjl769/c6400/dsplib/lib/dsp64x.lib', needed by 'QB_1.out'.
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****

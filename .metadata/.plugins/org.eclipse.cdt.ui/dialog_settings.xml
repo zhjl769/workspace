@@ -9,6 +9,8 @@
 	</section>
 	<section name="PDOMSearchPage">
 	</section>
+	<section name="NewClassWizardPage">
+	</section>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration.internal">
 		<item value="638" key="size.width"/>
 		<item value="284" key="size.height"/>

@@ -16,57 +16,31 @@ ASM_SRCS += \
 ../SourceFile/twid4096.asm \
 ../SourceFile/vectors.asm 
 
-OBJS += \
-./cbrev.obj \
-./cfft_noscale.obj \
-./cfft_scale.obj \
-./cifft_noscale.obj \
-./cifft_scale.obj \
-./fir2.obj \
-./h_LPF1.obj \
-./h_LPF2.obj \
-./maxvec.obj \
-./twid4096.obj \
-./vectors.obj 
-
 ASM_DEPS += \
-./SourceFile/cbrev.pp \
-./SourceFile/cfft_noscale.pp \
-./SourceFile/cfft_scale.pp \
-./SourceFile/cifft_noscale.pp \
-./SourceFile/cifft_scale.pp \
-./SourceFile/fir2.pp \
-./SourceFile/h_LPF1.pp \
-./SourceFile/h_LPF2.pp \
-./SourceFile/maxvec.pp \
-./SourceFile/twid4096.pp \
-./SourceFile/vectors.pp 
-
-OBJS__QUOTED += \
-"cbrev.obj" \
-"cfft_noscale.obj" \
-"cfft_scale.obj" \
-"cifft_noscale.obj" \
-"cifft_scale.obj" \
-"fir2.obj" \
-"h_LPF1.obj" \
-"h_LPF2.obj" \
-"maxvec.obj" \
-"twid4096.obj" \
-"vectors.obj" 
+./SourceFile/cbrev.d \
+./SourceFile/cfft_noscale.d \
+./SourceFile/cfft_scale.d \
+./SourceFile/cifft_noscale.d \
+./SourceFile/cifft_scale.d \
+./SourceFile/fir2.d \
+./SourceFile/h_LPF1.d \
+./SourceFile/h_LPF2.d \
+./SourceFile/maxvec.d \
+./SourceFile/twid4096.d \
+./SourceFile/vectors.d 
 
 ASM_DEPS__QUOTED += \
-"SourceFile\cbrev.pp" \
-"SourceFile\cfft_noscale.pp" \
-"SourceFile\cfft_scale.pp" \
-"SourceFile\cifft_noscale.pp" \
-"SourceFile\cifft_scale.pp" \
-"SourceFile\fir2.pp" \
-"SourceFile\h_LPF1.pp" \
-"SourceFile\h_LPF2.pp" \
-"SourceFile\maxvec.pp" \
-"SourceFile\twid4096.pp" \
-"SourceFile\vectors.pp" 
+"SourceFile\cbrev.d" \
+"SourceFile\cfft_noscale.d" \
+"SourceFile\cfft_scale.d" \
+"SourceFile\cifft_noscale.d" \
+"SourceFile\cifft_scale.d" \
+"SourceFile\fir2.d" \
+"SourceFile\h_LPF1.d" \
+"SourceFile\h_LPF2.d" \
+"SourceFile\maxvec.d" \
+"SourceFile\twid4096.d" \
+"SourceFile\vectors.d" 
 
 ASM_SRCS__QUOTED += \
 "../SourceFile/cbrev.asm" \

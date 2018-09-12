@@ -1,0 +1,581 @@
+******************************************************************************
+               TMS320C6x Linker PC v6.1.9                      
+******************************************************************************
+>> Linked Mon Sep 29 11:10:35 2014
+
+OUTPUT FILE NAME:   <./Debug/test_lbl_omap.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 11800000
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  entry_point           11800000   00000100  00000080  00000080  RWIX
+  L2SRAM                11800100   0003ff00  000289b8  00017548  RWIX
+  Shared_RAM            80000000   00020000  00001388  0001ec78  RWIX
+  DDR2_RAM              c6000000   00080000  00000000  00080000  RWIX
+  DDR2_part1            c6080000   00000400  000000c4  0000033c  RWIX
+  DDR2_part2            c6080400   00000400  00000400  00000000  RWIX
+  DDR2_part3            c6080800   00258000  00248800  0000f800  RWIX
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.text:_c_int00 
+*          0    11800000    00000080     
+                  11800000    00000080     rts67plus.lib : boot.obj (.text:_c_int00)
+
+buffer_env 
+*          0    11800100    0000c000     UNINITIALIZED
+                  11800100    0000c000     main_sys.obj (buffer_env)
+
+.text      0    1180c100    00008e20     
+                  1180c100    00002e80     function.obj (.text)
+                  1180ef80    00000ea0     user_evmomapl138.obj (.text)
+                  1180fe20    00000ba0     evmomapl138.obj (.text)
+                  118109c0    00000880     main_sys.obj (.text)
+                  11811240    00000580     evmomapl138_bsl.lib : evmomapl138_i2c_gpio.obj (.text)
+                  118117c0    00000400                         : evmomapl138_i2c.obj (.text)
+                  11811bc0    000003e0     evmomapl138_gpio.obj (.text)
+                  11811fa0    000003a0     dsplib64plus.lib : DSP_ifft32x32_sa.obj (.text:psa)
+                  11812340    00000380     rts67plus.lib : acos.obj (.text:_acos)
+                  118126c0    00000380                   : cos.obj (.text:_cos)
+                  11812a40    00000380     dsplib64plus.lib : DSP_fft32x32_sa.obj (.text:psa)
+                  11812dc0    00000340     rts67plus.lib : sin.obj (.text:_sin)
+                  11813100    00000320     evmomapl138_bsl.lib : evmomapl138_interrupts.obj (.text)
+                  11813420    000002e0     rts67plus.lib : frcdivd.obj (.text:__frcdivd)
+                  11813700    00000280                   : atan.obj (.text:_atan)
+                  11813980    00000280                   : sqrt.obj (.text:_sqrt)
+                  11813c00    00000220                   : divd.obj (.text:__divd)
+                  11813e20    00000220     evmomapl138_timer.obj (.text)
+                  11814040    00000200     rts67plus.lib : memcpy62.obj (.text:_memcpy)
+                  11814240    000001a0                   : atan2.obj (.text:_atan2)
+                  118143e0    00000180                   : ldexp.obj (.text:_ldexp)
+                  11814560    00000140                   : exit.obj (.text:_exit)
+                  118146a0    00000140     sys_interrupts.obj (.text)
+                  118147e0    00000120     rts67plus.lib : autoinit.obj (.text:__auto_init)
+                  11814900    00000120                   : frexp.obj (.text:_frexp)
+                  11814a20    00000120                   : memset.obj (.text:_memset)
+                  11814b40    00000100                   : divi.obj (.text:__divi)
+                  11814c40    000000e0                   : modf.obj (.text:_modf)
+                  11814d20    000000c0                   : round.obj (.text:__round)
+                  11814de0    00000060                   : ceil.obj (.text:_ceil)
+                  11814e40    00000040                   : args_main.obj (.text:__args_main)
+                  11814e80    00000040                   : trunc.obj (.text:__trunc)
+                  11814ec0    00000020                   : _lock.obj (.text:__nop)
+                  11814ee0    00000020                   : exit.obj (.text:_abort)
+                  11814f00    00000020     intvecs.obj (.text)
+
+.far       0    11814f20    000089a0     UNINITIALIZED
+                  11814f20    000087c8     main_sys.obj (.far)
+                  1181d6e8    0000008c     rts67plus.lib : exit.obj (.far)
+                  1181d774    00000004                   : errno.obj (.far)
+                  1181d778    00000060                   : acos.obj (.far)
+                  1181d7d8    00000060                   : atan.obj (.far)
+                  1181d838    00000040                   : cos.obj (.far)
+                  1181d878    00000040                   : sin.obj (.far)
+                  1181d8b8    00000008                   : _lock.obj (.far)
+
+buffer_env_ddr2 
+*          0    1181d8c0    00004000     UNINITIALIZED
+                  1181d8c0    00004000     main_sys.obj (buffer_env_ddr2)
+
+.cinit     0    118218c0    00002acc     
+                  118218c0    00002900     main_sys.obj (.cinit)
+                  118241c0    00000070     rts67plus.lib : atan.obj (.cinit)
+                  11824230    00000068                   : acos.obj (.cinit)
+                  11824298    00000048                   : cos.obj (.cinit)
+                  118242e0    00000048                   : sin.obj (.cinit)
+                  11824328    0000002c                   : exit.obj (.cinit)
+                  11824354    00000004     --HOLE-- [fill = 0]
+                  11824358    0000001c                   : _lock.obj (.cinit)
+                  11824374    00000004     --HOLE-- [fill = 0]
+                  11824378    0000000c                   : errno.obj (.cinit)
+                  11824384    00000004     --HOLE-- [fill = 0]
+                  11824388    00000004     (.pad.cinit) [fill = 0]
+
+buffer_coef_fft 
+*          0    11824390    00002000     UNINITIALIZED
+                  11824390    00002000     main_sys.obj (buffer_coef_fft)
+
+buffer_pingpang 
+*          0    11826390    00001400     UNINITIALIZED
+                  11826390    00001400     main_sys.obj (buffer_pingpang)
+
+.stack     0    11827790    00001000     UNINITIALIZED
+                  11827790    00000008     rts67plus.lib : boot.obj (.stack)
+                  11827798    00000ff8     --HOLE--
+
+.switch    0    11828790    00000064     
+                  11828790    00000030     evmomapl138_bsl.lib : evmomapl138_interrupts.obj (.switch)
+                  118287c0    00000024     evmomapl138_gpio.obj (.switch)
+                  118287e4    00000010     rts67plus.lib : frcdivd.obj (.switch)
+
+.vecs      0    11828800    00000200     
+                  11828800    00000200     intvecs.obj (.vecs)
+
+.const     0    11828a00    00000084     
+                  11828a00    00000080     evmomapl138.obj (.const:_bitval_u32)
+                  11828a80    00000004     main_sys.obj (.const:_arm_beacon_turnaround)
+
+.bss       0    11828a84    00000044     UNINITIALIZED
+                  11828a84    00000040     main_sys.obj (.bss)
+                  11828ac4    00000004     evmomapl138_bsl.lib : evmomapl138_i2c.obj (.bss)
+
+buffer_send_sig 
+*          0    80000000    00001388     UNINITIALIZED
+                  80000000    00001388     main_sys.obj (buffer_send_sig)
+
+ddr2_dat   0    c6080000    000000c4     UNINITIALIZED
+                  c6080000    000000c4     main_sys.obj (ddr2_dat)
+
+ddr2_cmd   0    c6080400    00000400     UNINITIALIZED
+                  c6080400    00000400     main_sys.obj (ddr2_cmd)
+
+ddr2_buffer 
+*          0    c6080800    00248800     UNINITIALIZED
+                  c6080800    00248800     main_sys.obj (ddr2_buffer)
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+11828a84   $bss
+11828a84   .bss
+1180c100   .text
+11814ee0   C$$EXIT
+1180f708   _AD_start
+1180f6f4   _AD_stop
+11828aa8   _Block_num
+11828ab4   _CHIP_L
+11828aac   _Close_num
+11824390   _Coef_fft
+11828a9c   _Configure_flag
+11800100   _Correlation1
+11801100   _Correlation2
+11802100   _Correlation3
+11803100   _Correlation4
+11812a40   _DSP_fft32x32
+11811fa0   _DSP_ifft32x32
+1180fdac   _DSP_interrupt_ARM
+11810038   _EVMOMAPL138_enableDsp
+1180fe20   _EVMOMAPL138_init
+1180fe54   _EVMOMAPL138_initRAM
+11810110   _EVMOMAPL138_lpscTransition
+11810068   _EVMOMAPL138_pinmuxConfig
+11804100   _Envelop1
+11806100   _Envelop2
+11808100   _Envelop3
+1180a100   _Envelop4
+1181d098   _F
+11826b90   _Fifo1
+11811c4c   _GPIO_getInput
+11811bc0   _GPIO_setDir
+11811ccc   _GPIO_setOutput
+11811d54   _GPIO_toggleLoop
+11811334   _I2CGPIO_getInput
+11811474   _I2CGPIO_getInputAll
+11811240   _I2CGPIO_init
+118115ac   _I2CGPIO_setOutput
+11811714   _I2CGPIO_setOutputAll
+118117c0   _I2C_init
+118118c0   _I2C_read
+11811a38   _I2C_write
+11828aa4   _Max_Buffer
+11814f20   _Parameter_sig
+11828ab2   _Pp_flag
+1181d0e8   _RAMSES_CODE
+1181d8c0   _Ref_fft1
+1181e8c0   _Ref_fft2
+1181f8c0   _Ref_fft3
+118208c0   _Ref_fft4
+11828ab8   _Refsig_len
+11828ab1   _Rx_flag
+11814f50   _Sig1
+11814f98   _Sig2
+11814fe0   _Sig3
+11815028   _Sig4
+11817098   _Sig_fft
+1181d0d8   _Sig_flag
+11828a9d   _Start_flag
+11828ab0   _Syn_flag
+1180dfd8   _Tcp_Info
+11819098   _Temp_buffer1
+1181b098   _Temp_buffer2
+11828aa0   _Time_over
+11828ab3   _Trans_flag
+80000000   _Trans_signal
+11828abc   _Trans_signal_flag
+11828ac0   _Trans_signal_len
+11815070   _Turnaround
+1180ef80   _USFUNC_delay
+11813f2c   _USTIMER_delay
+11814000   _USTIMER_get
+11813e20   _USTIMER_init
+11813fc8   _USTIMER_reset
+11814014   _USTIMER_set
+11810998   _UTIL_isUIBoardAttached
+11828aa1   _Work_mode
+00001000   __STACK_SIZE
+ffffffff   ___TI_pprof_out_hndl
+ffffffff   ___TI_prof_data_size
+ffffffff   ___TI_prof_data_start
+ffffffff   ___binit__
+11828a84   ___bss__
+ffffffff   ___c_args__
+118218c0   ___cinit__
+11828ac8   ___end__
+11814f20   ___etext__
+ffffffff   ___pinit__
+1180c100   ___text__
+11814e40   __args_main
+118147e0   __auto_init
+1181d76c   __cleanup_ptr
+11813c00   __divd
+11814b40   __divi
+1181d770   __dtors_ptr
+11813420   __frcdivd
+1181d8b8   __lock
+11814ec0   __nop
+11814d20   __round
+11827790   __stack
+11814e80   __trunc
+1181d8bc   __unlock
+11814ee0   _abort
+11812340   _acos
+11828a97   _arm_beacon_flag
+11828a80   _arm_beacon_turnaround
+11828a8a   _arm_parameter_abs_snr_threshold
+11828a92   _arm_parameter_close_time
+11828a88   _arm_parameter_flag
+11828a8e   _arm_parameter_max_pulse_width
+11828a8d   _arm_parameter_min_pulse_width
+11828a8c   _arm_parameter_rel2_snr_threshold
+11828a8b   _arm_parameter_rel_snr_threshold
+11828a89   _arm_parameter_snr_max
+11828a93   _arm_parameter_th_noise
+11828a91   _arm_parameter_w_after
+11828a90   _arm_parameter_w_all
+11828a8f   _arm_parameter_w_before
+11828a84   _arm_start_flag
+11828a87   _arm_syn_cyc
+11828a85   _arm_syn_flag
+11828a86   _arm_syn_type
+11828a94   _arm_sys_gain
+11828a96   _arm_work_mode
+11828a95   _arm_work_mode_flag
+11813700   _atan
+11814240   _atan2
+11828a00   _bitval_u32
+11826390   _buffer1
+11826790   _buffer2
+11800000   _c_int00
+118147c0   _c_int10
+118147c8   _c_int11
+118146a0   _c_int4
+118146b8   _c_int5
+118146d4   _c_int6
+118146f0   _c_int7
+11814798   _c_int8
+118147b4   _c_int9
+11814de0   _ceil
+1180fda8   _clear_gp2_1
+1180f244   _close_EDMA_E4
+118131a8   _config_Interrupt_Selector
+11810500   _config_pll0
+11810778   _config_pll1
+1180d020   _configure_para
+118126c0   _cos
+1180d5e4   _d2i
+c60800c0   _ddr2_beacon_status
+c6080800   _ddr2_buffer
+c6080400   _ddr2_cmd
+c6080060   _ddr2_corr_pos
+c6080000   _ddr2_delay
+c6080020   _ddr2_envelop_max
+c6080040   _ddr2_noise_std
+c6080090   _ddr2_parameter
+c6080070   _ddr2_real_pulse_width
+c6080080   _ddr2_snr_out
+1180e368   _detection
+11813110   _disableGlobalINT
+11813170   _disableSpecificINT
+11813100   _enableGlobalINT
+11813124   _enableNMI
+11813134   _enableSpecificINT
+1181d774   _errno
+1180fa48   _evm_init_edma_setup
+1180fac4   _evm_init_gpio_extern
+1180f690   _evm_init_mcbsp
+1180f340   _evm_init_omapl138
+1180f34c   _evm_init_omapl138_DDR2
+1180f528   _evm_init_timer
+1180f5cc   _evm_init_timer_send
+11814560   _exit
+1180d568   _fifo
+1180df78   _find_num
+11814900   _frexp
+11815090   _gain_db
+1180c100   _gen_sig
+1180c388   _gen_transmit_sig
+1180d64c   _gen_twiddle_fft32x32
+1180eb84   _get_delay
+1180dbf0   _get_envelop
+1180d92c   _get_fft
+1180da24   _get_xcorr
+1180f798   _init_PaRAM_event4
+1180f880   _init_PaRAM_event74
+1180f964   _init_PaRAM_event75
+1180f298   _init_clocks_user
+1180d3d8   _init_global_var
+1180efb8   _init_psc_user
+11828800   _intcVectorTable
+118143e0   _ldexp
+118109c0   _main
+1180de70   _max
+1180df04   _mean
+11814040   _memcpy
+11814a20   _memset
+11814c40   _modf
+1180f1ec   _open_EDMA_E4
+11828a98   _send_num
+1180fda4   _set_gp2_1
+11812dc0   _sin
+11813980   _sqrt
+1180c60c   _syn_config
+11828a9f   _syn_cyc
+11828a9e   _syn_type
+11828aa2   _sys_gain
+1180fc10   _transmit
+11815098   _w
+ffffffff   binit
+118218c0   cinit
+11828ac8   end
+11814f20   etext
+ffffffff   pinit
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00001000   __STACK_SIZE
+11800000   _c_int00
+11800100   _Correlation1
+11801100   _Correlation2
+11802100   _Correlation3
+11803100   _Correlation4
+11804100   _Envelop1
+11806100   _Envelop2
+11808100   _Envelop3
+1180a100   _Envelop4
+1180c100   .text
+1180c100   ___text__
+1180c100   _gen_sig
+1180c388   _gen_transmit_sig
+1180c60c   _syn_config
+1180d020   _configure_para
+1180d3d8   _init_global_var
+1180d568   _fifo
+1180d5e4   _d2i
+1180d64c   _gen_twiddle_fft32x32
+1180d92c   _get_fft
+1180da24   _get_xcorr
+1180dbf0   _get_envelop
+1180de70   _max
+1180df04   _mean
+1180df78   _find_num
+1180dfd8   _Tcp_Info
+1180e368   _detection
+1180eb84   _get_delay
+1180ef80   _USFUNC_delay
+1180efb8   _init_psc_user
+1180f1ec   _open_EDMA_E4
+1180f244   _close_EDMA_E4
+1180f298   _init_clocks_user
+1180f340   _evm_init_omapl138
+1180f34c   _evm_init_omapl138_DDR2
+1180f528   _evm_init_timer
+1180f5cc   _evm_init_timer_send
+1180f690   _evm_init_mcbsp
+1180f6f4   _AD_stop
+1180f708   _AD_start
+1180f798   _init_PaRAM_event4
+1180f880   _init_PaRAM_event74
+1180f964   _init_PaRAM_event75
+1180fa48   _evm_init_edma_setup
+1180fac4   _evm_init_gpio_extern
+1180fc10   _transmit
+1180fda4   _set_gp2_1
+1180fda8   _clear_gp2_1
+1180fdac   _DSP_interrupt_ARM
+1180fe20   _EVMOMAPL138_init
+1180fe54   _EVMOMAPL138_initRAM
+11810038   _EVMOMAPL138_enableDsp
+11810068   _EVMOMAPL138_pinmuxConfig
+11810110   _EVMOMAPL138_lpscTransition
+11810500   _config_pll0
+11810778   _config_pll1
+11810998   _UTIL_isUIBoardAttached
+118109c0   _main
+11811240   _I2CGPIO_init
+11811334   _I2CGPIO_getInput
+11811474   _I2CGPIO_getInputAll
+118115ac   _I2CGPIO_setOutput
+11811714   _I2CGPIO_setOutputAll
+118117c0   _I2C_init
+118118c0   _I2C_read
+11811a38   _I2C_write
+11811bc0   _GPIO_setDir
+11811c4c   _GPIO_getInput
+11811ccc   _GPIO_setOutput
+11811d54   _GPIO_toggleLoop
+11811fa0   _DSP_ifft32x32
+11812340   _acos
+118126c0   _cos
+11812a40   _DSP_fft32x32
+11812dc0   _sin
+11813100   _enableGlobalINT
+11813110   _disableGlobalINT
+11813124   _enableNMI
+11813134   _enableSpecificINT
+11813170   _disableSpecificINT
+118131a8   _config_Interrupt_Selector
+11813420   __frcdivd
+11813700   _atan
+11813980   _sqrt
+11813c00   __divd
+11813e20   _USTIMER_init
+11813f2c   _USTIMER_delay
+11813fc8   _USTIMER_reset
+11814000   _USTIMER_get
+11814014   _USTIMER_set
+11814040   _memcpy
+11814240   _atan2
+118143e0   _ldexp
+11814560   _exit
+118146a0   _c_int4
+118146b8   _c_int5
+118146d4   _c_int6
+118146f0   _c_int7
+11814798   _c_int8
+118147b4   _c_int9
+118147c0   _c_int10
+118147c8   _c_int11
+118147e0   __auto_init
+11814900   _frexp
+11814a20   _memset
+11814b40   __divi
+11814c40   _modf
+11814d20   __round
+11814de0   _ceil
+11814e40   __args_main
+11814e80   __trunc
+11814ec0   __nop
+11814ee0   C$$EXIT
+11814ee0   _abort
+11814f20   _Parameter_sig
+11814f20   ___etext__
+11814f20   etext
+11814f50   _Sig1
+11814f98   _Sig2
+11814fe0   _Sig3
+11815028   _Sig4
+11815070   _Turnaround
+11815090   _gain_db
+11815098   _w
+11817098   _Sig_fft
+11819098   _Temp_buffer1
+1181b098   _Temp_buffer2
+1181d098   _F
+1181d0d8   _Sig_flag
+1181d0e8   _RAMSES_CODE
+1181d76c   __cleanup_ptr
+1181d770   __dtors_ptr
+1181d774   _errno
+1181d8b8   __lock
+1181d8bc   __unlock
+1181d8c0   _Ref_fft1
+1181e8c0   _Ref_fft2
+1181f8c0   _Ref_fft3
+118208c0   _Ref_fft4
+118218c0   ___cinit__
+118218c0   cinit
+11824390   _Coef_fft
+11826390   _buffer1
+11826790   _buffer2
+11826b90   _Fifo1
+11827790   __stack
+11828800   _intcVectorTable
+11828a00   _bitval_u32
+11828a80   _arm_beacon_turnaround
+11828a84   $bss
+11828a84   .bss
+11828a84   ___bss__
+11828a84   _arm_start_flag
+11828a85   _arm_syn_flag
+11828a86   _arm_syn_type
+11828a87   _arm_syn_cyc
+11828a88   _arm_parameter_flag
+11828a89   _arm_parameter_snr_max
+11828a8a   _arm_parameter_abs_snr_threshold
+11828a8b   _arm_parameter_rel_snr_threshold
+11828a8c   _arm_parameter_rel2_snr_threshold
+11828a8d   _arm_parameter_min_pulse_width
+11828a8e   _arm_parameter_max_pulse_width
+11828a8f   _arm_parameter_w_before
+11828a90   _arm_parameter_w_all
+11828a91   _arm_parameter_w_after
+11828a92   _arm_parameter_close_time
+11828a93   _arm_parameter_th_noise
+11828a94   _arm_sys_gain
+11828a95   _arm_work_mode_flag
+11828a96   _arm_work_mode
+11828a97   _arm_beacon_flag
+11828a98   _send_num
+11828a9c   _Configure_flag
+11828a9d   _Start_flag
+11828a9e   _syn_type
+11828a9f   _syn_cyc
+11828aa0   _Time_over
+11828aa1   _Work_mode
+11828aa2   _sys_gain
+11828aa4   _Max_Buffer
+11828aa8   _Block_num
+11828aac   _Close_num
+11828ab0   _Syn_flag
+11828ab1   _Rx_flag
+11828ab2   _Pp_flag
+11828ab3   _Trans_flag
+11828ab4   _CHIP_L
+11828ab8   _Refsig_len
+11828abc   _Trans_signal_flag
+11828ac0   _Trans_signal_len
+11828ac8   ___end__
+11828ac8   end
+80000000   _Trans_signal
+c6080000   _ddr2_delay
+c6080020   _ddr2_envelop_max
+c6080040   _ddr2_noise_std
+c6080060   _ddr2_corr_pos
+c6080070   _ddr2_real_pulse_width
+c6080080   _ddr2_snr_out
+c6080090   _ddr2_parameter
+c60800c0   _ddr2_beacon_status
+c6080400   _ddr2_cmd
+c6080800   _ddr2_buffer
+ffffffff   ___TI_pprof_out_hndl
+ffffffff   ___TI_prof_data_size
+ffffffff   ___TI_prof_data_start
+ffffffff   ___binit__
+ffffffff   ___c_args__
+ffffffff   ___pinit__
+ffffffff   binit
+ffffffff   pinit
+
+[213 symbols]

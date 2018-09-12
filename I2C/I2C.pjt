@@ -1,0 +1,28 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="C:\Users\zhjl769\Desktop\i2c\I2C\"
+ProjectType=Executable
+CPUFamily=TMS320C55XX
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="Linker"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+Source="I2C.c"
+Source="I2C.cmd"
+
+["Compiler" Settings: "Debug"]
+Options=-g -fr"$(Proj_dir)\Debug" -d"CHIP_5509"
+
+["Compiler" Settings: "Release"]
+Options=-o2 -fr"$(Proj_dir)\Release"
+
+["Linker" Settings: "Debug"]
+Options=-c -heap0x500 -m".\Debug\I2C.map" -o".\Debug\I2C.out" -stack0x500 -sysstack0x500 -w -x -l"csl5509.lib" -l"rts55.lib"
+
+["Linker" Settings: "Release"]
+Options=-c -m".\Release\I2C.map" -o".\Release\I2C.out" -w -x
+

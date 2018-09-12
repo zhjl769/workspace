@@ -1,0 +1,7 @@
+# FIXED
+
+main.obj: ../main.c
+main.obj: E:/Program\ Files\ (x86)/CCSv6/ccsv6/ccs_base/msp430/include/msp430.h
+
+../main.c: 
+E:/Program\ Files\ (x86)/CCSv6/ccsv6/ccs_base/msp430/include/msp430.h: 

@@ -4,25 +4,30 @@
 
 SHELL = cmd.exe
 
-CG_TOOL_ROOT := D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1
+CG_TOOL_ROOT := D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1
+
+GEN_OPTS__FLAG := 
+GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
-$(GEN_CMDS__FLAG) \
 "../USBL.cmd" \
-"./vectors.obj" \
-"./twid4096.obj" \
-"./maxvec.obj" \
-"./h_LPF2.obj" \
-"./h_LPF1.obj" \
-"./fir2.obj" \
-"./cifft_scale.obj" \
-"./cifft_noscale.obj" \
-"./cfft_scale.obj" \
-"./cfft_noscale.obj" \
 "./cbrev.obj" \
+"./cfft_noscale.obj" \
+"./cfft_scale.obj" \
+"./cifft_noscale.obj" \
+"./cifft_scale.obj" \
+"./fir2.obj" \
+"./h_LPF1.obj" \
+"./h_LPF2.obj" \
 "./main.obj" \
--l"csl5509x.lib" \
--l"rts55x.lib" \
+"./maxvec.obj" \
+"./twid2048.obj" \
+"./twid4096.obj" \
+"./vectors.obj" \
+$(GEN_CMDS__FLAG) \
+-lcsl5509x.lib \
+-lrts55x.lib \
+-llibc.a \
 
 -include ../makefile.init
 
@@ -56,17 +61,20 @@ endif
 ifneq ($(strip $(CC_DEPS)),)
 -include $(CC_DEPS)
 endif
+ifneq ($(strip $(SV7A_DEPS)),)
+-include $(SV7A_DEPS)
+endif
 ifneq ($(strip $(S55_DEPS)),)
 -include $(S55_DEPS)
 endif
 ifneq ($(strip $(C67_DEPS)),)
 -include $(C67_DEPS)
 endif
-ifneq ($(strip $(C??_DEPS)),)
--include $(C??_DEPS)
-endif
 ifneq ($(strip $(CLA_DEPS)),)
 -include $(CLA_DEPS)
+endif
+ifneq ($(strip $(C??_DEPS)),)
+-include $(C??_DEPS)
 endif
 ifneq ($(strip $(CPP_DEPS)),)
 -include $(CPP_DEPS)
@@ -95,6 +103,9 @@ endif
 ifneq ($(strip $(C43_DEPS)),)
 -include $(C43_DEPS)
 endif
+ifneq ($(strip $(INO_DEPS)),)
+-include $(INO_DEPS)
+endif
 ifneq ($(strip $(S67_DEPS)),)
 -include $(S67_DEPS)
 endif
@@ -106,6 +117,9 @@ ifneq ($(strip $(S43_DEPS)),)
 endif
 ifneq ($(strip $(OPT_DEPS)),)
 -include $(OPT_DEPS)
+endif
+ifneq ($(strip $(PDE_DEPS)),)
+-include $(PDE_DEPS)
 endif
 ifneq ($(strip $(S64_DEPS)),)
 -include $(S64_DEPS)
@@ -121,6 +135,18 @@ endif
 -include ../makefile.defs
 
 # Add inputs and outputs from these tool invocations to the build variables 
+EXE_OUTPUTS += \
+USBL.out \
+
+EXE_OUTPUTS__QUOTED += \
+"USBL.out" \
+
+BIN_OUTPUTS += \
+USBL.hex \
+
+BIN_OUTPUTS__QUOTED += \
+"USBL.hex" \
+
 
 # All Target
 all: USBL.out
@@ -129,16 +155,22 @@ all: USBL.out
 USBL.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: C5500 Linker'
-	"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O3 -g --define="CHIP_5509" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 -z -m"USBL.map" --stack_size=0x200 --heap_size=0x400 -i"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/lib" -i"D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c5500_4.4.1/include" -i"E:/DATA/workspace/USBL(new)_100M" -i"E:/DATA/workspace/USBL(new)_100M/SourceFile" -i"D:/PROGRA~2/CCSTUD~1.3/C5500/csl/lib" -i"D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/rtdx/lib/c5500" -i"D:/Program Files (x86)/CCSv5/bios_5_42_01_09/packages/ti/bios/lib" --reread_libs --display_error_number --warn_sections --xml_link_info="USBL(new)_100M_linkInfo.xml" --rom_model --sys_stacksize=0x200 -o "USBL.out" $(ORDERED_OBJS)
+	"D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O3 -g --define="CHIP_5509" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 -z -m"USBL.map" --stack_size=0x200 --heap_size=0x400 -i"D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/lib" -i"D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/include" -i"E:/DATA/workspace/USBL(new)_100M" -i"E:/DATA/workspace/USBL(new)_100M/SourceFile" -i"/lib" -i"D:/Program Files (x86)/CCSv6/bios_5_42_02_10/packages/ti/rtdx/lib/c5500" -i"D:/Program Files (x86)/CCSv6/bios_5_42_02_10/packages/ti/bios/lib" --reread_libs --display_error_number --warn_sections --xml_link_info="USBL(new)_100M_linkInfo.xml" --rom_model --sys_stacksize=0x200 -o "USBL.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: $@'
+	@echo ' '
+
+USBL.hex: $(EXE_OUTPUTS)
+	@echo 'Invoking: C5500 Hex Utility'
+	"D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/bin/hex55"  -o "USBL.hex" $(EXE_OUTPUTS__QUOTED)
+	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(C5500_EXECUTABLE_OUTPUTS__QUOTED)$(GEN_HDRS__QUOTED)$(GEN_MISC_FILES__QUOTED)$(GEN_FILES__QUOTED)$(GEN_CMDS__QUOTED) "USBL.out"
-	-$(RM) "main.pp" 
-	-$(RM) "main.obj" "cbrev.obj" "cfft_noscale.obj" "cfft_scale.obj" "cifft_noscale.obj" "cifft_scale.obj" "fir2.obj" "h_LPF1.obj" "h_LPF2.obj" "maxvec.obj" "twid4096.obj" "vectors.obj" 
-	-$(RM) "SourceFile\cbrev.pp" "SourceFile\cfft_noscale.pp" "SourceFile\cfft_scale.pp" "SourceFile\cifft_noscale.pp" "SourceFile\cifft_scale.pp" "SourceFile\fir2.pp" "SourceFile\h_LPF1.pp" "SourceFile\h_LPF2.pp" "SourceFile\maxvec.pp" "SourceFile\twid4096.pp" "SourceFile\vectors.pp" 
+	-$(RM) $(GEN_HDRS__QUOTED)$(GEN_MISC_FILES__QUOTED)$(EXE_OUTPUTS__QUOTED)$(GEN_FILES__QUOTED)$(BIN_OUTPUTS__QUOTED)$(GEN_CMDS__QUOTED)
+	-$(RM) "main.d" 
+	-$(RM) "cbrev.obj" "cfft_noscale.obj" "cfft_scale.obj" "cifft_noscale.obj" "cifft_scale.obj" "fir2.obj" "h_LPF1.obj" "h_LPF2.obj" "main.obj" "maxvec.obj" "twid2048.obj" "twid4096.obj" "vectors.obj" 
+	-$(RM) "cbrev.d" "cfft_noscale.d" "cfft_scale.d" "cifft_noscale.d" "cifft_scale.d" "fir2.d" "h_LPF1.d" "h_LPF2.d" "maxvec.d" "twid2048.d" "twid4096.d" "vectors.d" "SourceFile\cbrev.d" "SourceFile\cfft_noscale.d" "SourceFile\cfft_scale.d" "SourceFile\cifft_noscale.d" "SourceFile\cifft_scale.d" "SourceFile\fir2.d" "SourceFile\h_LPF1.d" "SourceFile\h_LPF2.d" "SourceFile\maxvec.d" "SourceFile\twid4096.d" "SourceFile\vectors.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

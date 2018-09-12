@@ -1,4 +1,9 @@
+CCSResourceExplorerContentProvider.CCS_IMAGE_INFO=E\:/Program Files (x86)/CCSv6/ccsv6|6.2.0.201609121600
+CCStudioUIStartup.CCS_IMAGE_INFO=E\:/Program Files (x86)/CCSv6/ccsv6|6.2.0.201609121600
+com.ti.ccstudio.ui.CCS_INSTALL_LOCATION=E\:/Program Files (x86)/CCSv6/ccsv6
 com.ti.ccstudio.ui.CCS_UI_LAYOUT_VERSION=5.3.0
+com.ti.ccstudio.ui.CCS_VERSION=6.2.0.201609121600
 com.ti.ccstudio.ui.IS_NOT_FIRST_CCE_LAUNCH=true
+com.ti.ccstudio.ui.IS_NOT_FIRST_CCS_LAUNCH=true
 com.ti.ccstudio.ui.MAXIMIZE_WELCOME_PAGE=false
 eclipse.preferences.version=1

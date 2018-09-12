@@ -1,0 +1,8 @@
+------------------------------  I2C.pjt - Debug  ------------------------------
+[I2C.c] "C:\CCStudio_v3.3\C5500\cgtools\bin\cl55" -g -fr"C:/Users/zhjl769/Desktop/i2c/I2C/Debug" -d"CHIP_5509" -@"Debug.lkf" "I2C.c"
+
+[Linking...] "C:\CCStudio_v3.3\C5500\cgtools\bin\cl55" -@"Debug.lkf"
+<Linking>
+
+Build Complete,
+  0 Errors, 0 Warnings, 0 Remarks.

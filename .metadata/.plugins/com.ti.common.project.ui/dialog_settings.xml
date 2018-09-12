@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="com.ti.ccstudio.project.ui.internal.preferences.CodegenToolsPreferencePage">
+		<item value="E:\Program Files (x86)\CCSv6\ccsv6\ccs_base\MSP430" key="ToolsPreferencePage.BROWSE_FILTER"/>
 	</section>
 </section>

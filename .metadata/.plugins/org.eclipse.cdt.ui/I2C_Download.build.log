@@ -1,7 +1,47 @@
 
 **** Build of configuration Debug for project I2C_Download ****
 
-"D:\\Program Files (x86)\\CCSv5\\ccsv5\\utils\\bin\\gmake" -k all 
-gmake: Nothing to be done for `all'.
+"E:\\Program Files (x86)\\CCSv6\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../I2C.asm'
+'Invoking: C5500 Compiler'
+"E:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -g --include_path="E:/Program Files (x86)/CCSv6/ccsv6/ccs_base/c5500/csl/include" --include_path="E:/Program Files (x86)/CCSv6/ccsv6/ccs_base/c5500/dsplib/55x_src" --include_path="E:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/include" --define=CHIP_5509A --display_error_number --diag_warning=225 --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="I2C.d"  "../I2C.asm"
+'Finished building: ../I2C.asm'
+' '
+'Building file: ../USBL.asm'
+'Invoking: C5500 Compiler'
+"E:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -g --include_path="E:/Program Files (x86)/CCSv6/ccsv6/ccs_base/c5500/csl/include" --include_path="E:/Program Files (x86)/CCSv6/ccsv6/ccs_base/c5500/dsplib/55x_src" --include_path="E:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/include" --define=CHIP_5509A --display_error_number --diag_warning=225 --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="USBL.d"  "../USBL.asm"
+'Finished building: ../USBL.asm'
+' '
+'Building file: ../main.c'
+'Invoking: C5500 Compiler'
+"E:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -g --include_path="E:/Program Files (x86)/CCSv6/ccsv6/ccs_base/c5500/csl/include" --include_path="E:/Program Files (x86)/CCSv6/ccsv6/ccs_base/c5500/dsplib/55x_src" --include_path="E:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/include" --define=CHIP_5509A --display_error_number --diag_warning=225 --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="main.d"  "../main.c"
+'Finished building: ../main.c'
+' '
+'Building file: ../regs.asm'
+'Invoking: C5500 Compiler'
+"E:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -g --include_path="E:/Program Files (x86)/CCSv6/ccsv6/ccs_base/c5500/csl/include" --include_path="E:/Program Files (x86)/CCSv6/ccsv6/ccs_base/c5500/dsplib/55x_src" --include_path="E:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/include" --define=CHIP_5509A --display_error_number --diag_warning=225 --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="regs.d"  "../regs.asm"
+'Finished building: ../regs.asm'
+' '
+'Building file: ../vector.asm'
+'Invoking: C5500 Compiler'
+"E:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -g --include_path="E:/Program Files (x86)/CCSv6/ccsv6/ccs_base/c5500/csl/include" --include_path="E:/Program Files (x86)/CCSv6/ccsv6/ccs_base/c5500/dsplib/55x_src" --include_path="E:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/include" --define=CHIP_5509A --display_error_number --diag_warning=225 --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="vector.d"  "../vector.asm"
+1 Assembly Error, No Assembly Warnings
+
+>> Compilation failure
+
+>> Compilation failure
+subdir_rules.mk:35: recipe for target 'vector.obj' failed
+"..\vector.asm", ERROR!   at EOF: [E0300] The following symbols are undefined:
+  no_isr
+  start
+
+Errors in Source - Assembler Aborted
+gmake: *** [vector.obj] Error 1
+'Building file: ../vectors_i2c1.s55'
+'Invoking: C5500 Compiler'
+"E:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -g --include_path="E:/Program Files (x86)/CCSv6/ccsv6/ccs_base/c5500/csl/include" --include_path="E:/Program Files (x86)/CCSv6/ccsv6/ccs_base/c5500/dsplib/55x_src" --include_path="E:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/include" --define=CHIP_5509A --display_error_number --diag_warning=225 --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="vectors_i2c1.d"  "../vectors_i2c1.s55"
+'Finished building: ../vectors_i2c1.s55'
+' '
+gmake: Target 'all' not remade because of errors.
 
 **** Build Finished ****

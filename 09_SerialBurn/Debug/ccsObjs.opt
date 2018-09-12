@@ -1,0 +1,1 @@
+"./src/flash_burn.obj" "./src/AT25F1024.obj" "../flash_burn.cmd" -l"csl5509x.lib" -l"rts55x.lib" 

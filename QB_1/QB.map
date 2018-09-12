@@ -1,0 +1,887 @@
+******************************************************************************
+          TMS320C6x COFF Linker PC v6.0.8                      
+******************************************************************************
+>> Linked Fri Jun 05 15:12:02 2015
+
+OUTPUT FILE NAME:   <./Debug/QB_1.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 00010a20
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  VECS                  00000000   00000400  00000280  00000180  RWIX
+  PMEM                  00000400   00011000  000108a0  00000760  RWIX
+  DMEM                  00011400   000eb000  00067d92  0008326e  RWIX
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+vectors    0    00000000    00000200     
+                  00000000    00000200     vectors.obj (vectors)
+
+.boot_load 
+*          0    00000200    00000080     
+                  00000200    00000080     bootload.obj (.boot_load)
+
+.text      0    00000400    000108a0     
+                  00000400    00007440     QB_main.obj (.text)
+                  00007840    00001820     isr.obj (.text)
+                  00009060    00001640     cf.obj (.text)
+                  0000a6a0    00000c40     Sync.obj (.text)
+                  0000b2e0    00000c40     rts6400.lib : pow.obj (.text:_pow)
+                  0000bf20    00000960     c6xdspinit.obj (.text)
+                  0000c880    00000620     serial_order.obj (.text)
+                  0000cea0    000004c0     rts6400.lib : cos.obj (.text:_cos)
+                  0000d360    00000460                 : sin.obj (.text:_sin)
+                  0000d7c0    000003a0     dsp64x.lib : fft32x32.obj (.text:_fft32x32)
+                  0000db60    00000340     rts6400.lib : atan.obj (.text:_atan)
+                  0000dea0    00000320                 : frcdivd.obj (.text:__frcdivd)
+                  0000e1c0    00000300     c6xinterrupts.obj (.text)
+                  0000e4c0    00000280     rts6400.lib : sqrt.obj (.text:_sqrt)
+                  0000e740    00000260     databuffer.obj (.text)
+                  0000e9a0    00000260     rts6400.lib : ldexp.obj (.text:_ldexp)
+                  0000ec00    00000240                 : frcaddd.obj (.text:__frcaddd)
+                  0000ee40    000001e0                 : atan2.obj (.text:_atan2)
+                  0000f020    000001c0                 : divd.obj (.text:__divd)
+                  0000f1e0    000001c0                 : mpyd.obj (.text:__mpyd)
+                  0000f3a0    000001c0                 : frexp.obj (.text:_frexp)
+                  0000f560    00000180                 : addf.obj (.text:__addf)
+                  0000f6e0    00000160                 : addd.obj (.text:__addd)
+                  0000f840    00000160                 : round.obj (.text:__round)
+                  0000f9a0    00000120                 : frcmpyd.obj (.text:__frcmpyd)
+                  0000fac0    00000100                 : autoinit.obj (.text:__auto_init)
+                  0000fbc0    00000100                 : divi.obj (.text:__divi)
+                  0000fcc0    00000100                 : fixdlli.obj (.text:__fixdlli)
+                  0000fdc0    00000100                 : fltllid.obj (.text:__fltllid)
+                  0000fec0    00000100                 : exit.obj (.text:_exit)
+                  0000ffc0    00000100                 : memset.obj (.text:_memset)
+                  000100c0    000000e0                 : memcpy64.obj (.text:_memcpy)
+                  000101a0    000000e0                 : modf.obj (.text:_modf)
+                  00010280    000000c0                 : divu.obj (.text:__divu)
+                  00010340    000000a0                 : cmpd.obj (.text:__cmpd)
+                  000103e0    000000a0                 : cvtdf.obj (.text:__cvtdf)
+                  00010480    000000a0                 : fixdi.obj (.text:__fixdi)
+                  00010520    000000a0                 : fixfi.obj (.text:__fixfi)
+                  000105c0    000000a0                 : fltlid.obj (.text:__fltlid)
+                  00010660    000000a0                 : remu.obj (.text:__remu)
+                  00010700    000000a0                 : renormd.obj (.text:_renormd)
+                  000107a0    00000080                 : cmpf.obj (.text:__cmpf)
+                  00010820    00000080                 : llshift.obj (.text:__llshl)
+                  000108a0    00000060                 : cvtfd.obj (.text:__cvtfd)
+                  00010900    00000060                 : fltid.obj (.text:__fltid)
+                  00010960    00000060                 : fltif.obj (.text:__fltif)
+                  000109c0    00000060                 : llshift.obj (.text:__llshru)
+                  00010a20    00000060                 : boot.obj (.text:_c_int00)
+                  00010a80    00000060                 : strcpy.obj (.text:_strcpy)
+                  00010ae0    00000040                 : args_main.obj (.text:__args_main)
+                  00010b20    00000040                 : fltuf.obj (.text:__fltuf)
+                  00010b60    00000040                 : negd.obj (.text:__negd)
+                  00010ba0    00000040                 : subd.obj (.text:__subd)
+                  00010be0    00000040                 : subf.obj (.text:__subf)
+                  00010c20    00000020                 : negll.obj (.text:__negll)
+                  00010c40    00000020                 : _lock.obj (.text:__nop)
+                  00010c60    00000020                 : trunc.obj (.text:__trunc)
+                  00010c80    00000020                 : exit.obj (.text:_abort)
+
+.cio       0    00011400    00000000     UNINITIALIZED
+
+.data      0    00011400    00000000     UNINITIALIZED
+
+.sysmem    0    00011400    00000000     UNINITIALIZED
+
+.far       0    00011400    00064a98     UNINITIALIZED
+                  00011400    000478d0     QB_main.obj (.far)
+                  00058cd0    0001c420     cf.obj (.far)
+                  000750f0    00000828     isr.obj (.far)
+                  00075918    000002b0     serial_order.obj (.far)
+                  00075bc8    00000120     rts6400.lib : pow.obj (.far)
+                  00075ce8    00000090                 : exit.obj (.far)
+                  00075d78    00000060                 : atan.obj (.far)
+                  00075dd8    00000040                 : sin.obj (.far)
+                  00075e18    00000040                 : cos.obj (.far)
+                  00075e58    00000032     Sync.obj (.far)
+                  00075e8c    00000008     rts6400.lib : _lock.obj (.far)
+                  00075e94    00000004                 : errno.obj (.far)
+
+.stack     0    00075e98    00002000     UNINITIALIZED
+                  00075e98    00000008     rts6400.lib : boot.obj (.stack)
+
+.cinit     0    00077e98    00001044     
+                  00077e98    00000b28     QB_main.obj (.cinit)
+                  000789c0    00000140     rts6400.lib : pow.obj (.cinit)
+                  00078b00    00000111     isr.obj (.cinit)
+                  00078c11    00000007     --HOLE-- [fill = 0]
+                  00078c18    000000dc     cf.obj (.cinit)
+                  00078cf4    00000004     --HOLE-- [fill = 0]
+                  00078cf8    00000070     rts6400.lib : atan.obj (.cinit)
+                  00078d68    00000049     serial_order.obj (.cinit)
+                  00078db1    00000007     --HOLE-- [fill = 0]
+                  00078db8    00000048     rts6400.lib : sin.obj (.cinit)
+                  00078e00    00000048                 : cos.obj (.cinit)
+                  00078e48    0000002c                 : exit.obj (.cinit)
+                  00078e74    00000004     --HOLE-- [fill = 0]
+                  00078e78    0000002c     Sync.obj (.cinit)
+                  00078ea4    00000004     --HOLE-- [fill = 0]
+                  00078ea8    0000001c     rts6400.lib : _lock.obj (.cinit)
+                  00078ec4    00000004     --HOLE-- [fill = 0]
+                  00078ec8    0000000c                 : errno.obj (.cinit)
+                  00078ed4    00000008     --HOLE-- [fill = 0]
+
+.bss       0    00078ee0    00000222     UNINITIALIZED
+                  00078ee0    000001b8     QB_main.obj (.bss)
+                  00079098    00000038     cf.obj (.bss)
+                  000790d0    00000029     isr.obj (.bss)
+                  000790f9    00000007     serial_order.obj (.bss)
+                  00079100    00000002     Sync.obj (.bss)
+
+.const     0    00079108    00000054     
+                  00079108    00000033     Sync.obj (.const)
+                  0007913b    00000005     --HOLE-- [fill = 0]
+                  00079140    0000001c     cf.obj (.const)
+
+.switch    0    0007915c    00000040     
+                  0007915c    00000030     c6xinterrupts.obj (.switch)
+                  0007918c    00000010     rts6400.lib : frcdivd.obj (.switch)
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+00078ee0   $bss
+00078ee0   .bss
+00011400   .data
+00000400   .text
+00010c80   C$$EXIT
+00078f40   _A
+00011400   _Ad_Data_buffer0
+00013400   _Ad_Data_buffer1
+00015400   _Ad_big_buffer
+00079022   _C1
+00079030   _C2
+0000618c   _C2A
+00079034   _CC
+00079036   _CC1
+00079038   _CC2
+0007903a   _CC3
+0007903c   _CC4
+00006248   _CFOK
+000034a8   _CFZERO_Test
+0000976c   _CF_Addr_information
+00003520   _CF_Main
+0000962c   _CF_ReadSector
+00074ed0   _CF_Rsector_buffer
+00004630   _CF_Write
+0000994c   _CF_WriteSector
+00009a8c   _CF_WriteSectors
+00058cd0   _CF_Wsector_buffer
+00058ed0   _CF_Wsectors_buffer
+0007905c   _CF_write_count
+00075910   _CIPRHvalue
+00075914   _CIPRLvalue
+00078f5c   _Cell_Num_index
+00005020   _ClearCommandBuffer
+0000775c   _ClearCompassFIFO
+00007680   _ClearOrderFIFO
+00009e54   _Clear_Dir
+00078eec   _ComInt
+00079040   _ComPass
+00004cc0   _Command_Choose
+000790fa   _Command_Int_flag
+00075b58   _Command_buffer
+0000cbe4   _Command_to_buffer
+0000cab4   _CompassData_to_buffer
+000584d8   _CompassFix
+00079044   _CompassNum
+000790d0   _Compass_Int_flag
+00078f64   _Compass_Sector_num
+000790f9   _Compass_To_BufferOK_flag
+00075958   _Compass_buffer
+0000c75c   _Config_DisableEdma13
+0000c598   _Config_EnableEdma13
+00009c1c   _ConvertCharArrayToInt
+00009ca0   _ConvertIntToCharArray
+00078f8a   _Count2Min
+00078f88   _CountBuffer
+00078fd0   _CountS1
+000790a0   _DBRAdd
+000790a4   _DBRResrSec
+00031458   _DET
+000790bc   _DIRAdd
+0000d7c0   _DSP_fft32x32
+00079028   _DT1
+00079020   _DT2
+000790c0   _DataAdd
+0000e944   _DataBuffer_GetReadPointer
+0000e8fc   _DataBuffer_GetWritePointer
+0000e740   _DataBuffer_Initial
+0000e87c   _DataBuffer_ReadIndexInc
+0000e8d8   _DataBuffer_SetUsedCellNum
+0000e820   _DataBuffer_WriteIndexInc
+00078f60   _Data_Sector_num
+00078f70   _DelayT
+00009df0   _Detect_StatusReg_50
+00009d8c   _Detect_StatusReg_58
+00009d14   _Detect_StatusReg_81
+000750d0   _Dir_buffer
+000790da   _Edma13_Int_flag
+000790db   _Edma16_Int_flag
+000790dc   _Edma_Int_flag
+000790b4   _FAT1Add
+000790b8   _FAT2Add
+00031460   _FED
+00079088   _FF
+000414c8   _FP1s
+000454c8   _FVx1s
+000494c8   _FVy1s
+0004d4c8   _FVz1s
+00078f58   _File_index
+0000a570   _File_num_test
+000314c0   _First
+0000a284   _Form_FAT
+00009f20   _Form_FAT1
+00009060   _Init_CF
+000584b8   _KELLER_P
+00075e80   _KELLER_RX1
+000584c8   _KELLER_T
+00075e78   _KELLER_TX1
+000584a0   _KELLER_TX11
+000584a8   _KELLER_TX2
+000584b0   _KELLER_TX3
+00075108   _KELLER_buffer
+000790fb   _LJ_ok
+00079098   _MBRAdd
+0007909c   _MBRResrSec
+00078f90   _M_P
+00078f94   _M_Vx
+00078f98   _M_Vy
+00078f9c   _M_Vz
+0000c064   _McBSP_initial
+00078fa0   _N
+00078fa4   _NN
+00031480   _NO
+00078f80   _NSIG
+00078f78   _N_Del
+00031488   _OBJ
+00005de0   _OBJ2MinC
+00078f6c   _OBJ_Int
+000314c8   _P1s
+00031408   _PRD
+00031420   _PRD_C
+00031438   _PRD_N
+00078ff0   _PVz
+00078fd8   _PVzA
+00078fe0   _PVzB
+00078fe8   _PVzC
+00078ff8   _PVzR
+00079008   _PVz_temp
+00031450   _PWR
+00079000   _P_temp
+00079010   _P_temp1
+000790c4   _QB_Num
+000790c8   _QB_Num_LBAadd
+0000c880   _R232_To_LJ
+0000c9f8   _R232_To_order
+0000c93c   _R232_To_sync
+00006ae8   _R2T
+00006de0   _R2T_C
+00006ea0   _R2T_N
+0000cce0   _RS485_to_KELLER
+00009464   _Read_MBR_sector
+00009868   _Read_QB_num
+00078f68   _ReadyInt
+000790b0   _RootClus
+00078f6a   _S1Int
+00003268   _SRAM_Test
+000790ac   _SecPerFAT
+000790a8   _SecPerPart
+000061d8   _SendData
+00078f6e   _SendInt
+000071c0   _SendOBJ
+00005438   _Ser2MinC
+00078ee4   _SerCount
+000070bc   _SerOBJ
+000074fc   _SerOK
+00079046   _SerP
+00005078   _SerSf
+00079048   _SerX
+0007904a   _SerY
+0007904c   _SerZ
+000790e0   _Ser_OK
+00031400   _Seri
+00075118   _Sf
+00056788   _Sp
+00057278   _Sp16
+00078f48   _Sr16
+000554c8   _Sx
+00056dc8   _Sx16
+00057408   _Sx32
+00055b08   _Sy
+00056f58   _Sy16
+00057728   _Sy32
+00075e68   _Sync1_buffer
+0000cd9c   _SyncData_to_buffer
+000790e8   _Sync_Int_flag
+000790d4   _Sync_Pulse_AB
+00075b88   _Sync_buffer
+00079101   _Sync_number
+00075e58   _Sync_order_buffer
+0000acd0   _Sync_order_clear
+000790eb   _Sync_pulse_add
+0000adc4   _Sync_start
+0000b134   _Sync_successed
+00056148   _Sz
+000570e8   _Sz16
+00078f54   _T1
+000062a4   _T2R
+000066a8   _T2R_C
+000068dc   _T2R_N
+00058ca8   _TL
+00031468   _TST
+00078fa8   _TT
+00078f50   _Target1
+000354c8   _Vx1s
+000394c8   _Vy1s
+0003d4c8   _Vz1s
+00079004   _Vz_temp
+00079018   _Vz_temp1
+00078eee   _WorkInt
+00009104   _Write_File_dir
+000098a0   _Write_QB_num
+00002000   __STACK_SIZE
+ffffffff   ___binit__
+00078ee0   ___bss__
+ffffffff   ___c_args__
+00077e98   ___cinit__
+00011400   ___data__
+00011400   ___edata__
+00079102   ___end__
+00010ca0   ___etext__
+ffffffff   ___pinit__
+00000400   ___text__
+0000f6e0   __addd
+0000f560   __addf
+00010ae0   __args_main
+0000fac0   __auto_init
+00075d70   __cleanup_ptr
+00010340   __cmpd
+000107a0   __cmpf
+000103e0   __cvtdf
+000108a0   __cvtfd
+0000f020   __divd
+0000fbc0   __divi
+00010280   __divu
+00075d74   __dtors_ptr
+00010480   __fixdi
+0000fcc0   __fixdlli
+00010520   __fixfi
+00010900   __fltid
+00010960   __fltif
+000105c0   __fltlid
+0000fdc0   __fltllid
+00010b20   __fltuf
+0000ec00   __frcaddd
+0000dea0   __frcdivd
+0000f9a0   __frcmpyd
+00010820   __llshl
+000109c0   __llshru
+00075e8c   __lock
+0000f1e0   __mpyd
+00010b60   __negd
+00010c20   __negll
+00010c40   __nop
+00010660   __remu
+0000f840   __round
+00075e98   __stack
+00010ba0   __subd
+00010be0   __subf
+00010c60   __trunc
+00075e90   __unlock
+00010c80   _abort
+0000db60   _atan
+0000ee40   _atan2
+000750f0   _beacon_ack_buffer
+000750f8   _beacon_command_buffer
+00000200   _boot
+00078ef0   _bytesSize
+00078ee0   _bytesSize1
+00078ef4   _bytesSize2
+00078ef8   _bytesSize3
+00078efc   _bytesSize4
+0007904e   _c1
+0007904f   _c2
+00079050   _c3
+00010a20   _c_int00
+00007840   _c_int1
+00008bd0   _c_int13
+00008bd8   _c_int14
+00008c8c   _c_int15
+00007bdc   _c_int2
+00007f58   _c_int4
+00007f7c   _c_int5
+000082e0   _c_int6
+00008638   _c_int7
+0000874c   _c_int8
+00008858   _c_int9
+0000a6a0   _check_Sync
+0000ad40   _compass_error
+0000c0d8   _config_754a
+0000c1e4   _config_754b
+0000c2f0   _config_754c
+0000c3c4   _config_754d
+0000e260   _config_Interrupt_Selector
+0000bf20   _config_chip
+0000bff8   _config_gpio
+0000cea0   _cos
+00078ee8   _count0
+00057a48   _count_theta
+000790d9   _count_timer0_NO
+0000e224   _disableSpecificINT
+0000e1c0   _enableGlobalINT
+0000e1d4   _enableNMI
+0000e1e8   _enableSpecificINT
+00075e94   _errno
+0000fec0   _exit
+000790cc   _file_count
+0000f3a0   _frexp
+000047f4   _gen_twiddle_fft32x32
+00079054   _i1
+00078f8c   _ii
+00079058   _j1
+0000e9a0   _ldexp
+00079070   _m1
+00079074   _m2
+00000400   _main
+000100c0   _memcpy
+0000ffc0   _memset
+000101a0   _modf
+00075b78   _order_buffer
+0000ac60   _order_clear
+00075918   _order_redundancy
+0000ac38   _order_return
+00057ff0   _phX
+00058180   _phY
+00058310   _phZ
+0000b2e0   _pow
+00010700   _renormd
+00079060   _s
+00079068   _s16
+00079100   _sample_wait
+00078f00   _sca
+0000a978   _self_check
+0000d360   _sin
+0000e4c0   _sqrt
+00079064   _ss
+0007906a   _ss16
+0007906c   _sss16
+00010a80   _strcpy
+00078fb0   _sumP
+00078fb8   _sumVx
+00078fc0   _sumVy
+00078fc8   _sumVz
+00079078   _t1
+00079080   _t11
+00078f20   _temp1
+00078f28   _temp2
+00078f30   _temp3
+00078f38   _temp4
+00078f08   _tempx
+00078f10   _tempy
+00078f18   _tempz
+0007905e   _testint
+00079090   _the
+00078f4c   _theta
+0000c4d8   _timer0_5ms_timeout
+0000c498   _timer0_8ms_timeout
+000790f0   _timer0_add
+000790ea   _timer0_flag
+000790ec   _timer0_model
+000790e9   _timer0_sub
+000790d8   _timer1_1sOut_flag
+000790f4   _timer1_add
+0000c518   _timer1_config_2s
+0000c558   _timer1_config_timeout
+000790f8   _timer1_model
+000514c8   _w
+000790e4   _what
+ffffffff   binit
+00077e98   cinit
+00011400   edata
+00079102   end
+00010ca0   etext
+ffffffff   pinit
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000200   _boot
+00000400   .text
+00000400   ___text__
+00000400   _main
+00002000   __STACK_SIZE
+00003268   _SRAM_Test
+000034a8   _CFZERO_Test
+00003520   _CF_Main
+00004630   _CF_Write
+000047f4   _gen_twiddle_fft32x32
+00004cc0   _Command_Choose
+00005020   _ClearCommandBuffer
+00005078   _SerSf
+00005438   _Ser2MinC
+00005de0   _OBJ2MinC
+0000618c   _C2A
+000061d8   _SendData
+00006248   _CFOK
+000062a4   _T2R
+000066a8   _T2R_C
+000068dc   _T2R_N
+00006ae8   _R2T
+00006de0   _R2T_C
+00006ea0   _R2T_N
+000070bc   _SerOBJ
+000071c0   _SendOBJ
+000074fc   _SerOK
+00007680   _ClearOrderFIFO
+0000775c   _ClearCompassFIFO
+00007840   _c_int1
+00007bdc   _c_int2
+00007f58   _c_int4
+00007f7c   _c_int5
+000082e0   _c_int6
+00008638   _c_int7
+0000874c   _c_int8
+00008858   _c_int9
+00008bd0   _c_int13
+00008bd8   _c_int14
+00008c8c   _c_int15
+00009060   _Init_CF
+00009104   _Write_File_dir
+00009464   _Read_MBR_sector
+0000962c   _CF_ReadSector
+0000976c   _CF_Addr_information
+00009868   _Read_QB_num
+000098a0   _Write_QB_num
+0000994c   _CF_WriteSector
+00009a8c   _CF_WriteSectors
+00009c1c   _ConvertCharArrayToInt
+00009ca0   _ConvertIntToCharArray
+00009d14   _Detect_StatusReg_81
+00009d8c   _Detect_StatusReg_58
+00009df0   _Detect_StatusReg_50
+00009e54   _Clear_Dir
+00009f20   _Form_FAT1
+0000a284   _Form_FAT
+0000a570   _File_num_test
+0000a6a0   _check_Sync
+0000a978   _self_check
+0000ac38   _order_return
+0000ac60   _order_clear
+0000acd0   _Sync_order_clear
+0000ad40   _compass_error
+0000adc4   _Sync_start
+0000b134   _Sync_successed
+0000b2e0   _pow
+0000bf20   _config_chip
+0000bff8   _config_gpio
+0000c064   _McBSP_initial
+0000c0d8   _config_754a
+0000c1e4   _config_754b
+0000c2f0   _config_754c
+0000c3c4   _config_754d
+0000c498   _timer0_8ms_timeout
+0000c4d8   _timer0_5ms_timeout
+0000c518   _timer1_config_2s
+0000c558   _timer1_config_timeout
+0000c598   _Config_EnableEdma13
+0000c75c   _Config_DisableEdma13
+0000c880   _R232_To_LJ
+0000c93c   _R232_To_sync
+0000c9f8   _R232_To_order
+0000cab4   _CompassData_to_buffer
+0000cbe4   _Command_to_buffer
+0000cce0   _RS485_to_KELLER
+0000cd9c   _SyncData_to_buffer
+0000cea0   _cos
+0000d360   _sin
+0000d7c0   _DSP_fft32x32
+0000db60   _atan
+0000dea0   __frcdivd
+0000e1c0   _enableGlobalINT
+0000e1d4   _enableNMI
+0000e1e8   _enableSpecificINT
+0000e224   _disableSpecificINT
+0000e260   _config_Interrupt_Selector
+0000e4c0   _sqrt
+0000e740   _DataBuffer_Initial
+0000e820   _DataBuffer_WriteIndexInc
+0000e87c   _DataBuffer_ReadIndexInc
+0000e8d8   _DataBuffer_SetUsedCellNum
+0000e8fc   _DataBuffer_GetWritePointer
+0000e944   _DataBuffer_GetReadPointer
+0000e9a0   _ldexp
+0000ec00   __frcaddd
+0000ee40   _atan2
+0000f020   __divd
+0000f1e0   __mpyd
+0000f3a0   _frexp
+0000f560   __addf
+0000f6e0   __addd
+0000f840   __round
+0000f9a0   __frcmpyd
+0000fac0   __auto_init
+0000fbc0   __divi
+0000fcc0   __fixdlli
+0000fdc0   __fltllid
+0000fec0   _exit
+0000ffc0   _memset
+000100c0   _memcpy
+000101a0   _modf
+00010280   __divu
+00010340   __cmpd
+000103e0   __cvtdf
+00010480   __fixdi
+00010520   __fixfi
+000105c0   __fltlid
+00010660   __remu
+00010700   _renormd
+000107a0   __cmpf
+00010820   __llshl
+000108a0   __cvtfd
+00010900   __fltid
+00010960   __fltif
+000109c0   __llshru
+00010a20   _c_int00
+00010a80   _strcpy
+00010ae0   __args_main
+00010b20   __fltuf
+00010b60   __negd
+00010ba0   __subd
+00010be0   __subf
+00010c20   __negll
+00010c40   __nop
+00010c60   __trunc
+00010c80   C$$EXIT
+00010c80   _abort
+00010ca0   ___etext__
+00010ca0   etext
+00011400   .data
+00011400   _Ad_Data_buffer0
+00011400   ___data__
+00011400   ___edata__
+00011400   edata
+00013400   _Ad_Data_buffer1
+00015400   _Ad_big_buffer
+00031400   _Seri
+00031408   _PRD
+00031420   _PRD_C
+00031438   _PRD_N
+00031450   _PWR
+00031458   _DET
+00031460   _FED
+00031468   _TST
+00031480   _NO
+00031488   _OBJ
+000314c0   _First
+000314c8   _P1s
+000354c8   _Vx1s
+000394c8   _Vy1s
+0003d4c8   _Vz1s
+000414c8   _FP1s
+000454c8   _FVx1s
+000494c8   _FVy1s
+0004d4c8   _FVz1s
+000514c8   _w
+000554c8   _Sx
+00055b08   _Sy
+00056148   _Sz
+00056788   _Sp
+00056dc8   _Sx16
+00056f58   _Sy16
+000570e8   _Sz16
+00057278   _Sp16
+00057408   _Sx32
+00057728   _Sy32
+00057a48   _count_theta
+00057ff0   _phX
+00058180   _phY
+00058310   _phZ
+000584a0   _KELLER_TX11
+000584a8   _KELLER_TX2
+000584b0   _KELLER_TX3
+000584b8   _KELLER_P
+000584c8   _KELLER_T
+000584d8   _CompassFix
+00058ca8   _TL
+00058cd0   _CF_Wsector_buffer
+00058ed0   _CF_Wsectors_buffer
+00074ed0   _CF_Rsector_buffer
+000750d0   _Dir_buffer
+000750f0   _beacon_ack_buffer
+000750f8   _beacon_command_buffer
+00075108   _KELLER_buffer
+00075118   _Sf
+00075910   _CIPRHvalue
+00075914   _CIPRLvalue
+00075918   _order_redundancy
+00075958   _Compass_buffer
+00075b58   _Command_buffer
+00075b78   _order_buffer
+00075b88   _Sync_buffer
+00075d70   __cleanup_ptr
+00075d74   __dtors_ptr
+00075e58   _Sync_order_buffer
+00075e68   _Sync1_buffer
+00075e78   _KELLER_TX1
+00075e80   _KELLER_RX1
+00075e8c   __lock
+00075e90   __unlock
+00075e94   _errno
+00075e98   __stack
+00077e98   ___cinit__
+00077e98   cinit
+00078ee0   $bss
+00078ee0   .bss
+00078ee0   ___bss__
+00078ee0   _bytesSize1
+00078ee4   _SerCount
+00078ee8   _count0
+00078eec   _ComInt
+00078eee   _WorkInt
+00078ef0   _bytesSize
+00078ef4   _bytesSize2
+00078ef8   _bytesSize3
+00078efc   _bytesSize4
+00078f00   _sca
+00078f08   _tempx
+00078f10   _tempy
+00078f18   _tempz
+00078f20   _temp1
+00078f28   _temp2
+00078f30   _temp3
+00078f38   _temp4
+00078f40   _A
+00078f48   _Sr16
+00078f4c   _theta
+00078f50   _Target1
+00078f54   _T1
+00078f58   _File_index
+00078f5c   _Cell_Num_index
+00078f60   _Data_Sector_num
+00078f64   _Compass_Sector_num
+00078f68   _ReadyInt
+00078f6a   _S1Int
+00078f6c   _OBJ_Int
+00078f6e   _SendInt
+00078f70   _DelayT
+00078f78   _N_Del
+00078f80   _NSIG
+00078f88   _CountBuffer
+00078f8a   _Count2Min
+00078f8c   _ii
+00078f90   _M_P
+00078f94   _M_Vx
+00078f98   _M_Vy
+00078f9c   _M_Vz
+00078fa0   _N
+00078fa4   _NN
+00078fa8   _TT
+00078fb0   _sumP
+00078fb8   _sumVx
+00078fc0   _sumVy
+00078fc8   _sumVz
+00078fd0   _CountS1
+00078fd8   _PVzA
+00078fe0   _PVzB
+00078fe8   _PVzC
+00078ff0   _PVz
+00078ff8   _PVzR
+00079000   _P_temp
+00079004   _Vz_temp
+00079008   _PVz_temp
+00079010   _P_temp1
+00079018   _Vz_temp1
+00079020   _DT2
+00079022   _C1
+00079028   _DT1
+00079030   _C2
+00079034   _CC
+00079036   _CC1
+00079038   _CC2
+0007903a   _CC3
+0007903c   _CC4
+00079040   _ComPass
+00079044   _CompassNum
+00079046   _SerP
+00079048   _SerX
+0007904a   _SerY
+0007904c   _SerZ
+0007904e   _c1
+0007904f   _c2
+00079050   _c3
+00079054   _i1
+00079058   _j1
+0007905c   _CF_write_count
+0007905e   _testint
+00079060   _s
+00079064   _ss
+00079068   _s16
+0007906a   _ss16
+0007906c   _sss16
+00079070   _m1
+00079074   _m2
+00079078   _t1
+00079080   _t11
+00079088   _FF
+00079090   _the
+00079098   _MBRAdd
+0007909c   _MBRResrSec
+000790a0   _DBRAdd
+000790a4   _DBRResrSec
+000790a8   _SecPerPart
+000790ac   _SecPerFAT
+000790b0   _RootClus
+000790b4   _FAT1Add
+000790b8   _FAT2Add
+000790bc   _DIRAdd
+000790c0   _DataAdd
+000790c4   _QB_Num
+000790c8   _QB_Num_LBAadd
+000790cc   _file_count
+000790d0   _Compass_Int_flag
+000790d4   _Sync_Pulse_AB
+000790d8   _timer1_1sOut_flag
+000790d9   _count_timer0_NO
+000790da   _Edma13_Int_flag
+000790db   _Edma16_Int_flag
+000790dc   _Edma_Int_flag
+000790e0   _Ser_OK
+000790e4   _what
+000790e8   _Sync_Int_flag
+000790e9   _timer0_sub
+000790ea   _timer0_flag
+000790eb   _Sync_pulse_add
+000790ec   _timer0_model
+000790f0   _timer0_add
+000790f4   _timer1_add
+000790f8   _timer1_model
+000790f9   _Compass_To_BufferOK_flag
+000790fa   _Command_Int_flag
+000790fb   _LJ_ok
+00079100   _sample_wait
+00079101   _Sync_number
+00079102   ___end__
+00079102   end
+ffffffff   ___binit__
+ffffffff   ___c_args__
+ffffffff   ___pinit__
+ffffffff   binit
+ffffffff   pinit
+
+[362 symbols]

@@ -1,0 +1,3 @@
+-z -q -c -m"./Debug/I2C.map" -o"./Debug/I2C.out" -w -x -i"C:/CCStudio_v3.3/C5500/csl/lib" -i"C:/CCStudio_v3.3/C5500/xdais/lib" -i"C:/CCStudio_v3.3/C5500/cgtools/lib"
+"E:\MyProjects\i2c_zhangzhe_download\Debug\I2C.obj"
+"E:\MyProjects\i2c_zhangzhe_download\I2C.cmd"

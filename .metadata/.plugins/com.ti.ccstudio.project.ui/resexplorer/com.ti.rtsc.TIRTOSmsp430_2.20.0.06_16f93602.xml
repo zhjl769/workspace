@@ -1,0 +1,839 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resource.explorer version="1.0" name="TI-RTOS for MSP43x" dir="" href="http://processors.wiki.ti.com/index.php/TI-RTOS">
+
+    <content name="Release Notes" href="E:/Program Files (x86)/CCSv6/tirtos_msp43x_2_20_00_06/release_notes_tirtos_msp43x_2_20_00_06.html">
+	<type>weblink</type>
+    </content>
+    <content name="Documentation Links" href="E:/Program Files (x86)/CCSv6/tirtos_msp43x_2_20_00_06/docs/Documentation_Overview_msp43x.html">
+	<type>weblink</type>
+    </content>
+	<contents name="MSP432 Family" desc="MSP432 Family" icon="plugin://icons/obj16/targetFamily.png">
+		<contents name="MSP432P401R" desc="MSP432P401R" icon="plugin://icons/obj16/target.png">
+				<filter id="filter_175459936737390">
+					<devices><device>MSP432</device></devices>
+					<search.tags>
+					<tag>MSP432P401R</tag>
+					<tag>MSP432 Family</tag>
+					</search.tags>
+				</filter>
+				<contents name="MSP-EXP432P401R Launchpad" desc="TI-RTOS example projects for MSP-EXP432P401R Launchpad" customPageType="genericNote">
+				<filter id="filter_175459936932636">
+					<devices><device>MSP432</device></devices>
+					<search.tags>
+					<tag>MSP432P401R</tag>
+					<tag>MSP432 Family</tag>
+					<tag>MSP-EXP432P401R Launchpad</tag>
+					</search.tags>
+				</filter>
+				<contents name="Driver Examples" desc="TI-RTOS driver example projects for MSP-EXP432P401R Launchpad" customPageType="genericNote">
+				<filter id="filter_175459936934559">
+					<devices><device>MSP432</device></devices>
+					<search.tags>
+					<tag>MSP432P401R</tag>
+					<tag>MSP432 Family</tag>
+					<tag>Driver Examples</tag>
+					</search.tags>
+				</filter>
+				<contents name="GNU Driver Examples" desc="GNU driver example projects for MSP-EXP432P401R Launchpad" customPageType="genericNote">
+				<filter id="filter_175459936937124">
+					<devices><device>MSP432</device></devices>
+					<search.tags>
+					<tag>MSP432P401R</tag>
+					<tag>MSP432 Family</tag>
+					<tag>GNU Driver Examples</tag>
+					</search.tags>
+				</filter>
+				<contents name="ADC Examples" desc="ADC example projects for MSP-EXP432P401R Launchpad" customPageType="genericNote">
+				<filter id="filter_175459936939368">
+					<devices><device>MSP432</device></devices>
+					<search.tags>
+					<tag>MSP432P401R</tag>
+					<tag>MSP432 Family</tag>
+					<tag>ADC Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="ADC Project" desc="An ADC single channel TI-RTOS project" href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\driverExamples\gnuDriverExamples\adcExamples\com_ti_rtsc_tirtosmsp430_example_126.projectspec">
+					<filter.ref ref.id="filter_175459936939368"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="adcsinglechannel_MSP_EXP432P401R_GNU_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="Empty Examples" desc="Empty example projects for MSP-EXP432P401R Launchpad" customPageType="genericNote">
+				<filter id="filter_175459936983611">
+					<devices><device>MSP432</device></devices>
+					<search.tags>
+					<tag>MSP432P401R</tag>
+					<tag>MSP432 Family</tag>
+					<tag>Empty Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="Empty (Minimal) Project" desc="An empty TI-RTOS project with minimal footprint" href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\driverExamples\gnuDriverExamples\emptyExamples\com_ti_rtsc_tirtosmsp430_example_128.projectspec">
+					<filter.ref ref.id="filter_175459936983611"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="empty_min_MSP_EXP432P401R_GNU_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Empty Project" desc="An empty TI-RTOS project" href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\driverExamples\gnuDriverExamples\emptyExamples\com_ti_rtsc_tirtosmsp430_example_127.projectspec">
+					<filter.ref ref.id="filter_175459936983611"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="empty_MSP_EXP432P401R_GNU_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="FatFs Examples" desc="FatFs example projects for MSP-EXP432P401R Launchpad" customPageType="genericNote">
+				<filter id="filter_175459937018877">
+					<devices><device>MSP432</device></devices>
+					<search.tags>
+					<tag>MSP432P401R</tag>
+					<tag>MSP432 Family</tag>
+					<tag>FatFs Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="FatSD Raw" desc="An example using an SDcard with FatFs API calls" href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\driverExamples\gnuDriverExamples\fatFsExamples\com_ti_rtsc_tirtosmsp430_example_129.projectspec">
+					<filter.ref ref.id="filter_175459937018877"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="fatsdraw_MSP_EXP432P401R_GNU_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="GPIO Examples" desc="GPIO example projects for MSP-EXP432P401R Launchpad" customPageType="genericNote">
+				<filter id="filter_175459937039396">
+					<devices><device>MSP432</device></devices>
+					<search.tags>
+					<tag>MSP432P401R</tag>
+					<tag>MSP432 Family</tag>
+					<tag>GPIO Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="GPIO Interrupt" desc="An example using interrupts to toggle an LED after a button press" href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\driverExamples\gnuDriverExamples\gpioExamples\com_ti_rtsc_tirtosmsp430_example_130.projectspec">
+					<filter.ref ref.id="filter_175459937039396"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="gpiointerrupt_MSP_EXP432P401R_GNU_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="I2C Examples" desc="I2C example projects for MSP-EXP432P401R Launchpad" customPageType="genericNote">
+				<filter id="filter_175459937062159">
+					<devices><device>MSP432</device></devices>
+					<search.tags>
+					<tag>MSP432P401R</tag>
+					<tag>MSP432 Family</tag>
+					<tag>I2C Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="I2C RF430CL330 Load" desc="An example NFC RF430CL330 example that sends the CPU Load" href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\driverExamples\gnuDriverExamples\i2CExamples\com_ti_rtsc_tirtosmsp430_example_131.projectspec">
+					<filter.ref ref.id="filter_175459937062159"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="i2crf430cl330_load_MSP_EXP432P401R_GNU_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="I2C TMP006" desc="An example on how to use the I2C driver with the TMP006 boosterpack" href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\driverExamples\gnuDriverExamples\i2CExamples\com_ti_rtsc_tirtosmsp430_example_132.projectspec">
+					<filter.ref ref.id="filter_175459937062159"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="i2ctmp006_MSP_EXP432P401R_GNU_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="I2C TPL0401EVM" desc="An example on how to use the I2C driver with the TPL0401EVM boosterpack" href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\driverExamples\gnuDriverExamples\i2CExamples\com_ti_rtsc_tirtosmsp430_example_133.projectspec">
+					<filter.ref ref.id="filter_175459937062159"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="i2ctpl0401evm_MSP_EXP432P401R_GNU_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="PWM Examples" desc="PWM example projects for MSP-EXP432P401R Launchpad" customPageType="genericNote">
+				<filter id="filter_175459937099348">
+					<devices><device>MSP432</device></devices>
+					<search.tags>
+					<tag>MSP432P401R</tag>
+					<tag>MSP432 Family</tag>
+					<tag>PWM Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="PWM LED" desc="An example on how to use the PWM driver to control on-board LEDs" href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\driverExamples\gnuDriverExamples\pwmExamples\com_ti_rtsc_tirtosmsp430_example_134.projectspec">
+					<filter.ref ref.id="filter_175459937099348"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="pwmled_MSP_EXP432P401R_GNU_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="SPI Examples" desc="SPI example projects for MSP-EXP432P401R Launchpad" customPageType="genericNote">
+				<filter id="filter_175459937118264">
+					<devices><device>MSP432</device></devices>
+					<search.tags>
+					<tag>MSP432P401R</tag>
+					<tag>MSP432 Family</tag>
+					<tag>SPI Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="SPI Loopback" desc="An example that performs an external SPI loopback with master and slave SPI" href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\driverExamples\gnuDriverExamples\spiExamples\com_ti_rtsc_tirtosmsp430_example_135.projectspec">
+					<filter.ref ref.id="filter_175459937118264"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="spiloopback_MSP_EXP432P401R_GNU_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="UART Examples" desc="UART example projects for MSP-EXP432P401R Launchpad" customPageType="genericNote">
+				<filter id="filter_175459937140065">
+					<devices><device>MSP432</device></devices>
+					<search.tags>
+					<tag>MSP432P401R</tag>
+					<tag>MSP432 Family</tag>
+					<tag>UART Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="UART Echo" desc="Echoes characters back using the UART driver" href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\driverExamples\gnuDriverExamples\uartExamples\com_ti_rtsc_tirtosmsp430_example_136.projectspec">
+					<filter.ref ref.id="filter_175459937140065"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="uartecho_MSP_EXP432P401R_GNU_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="UART Logging" desc="A simple example that sends Log data to the UART" href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\driverExamples\gnuDriverExamples\uartExamples\com_ti_rtsc_tirtosmsp430_example_137.projectspec">
+					<filter.ref ref.id="filter_175459937140065"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="uartlogging_MSP_EXP432P401R_GNU_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="Watchdog Examples" desc="Watchdog example projects for MSP-EXP432P401R Launchpad" customPageType="genericNote">
+				<filter id="filter_175459937167636">
+					<devices><device>MSP432</device></devices>
+					<search.tags>
+					<tag>MSP432P401R</tag>
+					<tag>MSP432 Family</tag>
+					<tag>Watchdog Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="Watchdog" desc="Watchdog Timer example that services a watchdog until a button press and release" href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\driverExamples\gnuDriverExamples\watchdogExamples\com_ti_rtsc_tirtosmsp430_example_138.projectspec">
+					<filter.ref ref.id="filter_175459937167636"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="watchdog_MSP_EXP432P401R_GNU_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				</contents>
+				<contents name="TI Driver Examples" desc="TI driver example projects for MSP-EXP432P401R Launchpad" customPageType="genericNote">
+				<filter id="filter_175459937213162">
+					<devices><device>MSP432</device></devices>
+					<search.tags>
+					<tag>MSP432P401R</tag>
+					<tag>MSP432 Family</tag>
+					<tag>TI Driver Examples</tag>
+					</search.tags>
+				</filter>
+				<contents name="ADC Examples" desc="ADC example projects for MSP-EXP432P401R Launchpad" customPageType="genericNote">
+				<filter id="filter_175459937217650">
+					<devices><device>MSP432</device></devices>
+					<search.tags>
+					<tag>MSP432P401R</tag>
+					<tag>MSP432 Family</tag>
+					<tag>ADC Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="ADC Project" desc="An ADC single channel TI-RTOS project" href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\driverExamples\tiDriverExamples\adcExamples\com_ti_rtsc_tirtosmsp430_example_99.projectspec">
+					<filter.ref ref.id="filter_175459937217650"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="adcsinglechannel_MSP_EXP432P401R_TI_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="Empty Examples" desc="Empty example projects for MSP-EXP432P401R Launchpad" customPageType="genericNote">
+				<filter id="filter_175459937244581">
+					<devices><device>MSP432</device></devices>
+					<search.tags>
+					<tag>MSP432P401R</tag>
+					<tag>MSP432 Family</tag>
+					<tag>Empty Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="Empty (Minimal) Project" desc="An empty TI-RTOS project with minimal footprint" href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\driverExamples\tiDriverExamples\emptyExamples\com_ti_rtsc_tirtosmsp430_example_101.projectspec">
+					<filter.ref ref.id="filter_175459937244581"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="empty_min_MSP_EXP432P401R_TI_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Empty Project" desc="An empty TI-RTOS project" href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\driverExamples\tiDriverExamples\emptyExamples\com_ti_rtsc_tirtosmsp430_example_100.projectspec">
+					<filter.ref ref.id="filter_175459937244581"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="empty_MSP_EXP432P401R_TI_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="FatFs Examples" desc="FatFs example projects for MSP-EXP432P401R Launchpad" customPageType="genericNote">
+				<filter id="filter_175459937284335">
+					<devices><device>MSP432</device></devices>
+					<search.tags>
+					<tag>MSP432P401R</tag>
+					<tag>MSP432 Family</tag>
+					<tag>FatFs Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="FatSD" desc="An example using an SDcard" href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\driverExamples\tiDriverExamples\fatFsExamples\com_ti_rtsc_tirtosmsp430_example_102.projectspec">
+					<filter.ref ref.id="filter_175459937284335"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="fatsd_MSP_EXP432P401R_TI_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="FatSD Raw" desc="An example using an SDcard with FatFs API calls" href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\driverExamples\tiDriverExamples\fatFsExamples\com_ti_rtsc_tirtosmsp430_example_103.projectspec">
+					<filter.ref ref.id="filter_175459937284335"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="fatsdraw_MSP_EXP432P401R_TI_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="GPIO Examples" desc="GPIO example projects for MSP-EXP432P401R Launchpad" customPageType="genericNote">
+				<filter id="filter_175459937325372">
+					<devices><device>MSP432</device></devices>
+					<search.tags>
+					<tag>MSP432P401R</tag>
+					<tag>MSP432 Family</tag>
+					<tag>GPIO Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="GPIO Interrupt" desc="An example using interrupts to toggle an LED after a button press" href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\driverExamples\tiDriverExamples\gpioExamples\com_ti_rtsc_tirtosmsp430_example_104.projectspec">
+					<filter.ref ref.id="filter_175459937325372"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="gpiointerrupt_MSP_EXP432P401R_TI_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="I2C Examples" desc="I2C example projects for MSP-EXP432P401R Launchpad" customPageType="genericNote">
+				<filter id="filter_175459937349417">
+					<devices><device>MSP432</device></devices>
+					<search.tags>
+					<tag>MSP432P401R</tag>
+					<tag>MSP432 Family</tag>
+					<tag>I2C Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="I2C RF430CL330 Load" desc="An example NFC RF430CL330 example that sends the CPU Load" href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\driverExamples\tiDriverExamples\i2CExamples\com_ti_rtsc_tirtosmsp430_example_105.projectspec">
+					<filter.ref ref.id="filter_175459937349417"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="i2crf430cl330_load_MSP_EXP432P401R_TI_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="I2C TMP006" desc="An example on how to use the I2C driver with the TMP006 boosterpack" href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\driverExamples\tiDriverExamples\i2CExamples\com_ti_rtsc_tirtosmsp430_example_106.projectspec">
+					<filter.ref ref.id="filter_175459937349417"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="i2ctmp006_MSP_EXP432P401R_TI_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="I2C TPL0401EVM" desc="An example on how to use the I2C driver with the TPL0401EVM boosterpack" href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\driverExamples\tiDriverExamples\i2CExamples\com_ti_rtsc_tirtosmsp430_example_107.projectspec">
+					<filter.ref ref.id="filter_175459937349417"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="i2ctpl0401evm_MSP_EXP432P401R_TI_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="PWM Examples" desc="PWM example projects for MSP-EXP432P401R Launchpad" customPageType="genericNote">
+				<filter id="filter_175459937387248">
+					<devices><device>MSP432</device></devices>
+					<search.tags>
+					<tag>MSP432P401R</tag>
+					<tag>MSP432 Family</tag>
+					<tag>PWM Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="PWM LED" desc="An example on how to use the PWM driver to control on-board LEDs" href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\driverExamples\tiDriverExamples\pwmExamples\com_ti_rtsc_tirtosmsp430_example_108.projectspec">
+					<filter.ref ref.id="filter_175459937387248"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="pwmled_MSP_EXP432P401R_TI_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="SPI Examples" desc="SPI example projects for MSP-EXP432P401R Launchpad" customPageType="genericNote">
+				<filter id="filter_175459937409690">
+					<devices><device>MSP432</device></devices>
+					<search.tags>
+					<tag>MSP432P401R</tag>
+					<tag>MSP432 Family</tag>
+					<tag>SPI Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="SPI Loopback" desc="An example that performs an external SPI loopback with master and slave SPI" href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\driverExamples\tiDriverExamples\spiExamples\com_ti_rtsc_tirtosmsp430_example_109.projectspec">
+					<filter.ref ref.id="filter_175459937409690"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="spiloopback_MSP_EXP432P401R_TI_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="UART Examples" desc="UART example projects for MSP-EXP432P401R Launchpad" customPageType="genericNote">
+				<filter id="filter_175459937427644">
+					<devices><device>MSP432</device></devices>
+					<search.tags>
+					<tag>MSP432P401R</tag>
+					<tag>MSP432 Family</tag>
+					<tag>UART Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="UART Echo" desc="Echoes characters back using the UART driver" href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\driverExamples\tiDriverExamples\uartExamples\com_ti_rtsc_tirtosmsp430_example_110.projectspec">
+					<filter.ref ref.id="filter_175459937427644"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="uartecho_MSP_EXP432P401R_TI_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="UART Logging" desc="A simple example that sends Log data to the UART" href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\driverExamples\tiDriverExamples\uartExamples\com_ti_rtsc_tirtosmsp430_example_111.projectspec">
+					<filter.ref ref.id="filter_175459937427644"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="uartlogging_MSP_EXP432P401R_TI_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="Watchdog Examples" desc="Watchdog example projects for MSP-EXP432P401R Launchpad" customPageType="genericNote">
+				<filter id="filter_175459937455216">
+					<devices><device>MSP432</device></devices>
+					<search.tags>
+					<tag>MSP432P401R</tag>
+					<tag>MSP432 Family</tag>
+					<tag>Watchdog Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="Watchdog" desc="Watchdog Timer example that services a watchdog until a button press and release" href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\driverExamples\tiDriverExamples\watchdogExamples\com_ti_rtsc_tirtosmsp430_example_112.projectspec">
+					<filter.ref ref.id="filter_175459937455216"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="watchdog_MSP_EXP432P401R_TI_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				</contents>
+				</contents>
+				<contents name="Instrumentation Examples" desc="Instrumentation examples for MSP-EXP432P401R Launchpad" customPageType="genericNote">
+				<filter id="filter_175459937536328">
+					<devices><device>MSP432</device></devices>
+					<search.tags>
+					<tag>MSP432P401R</tag>
+					<tag>MSP432 Family</tag>
+					<tag>Instrumentation Examples</tag>
+					</search.tags>
+				</filter>
+				<contents name="GNU Instrumentation Examples" desc="GNU Instrumentation examples for MSP-EXP432P401R Launchpad" customPageType="genericNote">
+				<filter id="filter_175459937539854">
+					<devices><device>MSP432</device></devices>
+					<search.tags>
+					<tag>MSP432P401R</tag>
+					<tag>MSP432 Family</tag>
+					<tag>GNU Instrumentation Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="Hello World" desc="A basic example that logs a hello world string that can be viewed using System Analyzer." href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\instrumentationExamples\gnuInstrumentationExamples\com_ti_rtsc_tirtosmsp430_example_139.projectspec">
+					<filter.ref ref.id="filter_175459937539854"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="helloworld_MSP_EXP432P401R_GNU_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Stairstep JTAG StopMode" desc="The stairstep example runs continuously and periodically generates log events. Different threads (Hwi, Swi, Task) run to present a CPU load to the system.  The Log data is obtained when the target is halted.  The sizes of the loggers in LoggingSetup might need to be decreased if your target does not have enough memory." href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\instrumentationExamples\gnuInstrumentationExamples\com_ti_rtsc_tirtosmsp430_example_140.projectspec">
+					<filter.ref ref.id="filter_175459937539854"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="stairstepStopMode_MSP_EXP432P401R_GNU_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="TI Instrumentation Examples" desc="TI Instrumentation examples for MSP-EXP432P401R Launchpad" customPageType="genericNote">
+				<filter id="filter_175459937571594">
+					<devices><device>MSP432</device></devices>
+					<search.tags>
+					<tag>MSP432P401R</tag>
+					<tag>MSP432 Family</tag>
+					<tag>TI Instrumentation Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="Hello World" desc="A basic example that logs a hello world string that can be viewed using System Analyzer." href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\instrumentationExamples\tiInstrumentationExamples\com_ti_rtsc_tirtosmsp430_example_113.projectspec">
+					<filter.ref ref.id="filter_175459937571594"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="helloworld_MSP_EXP432P401R_TI_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Stairstep JTAG StopMode" desc="The stairstep example runs continuously and periodically generates log events. Different threads (Hwi, Swi, Task) run to present a CPU load to the system.  The Log data is obtained when the target is halted.  The sizes of the loggers in LoggingSetup might need to be decreased if your target does not have enough memory." href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\instrumentationExamples\tiInstrumentationExamples\com_ti_rtsc_tirtosmsp430_example_114.projectspec">
+					<filter.ref ref.id="filter_175459937571594"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="stairstepStopMode_MSP_EXP432P401R_TI_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				</contents>
+				<contents name="Kernel Examples" desc="SYS/BIOS kernel examples for MSP-EXP432P401R Launchpad" customPageType="genericNote">
+				<filter id="filter_175459937610386">
+					<devices><device>MSP432</device></devices>
+					<search.tags>
+					<tag>MSP432P401R</tag>
+					<tag>MSP432 Family</tag>
+					<tag>Kernel Examples</tag>
+					</search.tags>
+				</filter>
+				<contents name="GNU Kernel Examples" desc="GNU SYS/BIOS kernel examples for MSP-EXP432P401R Launchpad" customPageType="genericNote">
+				<filter id="filter_175459937613272">
+					<devices><device>MSP432</device></devices>
+					<search.tags>
+					<tag>MSP432P401R</tag>
+					<tag>MSP432 Family</tag>
+					<tag>GNU Kernel Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="Benchmark Example" desc="This example gathers and prints benchmark timing data for some representative SYS/BIOS APIs." href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\kernelExamples\gnuKernelExamples\com_ti_rtsc_tirtosmsp430_example_141.projectspec">
+					<filter.ref ref.id="filter_175459937613272"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="benchloop_MSP_EXP432P401R_GNU_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="C++ Example (bigtime)" desc="In this program, C++ is used to create a real-time clock/calendar." href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\kernelExamples\gnuKernelExamples\com_ti_rtsc_tirtosmsp430_example_142.projectspec">
+					<filter.ref ref.id="filter_175459937613272"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="bigtime_MSP_EXP432P401R_GNU_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Clock Example" desc="The clock example shows how to use the ti.sysbios.knl.Clock module to create one-shot and periodic Clock Instances. Clock Instances are essentially functions that run after a certain number of Clock ticks." href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\kernelExamples\gnuKernelExamples\com_ti_rtsc_tirtosmsp430_example_143.projectspec">
+					<filter.ref ref.id="filter_175459937613272"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="clock_MSP_EXP432P401R_GNU_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Error Example" desc="This example shows how to use Error_Blocks to catch runtime errors. An Error_Block is passed to Task_create() and then checked for create failure. When no Error_Block is passed, the application will terminate when an error occurs. The error.cfg file shows how to plug an error hook." href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\kernelExamples\gnuKernelExamples\com_ti_rtsc_tirtosmsp430_example_144.projectspec">
+					<filter.ref ref.id="filter_175459937613272"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="error_MSP_EXP432P401R_GNU_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Event Example" desc="The event example shows how to use the ti.sysbios.knl.Event module. The ti.sysbios.knl.Event module solves the 'Wait on Multiple' problem. In this example a reader task waits on several events." href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\kernelExamples\gnuKernelExamples\com_ti_rtsc_tirtosmsp430_example_145.projectspec">
+					<filter.ref ref.id="filter_175459937613272"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="event_MSP_EXP432P401R_GNU_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Hello Example" desc="The hello example serves as a basic sanity check program for SYS/BIOS. It demonstrates how to print the string 'hello world' to stdout." href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\kernelExamples\gnuKernelExamples\com_ti_rtsc_tirtosmsp430_example_146.projectspec">
+					<filter.ref ref.id="filter_175459937613272"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="hello_MSP_EXP432P401R_GNU_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Memory Example" desc="This example shows the use of xdc.runtime.Memory module and different xdc.runtime.IHeap implementations to manage memory. A system heap is created statically using ti.sysbios.heaps.HeapMem." href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\kernelExamples\gnuKernelExamples\com_ti_rtsc_tirtosmsp430_example_147.projectspec">
+					<filter.ref ref.id="filter_175459937613272"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="memory_MSP_EXP432P401R_GNU_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Semi-Hosting Example" desc="This example leverages Semi-Hosting for printf IO.  The configuration disables non-essential and debug-related SYS/BIOS features to reduce the application memory footprint." href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\kernelExamples\gnuKernelExamples\com_ti_rtsc_tirtosmsp430_example_149.projectspec">
+					<filter.ref ref.id="filter_175459937613272"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="semihost_MSP_EXP432P401R_GNU_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Swi Example" desc="The swi example shows how to use the ti.sysbios.knl.Swi module. It demonstrates how the various Swi APIs work." href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\kernelExamples\gnuKernelExamples\com_ti_rtsc_tirtosmsp430_example_150.projectspec">
+					<filter.ref ref.id="filter_175459937613272"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="swi_MSP_EXP432P401R_GNU_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Task Mutex Example" desc="This example shows the use of two tasks and one semaphore to protect data access." href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\kernelExamples\gnuKernelExamples\com_ti_rtsc_tirtosmsp430_example_148.projectspec">
+					<filter.ref ref.id="filter_175459937613272"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="mutex_MSP_EXP432P401R_GNU_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="TI Kernel Examples" desc="TI SYS/BIOS kernel examples for MSP-EXP432P401R Launchpad" customPageType="genericNote">
+				<filter id="filter_175459937715223">
+					<devices><device>MSP432</device></devices>
+					<search.tags>
+					<tag>MSP432P401R</tag>
+					<tag>MSP432 Family</tag>
+					<tag>TI Kernel Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="Benchmark Example" desc="This example gathers and prints benchmark timing data for some representative SYS/BIOS APIs." href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\kernelExamples\tiKernelExamples\com_ti_rtsc_tirtosmsp430_example_115.projectspec">
+					<filter.ref ref.id="filter_175459937715223"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="benchloop_MSP_EXP432P401R_TI_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="C++ Example (bigtime)" desc="In this program, C++ is used to create a real-time clock/calendar." href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\kernelExamples\tiKernelExamples\com_ti_rtsc_tirtosmsp430_example_116.projectspec">
+					<filter.ref ref.id="filter_175459937715223"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="bigtime_MSP_EXP432P401R_TI_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Clock Example" desc="The clock example shows how to use the ti.sysbios.knl.Clock module to create one-shot and periodic Clock Instances. Clock Instances are essentially functions that run after a certain number of Clock ticks." href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\kernelExamples\tiKernelExamples\com_ti_rtsc_tirtosmsp430_example_117.projectspec">
+					<filter.ref ref.id="filter_175459937715223"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="clock_MSP_EXP432P401R_TI_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Error Example" desc="This example shows how to use Error_Blocks to catch runtime errors. An Error_Block is passed to Task_create() and then checked for create failure. When no Error_Block is passed, the application will terminate when an error occurs. The error.cfg file shows how to plug an error hook." href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\kernelExamples\tiKernelExamples\com_ti_rtsc_tirtosmsp430_example_118.projectspec">
+					<filter.ref ref.id="filter_175459937715223"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="error_MSP_EXP432P401R_TI_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Event Example" desc="The event example shows how to use the ti.sysbios.knl.Event module. The ti.sysbios.knl.Event module solves the 'Wait on Multiple' problem. In this example a reader task waits on several events." href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\kernelExamples\tiKernelExamples\com_ti_rtsc_tirtosmsp430_example_119.projectspec">
+					<filter.ref ref.id="filter_175459937715223"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="event_MSP_EXP432P401R_TI_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Hello Example" desc="The hello example serves as a basic sanity check program for SYS/BIOS. It demonstrates how to print the string 'hello world' to stdout." href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\kernelExamples\tiKernelExamples\com_ti_rtsc_tirtosmsp430_example_120.projectspec">
+					<filter.ref ref.id="filter_175459937715223"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="hello_MSP_EXP432P401R_TI_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Memory Example" desc="This example shows the use of xdc.runtime.Memory module and different xdc.runtime.IHeap implementations to manage memory. A system heap is created statically using ti.sysbios.heaps.HeapMem." href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\kernelExamples\tiKernelExamples\com_ti_rtsc_tirtosmsp430_example_121.projectspec">
+					<filter.ref ref.id="filter_175459937715223"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="memory_MSP_EXP432P401R_TI_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Swi Example" desc="The swi example shows how to use the ti.sysbios.knl.Swi module. It demonstrates how the various Swi APIs work." href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\kernelExamples\tiKernelExamples\com_ti_rtsc_tirtosmsp430_example_123.projectspec">
+					<filter.ref ref.id="filter_175459937715223"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="swi_MSP_EXP432P401R_TI_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Task Mutex Example" desc="This example shows the use of two tasks and one semaphore to protect data access." href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\kernelExamples\tiKernelExamples\com_ti_rtsc_tirtosmsp430_example_122.projectspec">
+					<filter.ref ref.id="filter_175459937715223"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="mutex_MSP_EXP432P401R_TI_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				</contents>
+				<contents name="Network Examples" desc="TI-RTOS network examples for MSP-EXP432P401R Launchpad" customPageType="genericNote">
+				<filter id="filter_175459937815571">
+					<devices><device>MSP432</device></devices>
+					<search.tags>
+					<tag>MSP432P401R</tag>
+					<tag>MSP432 Family</tag>
+					<tag>Network Examples</tag>
+					</search.tags>
+				</filter>
+				<contents name="GNU Network Examples" desc="GNU TI-RTOS network examples for  MSP-EXP432P401R Launchpad" customPageType="genericNote">
+				<filter id="filter_175459937818777">
+					<devices><device>MSP432</device></devices>
+					<search.tags>
+					<tag>MSP432P401R</tag>
+					<tag>MSP432 Family</tag>
+					<tag>GNU Network Examples</tag>
+					</search.tags>
+				</filter>
+				<contents name="WiFi Examples" desc="WiFi example projects for MSP-EXP432P401R Launchpad" customPageType="genericNote">
+				<filter id="filter_175459937821342">
+					<devices><device>MSP432</device></devices>
+					<search.tags>
+					<tag>MSP432P401R</tag>
+					<tag>MSP432 Family</tag>
+					<tag>WiFi Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="TCP Echo for CC3X00" desc="The TCP Echo example showing how to use sockets with the SimpleLink Wi-Fi CC3X00" href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\networkExamples\gnuNetworkExamples\wiFiExamples\com_ti_rtsc_tirtosmsp430_example_151.projectspec">
+					<filter.ref ref.id="filter_175459937821342"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="tcpEchoCC3X00_MSP_EXP432P401R_GNU_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="UDP Echo for CC3X00" desc="The UDP Echo example showing how to use sockets with the SimpleLink Wi-Fi CC3X00" href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\networkExamples\gnuNetworkExamples\wiFiExamples\com_ti_rtsc_tirtosmsp430_example_152.projectspec">
+					<filter.ref ref.id="filter_175459937821342"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="udpEchoCC3X00_MSP_EXP432P401R_GNU_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				</contents>
+				<contents name="TI Network Examples" desc="TI TI-RTOS network examples for  MSP-EXP432P401R Launchpad" customPageType="genericNote">
+				<filter id="filter_175459937859494">
+					<devices><device>MSP432</device></devices>
+					<search.tags>
+					<tag>MSP432P401R</tag>
+					<tag>MSP432 Family</tag>
+					<tag>TI Network Examples</tag>
+					</search.tags>
+				</filter>
+				<contents name="WiFi Examples" desc="WiFi example projects for MSP-EXP432P401R Launchpad" customPageType="genericNote">
+				<filter id="filter_175459937862700">
+					<devices><device>MSP432</device></devices>
+					<search.tags>
+					<tag>MSP432P401R</tag>
+					<tag>MSP432 Family</tag>
+					<tag>WiFi Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="TCP Echo for CC3X00" desc="The TCP Echo example showing how to use sockets with the SimpleLink Wi-Fi CC3X00" href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\networkExamples\tiNetworkExamples\wiFiExamples\com_ti_rtsc_tirtosmsp430_example_124.projectspec">
+					<filter.ref ref.id="filter_175459937862700"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="tcpEchoCC3X00_MSP_EXP432P401R_TI_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="UDP Echo for CC3X00" desc="The UDP Echo example showing how to use sockets with the SimpleLink Wi-Fi CC3X00" href="E:\Program Files (x86)\CCSv6\tirtos_msp43x_2_20_00_06\resources\msp_exp432P401RLaunchpad\networkExamples\tiNetworkExamples\wiFiExamples\com_ti_rtsc_tirtosmsp430_example_125.projectspec">
+					<filter.ref ref.id="filter_175459937862700"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="udpEchoCC3X00_MSP_EXP432P401R_TI_MSP432P401R"/>
+							<attribute key="device.variant" value="MSP432P401R"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				</contents>
+				</contents>
+				</contents>
+		</contents>
+	</contents>
+
+</resource.explorer>

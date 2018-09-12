@@ -1,0 +1,1 @@
+"./main.obj" "./Other.obj" "./LCD1602.obj" "./Inlt.obj" "../lnk_msp430f1611.cmd" -l"libc.a" 

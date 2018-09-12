@@ -1,0 +1,1 @@
+"../test_omapl138.cmd" "./user_evmomapl138.obj" "./sys_interrupts.obj" "./main_sys.obj" "./intvecs.obj" "./function.obj" "./evmomapl138_timer.obj" "./evmomapl138_gpio.obj" "./evmomapl138.obj" "D:/lib/dsplib64plus.lib" "E:/DATA/bsl_zq_change_0718_noprintf/lib/evmomapl138_bsl.lib" "D:/Program Files (x86)/CCSv5/ccsv5/tools/compiler/c6000_7.4.4/lib/rts67plus.lib" 

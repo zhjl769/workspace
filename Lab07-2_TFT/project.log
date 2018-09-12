@@ -1,0 +1,13 @@
+!ERROR: Device 'MSP430F6638' is not recognized! Please migrate the project to one of the supported device-variants first.
+
+
+!CONFIGURATION: 'com.ti.ccstudio.buildDefinitions.MSP430.Debug.9721651' [Fri Sep 07 01:22:54 CST 2018]
+
+	!TOOL: 'com.ti.ccstudio.buildDefinitions.MSP430_4.2.exe.compilerDebug.1919804533'
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.MSP430_4.2.compilerID.DEBUG
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.MSP430_4.2.compilerID.DWARF_VERSION
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.MSP430_4.2.compilerID.STRICT_DWARF
+

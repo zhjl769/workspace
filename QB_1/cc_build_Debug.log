@@ -1,0 +1,26 @@
+------------------------------  QB_1.pjt - Debug  ------------------------------
+[bootload.asm] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -g -fr"C:/CCStudio_v3.3/MyProjects/QB_64G_test_0.1/Debug" -d"_DEBUG" -d"CHIP_6416" -d"_TMS320C6400" -mv6400 -@"Debug.lkf" "bootload.asm"
+
+[c6xdspinit.c] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -g -fr"C:/CCStudio_v3.3/MyProjects/QB_64G_test_0.1/Debug" -d"_DEBUG" -d"CHIP_6416" -d"_TMS320C6400" -mv6400 -@"Debug.lkf" "c6xdspinit.c"
+
+[c6xinterrupts.c] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -g -fr"C:/CCStudio_v3.3/MyProjects/QB_64G_test_0.1/Debug" -d"_DEBUG" -d"CHIP_6416" -d"_TMS320C6400" -mv6400 -@"Debug.lkf" "c6xinterrupts.c"
+
+[cf.c] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -g -fr"C:/CCStudio_v3.3/MyProjects/QB_64G_test_0.1/Debug" -d"_DEBUG" -d"CHIP_6416" -d"_TMS320C6400" -mv6400 -@"Debug.lkf" "cf.c"
+
+[databuffer.c] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -g -fr"C:/CCStudio_v3.3/MyProjects/QB_64G_test_0.1/Debug" -d"_DEBUG" -d"CHIP_6416" -d"_TMS320C6400" -mv6400 -@"Debug.lkf" "databuffer.c"
+
+[isr.c] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -g -fr"C:/CCStudio_v3.3/MyProjects/QB_64G_test_0.1/Debug" -d"_DEBUG" -d"CHIP_6416" -d"_TMS320C6400" -mv6400 -@"Debug.lkf" "isr.c"
+
+[QB_main.c] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -g -fr"C:/CCStudio_v3.3/MyProjects/QB_64G_test_0.1/Debug" -d"_DEBUG" -d"CHIP_6416" -d"_TMS320C6400" -mv6400 -@"Debug.lkf" "QB_main.c"
+
+[serial_order.c] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -g -fr"C:/CCStudio_v3.3/MyProjects/QB_64G_test_0.1/Debug" -d"_DEBUG" -d"CHIP_6416" -d"_TMS320C6400" -mv6400 -@"Debug.lkf" "serial_order.c"
+
+[Sync.c] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -g -fr"C:/CCStudio_v3.3/MyProjects/QB_64G_test_0.1/Debug" -d"_DEBUG" -d"CHIP_6416" -d"_TMS320C6400" -mv6400 -@"Debug.lkf" "Sync.c"
+
+[vectors.asm] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -g -fr"C:/CCStudio_v3.3/MyProjects/QB_64G_test_0.1/Debug" -d"_DEBUG" -d"CHIP_6416" -d"_TMS320C6400" -mv6400 -@"Debug.lkf" "vectors.asm"
+
+[Linking...] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -@"Debug.lkf"
+<Linking>
+
+Build Complete,
+  0 Errors, 0 Warnings, 0 Remarks.

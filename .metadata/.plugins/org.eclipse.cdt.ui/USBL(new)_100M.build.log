@@ -1,7 +1,142 @@
 
 **** Build of configuration Debug for project USBL(new)_100M ****
 
-"D:\\Program Files (x86)\\CCSv5\\ccsv5\\utils\\bin\\gmake" -k all 
-gmake: Nothing to be done for `all'.
+"D:\\Program Files (x86)\\CCSv6\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../SourceFile/cbrev.asm'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O3 -g --include_path="D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/include" --include_path="E:/DATA/workspace/USBL(new)_100M/SourceFile" --include_path="/packages/ti/xdais" --include_path="/include" --include_path="E:/DATA/workspace/USBL(new)_100M/Debug" --include_path="D:/Program Files (x86)/CCSv6/bios_5_42_02_10/packages/ti/bios/include" --include_path="D:/Program Files (x86)/CCSv6/bios_5_42_02_10/packages/ti/rtdx/include/c5500" --define="CHIP_5509" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="SourceFile/cbrev.d"  "../SourceFile/cbrev.asm"
+SourceFile/subdir_rules.mk:7: warning: overriding recipe for target 'cbrev.obj'
+subdir_rules.mk:7: warning: ignoring old recipe for target 'cbrev.obj'
+SourceFile/subdir_rules.mk:14: warning: overriding recipe for target 'cfft_noscale.obj'
+subdir_rules.mk:14: warning: ignoring old recipe for target 'cfft_noscale.obj'
+SourceFile/subdir_rules.mk:21: warning: overriding recipe for target 'cfft_scale.obj'
+subdir_rules.mk:21: warning: ignoring old recipe for target 'cfft_scale.obj'
+SourceFile/subdir_rules.mk:28: warning: overriding recipe for target 'cifft_noscale.obj'
+subdir_rules.mk:28: warning: ignoring old recipe for target 'cifft_noscale.obj'
+SourceFile/subdir_rules.mk:35: warning: overriding recipe for target 'cifft_scale.obj'
+subdir_rules.mk:35: warning: ignoring old recipe for target 'cifft_scale.obj'
+SourceFile/subdir_rules.mk:42: warning: overriding recipe for target 'fir2.obj'
+subdir_rules.mk:42: warning: ignoring old recipe for target 'fir2.obj'
+SourceFile/subdir_rules.mk:49: warning: overriding recipe for target 'h_LPF1.obj'
+subdir_rules.mk:49: warning: ignoring old recipe for target 'h_LPF1.obj'
+SourceFile/subdir_rules.mk:56: warning: overriding recipe for target 'h_LPF2.obj'
+subdir_rules.mk:56: warning: ignoring old recipe for target 'h_LPF2.obj'
+SourceFile/subdir_rules.mk:63: warning: overriding recipe for target 'maxvec.obj'
+subdir_rules.mk:70: warning: ignoring old recipe for target 'maxvec.obj'
+SourceFile/subdir_rules.mk:70: warning: overriding recipe for target 'twid4096.obj'
+subdir_rules.mk:84: warning: ignoring old recipe for target 'twid4096.obj'
+SourceFile/subdir_rules.mk:77: warning: overriding recipe for target 'vectors.obj'
+subdir_rules.mk:91: warning: ignoring old recipe for target 'vectors.obj'
+'Finished building: ../SourceFile/cbrev.asm'
+' '
+'Building file: ../SourceFile/cfft_noscale.asm'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O3 -g --include_path="D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/include" --include_path="E:/DATA/workspace/USBL(new)_100M/SourceFile" --include_path="/packages/ti/xdais" --include_path="/include" --include_path="E:/DATA/workspace/USBL(new)_100M/Debug" --include_path="D:/Program Files (x86)/CCSv6/bios_5_42_02_10/packages/ti/bios/include" --include_path="D:/Program Files (x86)/CCSv6/bios_5_42_02_10/packages/ti/rtdx/include/c5500" --define="CHIP_5509" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="SourceFile/cfft_noscale.d"  "../SourceFile/cfft_noscale.asm"
+"..\SourceFile\cfft_noscale.asm", REMARK   at line 475: [R5684] This outer loop
+                                                                contains a
+                                                                nested
+                                                                localrepeat
+                                                                that may cause
+                                                                execution to
+                                                                terminate if an
+                                                                iteration of
+                                                                the nested
+                                                                localrepeat is
+                                                                interrupted;
+                                                                Note: indirect
+                                                                write to memory
+                                                                may be write to
+                                                                MMR BRC1; (see
+                                                                the C55x
+                                                                silicon
+                                                                exceptions
+                                                                errata;
+                                                                Advisory
+                                                                CPU_116)
+		}
+
+'Finished building: ../SourceFile/cfft_noscale.asm'
+' '
+'Building file: ../SourceFile/cfft_scale.asm'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O3 -g --include_path="D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/include" --include_path="E:/DATA/workspace/USBL(new)_100M/SourceFile" --include_path="/packages/ti/xdais" --include_path="/include" --include_path="E:/DATA/workspace/USBL(new)_100M/Debug" --include_path="D:/Program Files (x86)/CCSv6/bios_5_42_02_10/packages/ti/bios/include" --include_path="D:/Program Files (x86)/CCSv6/bios_5_42_02_10/packages/ti/rtdx/include/c5500" --define="CHIP_5509" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="SourceFile/cfft_scale.d"  "../SourceFile/cfft_scale.asm"
+"..\SourceFile\cfft_scale.asm", REMARK   at line 565: [R5684] This outer loop
+                                                              contains a nested
+                                                              localrepeat that
+                                                              may cause
+                                                              execution to
+                                                              terminate if an
+                                                              iteration of the
+                                                              nested
+                                                              localrepeat is
+                                                              interrupted;
+                                                              Note: indirect
+                                                              write to memory
+                                                              may be write to
+                                                              MMR BRC1; (see
+                                                              the C55x silicon
+                                                              exceptions
+                                                              errata; Advisory
+                                                              CPU_116)
+		}
+
+'Finished building: ../SourceFile/cfft_scale.asm'
+' '
+'Building file: ../SourceFile/cifft_noscale.asm'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O3 -g --include_path="D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/include" --include_path="E:/DATA/workspace/USBL(new)_100M/SourceFile" --include_path="/packages/ti/xdais" --include_path="/include" --include_path="E:/DATA/workspace/USBL(new)_100M/Debug" --include_path="D:/Program Files (x86)/CCSv6/bios_5_42_02_10/packages/ti/bios/include" --include_path="D:/Program Files (x86)/CCSv6/bios_5_42_02_10/packages/ti/rtdx/include/c5500" --define="CHIP_5509" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="SourceFile/cifft_noscale.d"  "../SourceFile/cifft_noscale.asm"
+'Finished building: ../SourceFile/cifft_noscale.asm'
+' '
+'Building file: ../SourceFile/cifft_scale.asm'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O3 -g --include_path="D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/include" --include_path="E:/DATA/workspace/USBL(new)_100M/SourceFile" --include_path="/packages/ti/xdais" --include_path="/include" --include_path="E:/DATA/workspace/USBL(new)_100M/Debug" --include_path="D:/Program Files (x86)/CCSv6/bios_5_42_02_10/packages/ti/bios/include" --include_path="D:/Program Files (x86)/CCSv6/bios_5_42_02_10/packages/ti/rtdx/include/c5500" --define="CHIP_5509" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="SourceFile/cifft_scale.d"  "../SourceFile/cifft_scale.asm"
+'Finished building: ../SourceFile/cifft_scale.asm'
+' '
+'Building file: ../SourceFile/fir2.asm'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O3 -g --include_path="D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/include" --include_path="E:/DATA/workspace/USBL(new)_100M/SourceFile" --include_path="/packages/ti/xdais" --include_path="/include" --include_path="E:/DATA/workspace/USBL(new)_100M/Debug" --include_path="D:/Program Files (x86)/CCSv6/bios_5_42_02_10/packages/ti/bios/include" --include_path="D:/Program Files (x86)/CCSv6/bios_5_42_02_10/packages/ti/rtdx/include/c5500" --define="CHIP_5509" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="SourceFile/fir2.d"  "../SourceFile/fir2.asm"
+'Finished building: ../SourceFile/fir2.asm'
+' '
+'Building file: ../SourceFile/h_LPF1.asm'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O3 -g --include_path="D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/include" --include_path="E:/DATA/workspace/USBL(new)_100M/SourceFile" --include_path="/packages/ti/xdais" --include_path="/include" --include_path="E:/DATA/workspace/USBL(new)_100M/Debug" --include_path="D:/Program Files (x86)/CCSv6/bios_5_42_02_10/packages/ti/bios/include" --include_path="D:/Program Files (x86)/CCSv6/bios_5_42_02_10/packages/ti/rtdx/include/c5500" --define="CHIP_5509" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="SourceFile/h_LPF1.d"  "../SourceFile/h_LPF1.asm"
+'Finished building: ../SourceFile/h_LPF1.asm'
+' '
+'Building file: ../SourceFile/h_LPF2.asm'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O3 -g --include_path="D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/include" --include_path="E:/DATA/workspace/USBL(new)_100M/SourceFile" --include_path="/packages/ti/xdais" --include_path="/include" --include_path="E:/DATA/workspace/USBL(new)_100M/Debug" --include_path="D:/Program Files (x86)/CCSv6/bios_5_42_02_10/packages/ti/bios/include" --include_path="D:/Program Files (x86)/CCSv6/bios_5_42_02_10/packages/ti/rtdx/include/c5500" --define="CHIP_5509" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="SourceFile/h_LPF2.d"  "../SourceFile/h_LPF2.asm"
+'Finished building: ../SourceFile/h_LPF2.asm'
+' '
+'Building file: ../main.c'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O3 -g --include_path="D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/include" --include_path="E:/DATA/workspace/USBL(new)_100M/SourceFile" --include_path="/packages/ti/xdais" --include_path="/include" --include_path="E:/DATA/workspace/USBL(new)_100M/Debug" --include_path="D:/Program Files (x86)/CCSv6/bios_5_42_02_10/packages/ti/bios/include" --include_path="D:/Program Files (x86)/CCSv6/bios_5_42_02_10/packages/ti/rtdx/include/c5500" --define="CHIP_5509" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="main.d"  "../main.c"
+
+>> Compilation failure
+subdir_rules.mk:63: recipe for target 'main.obj' failed
+"../main.c", line 29: fatal error #5: could not open source file "csl.h"
+1 fatal error detected in the compilation of "../main.c".
+Compilation terminated.
+gmake: *** [main.obj] Error 1
+'Building file: ../SourceFile/maxvec.asm'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O3 -g --include_path="D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/include" --include_path="E:/DATA/workspace/USBL(new)_100M/SourceFile" --include_path="/packages/ti/xdais" --include_path="/include" --include_path="E:/DATA/workspace/USBL(new)_100M/Debug" --include_path="D:/Program Files (x86)/CCSv6/bios_5_42_02_10/packages/ti/bios/include" --include_path="D:/Program Files (x86)/CCSv6/bios_5_42_02_10/packages/ti/rtdx/include/c5500" --define="CHIP_5509" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="SourceFile/maxvec.d"  "../SourceFile/maxvec.asm"
+'Finished building: ../SourceFile/maxvec.asm'
+' '
+'Building file: ../twid2048.asm'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O3 -g --include_path="D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/include" --include_path="E:/DATA/workspace/USBL(new)_100M/SourceFile" --include_path="/packages/ti/xdais" --include_path="/include" --include_path="E:/DATA/workspace/USBL(new)_100M/Debug" --include_path="D:/Program Files (x86)/CCSv6/bios_5_42_02_10/packages/ti/bios/include" --include_path="D:/Program Files (x86)/CCSv6/bios_5_42_02_10/packages/ti/rtdx/include/c5500" --define="CHIP_5509" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="twid2048.d"  "../twid2048.asm"
+'Finished building: ../twid2048.asm'
+' '
+'Building file: ../SourceFile/twid4096.asm'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O3 -g --include_path="D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/include" --include_path="E:/DATA/workspace/USBL(new)_100M/SourceFile" --include_path="/packages/ti/xdais" --include_path="/include" --include_path="E:/DATA/workspace/USBL(new)_100M/Debug" --include_path="D:/Program Files (x86)/CCSv6/bios_5_42_02_10/packages/ti/bios/include" --include_path="D:/Program Files (x86)/CCSv6/bios_5_42_02_10/packages/ti/rtdx/include/c5500" --define="CHIP_5509" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="SourceFile/twid4096.d"  "../SourceFile/twid4096.asm"
+'Finished building: ../SourceFile/twid4096.asm'
+' '
+'Building file: ../SourceFile/vectors.asm'
+'Invoking: C5500 Compiler'
+"D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -O3 -g --include_path="D:/Program Files (x86)/CCSv6/ccsv6/tools/compiler/c5500_4.4.1/include" --include_path="E:/DATA/workspace/USBL(new)_100M/SourceFile" --include_path="/packages/ti/xdais" --include_path="/include" --include_path="E:/DATA/workspace/USBL(new)_100M/Debug" --include_path="D:/Program Files (x86)/CCSv6/bios_5_42_02_10/packages/ti/bios/include" --include_path="D:/Program Files (x86)/CCSv6/bios_5_42_02_10/packages/ti/rtdx/include/c5500" --define="CHIP_5509" --define=c5509a --quiet --display_error_number --ptrdiff_size=32 --preproc_with_compile --preproc_dependency="SourceFile/vectors.d"  "../SourceFile/vectors.asm"
+'Finished building: ../SourceFile/vectors.asm'
+' '
+gmake: Target 'all' not remade because of errors.
 
 **** Build Finished ****
